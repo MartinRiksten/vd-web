@@ -1,15 +1,16 @@
-import { FrameworkConfiguration } from "aurelia-framework";
+import { Aurelia } from "aurelia-framework";
 import "./attributes/clipboard";
 import "./attributes/draggable";
 import "./attributes/popover";
 import "./attributes/tooltip";
 
-/**
- * VdWebInitialize
- * configuraion: FrameworkConfiguration 
- */
-export class VdWebInitializer {
-    public initialize(configuration: FrameworkConfiguration): void {
-        configuration.globalResources(["attributes/clipboard", "attributes/draggable", "attributes/popover", "tooltip"]);
-    }
+export function configure(aurelia: Aurelia): void {
+    const customAttributes = [
+        "clipboard",
+        "draggable",
+        "popover",
+        "tooltip"
+    ];
+    const resources = customAttributes.map(x => `attributes/${x}`);
+    aurelia.use.standardConfiguration().globalResources(resources);
 }
