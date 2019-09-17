@@ -1,28 +1,27 @@
-﻿import { autoinject, customAttribute } from "aurelia-framework";
-import { PopoverOption } from "bootstrap";
-import $ from "jquery";
+﻿import { autoinject, customAttribute } from 'aurelia-framework';
+import { PopoverOption } from 'bootstrap';
+import $ from 'jquery';
 
 @autoinject
-@customAttribute("popover")
+@customAttribute('popover')
 export class PopoverCustomAttribute {
-    public value: PopoverOption | undefined;
+  public value: PopoverOption | undefined;
 
-    constructor(private readonly element: Element) {
+  constructor(private readonly element: Element) {}
+
+  public attached(): void {
+    if (!this.value) {
+      return;
     }
 
-    public attached(): void {
-        if (!this.value) {
-            return;
-        }
+    $(this.element).popover(this.value);
+  }
 
-        $(this.element).popover(this.value);
+  public detached(): void {
+    if (!this.value) {
+      return;
     }
 
-    public detached(): void {
-        if (!this.value) {
-            return;
-        }
-
-        $(this.element).popover("dispose");
-   }
+    $(this.element).popover('dispose');
+  }
 }
