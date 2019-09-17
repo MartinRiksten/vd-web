@@ -3,4 +3,6 @@ import "./attributes/clipboard";
 import "./attributes/draggable";
 import "./attributes/popover";
 import "./attributes/tooltip";
-export declare function configure(aurelia: Aurelia): void;
+export declare class VdWebInitializer {
+    configure(aurelia: Aurelia): void;
+}
