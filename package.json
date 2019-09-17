@@ -1,0 +1,47 @@
+{
+  "name": "vd-web",
+  "version": "1.0.0",
+  "description": "vd-web",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "dependencies": {
+    "@types/bootstrap": "^4.3.1",
+    "@types/hammerjs": "^2.0.36"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm test && npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
+  },
+  "files": ["lib/**/*"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://MartinRiksten:0eb089794c83488984c8c2e70c74c9bbd79a1607@github.com/MartinRiksten/vd-web.git"
+  },
+  "keywords": [],
+  "author": "Martin Riksten",
+  "bugs": {
+    "url": "https://github.com/MartinRiksten/vd-web/issues"
+  },
+  "homepage": "https://github.com/MartinRiksten/vd-web#readme",
+  "devDependencies": {
+    "@jspm/core": "1.0.4",
+    "aurelia-framework": "^1.3.1",
+    "aurelia-templating": "^1.10.2",
+    "bootstrap": "^4.3.1",
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "prettier": "^1.18.2",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.6.3"
+  }
+}
