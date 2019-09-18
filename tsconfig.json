@@ -9,6 +9,6 @@
       "outFile": "./lib/index.js",
       "strict": true
     },
-    "include": ["src"],
+    "include": ["src/vd-web.ts"],
     "exclude": ["node_modules", "**/__tests__/*"]
   }

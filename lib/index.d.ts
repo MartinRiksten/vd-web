@@ -212,8 +212,7 @@ declare module "components/vd-th" {
         getClass(by: string, ascending: boolean): string;
     }
 }
-declare module "index" {
-    import { Aurelia } from "aurelia-framework";
+declare module "vd-web" {
     export * from "attributes/clipboard";
     export * from "attributes/draggable";
     export * from "attributes/popover";
@@ -227,9 +226,4 @@ declare module "index" {
     export * from "components/vd-td-abbrev";
     export * from "components/vd-td-list";
     export * from "components/vd-th";
-    export class VdWebInitializer {
-        private readonly customAttributes;
-        private readonly components;
-        configure(aurelia: Aurelia): void;
-    }
 }
