@@ -3,10 +3,10 @@
       "experimentalDecorators": true,
       "esModuleInterop": true,
       "target": "es2015",
-      "module": "commonjs",
+      "module": "amd",
       "declaration": true,
       "rootDir": "./src",
-      "outDir": "./lib",
+      "outFile": "./lib/index.js",
       "strict": true
     },
     "include": ["src"],
