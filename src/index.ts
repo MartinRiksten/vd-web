@@ -1,40 +1,41 @@
 import { Aurelia } from "aurelia-framework";
-import "./attributes/clipboard";
-import "./attributes/draggable";
-import "./attributes/popover";
-import "./attributes/tooltip";
-import "./components/bootstrap-select";
-import "./components/vd-bool-icon";
-import "./components/vd-button";
-import "./components/vd-data";
-import "./components/vd-route";
-import "./components/vd-td";
-import "./components/vd-td-abbrev";
-import "./components/vd-td-list";
-import "./components/vd-th";
+
+export * from "./attributes/clipboard";
+export * from "./attributes/draggable";
+export * from "./attributes/popover";
+export * from "./attributes/tooltip";
+export * from "./components/bootstrap-select";
+export * from "./components/vd-bool-icon";
+export * from "./components/vd-button";
+export * from "./components/vd-data";
+export * from "./components/vd-route";
+export * from "./components/vd-td";
+export * from "./components/vd-td-abbrev";
+export * from "./components/vd-td-list";
+export * from "./components/vd-th";
 
 export class VdWebInitializer {
-    public configure(aurelia: Aurelia): void {
-        const customAttributes = [
-            "clipboard",
-            "draggable",
-            "popover",
-            "tooltip"
-        ];
-        const components = [
-            "bootstrap-select",
-            "vd-bool-icon",
-            "vd-button",
-            "vd-data",
-            "vd-td",
-            "vd-td-abbrev",
-            "vd-td-list",
-            "vd-th",
-            "vd-route"
-        ];
+    private readonly customAttributes = [
+        "clipboard",
+        "draggable",
+        "popover",
+        "tooltip"
+    ];
+    private readonly components = [
+        "bootstrap-select",
+        "vd-bool-icon",
+        "vd-button",
+        "vd-data",
+        "vd-td",
+        "vd-td-abbrev",
+        "vd-td-list",
+        "vd-th",
+        "vd-route"
+    ];
 
-        const resources = components.map(x => `components/${x}`)
-         .concat(customAttributes.map(x => `attributes/${x}`));
+    public configure(aurelia: Aurelia): void {
+        const resources = this.components.map(x => `components/${x}`)
+         .concat(this.customAttributes.map(x => `attributes/${x}`));
         aurelia.use.standardConfiguration().globalResources(resources);
     }
 }

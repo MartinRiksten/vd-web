@@ -11,14 +11,15 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "tsc && npm run copy-html",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A lib",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "copy-html": "copyfiles -u 1 ./src/**/*.html ./lib/"
   },
   "files": [
     "lib/**/*"
@@ -38,6 +39,7 @@
     "aurelia-framework": "^1.3.1",
     "aurelia-templating": "^1.10.2",
     "bootstrap": "^4.3.1",
+    "copyfiles": "^2.1.1",
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
