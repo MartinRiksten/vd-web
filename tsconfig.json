@@ -3,12 +3,12 @@
       "experimentalDecorators": true,
       "esModuleInterop": true,
       "target": "es2015",
-      "module": "amd",
+      "module": "commonjs",
       "declaration": true,
       "rootDir": "./src",
-      "outFile": "./lib/index.js",
-      "strict": true
+      "outDir": "./dist",
+      "strict": false
     },
-    "include": ["src/vd-web.ts"],
-    "exclude": ["node_modules", "**/__tests__/*"]
+    "include": ["src"],
+    "exclude": ["node_modules", "dist"]
   }
