@@ -1,0 +1,9 @@
+﻿@* Generator: MvcHelper *@
+<template>
+    <label class="font-weight-lighter text-right" class.bind="labelClass">${label}</label>
+    <span class.bind="dataClass">
+        <slot name="before"></slot>
+        <span innerhtml.bind="value"></span>
+        <slot name="after"></slot>
+    </span>
+</template>
