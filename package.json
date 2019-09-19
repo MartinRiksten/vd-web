@@ -2,8 +2,8 @@
   "name": "vd-web",
   "version": "1.0.0",
   "description": "vd-web",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
   "dependencies": {
     "@types/bootstrap": "^4.3.1",
     "@types/hammerjs": "^2.0.36"
