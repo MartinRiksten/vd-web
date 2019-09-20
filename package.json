@@ -42,6 +42,7 @@
     "copyfiles": "^2.1.1",
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
+    "moment": "^2.24.0",
     "popper.js": "^1.15.0",
     "prettier": "^1.18.2",
     "tslint": "^5.20.0",

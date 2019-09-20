@@ -16,7 +16,7 @@ export * from "./components/vd-td-list";
 export * from "./components/vd-th";
 
 export function configure(config: FrameworkConfiguration) {
-    const customAttributes = [
+    const attributes = [
         "clipboard",
         "draggable",
         "popover",
@@ -33,9 +33,17 @@ export function configure(config: FrameworkConfiguration) {
         "vd-th",
         "vd-route"
     ];
-
+    const converters = [
+        "bool",
+        "date",
+        "encode-uri",
+        "null",
+        "uppercase"
+    ];
+   
     const resources = components.map(x => `./dist/components/${x}`)
-        .concat(customAttributes.map(x => `./dist/attributes/${x}`))
+        .concat(attributes.map(x => `./dist/attributes/${x}`))
+        .concat(converters.map(x => `./dist/converters/${x}`))
         .map(x => PLATFORM.moduleName(x)); 
     config.globalResources(resources);
 }

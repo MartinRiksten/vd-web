@@ -18,7 +18,7 @@ __export(require("./components/vd-td-abbrev"));
 __export(require("./components/vd-td-list"));
 __export(require("./components/vd-th"));
 function configure(config) {
-    const customAttributes = [
+    const attributes = [
         "clipboard",
         "draggable",
         "popover",
@@ -35,8 +35,16 @@ function configure(config) {
         "vd-th",
         "vd-route"
     ];
+    const converters = [
+        "bool",
+        "date",
+        "encode-uri",
+        "null",
+        "uppercase"
+    ];
     const resources = components.map(x => `./dist/components/${x}`)
-        .concat(customAttributes.map(x => `./dist/attributes/${x}`))
+        .concat(attributes.map(x => `./dist/attributes/${x}`))
+        .concat(converters.map(x => `./dist/converters/${x}`))
         .map(x => aurelia_pal_1.PLATFORM.moduleName(x));
     config.globalResources(resources);
 }
