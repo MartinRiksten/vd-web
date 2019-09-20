@@ -17,6 +17,8 @@ __export(require("./components/vd-td"));
 __export(require("./components/vd-td-abbrev"));
 __export(require("./components/vd-td-list"));
 __export(require("./components/vd-th"));
+__export(require("./validation/bootstrap-renderer"));
+__export(require("./validation/popover-renderer"));
 function configure(config) {
     const attributes = [
         "clipboard",
