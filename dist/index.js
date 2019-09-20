@@ -24,6 +24,7 @@ __export(require("./components/vd-td-list"));
 __export(require("./components/vd-th"));
 __export(require("./utilities/alert-helper"));
 __export(require("./utilities/fetch-base"));
+__export(require("./utilities/http-fetch"));
 __export(require("./utilities/input-file-reader"));
 __export(require("./utilities/list-base"));
 __export(require("./utilities/list-helper"));

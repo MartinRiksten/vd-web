@@ -21,6 +21,7 @@ export * from "./components/vd-td-list";
 export * from "./components/vd-th";
 export * from "./utilities/alert-helper";
 export * from "./utilities/fetch-base";
+export * from "./utilities/http-fetch";
 export * from "./utilities/input-file-reader";
 export * from "./utilities/list-base";
 export * from "./utilities/list-helper";
