@@ -34,8 +34,8 @@ export function configure(config: FrameworkConfiguration) {
         "vd-route"
     ];
 
-    const resources = components.map(x => `./components/${x}`)
-        .concat(customAttributes.map(x => `./attributes/${x}`))
+    const resources = components.map(x => `./dist/components/${x}`)
+        .concat(customAttributes.map(x => `./dist/attributes/${x}`))
         .map(x => PLATFORM.moduleName(x)); 
     config.globalResources(resources);
 }
