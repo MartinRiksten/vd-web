@@ -11,4 +11,5 @@ export * from "./components/vd-td";
 export * from "./components/vd-td-abbrev";
 export * from "./components/vd-td-list";
 export * from "./components/vd-th";
+export * from "./initializer";
 
