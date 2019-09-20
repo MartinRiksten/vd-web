@@ -1,5 +1,4 @@
-﻿@* Generator: MvcHelper *@
-<template>
+﻿<template>
     <span ref="element">
         <span repeat.for="item of items">
             <span data-id="item.id" innerhtml.bind="item.value" name.bind="itemName" class.bind="item.variant" data-toggle.bind="getToggle(item)" popover.bind="item.popoverOption"></span><!--

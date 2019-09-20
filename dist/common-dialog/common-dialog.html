@@ -1,0 +1,22 @@
+<template>
+    <div>
+        <div class="modal-dialog" draggable=".modal-header">
+            <div class="modal-content">
+                <div class="modal-header alert" class.one-time="info.headerClass">
+                    <p class="modal-title">
+                        <span class.one-time="info.symbolClass"></span>
+                        ${info.header}
+                    </p>
+                    <button type="button" class="close" click.trigger="cancel()">&times;</button>
+                </div>
+                <div class="modal-body">${model.text}</div>
+                <div class="modal-footer">
+                    <vd-button if.bind="showButton('ok')" button-id="ok" click.call="ok()"></vd-button>
+                    <vd-button if.bind="showButton('yes')" button-id="yes" click.call="yes()"></vd-button>
+                    <vd-button if.bind="showButton('no')" button-id="no" click.call="no()"></vd-button>
+                    <vd-button if.bind="showButton('cancel')" button-id="cancel" click.call="cancel()"></vd-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
