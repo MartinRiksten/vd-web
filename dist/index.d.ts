@@ -1,3 +1,4 @@
+import { FrameworkConfiguration } from "aurelia-framework";
 export * from "./attributes/clipboard";
 export * from "./attributes/draggable";
 export * from "./attributes/popover";
@@ -11,4 +12,4 @@ export * from "./components/vd-td";
 export * from "./components/vd-td-abbrev";
 export * from "./components/vd-td-list";
 export * from "./components/vd-th";
-export * from "./initializer";
+export declare function configure(config: FrameworkConfiguration): void;

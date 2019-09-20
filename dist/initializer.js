@@ -21,8 +21,8 @@ class VdWebInitializer {
         ];
     }
     configure(aurelia) {
-        const resources = this.components.map(x => `components/${x}`)
-            .concat(this.customAttributes.map(x => `attributes/${x}`));
+        const resources = this.components.map(x => `vd-web/components/${x}`)
+            .concat(this.customAttributes.map(x => `vd-web/attributes/${x}`));
         aurelia.use.standardConfiguration().globalResources(resources);
     }
 }
