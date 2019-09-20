@@ -19,7 +19,7 @@ export class BootstrapSelect {
     @bindable public selected: string | undefined;
     @bindable public displayName: string | undefined;
 
-    public picker: Element = new Element;
+    public picker!: Element;
 
     public attached() {
         if (!!this.displayName) {

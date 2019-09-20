@@ -8,9 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 let BootstrapSelect = class BootstrapSelect {
-    constructor() {
-        this.picker = new Element;
-    }
     attached() {
         if (!!this.displayName) {
             $(this.picker).data("live-search-placeholder", this.displayName);

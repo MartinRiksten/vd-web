@@ -35,8 +35,8 @@ function configure(config) {
         "vd-th",
         "vd-route"
     ];
-    const resources = components.map(x => `./components/${x}`)
-        .concat(customAttributes.map(x => `./attributes/${x}`))
+    const resources = components.map(x => `./dist/components/${x}`)
+        .concat(customAttributes.map(x => `./dist/attributes/${x}`))
         .map(x => aurelia_pal_1.PLATFORM.moduleName(x));
     config.globalResources(resources);
 }
