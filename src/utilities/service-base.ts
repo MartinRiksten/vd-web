@@ -8,7 +8,6 @@ import { HttpFetch } from './http-fetch';
 /**
  * base class for list services.
  */
-@autoinject
 export abstract class ServiceBase<TModel> extends FetchBase {
   /**
    * A place to store some data
