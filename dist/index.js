@@ -20,7 +20,7 @@ __export(require("./components/bootstrap-select"));
 //// export * from "./components/vd-route";
 //// export * from "./components/vd-td";
 //// export * from "./components/vd-td-abbrev";
-//// export * from "./components/vd-td-list";
+__export(require("./components/vd-td-list"));
 //// export * from "./components/vd-th";
 __export(require("./configuration/configuration"));
 __export(require("./configuration/configuration-factory"));
