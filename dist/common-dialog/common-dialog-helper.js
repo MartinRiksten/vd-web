@@ -15,6 +15,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const aurelia_dialog_1 = require("aurelia-dialog");
 const aurelia_framework_1 = require("aurelia-framework");
 const common_dialog_1 = require("./common-dialog");
 const common_dialog_model_1 = require("./common-dialog-model");
@@ -66,6 +67,6 @@ let CommonDialogHelper = class CommonDialogHelper {
     }
 };
 CommonDialogHelper = __decorate([
-    aurelia_framework_1.autoinject
+    aurelia_framework_1.inject(aurelia_dialog_1.DialogService)
 ], CommonDialogHelper);
 exports.CommonDialogHelper = CommonDialogHelper;
