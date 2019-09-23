@@ -1,5 +1,5 @@
 import { FrameworkConfiguration } from 'aurelia-framework';
-import { IConfigurationModeInitializer as IConfigurationInitializer } from './configuration-factory';
+import { IConfigurationInitializer } from './configuration-factory';
 
 /**
  * Initializer for the debug configuration mode

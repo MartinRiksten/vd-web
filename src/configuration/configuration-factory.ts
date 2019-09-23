@@ -6,7 +6,7 @@ import { ReleaseConfiguration } from './release-configuration';
 /**
  * Interface for initializer classes
  */
-export interface IConfigurationModeInitializer {
+export interface IConfigurationInitializer {
   /**
    * Configures the configuration mode dependant stuff
    * @param config The framework configuration
@@ -22,7 +22,7 @@ export class InitializerFactory {
    * Create the appropriate initializer
    * @param mode: The current configuration mode
    */
-  public static create(mode: ConfigurationMode): IConfigurationModeInitializer {
+  public static create(mode: ConfigurationMode): IConfigurationInitializer {
     switch (mode) {
       case ConfigurationMode.Debug:
         return new DebugConfiguration();

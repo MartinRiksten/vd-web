@@ -1,9 +1,9 @@
 import { FrameworkConfiguration } from 'aurelia-framework';
-import { IConfigurationModeInitializer } from './configuration-factory';
+import { IConfigurationInitializer } from './configuration-factory';
 /**
  * Initializer for the release configuration mode
  */
-export declare class ReleaseConfiguration implements IConfigurationModeInitializer {
+export declare class ReleaseConfiguration implements IConfigurationInitializer {
     /**
      * Configures the configuration mode dependant stuff
      * @param config The framework configuration

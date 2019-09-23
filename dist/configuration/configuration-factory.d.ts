@@ -3,7 +3,7 @@ import { ConfigurationMode } from './configuration';
 /**
  * Interface for initializer classes
  */
-export interface IConfigurationModeInitializer {
+export interface IConfigurationInitializer {
     /**
      * Configures the configuration mode dependant stuff
      * @param config The framework configuration
@@ -18,5 +18,5 @@ export declare class InitializerFactory {
      * Create the appropriate initializer
      * @param mode: The current configuration mode
      */
-    static create(mode: ConfigurationMode): IConfigurationModeInitializer;
+    static create(mode: ConfigurationMode): IConfigurationInitializer;
 }
