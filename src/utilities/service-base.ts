@@ -1,12 +1,14 @@
-﻿import { json } from 'aurelia-fetch-client';
+﻿import { autoinject } from 'aurelia-framework';
 
 import { CommonDialogHelper } from '..';
 import { FetchBase, IServiceResult } from './fetch-base';
 import { HttpFetch } from './http-fetch';
 
+
 /**
  * base class for list services.
  */
+@autoinject
 export abstract class ServiceBase<TModel> extends FetchBase {
   /**
    * A place to store some data
