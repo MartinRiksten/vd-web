@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 let VdTdList = class VdTdList {
     getToggle(item) {
-        return !item.popoverOption ? void 0 : "popover";
+        return !item.popoverOption ? void 0 : 'popover';
     }
 };
 __decorate([

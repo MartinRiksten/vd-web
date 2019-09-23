@@ -1,4 +1,4 @@
-import { CommonDialogType } from "./common-dialog";
+import { CommonDialogType } from './common-dialog';
 /**
  * Model for the common dialog
  */

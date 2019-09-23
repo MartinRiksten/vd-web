@@ -41,7 +41,7 @@ class ListBase {
         if (!this.selected && !!item) {
             this.selected = item;
         }
-        return !this.select && this.selected === item ? "table-success" : "";
+        return !this.select && this.selected === item ? 'table-success' : '';
     }
     /**
      * Gets the filtered list of work items
@@ -53,7 +53,10 @@ class ListBase {
         }
         if (!!this.filter) {
             if (this.columns.length === 0) {
-                this.columns = $(this.table).find("th").get().map(x => $(x).attr("name") || "");
+                this.columns = $(this.table)
+                    .find('th')
+                    .get()
+                    .map(x => $(x).attr('name') || '');
             }
             result = this.listHelper.filter(result, this.filter.filter, this.columns);
         }

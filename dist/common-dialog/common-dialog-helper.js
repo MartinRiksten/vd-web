@@ -58,8 +58,8 @@ let CommonDialogHelper = class CommonDialogHelper {
      */
     unexpectedError(error) {
         return __awaiter(this, void 0, void 0, function* () {
-            aurelia_framework_1.LogManager.getLogger("app").info(`Unexpected error: ${error}`);
-            const message = "Er is een onverwachte fout opgetreden.";
+            aurelia_framework_1.LogManager.getLogger('app').info(`Unexpected error: ${error}`);
+            const message = 'Er is een onverwachte fout opgetreden.';
             const result = yield this.message(message, common_dialog_1.CommonDialogType.Error);
             return result;
         });

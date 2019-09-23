@@ -1,5 +1,5 @@
-import { CommonDialogHelper } from "..";
-import { HttpFetch } from "./http-fetch";
+import { CommonDialogHelper } from '..';
+import { HttpFetch } from './http-fetch';
 export declare abstract class FetchBase {
     private readonly http;
     private readonly commonDialogHelper;

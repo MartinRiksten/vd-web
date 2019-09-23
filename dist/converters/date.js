@@ -10,8 +10,8 @@ class DateValueConverter {
         if (!value) {
             return value;
         }
-        const data = moment_1.default(value).locale("nl");
-        return data.isValid() ? `${data.format("l")} ${data.format("H:mm")}` : value;
+        const data = moment_1.default(value).locale('nl');
+        return data.isValid() ? `${data.format('l')} ${data.format('H:mm')}` : value;
     }
 }
 exports.DateValueConverter = DateValueConverter;

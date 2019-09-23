@@ -33,22 +33,22 @@ class BootstrapRenderer {
         if (result.valid) {
             return;
         }
-        const formGroup = $(element).closest(".form-group");
-        formGroup.addClass("has-error");
-        $(element).one("keypress", () => {
-            formGroup.removeClass("has-error");
+        const formGroup = $(element).closest('.form-group');
+        formGroup.addClass('has-error');
+        $(element).one('keypress', () => {
+            formGroup.removeClass('has-error');
         });
     }
     remove(element, result) {
         if (result.valid) {
             return;
         }
-        const formGroup = $(element).closest(".form-group");
-        formGroup.removeClass("has-error");
+        const formGroup = $(element).closest('.form-group');
+        formGroup.removeClass('has-error');
     }
     findElementById(id) {
         const name = this.dashedId
-            ? id.replace(/^[a-z]|[A-Z]/g, (s, i) => i === 0 ? s.toLowerCase() : `-${s.toLowerCase()}`)
+            ? id.replace(/^[a-z]|[A-Z]/g, (s, i) => (i === 0 ? s.toLowerCase() : `-${s.toLowerCase()}`))
             : id.toString().toLowerCase();
         const selector = `#${name}`;
         return $(selector).get();

@@ -1,4 +1,4 @@
-import { PopoverOption } from "bootstrap/index";
+import { PopoverOption } from 'bootstrap/index';
 export declare class VdTdAbbrev {
     value: string;
     cutoff: number;

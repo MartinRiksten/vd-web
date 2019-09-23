@@ -10,16 +10,16 @@ const aurelia_framework_1 = require("aurelia-framework");
 let BootstrapSelect = class BootstrapSelect {
     attached() {
         if (!!this.displayName) {
-            $(this.picker).data("live-search-placeholder", this.displayName);
+            $(this.picker).data('live-search-placeholder', this.displayName);
         }
         $(this.picker).selectpicker();
-        $(this.picker).selectpicker("val", this.selected);
-        $(this.picker).on("changed.bs.select", () => {
-            this.selected = $(this.picker).selectpicker("val");
+        $(this.picker).selectpicker('val', this.selected);
+        $(this.picker).on('changed.bs.select', () => {
+            this.selected = $(this.picker).selectpicker('val');
         });
     }
     selectedChanged() {
-        $(this.picker).selectpicker("val", this.selected);
+        $(this.picker).selectpicker('val', this.selected);
     }
 };
 __decorate([

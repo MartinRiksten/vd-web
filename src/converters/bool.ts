@@ -1,8 +1,8 @@
-﻿import { valueConverter } from "aurelia-framework";
+﻿import { valueConverter } from 'aurelia-framework';
 
-@valueConverter("bool")
+@valueConverter('bool')
 export class BoolValueConverter {
-    public toView(value: any) {
-        return !!value ? "Ja" : "Nee";
-    }
+  public toView(value: any) {
+    return !!value ? 'Ja' : 'Nee';
+  }
 }

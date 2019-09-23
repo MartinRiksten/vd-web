@@ -1,6 +1,6 @@
-import { CommonDialogHelper } from "..";
-import { FetchBase, IServiceResult } from "./fetch-base";
-import { HttpFetch } from "./http-fetch";
+import { CommonDialogHelper } from '..';
+import { FetchBase, IServiceResult } from './fetch-base';
+import { HttpFetch } from './http-fetch';
 /**
  * base class for list services.
  */

@@ -11,9 +11,9 @@ let VdTh = class VdTh {
     getClass(by, ascending) {
         const result = !!this.order && by === this.name
             ? ascending
-                ? "fas fa-caret-up"
-                : "fas fa-caret-down"
-            : "fas fa-caret-up invisible";
+                ? 'fas fa-caret-up'
+                : 'fas fa-caret-down'
+            : 'fas fa-caret-up invisible';
         return result;
     }
 };

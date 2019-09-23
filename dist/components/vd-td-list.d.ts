@@ -1,4 +1,4 @@
-import { PopoverOption } from "bootstrap/index";
+import { PopoverOption } from 'bootstrap/index';
 export declare class VdTdList {
     items: IValueList[] | undefined;
     getToggle(item: IValueList): string | undefined;

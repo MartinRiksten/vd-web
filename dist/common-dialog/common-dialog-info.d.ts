@@ -1,4 +1,4 @@
-import { CommonDialogButton } from "./common-dialog";
+import { CommonDialogButton } from './common-dialog';
 /**
  * Common dialog information container
  */

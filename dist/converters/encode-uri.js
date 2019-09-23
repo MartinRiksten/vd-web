@@ -9,10 +9,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 let EncodeUriValueConverter = class EncodeUriValueConverter {
     toView(value) {
-        return !value ? "" : encodeURIComponent(value);
+        return !value ? '' : encodeURIComponent(value);
     }
 };
 EncodeUriValueConverter = __decorate([
-    aurelia_framework_1.valueConverter("encodeUri")
+    aurelia_framework_1.valueConverter('encodeUri')
 ], EncodeUriValueConverter);
 exports.EncodeUriValueConverter = EncodeUriValueConverter;

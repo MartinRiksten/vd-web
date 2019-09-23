@@ -1,8 +1,8 @@
-﻿import { valueConverter } from "aurelia-framework";
+﻿import { valueConverter } from 'aurelia-framework';
 
-@valueConverter("encodeUri")
+@valueConverter('encodeUri')
 export class EncodeUriValueConverter {
-    public toView(value: any) {
-        return !value ? "" : encodeURIComponent(value);
-    }
+  public toView(value: any) {
+    return !value ? '' : encodeURIComponent(value);
+  }
 }

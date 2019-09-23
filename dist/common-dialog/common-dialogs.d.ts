@@ -1,5 +1,5 @@
-import { CommonDialogButton, CommonDialogType } from "./common-dialog";
-import { CommonDialogInfo } from "./common-dialog-info";
+import { CommonDialogButton, CommonDialogType } from './common-dialog';
+import { CommonDialogInfo } from './common-dialog-info';
 /**
  * Container for common dialog information
  */

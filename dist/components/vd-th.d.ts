@@ -1,4 +1,4 @@
-import { IOrderInfo } from "./list-helper";
+import { IOrderInfo } from './list-helper';
 export declare class VdTh {
     label: string | undefined;
     name: string | undefined;

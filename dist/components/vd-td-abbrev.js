@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 let VdTdAbbrev = class VdTdAbbrev {
     constructor() {
-        this.value = "";
+        this.value = '';
         this.cutoff = 25;
         this.abbrev = false;
     }
@@ -19,11 +19,11 @@ let VdTdAbbrev = class VdTdAbbrev {
         this.popoverOption = !this.abbrev
             ? void 0
             : {
-                container: "body",
+                container: 'body',
                 content: () => this.value,
                 html: false,
-                placement: "right",
-                trigger: "hover"
+                placement: 'right',
+                trigger: 'hover',
             };
     }
 };

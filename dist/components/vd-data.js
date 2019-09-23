@@ -9,8 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 let VdData = class VdData {
     constructor() {
-        this.labelClass = "col-6";
-        this.dataClass = "col-6";
+        this.labelClass = 'col-6';
+        this.dataClass = 'col-6';
     }
 };
 __decorate([

@@ -15,7 +15,7 @@ class InputFileReader {
             const result = new Promise((resolve, reject) => {
                 const reader = new FileReader();
                 reader.onload = () => resolve(reader.result);
-                reader.onerror = (error) => reject(error);
+                reader.onerror = error => reject(error);
                 reader.readAsText(file);
             });
             return result;
@@ -23,10 +23,10 @@ class InputFileReader {
     }
     clearLoad(load) {
         try {
-            load.value = "";
+            load.value = '';
             if (load.value) {
-                load.type = "text";
-                load.type = "file";
+                load.type = 'text';
+                load.type = 'file';
             }
             // tslint:disable-next-line:no-empty
         }

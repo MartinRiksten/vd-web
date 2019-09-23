@@ -16,6 +16,6 @@ let UpperCaseValueConverter = class UpperCaseValueConverter {
     }
 };
 UpperCaseValueConverter = __decorate([
-    aurelia_framework_1.valueConverter("upperCase")
+    aurelia_framework_1.valueConverter('upperCase')
 ], UpperCaseValueConverter);
 exports.UpperCaseValueConverter = UpperCaseValueConverter;

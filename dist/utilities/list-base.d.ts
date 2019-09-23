@@ -1,4 +1,4 @@
-import { IOrderInfo, ListHelper } from "../utilities/list-helper";
+import { IOrderInfo, ListHelper } from '../utilities/list-helper';
 /**
  * Controller for the application view.
  */

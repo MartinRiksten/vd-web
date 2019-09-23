@@ -26,12 +26,12 @@ class PopoverRenderer {
                     toHide.push(element);
                 }
                 else {
-                    const popover = $(element).closest("[data-toggle=popover]");
+                    const popover = $(element).closest('[data-toggle=popover]');
                     if (toShow.indexOf(element) >= 0) {
-                        popover.data("content", popover.data("content") + "\n" + result.message);
+                        popover.data('content', popover.data('content') + '\n' + result.message);
                     }
                     else {
-                        popover.data("content", result.message);
+                        popover.data('content', result.message);
                         toShow.push(element);
                     }
                 }
@@ -43,32 +43,35 @@ class PopoverRenderer {
                 first = false;
                 $(element).focus();
             }
-            const popover = $(element).closest("[data-toggle=popover]");
-            const data = popover.data("bs.popover");
-            const isVisible = !!data && data.tip().hasClass("in");
-            const content = popover.data("content");
+            const popover = $(element).closest('[data-toggle=popover]');
+            const data = popover.data('bs.popover');
+            const isVisible = !!data && data.tip().hasClass('in');
+            const content = popover.data('content');
             if (!!data) {
                 data.options.content = content;
             }
             if (isVisible) {
-                data.tip().find(".popover-content").html(content);
-                popover.popover("update");
+                data
+                    .tip()
+                    .find('.popover-content')
+                    .html(content);
+                popover.popover('update');
             }
             else {
-                popover.popover("show");
-                $(element).one("keypress", () => {
-                    popover.popover("hide");
+                popover.popover('show');
+                $(element).one('keypress', () => {
+                    popover.popover('hide');
                 });
             }
         }
         for (const element of $.unique(toHide).filter(x => toShow.indexOf(x) === -1)) {
-            const popover = $(element).closest("[data-toggle=popover]");
-            popover.popover("hide");
+            const popover = $(element).closest('[data-toggle=popover]');
+            popover.popover('hide');
         }
     }
     findElementById(id) {
         const name = this.dashedId
-            ? id.replace(/^[a-z]|[A-Z]/g, (s, i) => i === 0 ? s.toLowerCase() : `-${s.toLowerCase()}`)
+            ? id.replace(/^[a-z]|[A-Z]/g, (s, i) => (i === 0 ? s.toLowerCase() : `-${s.toLowerCase()}`))
             : id.toString().toLowerCase();
         const selector = `#${name}`;
         return $(selector).get();

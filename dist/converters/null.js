@@ -9,10 +9,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 let NullValueConverter = class NullValueConverter {
     toView(value) {
-        return !value ? "" : value;
+        return !value ? '' : value;
     }
 };
 NullValueConverter = __decorate([
-    aurelia_framework_1.valueConverter("null")
+    aurelia_framework_1.valueConverter('null')
 ], NullValueConverter);
 exports.NullValueConverter = NullValueConverter;

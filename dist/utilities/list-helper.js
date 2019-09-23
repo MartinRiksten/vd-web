@@ -28,10 +28,12 @@ class ListHelper {
         if (!filter) {
             return array;
         }
-        if (typeof filter === "string") {
-            const list = filter.split(" ");
+        if (typeof filter === 'string') {
+            const list = filter.split(' ');
             let stringResult = array;
-            list.forEach(current => { stringResult = stringResult.filter((item) => this.filterFunc(item, current, included)); });
+            list.forEach(current => {
+                stringResult = stringResult.filter((item) => this.filterFunc(item, current, included));
+            });
             return stringResult;
         }
         const filterObject = filter;
@@ -67,7 +69,7 @@ class ListHelper {
     compare(a, b, prop) {
         let propA = a;
         let propB = b;
-        for (const item of prop.split(".")) {
+        for (const item of prop.split('.')) {
             propA = propA[item];
             propB = propB[item];
         }
@@ -85,8 +87,8 @@ class ListHelper {
             propB = propB.getTime();
         }
         const result = this.compareValues(propA, propB);
-        if (result === 0 && prop !== "id") {
-            return this.compare(a, b, "id");
+        if (result === 0 && prop !== 'id') {
+            return this.compare(a, b, 'id');
         }
         return result;
     }
@@ -107,9 +109,7 @@ class ListHelper {
      * @param property The property to filter on, or null when the filter applies to all properties
      */
     filterFunc(item, value, included, property) {
-        const result = property == null
-            ? this.filterAll(item, value, included)
-            : this.filterSingle(item, value, property);
+        const result = property == null ? this.filterAll(item, value, included) : this.filterSingle(item, value, property);
         return result;
     }
     /**
@@ -120,10 +120,14 @@ class ListHelper {
      */
     filterSingle(item, value, prop) {
         let current = item;
-        for (const part of prop.split(".")) {
+        for (const part of prop.split('.')) {
             current = current[part];
         }
-        const result = current != null && current.toString().toLowerCase().indexOf(value.toLowerCase()) > -1;
+        const result = current != null &&
+            current
+                .toString()
+                .toLowerCase()
+                .indexOf(value.toLowerCase()) > -1;
         return result;
     }
     /**
@@ -134,11 +138,14 @@ class ListHelper {
      */
     filterAll(item, value, included) {
         for (const property in item) {
-            if (item.hasOwnProperty(property) && (typeof included === "undefined" || included.filter(x => x.startsWith(property)).length > 0)) {
+            if (item.hasOwnProperty(property) &&
+                (typeof included === 'undefined' || included.filter(x => x.startsWith(property)).length > 0)) {
                 const current = item[property];
-                if ((typeof current === "object" && this.filterAll(current, value, typeof included === "undefined"
-                    ? included
-                    : included.filter(x => x.startsWith(property + ".")).map(x => x.substr(property.length + 1)))) || this.filterSingle(item, value, property)) {
+                if ((typeof current === 'object' &&
+                    this.filterAll(current, value, typeof included === 'undefined'
+                        ? included
+                        : included.filter(x => x.startsWith(property + '.')).map(x => x.substr(property.length + 1)))) ||
+                    this.filterSingle(item, value, property)) {
                     return true;
                 }
             }

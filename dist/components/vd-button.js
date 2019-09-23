@@ -10,10 +10,10 @@ const aurelia_framework_1 = require("aurelia-framework");
 let VdButton = class VdButton {
     constructor() {
         this.types = [
-            { id: "ok", label: "OK", variant: "btn-primary", icon: "fas fa-check" },
-            { id: "cancel", label: "Annuleren", variant: "btn-light", icon: "fas fa-times" },
-            { id: "yes", label: "Ja", variant: "btn-primary", icon: "fas fa-check" },
-            { id: "no", label: "Nee", variant: "btn-light", icon: "fas fa-times" }
+            { id: 'ok', label: 'OK', variant: 'btn-primary', icon: 'fas fa-check' },
+            { id: 'cancel', label: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' },
+            { id: 'yes', label: 'Ja', variant: 'btn-primary', icon: 'fas fa-check' },
+            { id: 'no', label: 'Nee', variant: 'btn-light', icon: 'fas fa-times' },
         ];
     }
     bind() {

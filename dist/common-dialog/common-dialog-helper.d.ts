@@ -1,5 +1,5 @@
-import { DialogCancelResult, DialogOpenResult, DialogService } from "aurelia-dialog";
-import { CommonDialogType } from "./common-dialog";
+import { DialogCancelResult, DialogOpenResult, DialogService } from 'aurelia-dialog';
+import { CommonDialogType } from './common-dialog';
 /**
  * Helper class for common dialogs.
  */

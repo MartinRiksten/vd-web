@@ -19,12 +19,12 @@ class AlertHelper {
             options = Object.assign(Object.assign({}, AlertHelper.DEFAULTS), options);
             const id = `static-alert-${AlertHelper.id++}`;
             const template = `<div id="${id}" class="static-alert fade text-center alert-${AlertHelper.count++}"><div class="alert ${options.style}" role="alert">${message}</div></div>`;
-            $("body").prepend(template);
+            $('body').prepend(template);
             const alert = $(`#${id}`);
             yield wait_1.Wait.for(options.delay);
-            alert.addClass("in");
+            alert.addClass('in');
             yield wait_1.Wait.for(options.duration);
-            alert.removeClass("in");
+            alert.removeClass('in');
             AlertHelper.count--;
             yield wait_1.Wait.for(100);
             alert.remove();
@@ -32,6 +32,6 @@ class AlertHelper {
     }
 }
 exports.AlertHelper = AlertHelper;
-AlertHelper.DEFAULTS = { style: "alert-success", delay: 10, duration: 3500 };
+AlertHelper.DEFAULTS = { style: 'alert-success', delay: 10, duration: 3500 };
 AlertHelper.id = 0;
 AlertHelper.count = 0;

@@ -1,8 +1,8 @@
-﻿import { valueConverter } from "aurelia-framework";
+﻿import { valueConverter } from 'aurelia-framework';
 
-@valueConverter("null")
+@valueConverter('null')
 export class NullValueConverter {
-    public toView(value: any) {
-        return !value ? "" : value;
-    }
+  public toView(value: any) {
+    return !value ? '' : value;
+  }
 }

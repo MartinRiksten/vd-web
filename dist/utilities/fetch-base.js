@@ -26,7 +26,7 @@ class FetchBase {
         return __awaiter(this, void 0, void 0, function* () {
             const body = !!data ? aurelia_fetch_client_1.json(data) : data;
             try {
-                const response = yield this.http.fetchAsync(url, { method: "POST", body });
+                const response = yield this.http.fetchAsync(url, { method: 'POST', body });
                 if (!response.ok) {
                     this.commonDialogHelper.unexpectedError(response.statusText);
                     return { success: false, handled: true };

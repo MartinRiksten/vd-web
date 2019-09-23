@@ -1,4 +1,4 @@
-import { RenderInstruction, ValidationRenderer } from "aurelia-validation";
+import { RenderInstruction, ValidationRenderer } from 'aurelia-validation';
 export declare class BootstrapRenderer implements ValidationRenderer {
     findById: boolean;
     focusFirst: boolean;

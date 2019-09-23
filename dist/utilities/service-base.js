@@ -32,10 +32,8 @@ class ServiceBase extends fetch_base_1.FetchBase {
      */
     searchBaseAsync(url, id) {
         return __awaiter(this, void 0, void 0, function* () {
-            const data = typeof id === "string" || id instanceof String ? { id } : id;
-            const result = !!id
-                ? yield this.fetchAsync(url, data)
-                : yield this.fetchAsync(url);
+            const data = typeof id === 'string' || id instanceof String ? { id } : id;
+            const result = !!id ? yield this.fetchAsync(url, data) : yield this.fetchAsync(url);
             return result;
         });
     }
@@ -46,10 +44,8 @@ class ServiceBase extends fetch_base_1.FetchBase {
      */
     loadBaseAsync(url, id) {
         return __awaiter(this, void 0, void 0, function* () {
-            const data = typeof id === "string" || id instanceof String ? { id } : id;
-            const result = !!id
-                ? yield this.fetchAsync(url, data)
-                : yield this.fetchAsync(url);
+            const data = typeof id === 'string' || id instanceof String ? { id } : id;
+            const result = !!id ? yield this.fetchAsync(url, data) : yield this.fetchAsync(url);
             return result;
         });
     }

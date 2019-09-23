@@ -29,8 +29,8 @@ let HttpFetch = HttpFetch_1 = class HttpFetch {
      */
     fetchAsync(url, init) {
         return __awaiter(this, void 0, void 0, function* () {
-            const headers = new Headers({ "user-role": HttpFetch_1.roleChange.toString() });
-            init = Object.assign({ method: "POST", headers }, init);
+            const headers = new Headers({ 'user-role': HttpFetch_1.roleChange.toString() });
+            init = Object.assign({ method: 'POST', headers }, init);
             this.isFetching++;
             try {
                 const response = yield this.http.fetch(url, init);

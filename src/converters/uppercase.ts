@@ -1,12 +1,12 @@
-﻿import { valueConverter } from "aurelia-framework";
+﻿import { valueConverter } from 'aurelia-framework';
 
-@valueConverter("upperCase")
+@valueConverter('upperCase')
 export class UpperCaseValueConverter {
-    public toView(value: string) {
-        return !value ? value : value.toUpperCase();
-    }
+  public toView(value: string) {
+    return !value ? value : value.toUpperCase();
+  }
 
-    public fromView(value: string) {
-        return !value ? value : value.toUpperCase();
-    }
+  public fromView(value: string) {
+    return !value ? value : value.toUpperCase();
+  }
 }

@@ -1,5 +1,5 @@
-import { DialogCancelableOperationResult, DialogController } from "aurelia-dialog";
-import { CommonDialogModel } from "./common-dialog-model";
+import { DialogCancelableOperationResult, DialogController } from 'aurelia-dialog';
+import { CommonDialogModel } from './common-dialog-model';
 /**
  * Controller for the common-dialog component
  */

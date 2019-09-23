@@ -12,7 +12,7 @@ let VdBoolIcon = class VdBoolIcon {
         this.value = false;
     }
     getIcon(value) {
-        return value ? "fa-check text-success" : "fa-times text-danger";
+        return value ? 'fa-check text-success' : 'fa-times text-danger';
     }
 };
 __decorate([

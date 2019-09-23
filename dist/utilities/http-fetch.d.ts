@@ -1,4 +1,4 @@
-import { HttpClient } from "aurelia-fetch-client";
+import { HttpClient } from 'aurelia-fetch-client';
 export declare class HttpFetch {
     private readonly http;
     static roleChange: number;
