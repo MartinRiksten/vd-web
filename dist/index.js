@@ -13,7 +13,7 @@ __export(require("./common-dialog/common-dialog-helper"));
 __export(require("./common-dialog/common-dialog-info"));
 __export(require("./common-dialog/common-dialog-model"));
 __export(require("./common-dialog/common-dialogs"));
-//// export * from "./components/bootstrap-select";
+__export(require("./components/bootstrap-select"));
 //// export * from "./components/vd-bool-icon";
 //// export * from "./components/vd-button";
 //// export * from "./components/vd-data";

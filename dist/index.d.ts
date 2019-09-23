@@ -4,6 +4,7 @@ export * from './common-dialog/common-dialog-helper';
 export * from './common-dialog/common-dialog-info';
 export * from './common-dialog/common-dialog-model';
 export * from './common-dialog/common-dialogs';
+export * from "./components/bootstrap-select";
 export * from './configuration/configuration';
 export * from './configuration/configuration-factory';
 export * from './utilities/alert-helper';
