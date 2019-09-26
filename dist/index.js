@@ -4,24 +4,14 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_pal_1 = require("aurelia-pal");
-//// export * from "./attributes/clipboard";
-//// export * from "./attributes/draggable";
-//// export * from "./attributes/popover";
-//// export * from "./attributes/tooltip";
+const common_dialogs_1 = require("./common-dialog/common-dialogs");
 __export(require("./common-dialog/common-dialog"));
 __export(require("./common-dialog/common-dialog-helper"));
 __export(require("./common-dialog/common-dialog-info"));
 __export(require("./common-dialog/common-dialog-model"));
 __export(require("./common-dialog/common-dialogs"));
 __export(require("./components/bootstrap-select"));
-//// export * from "./components/vd-bool-icon";
-//// export * from "./components/vd-button";
-//// export * from "./components/vd-data";
-//// export * from "./components/vd-route";
-//// export * from "./components/vd-td";
-//// export * from "./components/vd-td-abbrev";
 __export(require("./components/vd-td-list"));
-//// export * from "./components/vd-th";
 __export(require("./configuration/configuration"));
 __export(require("./configuration/configuration-factory"));
 __export(require("./utilities/alert-helper"));
@@ -54,5 +44,6 @@ function configure(config) {
         .concat(converters.map(x => `./dist/converters/${x}`))
         .map(x => aurelia_pal_1.PLATFORM.moduleName(x));
     config.globalResources(resources);
+    common_dialogs_1.CommonDialogs.configure();
 }
 exports.configure = configure;

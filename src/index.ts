@@ -1,24 +1,14 @@
 import { FrameworkConfiguration } from 'aurelia-framework';
 import { PLATFORM } from 'aurelia-pal';
+import { CommonDialogs } from './common-dialog/common-dialogs';
 
-//// export * from "./attributes/clipboard";
-//// export * from "./attributes/draggable";
-//// export * from "./attributes/popover";
-//// export * from "./attributes/tooltip";
 export * from './common-dialog/common-dialog';
 export * from './common-dialog/common-dialog-helper';
 export * from './common-dialog/common-dialog-info';
 export * from './common-dialog/common-dialog-model';
 export * from './common-dialog/common-dialogs';
 export * from "./components/bootstrap-select";
-//// export * from "./components/vd-bool-icon";
-//// export * from "./components/vd-button";
-//// export * from "./components/vd-data";
-//// export * from "./components/vd-route";
-//// export * from "./components/vd-td";
-//// export * from "./components/vd-td-abbrev";
 export * from "./components/vd-td-list";
-//// export * from "./components/vd-th";
 export * from './configuration/configuration';
 export * from './configuration/configuration-factory';
 export * from './utilities/alert-helper';
@@ -53,4 +43,6 @@ export function configure(config: FrameworkConfiguration) {
     .concat(converters.map(x => `./dist/converters/${x}`))
     .map(x => PLATFORM.moduleName(x));
   config.globalResources(resources);
+  
+  CommonDialogs.configure();
 }

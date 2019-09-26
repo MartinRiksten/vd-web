@@ -12,4 +12,8 @@ export declare class CommonDialogs {
      * A mapn containing the enumeration button value for each button name
      */
     static buttons: Map<string, CommonDialogButton>;
+    /**
+     * Initailizes the common dialog information container
+     */
+    static configure(): void;
 }
