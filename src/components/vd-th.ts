@@ -1,5 +1,5 @@
 ﻿import { autoinject, bindable } from 'aurelia-framework';
-import { IOrderInfo } from './list-helper';
+import { IOrderInfo } from '../utilities/list-helper';
 
 @autoinject
 export class VdTh {
