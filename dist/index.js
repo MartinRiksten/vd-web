@@ -56,8 +56,8 @@ function configure(config) {
     const converters = ['bool', 'date', 'encode-uri', 'null', 'uppercase'];
     const resources = components
         .map(x => `./dist/components/${x}`)
-        .concat(attributes.map(x => `./dist/attributes/${x}`))
-        .concat(converters.map(x => `./dist/converters/${x}`))
+        .concat(attributes.map(x => `./attributes/${x}`))
+        .concat(converters.map(x => `./converters/${x}`))
         .map(x => aurelia_pal_1.PLATFORM.moduleName(x));
     config.globalResources(resources);
     common_dialogs_1.CommonDialogs.configure();

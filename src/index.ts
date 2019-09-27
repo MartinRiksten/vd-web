@@ -55,8 +55,8 @@ export function configure(config: FrameworkConfiguration) {
 
   const resources = components
     .map(x => `./dist/components/${x}`)
-    .concat(attributes.map(x => `./dist/attributes/${x}`))
-    .concat(converters.map(x => `./dist/converters/${x}`))
+    .concat(attributes.map(x => `./attributes/${x}`))
+    .concat(converters.map(x => `./converters/${x}`))
     .map(x => PLATFORM.moduleName(x));
   config.globalResources(resources);
   
