@@ -36,7 +36,7 @@ class BootstrapRenderer {
         const $element = $(element);
         $element.addClass('is-invalid');
         $element.one('keypress', () => {
-            $element.removeClass('has-error');
+            $element.removeClass('is-invalid');
         });
     }
     remove(element, result) {
