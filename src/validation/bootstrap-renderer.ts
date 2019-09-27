@@ -37,11 +37,10 @@ export class BootstrapRenderer implements ValidationRenderer {
       return;
     }
 
-    const formGroup = $(element).closest('.form-group');
-    formGroup.addClass('has-error');
-
-    $(element).one('keypress', () => {
-      formGroup.removeClass('has-error');
+    const $element = $(element);
+    $element.addClass('is-invalid');
+    $element.one('keypress', () => {
+      $element.removeClass('has-error');
     });
   }
 
@@ -50,8 +49,8 @@ export class BootstrapRenderer implements ValidationRenderer {
       return;
     }
 
-    const formGroup = $(element).closest('.form-group');
-    formGroup.removeClass('has-error');
+    const $element = $(element);
+    $element.removeClass('is-invalid');
   }
 
   private findElementById(id: string): Element[] {

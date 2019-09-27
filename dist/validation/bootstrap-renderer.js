@@ -33,18 +33,18 @@ class BootstrapRenderer {
         if (result.valid) {
             return;
         }
-        const formGroup = $(element).closest('.form-group');
-        formGroup.addClass('has-error');
-        $(element).one('keypress', () => {
-            formGroup.removeClass('has-error');
+        const $element = $(element);
+        $element.addClass('is-invalid');
+        $element.one('keypress', () => {
+            $element.removeClass('has-error');
         });
     }
     remove(element, result) {
         if (result.valid) {
             return;
         }
-        const formGroup = $(element).closest('.form-group');
-        formGroup.removeClass('has-error');
+        const $element = $(element);
+        $element.removeClass('is-invalid');
     }
     findElementById(id) {
         const name = this.dashedId
