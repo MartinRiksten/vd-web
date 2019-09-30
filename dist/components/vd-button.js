@@ -22,9 +22,16 @@ let VdButton = class VdButton {
         ];
     }
     bind() {
-        const standardInfo = this.types.find(x => x.id === this.buttonId);
-        const customInfo = { id: this.buttonId, label: this.label, variant: this.variant, icon: this.icon };
-        $.extend(this.info, {}, standardInfo, customInfo);
+        const info = this.types.find(x => x.id === this.buttonId) || {};
+        this.label = this.label || info.label;
+        this.variant = this.variant || info.variant;
+        this.icon = this.icon || info.icon;
+        this.click = this.click || this.onClick;
+    }
+    onClick() {
+        if (!!this.clickTarget) {
+            $(this.clickTarget).click();
+        }
     }
 };
 __decorate([
@@ -47,6 +54,10 @@ __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
 ], VdButton.prototype, "icon", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdButton.prototype, "clickTarget", void 0);
 VdButton = __decorate([
     aurelia_framework_1.autoinject
 ], VdButton);

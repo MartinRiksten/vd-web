@@ -14,8 +14,7 @@ export class VdButton {
   @bindable public label!: string;
   @bindable public variant!: string;
   @bindable public icon!: string;  
-
-  private info!: IButtonInfo;
+  @bindable public clickTarget: string | undefined;
 
   private types = [
     { id: 'ok', label: 'OK', variant: 'btn-primary', icon: 'fas fa-check' } as IButtonInfo,
@@ -27,8 +26,16 @@ export class VdButton {
   ];
 
   public bind() {
-    const standardInfo = this.types.find(x => x.id === this.buttonId);
-    const customInfo = { id: this.buttonId, label: this.label, variant: this.variant, icon:this.icon } as IButtonInfo;
-    $.extend(this.info, {}, standardInfo, customInfo);
+    const info = this.types.find(x => x.id === this.buttonId) || {} as IButtonInfo;
+    this.label = this.label || info.label;
+    this.variant = this.variant || info.variant;
+    this.icon = this.icon || info.icon;
+    this.click = this.click || this.onClick;
+  }
+
+  public onClick() {
+    if (!!this.clickTarget) {
+      $(this.clickTarget).click();
+    }
   }
 }

@@ -10,7 +10,8 @@ export declare class VdButton {
     label: string;
     variant: string;
     icon: string;
-    private info;
+    clickTarget: string | undefined;
     private types;
     bind(): void;
+    onClick(): void;
 }
