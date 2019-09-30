@@ -5,9 +5,12 @@ export interface IButtonInfo {
     icon: string;
 }
 export declare class VdButton {
-    buttonId: string | undefined;
-    info: IButtonInfo | undefined;
-    click: (() => void) | undefined;
+    buttonId: string;
+    click: (() => void);
+    label: string;
+    variant: string;
+    icon: string;
+    private info;
     private types;
     bind(): void;
 }

@@ -9,18 +9,26 @@ export interface IButtonInfo {
 
 @autoinject
 export class VdButton {
-  @bindable public buttonId: string | undefined;
-  @bindable public info: IButtonInfo | undefined;
-  @bindable public click: (() => void) | undefined;
+  @bindable public buttonId!: string;
+  @bindable public click!: (() => void);
+  @bindable public label!: string;
+  @bindable public variant!: string;
+  @bindable public icon!: string;  
+
+  private info!: IButtonInfo;
 
   private types = [
     { id: 'ok', label: 'OK', variant: 'btn-primary', icon: 'fas fa-check' } as IButtonInfo,
     { id: 'cancel', label: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' } as IButtonInfo,
     { id: 'yes', label: 'Ja', variant: 'btn-primary', icon: 'fas fa-check' } as IButtonInfo,
     { id: 'no', label: 'Nee', variant: 'btn-light', icon: 'fas fa-times' } as IButtonInfo,
+    { id: 'çlear', label: 'Wissen', variant: 'btn-light', icon: 'fa fa-eraser' } as IButtonInfo,
+    { id: 'save', label: 'Opslaan', variant: 'btn-light', icon: 'fa fa-save'} as IButtonInfo
   ];
 
   public bind() {
-    this.info = !this.info ? this.types.find(x => x.id === this.buttonId) : this.info;
+    const standardInfo = this.types.find(x => x.id === this.buttonId);
+    const customInfo = { id: this.buttonId, label: this.label, variant: this.variant, icon:this.icon } as IButtonInfo;
+    $.extend(this.info, {}, standardInfo, customInfo);
   }
 }

@@ -17,10 +17,14 @@ let VdButton = class VdButton {
             { id: 'cancel', label: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' },
             { id: 'yes', label: 'Ja', variant: 'btn-primary', icon: 'fas fa-check' },
             { id: 'no', label: 'Nee', variant: 'btn-light', icon: 'fas fa-times' },
+            { id: 'çlear', label: 'Wissen', variant: 'btn-light', icon: 'fa fa-eraser' },
+            { id: 'save', label: 'Opslaan', variant: 'btn-light', icon: 'fa fa-save' }
         ];
     }
     bind() {
-        this.info = !this.info ? this.types.find(x => x.id === this.buttonId) : this.info;
+        const standardInfo = this.types.find(x => x.id === this.buttonId);
+        const customInfo = { id: this.buttonId, label: this.label, variant: this.variant, icon: this.icon };
+        $.extend(this.info, {}, standardInfo, customInfo);
     }
 };
 __decorate([
@@ -29,12 +33,20 @@ __decorate([
 ], VdButton.prototype, "buttonId", void 0);
 __decorate([
     aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdButton.prototype, "info", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
     __metadata("design:type", Function)
 ], VdButton.prototype, "click", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdButton.prototype, "label", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdButton.prototype, "variant", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdButton.prototype, "icon", void 0);
 VdButton = __decorate([
     aurelia_framework_1.autoinject
 ], VdButton);
