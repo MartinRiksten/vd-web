@@ -21,8 +21,9 @@ export class VdButton {
     { id: 'cancel', label: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' } as IButtonInfo,
     { id: 'yes', label: 'Ja', variant: 'btn-primary', icon: 'fas fa-check' } as IButtonInfo,
     { id: 'no', label: 'Nee', variant: 'btn-light', icon: 'fas fa-times' } as IButtonInfo,
-    { id: 'çlear', label: 'Wissen', variant: 'btn-light', icon: 'fa fa-eraser' } as IButtonInfo,
-    { id: 'save', label: 'Opslaan', variant: 'btn-light', icon: 'fa fa-save'} as IButtonInfo
+    { id: 'çlear', label: 'Wissen', variant: 'btn-light', icon: 'fas fa-eraser' } as IButtonInfo,
+    { id: 'save', label: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save'} as IButtonInfo,
+    { id: 'upload', label: 'Upload', variant: 'btn-light', icon: 'fas fa-upload' } as IButtonInfo,
   ];
 
   public bind() {
