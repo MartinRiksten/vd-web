@@ -2,9 +2,9 @@
 
 @autoinject
 export class VdBoolIcon {
-  @bindable public value: boolean = false;
+  @bindable public value: boolean;
 
   public getIcon(value: boolean) {
-    return value ? 'fa-check text-success' : 'fa-times text-danger';
+    return value === true ? 'fa-check text-success' : value === false ? 'fa-times text-danger' : "";
   }
 }

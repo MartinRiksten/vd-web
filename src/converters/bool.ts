@@ -3,6 +3,6 @@
 @valueConverter('bool')
 export class BoolValueConverter {
   public toView(value: any) {
-    return !!value ? 'Ja' : 'Nee';
+    return value === true ? 'Ja' : value === false ? 'Nee' : "";
   }
 }

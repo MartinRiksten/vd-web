@@ -11,11 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 let VdBoolIcon = class VdBoolIcon {
-    constructor() {
-        this.value = false;
-    }
     getIcon(value) {
-        return value ? 'fa-check text-success' : 'fa-times text-danger';
+        return value === true ? 'fa-check text-success' : value === false ? 'fa-times text-danger' : "";
     }
 };
 __decorate([

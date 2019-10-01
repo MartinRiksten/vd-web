@@ -1,3 +1,3 @@
 export declare class BoolValueConverter {
-    toView(value: any): "Ja" | "Nee";
+    toView(value: any): "" | "Ja" | "Nee";
 }
