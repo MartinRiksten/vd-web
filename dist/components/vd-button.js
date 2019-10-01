@@ -17,7 +17,7 @@ let VdButton = class VdButton {
             { id: 'cancel', label: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' },
             { id: 'yes', label: 'Ja', variant: 'btn-primary', icon: 'fas fa-check' },
             { id: 'no', label: 'Nee', variant: 'btn-light', icon: 'fas fa-times' },
-            { id: 'çlear', label: 'Wissen', variant: 'btn-light', icon: 'fas fa-eraser' },
+            { id: 'clear', label: 'Wissen', variant: 'btn-light', icon: 'fas fa-eraser' },
             { id: 'save', label: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save' },
             { id: 'upload', label: 'Upload', variant: 'btn-light', icon: 'fas fa-upload' },
         ];
