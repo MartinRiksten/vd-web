@@ -13,18 +13,18 @@ const aurelia_framework_1 = require("aurelia-framework");
 let VdButton = class VdButton {
     constructor() {
         this.types = [
-            { id: 'ok', label: 'OK', variant: 'btn-primary', icon: 'fas fa-check' },
-            { id: 'cancel', label: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' },
-            { id: 'yes', label: 'Ja', variant: 'btn-primary', icon: 'fas fa-check' },
-            { id: 'no', label: 'Nee', variant: 'btn-light', icon: 'fas fa-times' },
-            { id: 'clear', label: 'Wissen', variant: 'btn-light', icon: 'fas fa-eraser' },
-            { id: 'save', label: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save' },
-            { id: 'upload', label: 'Upload', variant: 'btn-light', icon: 'fas fa-upload' },
+            { kind: 'ok', label: 'OK', variant: 'btn-primary', icon: 'fas fa-check' },
+            { kind: 'cancel', label: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' },
+            { kind: 'yes', label: 'Ja', variant: 'btn-primary', icon: 'fas fa-check' },
+            { kind: 'no', label: 'Nee', variant: 'btn-light', icon: 'fas fa-times' },
+            { kind: 'clear', label: 'Wissen', variant: 'btn-light', icon: 'fas fa-eraser' },
+            { kind: 'save', label: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save' },
+            { kind: 'upload', label: 'Upload', variant: 'btn-light', icon: 'fas fa-upload' },
         ];
     }
     bind() {
-        this.buttonId = !this.buttonId ? this.id : this.buttonId;
-        const info = this.types.find(x => x.id === this.id) || {};
+        this.id = !this.id ? this.kind : this.id;
+        const info = this.types.find(x => x.kind === this.kind) || {};
         this.label = !!this.label ? this.label : info.label;
         this.variant = !!this.variant ? this.variant : info.variant;
         this.icon = !!this.icon ? this.icon : info.icon;
@@ -39,7 +39,7 @@ let VdButton = class VdButton {
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
-], VdButton.prototype, "buttonId", void 0);
+], VdButton.prototype, "kind", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
