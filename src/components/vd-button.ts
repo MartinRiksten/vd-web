@@ -10,6 +10,7 @@ export interface IButtonInfo {
 @autoinject
 export class VdButton {
   @bindable public buttonId!: string;
+  @bindable public id!: string;
   @bindable public click!: (() => void);
   @bindable public label!: string;
   @bindable public variant!: string;
@@ -27,7 +28,8 @@ export class VdButton {
   ];
 
   public bind() {
-    const info = this.types.find(x => x.id === this.buttonId) || {} as IButtonInfo;
+    this.buttonId = !this.buttonId ? this.id : this.buttonId;
+    const info = this.types.find(x => x.id === this.id) || {} as IButtonInfo;
     this.label = !!this.label ? this.label : info.label;
     this.variant = !!this.variant ? this.variant : info.variant;
     this.icon = !!this.icon ? this.icon : info.icon;

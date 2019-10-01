@@ -23,7 +23,8 @@ let VdButton = class VdButton {
         ];
     }
     bind() {
-        const info = this.types.find(x => x.id === this.buttonId) || {};
+        this.buttonId = !this.buttonId ? this.id : this.buttonId;
+        const info = this.types.find(x => x.id === this.id) || {};
         this.label = !!this.label ? this.label : info.label;
         this.variant = !!this.variant ? this.variant : info.variant;
         this.icon = !!this.icon ? this.icon : info.icon;
@@ -39,6 +40,10 @@ __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
 ], VdButton.prototype, "buttonId", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdButton.prototype, "id", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Function)
