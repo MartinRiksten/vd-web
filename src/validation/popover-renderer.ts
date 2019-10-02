@@ -47,17 +47,14 @@ export class PopoverRenderer implements ValidationRenderer {
 
       const popover = $(element).closest('[data-toggle=popover]');
       const data = popover.data('bs.popover');
-      const isVisible = !!data && data.tip().hasClass('in');
+      const isVisible = !!data && !!data.tip && data.tip.hasClass('in');
       const content = popover.data('content');
       if (!!data) {
         data.options.content = content;
       }
 
       if (isVisible) {
-        data
-          .tip()
-          .find('.popover-content')
-          .html(content);
+        data.tip.find('.popover-content').html(content);
         popover.popover('update');
       } else {
         popover.popover('show');
