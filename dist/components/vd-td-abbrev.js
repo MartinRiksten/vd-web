@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-let VdTdAbbrev = class VdTdAbbrev {
+class VdTdAbbrev {
     constructor() {
         this.value = '';
         this.cutoff = 25;
@@ -29,7 +29,7 @@ let VdTdAbbrev = class VdTdAbbrev {
                 trigger: 'hover',
             };
     }
-};
+}
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
@@ -38,7 +38,4 @@ __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Object)
 ], VdTdAbbrev.prototype, "cutoff", void 0);
-VdTdAbbrev = __decorate([
-    aurelia_framework_1.autoinject
-], VdTdAbbrev);
 exports.VdTdAbbrev = VdTdAbbrev;

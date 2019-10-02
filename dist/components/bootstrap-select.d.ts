@@ -9,9 +9,9 @@ export interface IBootstrapSelectOption {
     subtext: string;
 }
 export declare class BootstrapSelect {
-    options: IBootstrapSelectOption[] | undefined;
-    selected: string | undefined;
-    displayName: string | undefined;
+    options: IBootstrapSelectOption[];
+    selected: string;
+    displayName: string;
     picker: Element;
     attached(): void;
     selectedChanged(): void;

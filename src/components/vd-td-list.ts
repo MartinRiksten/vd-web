@@ -1,9 +1,8 @@
-﻿import { autoinject, bindable } from 'aurelia-framework';
+﻿import { bindable } from 'aurelia-framework';
 import { PopoverOption } from 'bootstrap/index';
 
-@autoinject
 export class VdTdList {
-  @bindable public items: IValueList[] | undefined;
+  @bindable public items!: IValueList[];
 
   public getToggle(item: IValueList): string | undefined {
     return !item.popoverOption ? void 0 : 'popover';

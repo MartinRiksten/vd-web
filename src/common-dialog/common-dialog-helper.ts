@@ -1,5 +1,5 @@
 ﻿import { DialogCancelResult, DialogOpenResult, DialogService } from 'aurelia-dialog';
-import { inject, LogManager } from 'aurelia-framework';
+import { autoinject, LogManager } from 'aurelia-framework';
 
 import { CommonDialog, CommonDialogType } from './common-dialog';
 import { CommonDialogModel } from './common-dialog-model';
@@ -7,7 +7,7 @@ import { CommonDialogModel } from './common-dialog-model';
 /**
  * Helper class for common dialogs.
  */
-@inject(DialogService)
+@autoinject
 export class CommonDialogHelper {
   /**
    * Initializes a new instance of the CommonDialogs class

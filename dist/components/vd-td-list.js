@@ -10,16 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-let VdTdList = class VdTdList {
+class VdTdList {
     getToggle(item) {
         return !item.popoverOption ? void 0 : 'popover';
     }
-};
+}
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Array)
 ], VdTdList.prototype, "items", void 0);
-VdTdList = __decorate([
-    aurelia_framework_1.autoinject
-], VdTdList);
 exports.VdTdList = VdTdList;

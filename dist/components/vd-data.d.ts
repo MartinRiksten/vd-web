@@ -1,6 +1,7 @@
 export declare class VdData {
+    formClass: string;
     labelClass: string;
     dataClass: string;
-    label: string | undefined;
-    value: string | undefined;
+    label: string;
+    value: string;
 }

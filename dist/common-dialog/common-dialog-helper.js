@@ -70,7 +70,7 @@ let CommonDialogHelper = class CommonDialogHelper {
     }
 };
 CommonDialogHelper = __decorate([
-    aurelia_framework_1.inject(aurelia_dialog_1.DialogService),
+    aurelia_framework_1.autoinject,
     __metadata("design:paramtypes", [aurelia_dialog_1.DialogService])
 ], CommonDialogHelper);
 exports.CommonDialogHelper = CommonDialogHelper;

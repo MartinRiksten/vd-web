@@ -1,8 +1,8 @@
 export declare class VdRoute {
-    route: string | undefined;
+    route: string;
     key: any;
     params: {
         id: string;
-    } | undefined;
+    };
     bind(): void;
 }

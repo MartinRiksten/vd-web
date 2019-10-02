@@ -1,13 +1,12 @@
-﻿import { autoinject, bindable } from 'aurelia-framework';
+﻿import { bindable } from 'aurelia-framework';
 import { PopoverOption } from 'bootstrap/index';
 
-@autoinject
 export class VdTdAbbrev {
   @bindable public value: string = '';
   @bindable public cutoff = 25;
-  public short: string | undefined;
+  public short!: string;
   public abbrev: boolean = false;
-  public popoverOption: PopoverOption | undefined;
+  public popoverOption!: PopoverOption;
 
   public bind(): void {
     this.abbrev = !!this.value && this.value.length > this.cutoff;

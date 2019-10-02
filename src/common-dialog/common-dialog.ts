@@ -12,7 +12,7 @@ export class CommonDialog {
   /**
    * The model for dialog
    */
-  private model: CommonDialogModel | undefined;
+  private model!: CommonDialogModel;
 
   /**
    * The information about the dialog appearance

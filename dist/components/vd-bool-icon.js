@@ -10,16 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-let VdBoolIcon = class VdBoolIcon {
+class VdBoolIcon {
     getIcon(value) {
-        return value === true ? 'fa-check text-success' : value === false ? 'fa-times text-danger' : "";
+        return value === true ? 'fa-check text-success' : value === false ? 'fa-times text-danger' : '';
     }
-};
+}
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Boolean)
 ], VdBoolIcon.prototype, "value", void 0);
-VdBoolIcon = __decorate([
-    aurelia_framework_1.autoinject
-], VdBoolIcon);
 exports.VdBoolIcon = VdBoolIcon;

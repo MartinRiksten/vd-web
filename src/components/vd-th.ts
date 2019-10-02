@@ -1,11 +1,10 @@
-﻿import { autoinject, bindable } from 'aurelia-framework';
+﻿import { bindable } from 'aurelia-framework';
 import { IOrderInfo } from '../utilities/list-helper';
 
-@autoinject
 export class VdTh {
-  @bindable public label: string | undefined;
-  @bindable public name: string | undefined;
-  @bindable public order: IOrderInfo | undefined;
+  @bindable public label!: string;
+  @bindable public name!: string;
+  @bindable public order!: IOrderInfo;
 
   public getClass(by: string, ascending: boolean): string {
     const result =

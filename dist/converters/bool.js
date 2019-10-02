@@ -9,7 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 let BoolValueConverter = class BoolValueConverter {
     toView(value) {
-        return value === true ? 'Ja' : value === false ? 'Nee' : "";
+        return value === true ? 'Ja' : value === false ? 'Nee' : '';
     }
 };
 BoolValueConverter = __decorate([

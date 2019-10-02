@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-let BootstrapSelect = class BootstrapSelect {
+class BootstrapSelect {
     attached() {
         if (!!this.displayName) {
             $(this.picker).data('live-search-placeholder', this.displayName);
@@ -24,7 +24,7 @@ let BootstrapSelect = class BootstrapSelect {
     selectedChanged() {
         $(this.picker).selectpicker('val', this.selected);
     }
-};
+}
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Array)
@@ -37,7 +37,4 @@ __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
 ], BootstrapSelect.prototype, "displayName", void 0);
-BootstrapSelect = __decorate([
-    aurelia_framework_1.autoinject
-], BootstrapSelect);
 exports.BootstrapSelect = BootstrapSelect;

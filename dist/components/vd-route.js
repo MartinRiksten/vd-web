@@ -10,11 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-let VdRoute = class VdRoute {
+class VdRoute {
     bind() {
         this.params = { id: this.key };
     }
-};
+}
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
@@ -23,7 +23,4 @@ __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Object)
 ], VdRoute.prototype, "key", void 0);
-VdRoute = __decorate([
-    aurelia_framework_1.autoinject
-], VdRoute);
 exports.VdRoute = VdRoute;

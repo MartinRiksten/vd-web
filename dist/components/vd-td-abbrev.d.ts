@@ -2,8 +2,8 @@ import { PopoverOption } from 'bootstrap/index';
 export declare class VdTdAbbrev {
     value: string;
     cutoff: number;
-    short: string | undefined;
+    short: string;
     abbrev: boolean;
-    popoverOption: PopoverOption | undefined;
+    popoverOption: PopoverOption;
     bind(): void;
 }

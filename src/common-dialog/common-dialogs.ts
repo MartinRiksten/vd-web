@@ -43,7 +43,12 @@ export class CommonDialogs {
     );
     CommonDialogs.types.set(
       CommonDialogType.Warning,
-      new CommonDialogInfo('Waarschuwing', 'alert-warning', [CommonDialogButton.Ok], 'fas fa-1_5x fa-exclamation-triangle'),
+      new CommonDialogInfo(
+        'Waarschuwing',
+        'alert-warning',
+        [CommonDialogButton.Ok],
+        'fas fa-1_5x fa-exclamation-triangle',
+      ),
     );
     CommonDialogs.types.set(
       CommonDialogType.Error,

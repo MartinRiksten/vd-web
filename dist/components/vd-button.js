@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-let VdButton = class VdButton {
+class VdButton {
     constructor() {
         this.types = [
             { kind: 'ok', label: 'OK', variant: 'btn-primary', icon: 'fas fa-check' },
@@ -19,7 +19,7 @@ let VdButton = class VdButton {
             { kind: 'no', label: 'Nee', variant: 'btn-light', icon: 'fas fa-times' },
             { kind: 'clear', label: 'Wissen', variant: 'btn-light', icon: 'fas fa-eraser' },
             { kind: 'save', label: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save' },
-            { kind: 'upload', label: 'Upload', variant: 'btn-light', icon: 'fas fa-upload' },
+            { kind: 'upload', label: 'Inlezen', variant: 'btn-light', icon: 'fas fa-upload' },
         ];
     }
     bind() {
@@ -35,7 +35,7 @@ let VdButton = class VdButton {
             $(this.clickTarget).click();
         }
     }
-};
+}
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
@@ -64,7 +64,4 @@ __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
 ], VdButton.prototype, "clickTarget", void 0);
-VdButton = __decorate([
-    aurelia_framework_1.autoinject
-], VdButton);
 exports.VdButton = VdButton;

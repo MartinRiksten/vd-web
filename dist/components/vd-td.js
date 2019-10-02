@@ -10,13 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-let VdTd = class VdTd {
-};
+class VdTd {
+}
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
 ], VdTd.prototype, "value", void 0);
-VdTd = __decorate([
-    aurelia_framework_1.autoinject
-], VdTd);
 exports.VdTd = VdTd;

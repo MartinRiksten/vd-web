@@ -10,12 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-let VdData = class VdData {
+class VdData {
     constructor() {
+        this.formClass = 'col-6';
         this.labelClass = 'col-6';
         this.dataClass = 'col-6';
     }
-};
+}
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", Object)
+], VdData.prototype, "formClass", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Object)
@@ -32,7 +37,4 @@ __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
 ], VdData.prototype, "value", void 0);
-VdData = __decorate([
-    aurelia_framework_1.autoinject
-], VdData);
 exports.VdData = VdData;
