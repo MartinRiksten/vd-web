@@ -1,10 +1,8 @@
 ﻿<template>
-    <div class="form-group" class.bind="formClass">
-        <label class="font-weight-lighter text-right" class.bind="labelClass">${label}</label>
-        <div class.bind="dataClass">
-            <slot name="before"></slot>
-            <span innerhtml.bind="value"></span>
-            <slot name="after"></slot>
-        </div>
+    <label class="font-weight-lighter text-right" class.bind="labelClass">${label}</label>
+    <div class.bind="dataClass">
+        <slot name="before"></slot>
+        <span innerhtml.bind="value"></span>
+        <slot name="after"></slot>
     </div>
 </template>
