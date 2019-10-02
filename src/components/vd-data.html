@@ -1,6 +1,6 @@
 ﻿<template>
-    <label class="font-weight-lighter text-right" class.bind="labelClass">${label}</label>
-    <div class.bind="dataClass">
+    <label class="font-weight-lighter text-sm-right" class.bind="labelClass">${label}</label>
+    <div class="d-inline" class.bind="dataClass">
         <slot name="before"></slot>
         <span innerhtml.bind="value"></span>
         <slot name="after"></slot>
