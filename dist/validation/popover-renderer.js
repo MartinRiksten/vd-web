@@ -58,6 +58,7 @@ class PopoverRenderer {
             }
             else {
                 popover.popover('show');
+                $(popover.data('bs.popover').tip).find('.popover-content').addClass("alert-danger");
                 $(element).one('keypress', () => {
                     popover.popover('hide');
                 });
