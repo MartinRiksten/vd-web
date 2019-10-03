@@ -45,7 +45,7 @@ class PopoverRenderer {
             }
             const popover = $(element).closest('[data-toggle=popover]');
             const data = popover.data('bs.popover');
-            const isVisible = !!data && !!data.tip && data.tip.hasClass('in');
+            const isVisible = !!data && !!data.tip && $(data.tip).hasClass('show');
             const content = popover.data('content');
             if (!!data) {
                 data.config.content = content;
