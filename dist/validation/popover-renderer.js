@@ -46,7 +46,7 @@ class PopoverRenderer {
             const popover = $(element).closest('[data-toggle=popover]');
             const data = popover.data('bs.popover');
             const hasTip = !!data && !!data.tip;
-            const $tip = hasTip ? $(data.tip) : undefined;
+            let $tip = hasTip ? $(data.tip) : undefined;
             const isVisible = hasTip && $tip.hasClass('show');
             const content = popover.data('content');
             if (!!data) {
@@ -58,7 +58,8 @@ class PopoverRenderer {
             }
             else {
                 popover.popover('show');
-                $(popover.data('bs.popover').tip).find('.popover-body').addClass("alert-danger");
+                $tip = $(popover.data('bs.popover').tip);
+                $tip.addClass("popover-danger");
                 $(element).one('keypress', () => {
                     popover.popover('hide');
                 });
