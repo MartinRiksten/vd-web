@@ -48,7 +48,7 @@ class PopoverRenderer {
             const isVisible = !!data && !!data.tip && data.tip.hasClass('in');
             const content = popover.data('content');
             if (!!data) {
-                data.options.content = content;
+                data.config.content = content;
             }
             if (isVisible) {
                 data.tip.find('.popover-content').html(content);
