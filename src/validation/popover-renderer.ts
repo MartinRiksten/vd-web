@@ -56,11 +56,11 @@ export class PopoverRenderer implements ValidationRenderer {
       }
 
       if (isVisible) {
-        $tip.find('.popover-content').html(content);
+        $tip.find('.popover-body').html(content);
         popover.popover('update');
       } else {
         popover.popover('show');
-        $(popover.data('bs.popover').tip).find('.popover-content').addClass("alert-danger");
+        $(popover.data('bs.popover').tip).find('.popover-body').addClass("alert-danger");
         $(element).one('keypress', () => {
           popover.popover('hide');
         });
