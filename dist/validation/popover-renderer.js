@@ -45,13 +45,15 @@ class PopoverRenderer {
             }
             const popover = $(element).closest('[data-toggle=popover]');
             const data = popover.data('bs.popover');
-            const isVisible = !!data && !!data.tip && $(data.tip).hasClass('show');
+            const hasTip = !!data && !!data.tip;
+            const $tip = hasTip ? $(data.tip) : undefined;
+            const isVisible = hasTip && $tip.hasClass('show');
             const content = popover.data('content');
             if (!!data) {
                 data.config.content = content;
             }
             if (isVisible) {
-                data.tip.find('.popover-content').html(content);
+                $tip.find('.popover-content').html(content);
                 popover.popover('update');
             }
             else {
