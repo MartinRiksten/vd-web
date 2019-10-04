@@ -18,7 +18,7 @@ class AlertHelper {
         return __awaiter(this, void 0, void 0, function* () {
             options = Object.assign(Object.assign({}, AlertHelper.DEFAULTS), options);
             const id = `static-alert-${AlertHelper.id++}`;
-            const template = `<div id="${id}" class="static-alert fade text-center alert-${AlertHelper.count++}"><div class="alert ${options.style}" role="alert">${message}</div></div>`;
+            const template = `<div id="${id}" class="static-alert fade text-center alert-${AlertHelper.count++}"><div class="alert ${options.variant}" role="alert">${message}</div></div>`;
             $('body').prepend(template);
             const alert = $(`#${id}`);
             yield wait_1.Wait.for(options.delay);
@@ -32,6 +32,6 @@ class AlertHelper {
     }
 }
 exports.AlertHelper = AlertHelper;
-AlertHelper.DEFAULTS = { style: 'alert-success', delay: 10, duration: 3500 };
+AlertHelper.DEFAULTS = { variant: 'alert-success', delay: 10, duration: 3500 };
 AlertHelper.id = 0;
 AlertHelper.count = 0;

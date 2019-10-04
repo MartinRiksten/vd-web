@@ -8,7 +8,7 @@ export declare class AlertHelper {
     show(message: string, options?: IAlertOptions): Promise<void>;
 }
 export interface IAlertOptions {
-    style: string;
+    variant: string;
     delay: number;
     duration: number;
 }

@@ -4,7 +4,7 @@
  * Helper for showing alerts
  */
 export class AlertHelper {
-  public static DEFAULTS: IAlertOptions = { style: 'alert-success', delay: 10, duration: 3500 };
+  public static DEFAULTS: IAlertOptions = { variant: 'alert-success', delay: 10, duration: 3500 };
   private static id = 0;
   private static count = 0;
 
@@ -12,7 +12,7 @@ export class AlertHelper {
     options = { ...AlertHelper.DEFAULTS, ...options };
     const id = `static-alert-${AlertHelper.id++}`;
     const template = `<div id="${id}" class="static-alert fade text-center alert-${AlertHelper.count++}"><div class="alert ${
-      options.style
+      options.variant
     }" role="alert">${message}</div></div>`;
     $('body').prepend(template);
     const alert = $(`#${id}`);
@@ -28,7 +28,7 @@ export class AlertHelper {
 }
 
 export interface IAlertOptions {
-  style: string;
+  variant: string;
   delay: number;
   duration: number;
 }
