@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 class VdButton {
     constructor() {
+        this.if = true;
         this.types = [
             { kind: 'ok', label: 'OK', variant: 'btn-primary', icon: 'fas fa-check' },
             { kind: 'cancel', label: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' },
@@ -64,4 +65,8 @@ __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
 ], VdButton.prototype, "clickTarget", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", Boolean)
+], VdButton.prototype, "if", void 0);
 exports.VdButton = VdButton;
