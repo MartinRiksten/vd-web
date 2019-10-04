@@ -9,7 +9,7 @@ export interface IButtonInfo {
 
 export class VdButton {
   @bindable public kind!: string;
-  @bindable public id!: string;
+  @bindable public buttonId!: string;
   @bindable public click!: () => void;
   @bindable public label!: string;
   @bindable public variant!: string;
@@ -27,7 +27,7 @@ export class VdButton {
   ];
 
   public bind() {
-    this.id = !this.id ? this.kind : this.id;
+    this.buttonId = !this.buttonId ? this.kind : this.buttonId;
     const info = this.types.find(x => x.kind === this.kind) || ({} as IButtonInfo);
     this.label = !!this.label ? this.label : info.label;
     this.variant = !!this.variant ? this.variant : info.variant;
