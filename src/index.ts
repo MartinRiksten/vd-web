@@ -48,7 +48,7 @@ export function configure(config: FrameworkConfiguration) {
     'vd-td',
     'vd-td-abbrev',
     'vd-td-bool-icon',
-    'vd-text-box',
+    'vd-textbox',
     'vd-td-list',
     'vd-th',
     'vd-route',
