@@ -28,7 +28,7 @@ export class AlertHelper {
 }
 
 export interface IAlertOptions {
-  variant: string;
-  delay: number;
-  duration: number;
+  variant?: string;
+  delay?: number;
+  duration?: number;
 }
