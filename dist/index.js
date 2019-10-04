@@ -18,6 +18,7 @@ __export(require("./components/bootstrap-select"));
 __export(require("./components/vd-bool-icon"));
 __export(require("./components/vd-button"));
 __export(require("./components/vd-data"));
+__export(require("./components/vd-filter-input"));
 __export(require("./components/vd-route"));
 __export(require("./components/vd-td-abbrev"));
 __export(require("./components/vd-td-bool-icon"));
@@ -49,6 +50,7 @@ function configure(config) {
         'vd-bool-icon',
         'vd-button',
         'vd-data',
+        'vd-filter-inout',
         'vd-td',
         'vd-td-abbrev',
         'vd-td-bool-icon',

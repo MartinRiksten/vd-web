@@ -28,8 +28,8 @@ export class VdTextbox {
   }
 
   public attached() {
-      if (this.autoFocus) {
-        $(this.element).focus();
-      }
+    if (this.autoFocus) {
+      $(this.element).focus();
+    }
   }
 }
