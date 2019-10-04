@@ -1,3 +1,4 @@
 export declare class VdTdBoolIcon {
-    value: string | undefined;
+    value: string;
+    iconValue: string;
 }

@@ -16,4 +16,8 @@ __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
 ], VdTdBoolIcon.prototype, "value", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdTdBoolIcon.prototype, "iconValue", void 0);
 exports.VdTdBoolIcon = VdTdBoolIcon;
