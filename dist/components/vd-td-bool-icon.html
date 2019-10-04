@@ -1,3 +1,4 @@
-<td as-element="vd-td" value.bind="value">
-    <span as-element="vd-bool-icon" slot="before" value.bind="value"></span>
-</td>
+<template>
+    <span as-element="vd-bool-icon" value.bind="value"></span>
+    <span innerhtml.bind="value"></span>
+</template>
