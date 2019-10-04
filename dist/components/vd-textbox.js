@@ -12,14 +12,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 class VdTextbox {
     constructor() {
-        this.formClass = "col-6";
-        this.labelClass = "col-6";
-        this.inputClass = "col-6";
+        this.formClass = 'col-6';
+        this.labelClass = 'col-6';
+        this.inputClass = 'col-6';
         this.usePopover = true;
-        this.popoverOption = { container: "body", placement: "right", trigger: "manual" };
+        this.popoverOption = { container: 'body', placement: 'right', trigger: 'manual' };
     }
     bind() {
-        this.dataToggle = this.usePopover ? "popover" : "";
+        this.dataToggle = this.usePopover ? 'popover' : '';
         this.popover = this.usePopover ? this.popoverOption : undefined;
     }
 }

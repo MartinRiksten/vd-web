@@ -61,7 +61,7 @@ export class PopoverRenderer implements ValidationRenderer {
       } else {
         popover.popover('show');
         $tip = $(popover.data('bs.popover').tip);
-        $tip.addClass("popover-danger");
+        $tip.addClass('popover-danger');
         $(element).one('keypress', () => {
           popover.popover('hide');
         });

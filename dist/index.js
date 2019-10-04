@@ -49,6 +49,8 @@ function configure(config) {
         'vd-data',
         'vd-td',
         'vd-td-abbrev',
+        'vd-td-bool-icon',
+        'vd-text-box',
         'vd-td-list',
         'vd-th',
         'vd-route',

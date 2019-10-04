@@ -1,4 +1,4 @@
-﻿import {  bindable } from 'aurelia-framework';
+﻿import { bindable } from 'aurelia-framework';
 
 declare global {
   // tslint:disable-next-line:interface-name
