@@ -11,16 +11,16 @@ export class AlertHelper {
   public async show(message: string, options?: IAlertOptions): Promise<void> {
     options = { ...AlertHelper.DEFAULTS, ...options };
     const id = `static-alert-${AlertHelper.id++}`;
-    const template = `<div id="${id}" class="static-alert fade text-center alert-${AlertHelper.count++}"><div class="alert ${
-      options.variant
-    }" role="alert">${message}</div></div>`;
+    const template = `<div id="${id}" class="static-alert fade text-center alert-${AlertHelper.count++}">
+    <div class="alert alert-sm ${options.variant}" role="alert">${message}</div>
+</div>`;
     $('body').prepend(template);
     const alert = $(`#${id}`);
 
     await Wait.for(options.delay);
-    alert.addClass('in');
+    alert.addClass('show');
     await Wait.for(options.duration);
-    alert.removeClass('in');
+    alert.removeClass('show');
     AlertHelper.count--;
     await Wait.for(100);
     alert.remove();

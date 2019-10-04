@@ -18,13 +18,15 @@ class AlertHelper {
         return __awaiter(this, void 0, void 0, function* () {
             options = Object.assign(Object.assign({}, AlertHelper.DEFAULTS), options);
             const id = `static-alert-${AlertHelper.id++}`;
-            const template = `<div id="${id}" class="static-alert fade text-center alert-${AlertHelper.count++}"><div class="alert ${options.variant}" role="alert">${message}</div></div>`;
+            const template = `<div id="${id}" class="static-alert fade text-center alert-${AlertHelper.count++}">
+    <div class="alert alert-sm ${options.variant}" role="alert">${message}</div>
+</div>`;
             $('body').prepend(template);
             const alert = $(`#${id}`);
             yield wait_1.Wait.for(options.delay);
-            alert.addClass('in');
+            alert.addClass('show');
             yield wait_1.Wait.for(options.duration);
-            alert.removeClass('in');
+            alert.removeClass('show');
             AlertHelper.count--;
             yield wait_1.Wait.for(100);
             alert.remove();
