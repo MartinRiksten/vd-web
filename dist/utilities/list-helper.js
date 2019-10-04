@@ -139,12 +139,12 @@ class ListHelper {
     filterAll(item, value, included) {
         for (const property in item) {
             if (item.hasOwnProperty(property) &&
-                (typeof included === 'undefined' || included.filter(x => x.startsWith(property)).length > 0)) {
+                (typeof included === 'undefined' || included.filter(x => !!x && x.startsWith(property)).length > 0)) {
                 const current = item[property];
                 if ((typeof current === 'object' &&
                     this.filterAll(current, value, typeof included === 'undefined'
                         ? included
-                        : included.filter(x => x.startsWith(property + '.')).map(x => x.substr(property.length + 1)))) ||
+                        : included.filter(x => !!x && x.startsWith(property + '.')).map(x => x.substr(property.length + 1)))) ||
                     this.filterSingle(item, value, property)) {
                     return true;
                 }
