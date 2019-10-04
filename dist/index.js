@@ -50,7 +50,7 @@ function configure(config) {
         'vd-bool-icon',
         'vd-button',
         'vd-data',
-        'vd-filter-inout',
+        'vd-filter-input',
         'vd-td',
         'vd-td-abbrev',
         'vd-td-bool-icon',
