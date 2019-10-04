@@ -15,12 +15,18 @@ class VdTextbox {
         this.formClass = 'col-6';
         this.labelClass = 'col-6';
         this.inputClass = 'col-6';
+        this.autoFocus = false;
         this.usePopover = true;
         this.popoverOption = { container: 'body', placement: 'right', trigger: 'manual' };
     }
     bind() {
         this.dataToggle = this.usePopover ? 'popover' : '';
         this.popover = this.usePopover ? this.popoverOption : undefined;
+    }
+    attached() {
+        if (this.autoFocus) {
+            $(this.element).focus();
+        }
     }
 }
 __decorate([
@@ -49,12 +55,8 @@ __decorate([
 ], VdTextbox.prototype, "value", void 0);
 __decorate([
     aurelia_framework_1.bindable,
-    __metadata("design:type", Element)
-], VdTextbox.prototype, "element", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
     __metadata("design:type", String)
-], VdTextbox.prototype, "inputRegex", void 0);
+], VdTextbox.prototype, "regex", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
@@ -62,7 +64,11 @@ __decorate([
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
-], VdTextbox.prototype, "placeholder", void 0);
+], VdTextbox.prototype, "placeHolder", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", Object)
+], VdTextbox.prototype, "autoFocus", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Boolean)
