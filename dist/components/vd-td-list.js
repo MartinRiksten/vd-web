@@ -13,6 +13,7 @@ const aurelia_framework_1 = require("aurelia-framework");
 const vd_td_1 = require("./vd-td");
 class VdTdList extends vd_td_1.VdTd {
     bind() {
+        super.bind();
         this.value = !this.items ? "" : this.items.join(", ");
     }
     getToggle(item) {

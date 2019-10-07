@@ -37,7 +37,7 @@ export class ListHelper<T extends IFilterable> {
    * @param included The array op property names to include
    */
   public filter(items: T[], filter: string): T[] {
-    if (!filter) {
+    if (!filter || items.length === 0 || !items[0]._filterValues) {
       return items;
     }
 

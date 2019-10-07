@@ -25,7 +25,7 @@ class ListHelper {
      * @param included The array op property names to include
      */
     filter(items, filter) {
-        if (!filter) {
+        if (!filter || items.length === 0 || !items[0]._filterValues) {
             return items;
         }
         const list = filter.split(' ');

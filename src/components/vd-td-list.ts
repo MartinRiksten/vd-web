@@ -7,6 +7,7 @@ export class VdTdList extends VdTd {
   public value: string;
   
 public bind() {
+  super.bind();
   this.value = !this.items ? "" : this.items.join(", ");
 }
 
