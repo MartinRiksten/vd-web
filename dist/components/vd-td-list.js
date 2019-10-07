@@ -22,6 +22,10 @@ class VdTdList extends vd_td_1.VdTd {
 }
 __decorate([
     aurelia_framework_1.bindable,
+    __metadata("design:type", Object)
+], VdTdList.prototype, "instance", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
     __metadata("design:type", Array)
 ], VdTdList.prototype, "items", void 0);
 exports.VdTdList = VdTdList;

@@ -1,8 +1,10 @@
 ﻿import { bindable } from 'aurelia-framework';
 import { PopoverOption } from 'bootstrap/index';
+import { IFilterable } from '../utilities/list-helper';
 import { VdTd } from './vd-td';
 
 export class VdTdList extends VdTd {
+  @bindable public instance: IFilterable;
   @bindable public items!: IValueList[];
   public value: string;
   

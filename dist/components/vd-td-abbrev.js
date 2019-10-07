@@ -34,6 +34,14 @@ class VdTdAbbrev extends vd_td_1.VdTd {
 }
 __decorate([
     aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdTdAbbrev.prototype, "value", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", Object)
+], VdTdAbbrev.prototype, "instance", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
     __metadata("design:type", Object)
 ], VdTdAbbrev.prototype, "cutoff", void 0);
 exports.VdTdAbbrev = VdTdAbbrev;

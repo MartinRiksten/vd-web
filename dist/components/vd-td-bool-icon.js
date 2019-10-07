@@ -16,5 +16,13 @@ class VdTdBoolIcon extends vd_td_1.VdTd {
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
+], VdTdBoolIcon.prototype, "value", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", Object)
+], VdTdBoolIcon.prototype, "instance", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
 ], VdTdBoolIcon.prototype, "iconValue", void 0);
 exports.VdTdBoolIcon = VdTdBoolIcon;
