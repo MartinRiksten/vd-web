@@ -12,6 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 class VdTd {
     bind() {
+        if (!this.instance) {
+            return;
+        }
         if (!this.instance._filterValues) {
             this.instance._filterValues = [];
         }

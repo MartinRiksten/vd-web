@@ -7,6 +7,10 @@ export class VdTd {
   @bindable public instance: IFilterable;
 
   public bind() {
+    if (!this.instance) {
+      return;
+    }
+
     if (!this.instance._filterValues) {
       this.instance._filterValues = [];
     }
