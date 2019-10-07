@@ -7,7 +7,7 @@ const list_helper_1 = require("../utilities/list-helper");
 class ListBase {
     constructor() {
         this.trigger = 0;
-        this.sorted = [];
+        this.currentList = [];
         this.listHelper = new list_helper_1.ListHelper();
         // the columns that are shown in the table
         this.columns = [];
@@ -44,9 +44,9 @@ class ListBase {
         return !this.select && this.selected === item ? 'table-success' : '';
     }
     /**
-     * Gets the filtered list of work items
+     * Gets the filtered and sorted list of items
      */
-    getSorted() {
+    getCurrentList() {
         let result = this.items;
         if (!result) {
             return [];
@@ -63,7 +63,7 @@ class ListBase {
         if (!!this.order) {
             result = this.listHelper.sort(result, this.order);
         }
-        this.sorted = result;
+        this.currentList = result;
         return result;
     }
 }

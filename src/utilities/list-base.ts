@@ -9,7 +9,7 @@ export class ListBase<T> {
   public items: T[] | undefined;
   public order!: IOrderInfo;
   public trigger = 0;
-  public sorted: T[] = [];
+  public currentList: T[] = [];
 
   protected selected: T | undefined;
   protected listHelper = new ListHelper<T>();
@@ -53,9 +53,9 @@ export class ListBase<T> {
   }
 
   /**
-   * Gets the filtered list of work items
+   * Gets the filtered and sorted list of items
    */
-  public getSorted(): T[] {
+  public getCurrentList(): T[] {
     let result = this.items;
     if (!result) {
       return [];
@@ -76,7 +76,7 @@ export class ListBase<T> {
       result = this.listHelper.sort(result, this.order);
     }
 
-    this.sorted = result;
+    this.currentList = result;
     return result;
   }
 }

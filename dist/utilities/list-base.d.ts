@@ -8,7 +8,7 @@ export declare class ListBase<T> {
     items: T[] | undefined;
     order: IOrderInfo;
     trigger: number;
-    sorted: T[];
+    currentList: T[];
     protected selected: T | undefined;
     protected listHelper: ListHelper<T>;
     protected table: Element;
@@ -29,9 +29,9 @@ export declare class ListBase<T> {
      */
     GetRowClass(item: T): "" | "table-success";
     /**
-     * Gets the filtered list of work items
+     * Gets the filtered and sorted list of items
      */
-    getSorted(): T[];
+    getCurrentList(): T[];
 }
 export interface IFilter {
     filter: string;
