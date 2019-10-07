@@ -10,12 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-class VdTdBoolIcon {
+const vd_td_1 = require("./vd-td");
+class VdTdBoolIcon extends vd_td_1.VdTd {
 }
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdTdBoolIcon.prototype, "value", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)

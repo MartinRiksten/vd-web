@@ -6,10 +6,14 @@ export interface IOrderInfo {
   ascending: boolean;
 }
 
+export interface IFilterable {
+  _filterValues: string[];
+}
+
 /**
  * Helper class for paing and sorting.
  */
-export class ListHelper<T> {
+export class ListHelper<T extends IFilterable> {
   /**
    * Sorts the given array
    * @param array The array to sort
@@ -26,52 +30,46 @@ export class ListHelper<T> {
 
   /**
    * Filers the given array using the properties of both the items and the value.
-   * @param array The array to filetr
+   * @param items The array to filter
    * @param filter The value containing the filters, or a single filter
    *        string: the value is split by a space and filtered on each part
    *        T: the array is filtered over each property of the filter
    * @param included The array op property names to include
    */
-  public filter(array: T[], filter: string | T, included?: string[]): T[] {
+  public filter(items: T[], filter: string): T[] {
     if (!filter) {
-      return array;
+      return items;
     }
 
-    if (typeof filter === 'string') {
-      const list = (filter as string).split(' ');
-      let stringResult = array;
-      list.forEach(current => {
-        stringResult = stringResult.filter((item: T) => this.filterFunc(item, current, included));
-      });
-      return stringResult;
-    }
-
-    const filterObject = filter;
-    let result = array;
-    for (const property in filterObject) {
-      if (Object.keys(filterObject).indexOf(property) >= 0) {
-        const current = filterObject as any;
-        result = this.filterOnProperty(result, current[property], included, property);
-      }
-    }
-
+    const list = filter.split(' ');
+    let result = items;
+    list.forEach(current => {
+      result = result.filter((item: T) => this.filterFunc(item, current));
+    });
     return result;
   }
 
   /**
-   * Filters on a single property
-   * @param array The array to filter
+   * determines whether the item satisfies the filter
+   * @param item The item to test
    * @param value The value to filter on
    * @param included The array op property names to include
    * @param property The property to filter on, or null when the filter applies to all properties
    */
-  private filterOnProperty(array: T[], value: string, included?: string[], property?: string): T[] {
-    if (value == null || value.length === 0) {
-      return array;
+  private filterFunc(item: T, value: string): boolean {
+    for (const current of item._filterValues) {
+      const result =
+        current != null &&
+        current
+          .toString()
+          .toLowerCase()
+          .indexOf(value.toLowerCase()) > -1;
+      if (result) {
+        return true;
+      }
     }
 
-    const result = array.filter((item: T) => this.filterFunc(item, value, included, property));
-    return result;
+    return false;
   }
 
   /**
@@ -119,70 +117,5 @@ export class ListHelper<T> {
   private compareValues(v1: any, v2: any): number {
     const result = v1 < v2 ? -1 : v1 > v2 ? 1 : 0;
     return result;
-  }
-
-  /**
-   * determines whether the item satisfies the filter
-   * @param item The item to test
-   * @param value The value to filter on
-   * @param included The array op property names to include
-   * @param property The property to filter on, or null when the filter applies to all properties
-   */
-  private filterFunc(item: any, value: string, included?: string[], property?: string): boolean {
-    const result = property == null ? this.filterAll(item, value, included) : this.filterSingle(item, value, property);
-    return result;
-  }
-
-  /**
-   * determines whether the item satisfies the filter
-   * @param item The item to test
-   * @param value The value to filter
-   * @param prop The name of the property to filter on
-   */
-  private filterSingle(item: any, value: string, prop: string): boolean {
-    let current = item as any;
-    for (const part of prop.split('.')) {
-      current = current[part];
-    }
-
-    const result =
-      current != null &&
-      current
-        .toString()
-        .toLowerCase()
-        .indexOf(value.toLowerCase()) > -1;
-    return result;
-  }
-
-  /**
-   * determines whether the item satisfies the filter
-   * @param item The item to test
-   * @param value The value to filter on all properties
-   * @param included The array op property names to include
-   */
-  private filterAll(item: any, value: string, included?: string[]): boolean {
-    for (const property in item) {
-      if (
-        item.hasOwnProperty(property) &&
-        (typeof included === 'undefined' || included.filter(x => !!x && x.startsWith(property)).length > 0)
-      ) {
-        const current = item[property];
-        if (
-          (typeof current === 'object' &&
-            this.filterAll(
-              current,
-              value,
-              typeof included === 'undefined'
-                ? included
-                : included.filter(x => !!x && x.startsWith(property + '.')).map(x => x.substr(property.length + 1)),
-            )) ||
-          this.filterSingle(item, value, property)
-        ) {
-          return true;
-        }
-      }
-    }
-
-    return false;
   }
 }

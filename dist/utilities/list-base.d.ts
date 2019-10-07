@@ -1,18 +1,18 @@
-import { IOrderInfo, ListHelper } from '../utilities/list-helper';
+import { IFilterable, IOrderInfo, ListHelper } from '../utilities/list-helper';
 /**
  * Controller for the application view.
  */
-export declare class ListBase<T> {
+export declare class ListBase<T extends IFilterable> {
     select: ((x: T) => void) | undefined;
     filter: IFilter | undefined;
-    items: T[] | undefined;
+    items: T[];
     order: IOrderInfo;
     trigger: number;
     currentList: T[];
     protected selected: T | undefined;
     protected listHelper: ListHelper<T>;
     protected table: Element;
-    private columns;
+    bind(): void;
     /**
      * Order the list of work items
      * @param orderBy The name of the field to order by

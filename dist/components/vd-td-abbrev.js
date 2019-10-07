@@ -10,13 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-class VdTdAbbrev {
+const vd_td_1 = require("./vd-td");
+class VdTdAbbrev extends vd_td_1.VdTd {
     constructor() {
-        this.value = '';
+        super(...arguments);
         this.cutoff = 25;
         this.abbrev = false;
     }
     bind() {
+        super.bind();
         this.abbrev = !!this.value && this.value.length > this.cutoff;
         this.short = this.abbrev ? this.value.substr(0, this.cutoff) : this.value;
         this.popoverOption = !this.abbrev
@@ -30,10 +32,6 @@ class VdTdAbbrev {
             };
     }
 }
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdTdAbbrev.prototype, "value", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Object)

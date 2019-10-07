@@ -1,12 +1,12 @@
-﻿import { IOrderInfo, ListHelper } from '../utilities/list-helper';
+﻿import { IFilterable, IOrderInfo, ListHelper } from '../utilities/list-helper';
 
 /**
  * Controller for the application view.
  */
-export class ListBase<T> {
+export class ListBase<T extends IFilterable> {
   public select: ((x: T) => void) | undefined;
   public filter: IFilter | undefined;
-  public items: T[] | undefined;
+  public items!: T[];
   public order!: IOrderInfo;
   public trigger = 0;
   public currentList: T[] = [];
@@ -15,8 +15,11 @@ export class ListBase<T> {
   protected listHelper = new ListHelper<T>();
   protected table!: Element;
 
-  // the columns that are shown in the table
-  private columns: string[] = [];
+  public bind() {
+    for (const item of this.items) {
+      item._filterValues = [];
+    }
+  }
 
   /**
    * Order the list of work items
@@ -62,14 +65,7 @@ export class ListBase<T> {
     }
 
     if (!!this.filter) {
-      if (this.columns.length === 0) {
-        this.columns = $(this.table)
-          .find('th')
-          .get()
-          .map<string>(x => $(x as any).attr('name') || '');
-      }
-
-      result = this.listHelper.filter(result, this.filter.filter, this.columns);
+      result = this.listHelper.filter(result, this.filter.filter);
     }
 
     if (!!this.order) {

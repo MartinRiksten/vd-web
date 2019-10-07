@@ -9,8 +9,11 @@ class ListBase {
         this.trigger = 0;
         this.currentList = [];
         this.listHelper = new list_helper_1.ListHelper();
-        // the columns that are shown in the table
-        this.columns = [];
+    }
+    bind() {
+        for (const item of this.items) {
+            item._filterValues = [];
+        }
     }
     /**
      * Order the list of work items
@@ -52,13 +55,7 @@ class ListBase {
             return [];
         }
         if (!!this.filter) {
-            if (this.columns.length === 0) {
-                this.columns = $(this.table)
-                    .find('th')
-                    .get()
-                    .map(x => $(x).attr('name') || '');
-            }
-            result = this.listHelper.filter(result, this.filter.filter, this.columns);
+            result = this.listHelper.filter(result, this.filter.filter);
         }
         if (!!this.order) {
             result = this.listHelper.sort(result, this.order);

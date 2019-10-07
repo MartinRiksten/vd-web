@@ -1,6 +1,9 @@
 import { PopoverOption } from 'bootstrap/index';
-export declare class VdTdList {
+import { VdTd } from './vd-td';
+export declare class VdTdList extends VdTd {
     items: IValueList[];
+    value: string;
+    bind(): void;
     getToggle(item: IValueList): string | undefined;
 }
 export interface IValueList {

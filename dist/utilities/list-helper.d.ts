@@ -5,10 +5,13 @@ export interface IOrderInfo {
     by: string;
     ascending: boolean;
 }
+export interface IFilterable {
+    _filterValues: string[];
+}
 /**
  * Helper class for paing and sorting.
  */
-export declare class ListHelper<T> {
+export declare class ListHelper<T extends IFilterable> {
     /**
      * Sorts the given array
      * @param array The array to sort
@@ -17,21 +20,21 @@ export declare class ListHelper<T> {
     sort(array: T[], order: IOrderInfo): T[];
     /**
      * Filers the given array using the properties of both the items and the value.
-     * @param array The array to filetr
+     * @param items The array to filter
      * @param filter The value containing the filters, or a single filter
      *        string: the value is split by a space and filtered on each part
      *        T: the array is filtered over each property of the filter
      * @param included The array op property names to include
      */
-    filter(array: T[], filter: string | T, included?: string[]): T[];
+    filter(items: T[], filter: string): T[];
     /**
-     * Filters on a single property
-     * @param array The array to filter
+     * determines whether the item satisfies the filter
+     * @param item The item to test
      * @param value The value to filter on
      * @param included The array op property names to include
      * @param property The property to filter on, or null when the filter applies to all properties
      */
-    private filterOnProperty;
+    private filterFunc;
     /**
      * Compares the property values of the two objects
      * @param a The first object
@@ -45,26 +48,4 @@ export declare class ListHelper<T> {
      * @param v2 The second value
      */
     private compareValues;
-    /**
-     * determines whether the item satisfies the filter
-     * @param item The item to test
-     * @param value The value to filter on
-     * @param included The array op property names to include
-     * @param property The property to filter on, or null when the filter applies to all properties
-     */
-    private filterFunc;
-    /**
-     * determines whether the item satisfies the filter
-     * @param item The item to test
-     * @param value The value to filter
-     * @param prop The name of the property to filter on
-     */
-    private filterSingle;
-    /**
-     * determines whether the item satisfies the filter
-     * @param item The item to test
-     * @param value The value to filter on all properties
-     * @param included The array op property names to include
-     */
-    private filterAll;
 }

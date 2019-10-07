@@ -10,7 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-class VdTdList {
+const vd_td_1 = require("./vd-td");
+class VdTdList extends vd_td_1.VdTd {
+    bind() {
+        this.value = !this.items ? "" : this.items.join(", ");
+    }
     getToggle(item) {
         return !item.popoverOption ? void 0 : 'popover';
     }
