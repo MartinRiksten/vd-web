@@ -14,7 +14,7 @@ const vd_td_1 = require("./vd-td");
 class VdTdList extends vd_td_1.VdTd {
     bind() {
         super.bind();
-        this.value = !this.items ? "" : this.items.join(", ");
+        this.value = !this.items ? '' : this.items.join(', ');
     }
     getToggle(item) {
         return !item.popoverOption ? void 0 : 'popover';

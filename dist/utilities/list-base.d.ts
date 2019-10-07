@@ -4,7 +4,7 @@ import { IFilterable, IOrderInfo, ListHelper } from '../utilities/list-helper';
  */
 export declare class ListBase<T extends IFilterable> {
     select: ((x: T) => void) | undefined;
-    filter: IFilter | undefined;
+    filter: string;
     items: T[];
     order: IOrderInfo;
     trigger: number;

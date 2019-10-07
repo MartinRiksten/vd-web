@@ -7,11 +7,11 @@ export class VdTdList extends VdTd {
   @bindable public instance: IFilterable;
   @bindable public items!: IValueList[];
   public value: string;
-  
-public bind() {
-  super.bind();
-  this.value = !this.items ? "" : this.items.join(", ");
-}
+
+  public bind() {
+    super.bind();
+    this.value = !this.items ? '' : this.items.join(', ');
+  }
 
   public getToggle(item: IValueList): string | undefined {
     return !item.popoverOption ? void 0 : 'popover';

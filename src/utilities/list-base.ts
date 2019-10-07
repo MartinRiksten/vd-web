@@ -5,7 +5,7 @@
  */
 export class ListBase<T extends IFilterable> {
   public select: ((x: T) => void) | undefined;
-  public filter: IFilter | undefined;
+  public filter: string;
   public items!: T[];
   public order!: IOrderInfo;
   public trigger = 0;
@@ -65,7 +65,7 @@ export class ListBase<T extends IFilterable> {
     }
 
     if (!!this.filter) {
-      result = this.listHelper.filter(result, this.filter.filter);
+      result = this.listHelper.filter(result, this.filter);
     }
 
     if (!!this.order) {

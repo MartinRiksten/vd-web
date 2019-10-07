@@ -55,7 +55,7 @@ class ListBase {
             return [];
         }
         if (!!this.filter) {
-            result = this.listHelper.filter(result, this.filter.filter);
+            result = this.listHelper.filter(result, this.filter);
         }
         if (!!this.order) {
             result = this.listHelper.sort(result, this.order);
