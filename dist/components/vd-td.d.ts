@@ -1,3 +1,3 @@
 export declare class VdTd {
-    value: string | undefined;
+    value: string;
 }
