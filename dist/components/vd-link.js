@@ -12,6 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 const vd_data_1 = require("./vd-data");
 class VdLink extends vd_data_1.VdData {
+    constructor() {
+        super(...arguments);
+        this.href = "#";
+    }
 }
 __decorate([
     aurelia_framework_1.bindable,
