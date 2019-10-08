@@ -20,6 +20,7 @@ class VdButton {
             { kind: 'no', label: 'Nee', variant: 'btn-light', icon: 'fas fa-times' },
             { kind: 'clear', label: 'Wissen', variant: 'btn-light', icon: 'fas fa-eraser' },
             { kind: 'save', label: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save' },
+            { kind: 'close', label: '', variant: 'btn-light', icon: 'fas fa-times' },
             { kind: 'upload', label: 'Inlezen', variant: 'btn-light', icon: 'fas fa-upload' },
         ];
     }

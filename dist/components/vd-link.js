@@ -15,6 +15,8 @@ class VdLink extends vd_data_1.VdData {
     constructor() {
         super(...arguments);
         this.href = "#";
+        // tslint:disable-next-line:no-empty
+        this.click = () => { };
     }
 }
 __decorate([
