@@ -1,0 +1,2056 @@
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+System.register("common-dialog/common-dialog-info", [], function (exports_1, context_1) {
+    "use strict";
+    var CommonDialogInfo;
+    var __moduleName = context_1 && context_1.id;
+    return {
+        setters: [],
+        execute: function () {
+            /**
+             * Common dialog information container
+             */
+            CommonDialogInfo = class CommonDialogInfo {
+                /**
+                 * Initializes a new instance of the CommonDialogInfo class
+                 * @param header The header text
+                 * @param headerClass The additonal header class(es)
+                 * @param buttons The buttons
+                 * @param symbolClass The header symbol class
+                 */
+                constructor(header, headerClass, buttons = [], symbolClass) {
+                    this.header = header;
+                    this.headerClass = headerClass;
+                    this.buttons = buttons;
+                    this.symbolClass = symbolClass;
+                }
+            };
+            exports_1("CommonDialogInfo", CommonDialogInfo);
+        }
+    };
+});
+System.register("common-dialog/common-dialog-model", [], function (exports_2, context_2) {
+    "use strict";
+    var CommonDialogModel;
+    var __moduleName = context_2 && context_2.id;
+    return {
+        setters: [],
+        execute: function () {
+            /**
+             * Model for the common dialog
+             */
+            CommonDialogModel = class CommonDialogModel {
+                /**
+                 * Initailizes anew instance of the CommonDialogModel class
+                 * @param type The type of the dialog
+                 * @param text The text for the dialog
+                 */
+                constructor(type, text) {
+                    this.type = type;
+                    this.text = text;
+                }
+            };
+            exports_2("CommonDialogModel", CommonDialogModel);
+        }
+    };
+});
+System.register("common-dialog/common-dialog", ["aurelia-dialog", "aurelia-framework", "common-dialog/common-dialogs"], function (exports_3, context_3) {
+    "use strict";
+    var _a, aurelia_dialog_1, aurelia_framework_1, common_dialogs_1, CommonDialog, CommonDialogType, CommonDialogButton;
+    var __moduleName = context_3 && context_3.id;
+    return {
+        setters: [
+            function (aurelia_dialog_1_1) {
+                aurelia_dialog_1 = aurelia_dialog_1_1;
+            },
+            function (aurelia_framework_1_1) {
+                aurelia_framework_1 = aurelia_framework_1_1;
+            },
+            function (common_dialogs_1_1) {
+                common_dialogs_1 = common_dialogs_1_1;
+            }
+        ],
+        execute: function () {
+            CommonDialog = class CommonDialog {
+                /**
+                 * Initializes a new instance of the CommonDialog class
+                 * @param controller The injected dialog controller
+                 */
+                constructor(controller) {
+                    this.controller = controller;
+                }
+                /**
+                 *
+                 * Called by the aurelia framework
+                 * @param model
+                 */
+                activate(model) {
+                    this.model = model;
+                    const info = common_dialogs_1.CommonDialogs.types.get(this.model.type);
+                    if (!!info) {
+                        this.info = info;
+                    }
+                }
+                /**
+                 * Indicates wheter the given button must be shown
+                 * @param name The button name
+                 */
+                showButton(name) {
+                    const button = common_dialogs_1.CommonDialogs.buttons.get(name);
+                    const result = !!button && this.info.buttons.indexOf(button) >= 0;
+                    return result;
+                }
+                /**
+                 * Handles the successful closing of the modal window by pressing the button ok
+                 */
+                ok() {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        const result = yield this.controller.ok(true);
+                        return result;
+                    });
+                }
+                /**
+                 * Handles the unsuccesful closing of the modal window by pressing the button cancel
+                 */
+                cancel() {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        const result = yield this.controller.cancel(false);
+                        return result;
+                    });
+                }
+                /**
+                 * Handles the successful closing of the modal window by pressing the button yes
+                 */
+                yes() {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        const result = yield this.controller.ok(true);
+                        return result;
+                    });
+                }
+                /**
+                 * Handles the unsuccesful closing of the modal window by pressing the button no
+                 */
+                no() {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        const result = yield this.controller.ok(false);
+                        return result;
+                    });
+                }
+            };
+            CommonDialog = __decorate([
+                aurelia_framework_1.autoinject,
+                __metadata("design:paramtypes", [typeof (_a = typeof aurelia_dialog_1.DialogController !== "undefined" && aurelia_dialog_1.DialogController) === "function" ? _a : Object])
+            ], CommonDialog);
+            exports_3("CommonDialog", CommonDialog);
+            /**
+             * Enumeration of common dialog types
+             */
+            (function (CommonDialogType) {
+                CommonDialogType[CommonDialogType["Information"] = 0] = "Information";
+                CommonDialogType[CommonDialogType["Confirmation"] = 1] = "Confirmation";
+                CommonDialogType[CommonDialogType["ConfirmationCancel"] = 2] = "ConfirmationCancel";
+                CommonDialogType[CommonDialogType["Warning"] = 3] = "Warning";
+                CommonDialogType[CommonDialogType["Error"] = 4] = "Error";
+                CommonDialogType[CommonDialogType["Success"] = 5] = "Success";
+            })(CommonDialogType || (CommonDialogType = {}));
+            exports_3("CommonDialogType", CommonDialogType);
+            /**
+             * Enumeration of buttons that may appear on a common dialog
+             */
+            (function (CommonDialogButton) {
+                CommonDialogButton[CommonDialogButton["Ok"] = 0] = "Ok";
+                CommonDialogButton[CommonDialogButton["Cancel"] = 1] = "Cancel";
+                CommonDialogButton[CommonDialogButton["Yes"] = 2] = "Yes";
+                CommonDialogButton[CommonDialogButton["No"] = 3] = "No";
+            })(CommonDialogButton || (CommonDialogButton = {}));
+            exports_3("CommonDialogButton", CommonDialogButton);
+        }
+    };
+});
+System.register("common-dialog/common-dialogs", ["common-dialog/common-dialog", "common-dialog/common-dialog-info"], function (exports_4, context_4) {
+    "use strict";
+    var common_dialog_1, common_dialog_info_1, CommonDialogs;
+    var __moduleName = context_4 && context_4.id;
+    return {
+        setters: [
+            function (common_dialog_1_1) {
+                common_dialog_1 = common_dialog_1_1;
+            },
+            function (common_dialog_info_1_1) {
+                common_dialog_info_1 = common_dialog_info_1_1;
+            }
+        ],
+        execute: function () {
+            /**
+             * Container for common dialog information
+             */
+            CommonDialogs = class CommonDialogs {
+                /**
+                 * Initailizes the common dialog information container
+                 */
+                static configure() {
+                    CommonDialogs.types.set(common_dialog_1.CommonDialogType.Information, new common_dialog_info_1.CommonDialogInfo('Informatie', 'alert-info', [common_dialog_1.CommonDialogButton.Ok], 'fas fa-1_5x fa-info-circle'));
+                    CommonDialogs.types.set(common_dialog_1.CommonDialogType.Confirmation, new common_dialog_info_1.CommonDialogInfo('Bevestiging', 'alert-info', [common_dialog_1.CommonDialogButton.Yes, common_dialog_1.CommonDialogButton.No], 'fas fa-1_5x fa-question-circle'));
+                    CommonDialogs.types.set(common_dialog_1.CommonDialogType.ConfirmationCancel, new common_dialog_info_1.CommonDialogInfo('Bevestiging', 'alert-info', [common_dialog_1.CommonDialogButton.Yes, common_dialog_1.CommonDialogButton.No, common_dialog_1.CommonDialogButton.Cancel], 'fas fa-1_5x fa-question-circle'));
+                    CommonDialogs.types.set(common_dialog_1.CommonDialogType.Warning, new common_dialog_info_1.CommonDialogInfo('Waarschuwing', 'alert-warning', [common_dialog_1.CommonDialogButton.Ok], 'fas fa-1_5x fa-exclamation-triangle'));
+                    CommonDialogs.types.set(common_dialog_1.CommonDialogType.Error, new common_dialog_info_1.CommonDialogInfo('Fout', 'alert-danger', [common_dialog_1.CommonDialogButton.Ok], 'fas fa-1_5x fa-times-circle'));
+                    CommonDialogs.types.set(common_dialog_1.CommonDialogType.Success, new common_dialog_info_1.CommonDialogInfo('Succes', 'alert-success', [common_dialog_1.CommonDialogButton.Ok], 'fas fa-1_5x fa-check'));
+                    CommonDialogs.buttons.set('ok', common_dialog_1.CommonDialogButton.Ok);
+                    CommonDialogs.buttons.set('cancel', common_dialog_1.CommonDialogButton.Cancel);
+                    CommonDialogs.buttons.set('yes', common_dialog_1.CommonDialogButton.Yes);
+                    CommonDialogs.buttons.set('no', common_dialog_1.CommonDialogButton.No);
+                }
+            };
+            exports_4("CommonDialogs", CommonDialogs);
+            /**
+             * A map containing the dialog information per dialog type
+             */
+            CommonDialogs.types = new Map();
+            /**
+             * A mapn containing the enumeration button value for each button name
+             */
+            CommonDialogs.buttons = new Map();
+        }
+    };
+});
+System.register("attributes/clipboard", ["aurelia-framework"], function (exports_5, context_5) {
+    "use strict";
+    var aurelia_framework_2, ClipboardCustomAttribute;
+    var __moduleName = context_5 && context_5.id;
+    return {
+        setters: [
+            function (aurelia_framework_2_1) {
+                aurelia_framework_2 = aurelia_framework_2_1;
+            }
+        ],
+        execute: function () {
+            ClipboardCustomAttribute = class ClipboardCustomAttribute {
+                constructor(element) {
+                    this.element = element;
+                }
+                attached() {
+                    // Loop over any child elements and disable the click events. For example if you put this on a button,
+                    // and then put a span / image icon it breaks the click event.
+                    this.element.childNodes.forEach(e => {
+                        const style = e.style;
+                        if (style) {
+                            style.pointerEvents = 'none';
+                        }
+                    });
+                    this.element.addEventListener('click', this.handleClick);
+                }
+                detached() {
+                    this.element.removeEventListener('click', this.handleClick);
+                }
+                handleClick($event) {
+                    const text = $event.srcElement.getAttribute('text');
+                    if (document.queryCommandSupported('copy') && text) {
+                        const textarea = document.createElement('textarea');
+                        textarea.style.display = 'none !important;';
+                        textarea.value = text;
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        document.execCommand('Copy');
+                        document.body.removeChild(textarea);
+                    }
+                }
+                valueChanged(newValue) {
+                    this.element.setAttribute('text', newValue);
+                }
+            };
+            ClipboardCustomAttribute = __decorate([
+                aurelia_framework_2.autoinject,
+                aurelia_framework_2.customAttribute('clipboard'),
+                __metadata("design:paramtypes", [Element])
+            ], ClipboardCustomAttribute);
+            exports_5("ClipboardCustomAttribute", ClipboardCustomAttribute);
+        }
+    };
+});
+System.register("attributes/draggable", ["aurelia-framework", "hammerjs"], function (exports_6, context_6) {
+    "use strict";
+    var aurelia_framework_3, hammerjs_1, DraggableCustomAttribute;
+    var __moduleName = context_6 && context_6.id;
+    return {
+        setters: [
+            function (aurelia_framework_3_1) {
+                aurelia_framework_3 = aurelia_framework_3_1;
+            },
+            function (hammerjs_1_1) {
+                hammerjs_1 = hammerjs_1_1;
+            }
+        ],
+        execute: function () {
+            DraggableCustomAttribute = class DraggableCustomAttribute {
+                constructor(element) {
+                    this.startX = 0;
+                    this.startY = 0;
+                    this.selector = '';
+                    this.element = element;
+                }
+                attached() {
+                    const target = this.element.querySelector(this.selector);
+                    target.addEventListener('mousedown', (event) => this.init(event), false);
+                    const manager = new hammerjs_1.default.Manager(target);
+                    manager.add(new hammerjs_1.default.Pan({ direction: hammerjs_1.default.DIRECTION_ALL, threshold: 0 }));
+                    manager.on('pan', (e) => this.pan(e));
+                }
+                init(event) {
+                    const rect = this.element.getBoundingClientRect();
+                    /* tslint:disable */
+                    this.startX = rect.x | rect.left;
+                    this.startY = rect.y | rect.top;
+                    /* tslint:enable */
+                    if (!this.element.style.top) {
+                        this.element.style.top = this.startY + 'px';
+                        this.element.style.left = this.startX + 'px';
+                        this.element.style.marginTop = '0';
+                        this.element.style.position = 'absolute';
+                    }
+                }
+                pan(e) {
+                    this.element.style.top = this.startY + e.deltaY + 'px';
+                    this.element.style.left = this.startX + e.deltaX + 'px';
+                }
+            };
+            __decorate([
+                aurelia_framework_3.bindable({ primaryProperty: true }),
+                __metadata("design:type", String)
+            ], DraggableCustomAttribute.prototype, "selector", void 0);
+            DraggableCustomAttribute = __decorate([
+                aurelia_framework_3.autoinject,
+                aurelia_framework_3.customAttribute('draggable'),
+                __metadata("design:paramtypes", [Element])
+            ], DraggableCustomAttribute);
+            exports_6("DraggableCustomAttribute", DraggableCustomAttribute);
+        }
+    };
+});
+System.register("attributes/popover", ["aurelia-framework", "jquery"], function (exports_7, context_7) {
+    "use strict";
+    var aurelia_framework_4, jquery_1, PopoverCustomAttribute;
+    var __moduleName = context_7 && context_7.id;
+    return {
+        setters: [
+            function (aurelia_framework_4_1) {
+                aurelia_framework_4 = aurelia_framework_4_1;
+            },
+            function (jquery_1_1) {
+                jquery_1 = jquery_1_1;
+            }
+        ],
+        execute: function () {
+            PopoverCustomAttribute = class PopoverCustomAttribute {
+                constructor(element) {
+                    this.element = element;
+                }
+                attached() {
+                    if (!this.value) {
+                        return;
+                    }
+                    jquery_1.default(this.element).popover(this.value);
+                }
+                detached() {
+                    if (!this.value) {
+                        return;
+                    }
+                    jquery_1.default(this.element).popover('dispose');
+                }
+            };
+            PopoverCustomAttribute = __decorate([
+                aurelia_framework_4.autoinject,
+                aurelia_framework_4.customAttribute('popover'),
+                __metadata("design:paramtypes", [Element])
+            ], PopoverCustomAttribute);
+            exports_7("PopoverCustomAttribute", PopoverCustomAttribute);
+        }
+    };
+});
+System.register("attributes/tooltip", ["aurelia-framework", "aurelia-task-queue", "jquery"], function (exports_8, context_8) {
+    "use strict";
+    var _a, aurelia_framework_5, aurelia_task_queue_1, jquery_2, TooltipCustomAttribute;
+    var __moduleName = context_8 && context_8.id;
+    return {
+        setters: [
+            function (aurelia_framework_5_1) {
+                aurelia_framework_5 = aurelia_framework_5_1;
+            },
+            function (aurelia_task_queue_1_1) {
+                aurelia_task_queue_1 = aurelia_task_queue_1_1;
+            },
+            function (jquery_2_1) {
+                jquery_2 = jquery_2_1;
+            }
+        ],
+        execute: function () {
+            TooltipCustomAttribute = class TooltipCustomAttribute {
+                constructor(element, taskQueue) {
+                    this.element = element;
+                    this.taskQueue = taskQueue;
+                }
+                attached() {
+                    if (!this.value) {
+                        return;
+                    }
+                    const option = this.value;
+                    this.taskQueue.queueTask(() => {
+                        jquery_2.default(this.element).tooltip(option);
+                    });
+                }
+                detached() {
+                    if (!this.value) {
+                        return;
+                    }
+                    jquery_2.default(this.element).tooltip('dispose');
+                }
+            };
+            TooltipCustomAttribute = __decorate([
+                aurelia_framework_5.autoinject,
+                aurelia_framework_5.customAttribute('tooltip'),
+                __metadata("design:paramtypes", [Element, typeof (_a = typeof aurelia_task_queue_1.TaskQueue !== "undefined" && aurelia_task_queue_1.TaskQueue) === "function" ? _a : Object])
+            ], TooltipCustomAttribute);
+            exports_8("TooltipCustomAttribute", TooltipCustomAttribute);
+        }
+    };
+});
+System.register("common-dialog/common-dialog-helper", ["aurelia-dialog", "aurelia-framework", "common-dialog/common-dialog", "common-dialog/common-dialog-model"], function (exports_9, context_9) {
+    "use strict";
+    var _a, aurelia_dialog_2, aurelia_framework_6, common_dialog_2, common_dialog_model_1, CommonDialogHelper;
+    var __moduleName = context_9 && context_9.id;
+    return {
+        setters: [
+            function (aurelia_dialog_2_1) {
+                aurelia_dialog_2 = aurelia_dialog_2_1;
+            },
+            function (aurelia_framework_6_1) {
+                aurelia_framework_6 = aurelia_framework_6_1;
+            },
+            function (common_dialog_2_1) {
+                common_dialog_2 = common_dialog_2_1;
+            },
+            function (common_dialog_model_1_1) {
+                common_dialog_model_1 = common_dialog_model_1_1;
+            }
+        ],
+        execute: function () {
+            CommonDialogHelper = class CommonDialogHelper {
+                /**
+                 * Initializes a new instance of the CommonDialogs class
+                 * @param dialogService The injected dialog service
+                 */
+                constructor(dialogService) {
+                    this.dialogService = dialogService;
+                }
+                /**
+                 * Shows a dialog with a yes/no question
+                 * @param question The question for the user
+                 */
+                confirm(question, cancellable) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        const model = cancellable
+                            ? new common_dialog_model_1.CommonDialogModel(common_dialog_2.CommonDialogType.ConfirmationCancel, question)
+                            : new common_dialog_model_1.CommonDialogModel(common_dialog_2.CommonDialogType.Confirmation, question);
+                        const result = yield this.dialogService.open({ viewModel: common_dialog_2.CommonDialog, model });
+                        return result;
+                    });
+                }
+                /**
+                 * Shows a dialog with an error message
+                 * @param message The message to show
+                 */
+                message(message, dialogType) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        const model = new common_dialog_model_1.CommonDialogModel(dialogType, message);
+                        const result = yield this.dialogService.open({ viewModel: common_dialog_2.CommonDialog, model });
+                        return result;
+                    });
+                }
+                /**
+                 * Shows a dialog with the unexpected error message
+                 */
+                unexpectedError(error) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        aurelia_framework_6.LogManager.getLogger('app').info(`Unexpected error: ${error}`);
+                        const message = 'Er is een onverwachte fout opgetreden.';
+                        const result = yield this.message(message, common_dialog_2.CommonDialogType.Error);
+                        return result;
+                    });
+                }
+            };
+            CommonDialogHelper = __decorate([
+                aurelia_framework_6.autoinject,
+                __metadata("design:paramtypes", [typeof (_a = typeof aurelia_dialog_2.DialogService !== "undefined" && aurelia_dialog_2.DialogService) === "function" ? _a : Object])
+            ], CommonDialogHelper);
+            exports_9("CommonDialogHelper", CommonDialogHelper);
+        }
+    };
+});
+System.register("components/bootstrap-select", ["aurelia-framework"], function (exports_10, context_10) {
+    "use strict";
+    var aurelia_framework_7, BootstrapSelect;
+    var __moduleName = context_10 && context_10.id;
+    return {
+        setters: [
+            function (aurelia_framework_7_1) {
+                aurelia_framework_7 = aurelia_framework_7_1;
+            }
+        ],
+        execute: function () {
+            BootstrapSelect = class BootstrapSelect {
+                attached() {
+                    if (!!this.displayName) {
+                        $(this.picker).data('live-search-placeholder', this.displayName);
+                    }
+                    $(this.picker).selectpicker();
+                    $(this.picker).selectpicker('val', this.selected);
+                    $(this.picker).on('changed.bs.select', () => {
+                        this.selected = $(this.picker).selectpicker('val');
+                    });
+                }
+                selectedChanged() {
+                    $(this.picker).selectpicker('val', this.selected);
+                }
+            };
+            __decorate([
+                aurelia_framework_7.bindable,
+                __metadata("design:type", Array)
+            ], BootstrapSelect.prototype, "options", void 0);
+            __decorate([
+                aurelia_framework_7.bindable,
+                __metadata("design:type", String)
+            ], BootstrapSelect.prototype, "selected", void 0);
+            __decorate([
+                aurelia_framework_7.bindable,
+                __metadata("design:type", String)
+            ], BootstrapSelect.prototype, "displayName", void 0);
+            exports_10("BootstrapSelect", BootstrapSelect);
+        }
+    };
+});
+System.register("components/vd-bool-icon", ["aurelia-framework"], function (exports_11, context_11) {
+    "use strict";
+    var aurelia_framework_8, VdBoolIcon;
+    var __moduleName = context_11 && context_11.id;
+    return {
+        setters: [
+            function (aurelia_framework_8_1) {
+                aurelia_framework_8 = aurelia_framework_8_1;
+            }
+        ],
+        execute: function () {
+            VdBoolIcon = class VdBoolIcon {
+                getIcon(value) {
+                    return value === true ? 'fa-check text-success' : value === false ? 'fa-times text-danger' : '';
+                }
+            };
+            __decorate([
+                aurelia_framework_8.bindable,
+                __metadata("design:type", Boolean)
+            ], VdBoolIcon.prototype, "value", void 0);
+            exports_11("VdBoolIcon", VdBoolIcon);
+        }
+    };
+});
+System.register("components/vd-button", ["aurelia-framework"], function (exports_12, context_12) {
+    "use strict";
+    var aurelia_framework_9, VdButton;
+    var __moduleName = context_12 && context_12.id;
+    return {
+        setters: [
+            function (aurelia_framework_9_1) {
+                aurelia_framework_9 = aurelia_framework_9_1;
+            }
+        ],
+        execute: function () {
+            VdButton = class VdButton {
+                constructor() {
+                    this.buttonIf = true;
+                    this.types = [
+                        { kind: 'ok', label: 'OK', variant: 'btn-primary', icon: 'fas fa-check' },
+                        { kind: 'cancel', label: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' },
+                        { kind: 'yes', label: 'Ja', variant: 'btn-primary', icon: 'fas fa-check' },
+                        { kind: 'no', label: 'Nee', variant: 'btn-light', icon: 'fas fa-times' },
+                        { kind: 'clear', label: 'Wissen', variant: 'btn-light', icon: 'fas fa-eraser' },
+                        { kind: 'save', label: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save' },
+                        { kind: 'upload', label: 'Inlezen', variant: 'btn-light', icon: 'fas fa-upload' },
+                    ];
+                }
+                bind() {
+                    this.buttonId = !this.buttonId ? this.kind : this.buttonId;
+                    const info = this.types.find(x => x.kind === this.kind) || {};
+                    this.label = !!this.label ? this.label : info.label;
+                    this.variant = !!this.variant ? this.variant : info.variant;
+                    this.icon = !!this.icon ? this.icon : info.icon;
+                    this.click = !!this.click ? this.click : this.onClick;
+                }
+                onClick() {
+                    if (!!this.clickTarget) {
+                        $(this.clickTarget).click();
+                    }
+                }
+            };
+            __decorate([
+                aurelia_framework_9.bindable,
+                __metadata("design:type", String)
+            ], VdButton.prototype, "kind", void 0);
+            __decorate([
+                aurelia_framework_9.bindable,
+                __metadata("design:type", String)
+            ], VdButton.prototype, "buttonId", void 0);
+            __decorate([
+                aurelia_framework_9.bindable,
+                __metadata("design:type", Function)
+            ], VdButton.prototype, "click", void 0);
+            __decorate([
+                aurelia_framework_9.bindable,
+                __metadata("design:type", String)
+            ], VdButton.prototype, "label", void 0);
+            __decorate([
+                aurelia_framework_9.bindable,
+                __metadata("design:type", String)
+            ], VdButton.prototype, "variant", void 0);
+            __decorate([
+                aurelia_framework_9.bindable,
+                __metadata("design:type", String)
+            ], VdButton.prototype, "icon", void 0);
+            __decorate([
+                aurelia_framework_9.bindable,
+                __metadata("design:type", String)
+            ], VdButton.prototype, "clickTarget", void 0);
+            __decorate([
+                aurelia_framework_9.bindable,
+                __metadata("design:type", Boolean)
+            ], VdButton.prototype, "buttonIf", void 0);
+            exports_12("VdButton", VdButton);
+        }
+    };
+});
+System.register("components/vd-data", ["aurelia-framework"], function (exports_13, context_13) {
+    "use strict";
+    var aurelia_framework_10, VdData;
+    var __moduleName = context_13 && context_13.id;
+    return {
+        setters: [
+            function (aurelia_framework_10_1) {
+                aurelia_framework_10 = aurelia_framework_10_1;
+            }
+        ],
+        execute: function () {
+            VdData = class VdData {
+                constructor() {
+                    this.formClass = 'col-6';
+                    this.labelClass = 'col-6';
+                    this.dataClass = 'col-6';
+                }
+            };
+            __decorate([
+                aurelia_framework_10.bindable,
+                __metadata("design:type", Object)
+            ], VdData.prototype, "formClass", void 0);
+            __decorate([
+                aurelia_framework_10.bindable,
+                __metadata("design:type", Object)
+            ], VdData.prototype, "labelClass", void 0);
+            __decorate([
+                aurelia_framework_10.bindable,
+                __metadata("design:type", Object)
+            ], VdData.prototype, "dataClass", void 0);
+            __decorate([
+                aurelia_framework_10.bindable,
+                __metadata("design:type", String)
+            ], VdData.prototype, "label", void 0);
+            __decorate([
+                aurelia_framework_10.bindable,
+                __metadata("design:type", String)
+            ], VdData.prototype, "value", void 0);
+            exports_13("VdData", VdData);
+        }
+    };
+});
+System.register("components/vd-filter-input", ["aurelia-framework"], function (exports_14, context_14) {
+    "use strict";
+    var aurelia_framework_11, VdFilterInput;
+    var __moduleName = context_14 && context_14.id;
+    return {
+        setters: [
+            function (aurelia_framework_11_1) {
+                aurelia_framework_11 = aurelia_framework_11_1;
+            }
+        ],
+        execute: function () {
+            VdFilterInput = class VdFilterInput {
+            };
+            __decorate([
+                aurelia_framework_11.bindable,
+                __metadata("design:type", String)
+            ], VdFilterInput.prototype, "value", void 0);
+            exports_14("VdFilterInput", VdFilterInput);
+        }
+    };
+});
+System.register("components/vd-link", ["aurelia-framework", "components/vd-data"], function (exports_15, context_15) {
+    "use strict";
+    var aurelia_framework_12, vd_data_1, VdDataLink;
+    var __moduleName = context_15 && context_15.id;
+    return {
+        setters: [
+            function (aurelia_framework_12_1) {
+                aurelia_framework_12 = aurelia_framework_12_1;
+            },
+            function (vd_data_1_1) {
+                vd_data_1 = vd_data_1_1;
+            }
+        ],
+        execute: function () {
+            VdDataLink = class VdDataLink extends vd_data_1.VdData {
+            };
+            __decorate([
+                aurelia_framework_12.bindable,
+                __metadata("design:type", String)
+            ], VdDataLink.prototype, "href", void 0);
+            __decorate([
+                aurelia_framework_12.bindable,
+                __metadata("design:type", Function)
+            ], VdDataLink.prototype, "click", void 0);
+            exports_15("VdDataLink", VdDataLink);
+        }
+    };
+});
+System.register("components/vd-route", ["aurelia-framework"], function (exports_16, context_16) {
+    "use strict";
+    var aurelia_framework_13, VdRoute;
+    var __moduleName = context_16 && context_16.id;
+    return {
+        setters: [
+            function (aurelia_framework_13_1) {
+                aurelia_framework_13 = aurelia_framework_13_1;
+            }
+        ],
+        execute: function () {
+            VdRoute = class VdRoute {
+                bind() {
+                    this.params = { id: this.key };
+                }
+            };
+            __decorate([
+                aurelia_framework_13.bindable,
+                __metadata("design:type", String)
+            ], VdRoute.prototype, "route", void 0);
+            __decorate([
+                aurelia_framework_13.bindable,
+                __metadata("design:type", Object)
+            ], VdRoute.prototype, "key", void 0);
+            exports_16("VdRoute", VdRoute);
+        }
+    };
+});
+System.register("utilities/list-helper", [], function (exports_17, context_17) {
+    "use strict";
+    var ListHelper;
+    var __moduleName = context_17 && context_17.id;
+    return {
+        setters: [],
+        execute: function () {
+            /**
+             * Helper class for paing and sorting.
+             */
+            ListHelper = class ListHelper {
+                /**
+                 * Sorts the given array
+                 * @param array The array to sort
+                 * @param order The sorting information
+                 */
+                sort(array, order) {
+                    if (!order) {
+                        return array;
+                    }
+                    const result = array.sort((a, b) => this.compare(a, b, order.by) * (order.ascending ? 1 : -1));
+                    return result;
+                }
+                /**
+                 * Filers the given array using the properties of both the items and the value.
+                 * @param items The array to filter
+                 * @param filter The value containing the filters, or a single filter
+                 *        string: the value is split by a space and filtered on each part
+                 *        T: the array is filtered over each property of the filter
+                 * @param included The array op property names to include
+                 */
+                filter(items, filter) {
+                    if (!filter || items.length === 0 || !items[0]._filterValues) {
+                        return items;
+                    }
+                    const list = filter.split(' ');
+                    let result = items;
+                    list.forEach(current => {
+                        result = result.filter((item) => this.filterFunc(item, current));
+                    });
+                    return result;
+                }
+                /**
+                 * determines whether the item satisfies the filter
+                 * @param item The item to test
+                 * @param value The value to filter on
+                 * @param included The array op property names to include
+                 * @param property The property to filter on, or null when the filter applies to all properties
+                 */
+                filterFunc(item, value) {
+                    for (const current of item._filterValues) {
+                        const result = current != null &&
+                            current
+                                .toString()
+                                .toLowerCase()
+                                .indexOf(value.toLowerCase()) > -1;
+                        if (result) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                /**
+                 * Compares the property values of the two objects
+                 * @param a The first object
+                 * @param b The second object
+                 * @param prop The name of the property to compare
+                 */
+                compare(a, b, prop) {
+                    let propA = a;
+                    let propB = b;
+                    for (const item of prop.split('.')) {
+                        propA = propA[item];
+                        propB = propB[item];
+                    }
+                    if (propA == null && propB == null) {
+                        return 0;
+                    }
+                    if (propA == null) {
+                        return -1;
+                    }
+                    if (propB == null) {
+                        return 1;
+                    }
+                    if (propA instanceof Date) {
+                        propA = propA.getTime();
+                        propB = propB.getTime();
+                    }
+                    const result = this.compareValues(propA, propB);
+                    if (result === 0 && prop !== 'id') {
+                        return this.compare(a, b, 'id');
+                    }
+                    return result;
+                }
+                /**
+                 * Compares two values
+                 * @param v1 The first value
+                 * @param v2 The second value
+                 */
+                compareValues(v1, v2) {
+                    const result = v1 < v2 ? -1 : v1 > v2 ? 1 : 0;
+                    return result;
+                }
+            };
+            exports_17("ListHelper", ListHelper);
+        }
+    };
+});
+System.register("components/vd-td", ["aurelia-framework"], function (exports_18, context_18) {
+    "use strict";
+    var aurelia_framework_14, VdTd;
+    var __moduleName = context_18 && context_18.id;
+    return {
+        setters: [
+            function (aurelia_framework_14_1) {
+                aurelia_framework_14 = aurelia_framework_14_1;
+            }
+        ],
+        execute: function () {
+            VdTd = class VdTd {
+                bind() {
+                    if (!this.instance) {
+                        return;
+                    }
+                    if (!this.instance._filterValues) {
+                        this.instance._filterValues = [];
+                    }
+                    this.instance._filterValues.push(this.value);
+                }
+            };
+            __decorate([
+                aurelia_framework_14.bindable,
+                __metadata("design:type", String)
+            ], VdTd.prototype, "value", void 0);
+            __decorate([
+                aurelia_framework_14.bindable,
+                __metadata("design:type", Object)
+            ], VdTd.prototype, "instance", void 0);
+            exports_18("VdTd", VdTd);
+        }
+    };
+});
+System.register("components/vd-td-abbrev", ["aurelia-framework", "components/vd-td"], function (exports_19, context_19) {
+    "use strict";
+    var aurelia_framework_15, vd_td_1, VdTdAbbrev;
+    var __moduleName = context_19 && context_19.id;
+    return {
+        setters: [
+            function (aurelia_framework_15_1) {
+                aurelia_framework_15 = aurelia_framework_15_1;
+            },
+            function (vd_td_1_1) {
+                vd_td_1 = vd_td_1_1;
+            }
+        ],
+        execute: function () {
+            VdTdAbbrev = class VdTdAbbrev extends vd_td_1.VdTd {
+                constructor() {
+                    super(...arguments);
+                    this.cutoff = 25;
+                    this.abbrev = false;
+                }
+                bind() {
+                    super.bind();
+                    this.abbrev = !!this.value && this.value.length > this.cutoff;
+                    this.short = this.abbrev ? this.value.substr(0, this.cutoff) : this.value;
+                    this.popoverOption = !this.abbrev
+                        ? void 0
+                        : {
+                            container: 'body',
+                            content: () => this.value,
+                            html: false,
+                            placement: 'right',
+                            trigger: 'hover',
+                        };
+                }
+            };
+            __decorate([
+                aurelia_framework_15.bindable,
+                __metadata("design:type", String)
+            ], VdTdAbbrev.prototype, "value", void 0);
+            __decorate([
+                aurelia_framework_15.bindable,
+                __metadata("design:type", Object)
+            ], VdTdAbbrev.prototype, "instance", void 0);
+            __decorate([
+                aurelia_framework_15.bindable,
+                __metadata("design:type", Object)
+            ], VdTdAbbrev.prototype, "cutoff", void 0);
+            exports_19("VdTdAbbrev", VdTdAbbrev);
+        }
+    };
+});
+System.register("components/vd-td-bool-icon", ["aurelia-framework", "components/vd-td"], function (exports_20, context_20) {
+    "use strict";
+    var aurelia_framework_16, vd_td_2, VdTdBoolIcon;
+    var __moduleName = context_20 && context_20.id;
+    return {
+        setters: [
+            function (aurelia_framework_16_1) {
+                aurelia_framework_16 = aurelia_framework_16_1;
+            },
+            function (vd_td_2_1) {
+                vd_td_2 = vd_td_2_1;
+            }
+        ],
+        execute: function () {
+            VdTdBoolIcon = class VdTdBoolIcon extends vd_td_2.VdTd {
+            };
+            __decorate([
+                aurelia_framework_16.bindable,
+                __metadata("design:type", String)
+            ], VdTdBoolIcon.prototype, "value", void 0);
+            __decorate([
+                aurelia_framework_16.bindable,
+                __metadata("design:type", Object)
+            ], VdTdBoolIcon.prototype, "instance", void 0);
+            __decorate([
+                aurelia_framework_16.bindable,
+                __metadata("design:type", String)
+            ], VdTdBoolIcon.prototype, "iconValue", void 0);
+            exports_20("VdTdBoolIcon", VdTdBoolIcon);
+        }
+    };
+});
+System.register("components/vd-td-list", ["aurelia-framework", "components/vd-td"], function (exports_21, context_21) {
+    "use strict";
+    var aurelia_framework_17, vd_td_3, VdTdList;
+    var __moduleName = context_21 && context_21.id;
+    return {
+        setters: [
+            function (aurelia_framework_17_1) {
+                aurelia_framework_17 = aurelia_framework_17_1;
+            },
+            function (vd_td_3_1) {
+                vd_td_3 = vd_td_3_1;
+            }
+        ],
+        execute: function () {
+            VdTdList = class VdTdList extends vd_td_3.VdTd {
+                bind() {
+                    super.bind();
+                    this.value = !this.items ? '' : this.items.join(', ');
+                }
+                getToggle(item) {
+                    return !item.popoverOption ? void 0 : 'popover';
+                }
+            };
+            __decorate([
+                aurelia_framework_17.bindable,
+                __metadata("design:type", Object)
+            ], VdTdList.prototype, "instance", void 0);
+            __decorate([
+                aurelia_framework_17.bindable,
+                __metadata("design:type", Array)
+            ], VdTdList.prototype, "items", void 0);
+            exports_21("VdTdList", VdTdList);
+        }
+    };
+});
+System.register("components/vd-textbox", ["aurelia-framework"], function (exports_22, context_22) {
+    "use strict";
+    var aurelia_framework_18, VdTextbox;
+    var __moduleName = context_22 && context_22.id;
+    return {
+        setters: [
+            function (aurelia_framework_18_1) {
+                aurelia_framework_18 = aurelia_framework_18_1;
+            }
+        ],
+        execute: function () {
+            VdTextbox = class VdTextbox {
+                constructor() {
+                    this.formClass = 'col-6';
+                    this.labelClass = 'col-6';
+                    this.inputClass = 'col-6';
+                    this.autoFocus = false;
+                    this.usePopover = true;
+                    this.popoverOption = { container: 'body', placement: 'right', trigger: 'manual' };
+                }
+                bind() {
+                    this.dataToggle = this.usePopover ? 'popover' : '';
+                    this.popover = this.usePopover ? this.popoverOption : undefined;
+                }
+                attached() {
+                    if (this.autoFocus) {
+                        $(this.element).focus();
+                    }
+                }
+            };
+            __decorate([
+                aurelia_framework_18.bindable,
+                __metadata("design:type", Object)
+            ], VdTextbox.prototype, "formClass", void 0);
+            __decorate([
+                aurelia_framework_18.bindable,
+                __metadata("design:type", Object)
+            ], VdTextbox.prototype, "labelClass", void 0);
+            __decorate([
+                aurelia_framework_18.bindable,
+                __metadata("design:type", Object)
+            ], VdTextbox.prototype, "inputClass", void 0);
+            __decorate([
+                aurelia_framework_18.bindable,
+                __metadata("design:type", String)
+            ], VdTextbox.prototype, "inputId", void 0);
+            __decorate([
+                aurelia_framework_18.bindable,
+                __metadata("design:type", String)
+            ], VdTextbox.prototype, "label", void 0);
+            __decorate([
+                aurelia_framework_18.bindable,
+                __metadata("design:type", String)
+            ], VdTextbox.prototype, "value", void 0);
+            __decorate([
+                aurelia_framework_18.bindable,
+                __metadata("design:type", String)
+            ], VdTextbox.prototype, "regex", void 0);
+            __decorate([
+                aurelia_framework_18.bindable,
+                __metadata("design:type", String)
+            ], VdTextbox.prototype, "maxLength", void 0);
+            __decorate([
+                aurelia_framework_18.bindable,
+                __metadata("design:type", String)
+            ], VdTextbox.prototype, "placeHolder", void 0);
+            __decorate([
+                aurelia_framework_18.bindable,
+                __metadata("design:type", Object)
+            ], VdTextbox.prototype, "autoFocus", void 0);
+            __decorate([
+                aurelia_framework_18.bindable,
+                __metadata("design:type", Boolean)
+            ], VdTextbox.prototype, "usePopover", void 0);
+            __decorate([
+                aurelia_framework_18.bindable,
+                __metadata("design:type", Object)
+            ], VdTextbox.prototype, "popoverOption", void 0);
+            exports_22("VdTextbox", VdTextbox);
+        }
+    };
+});
+System.register("components/vd-th", ["aurelia-framework"], function (exports_23, context_23) {
+    "use strict";
+    var aurelia_framework_19, VdTh;
+    var __moduleName = context_23 && context_23.id;
+    return {
+        setters: [
+            function (aurelia_framework_19_1) {
+                aurelia_framework_19 = aurelia_framework_19_1;
+            }
+        ],
+        execute: function () {
+            VdTh = class VdTh {
+                getClass(by, ascending) {
+                    const result = !!this.order && by === this.name
+                        ? ascending
+                            ? 'fas fa-caret-up'
+                            : 'fas fa-caret-down'
+                        : 'fas fa-caret-up invisible';
+                    return result;
+                }
+            };
+            __decorate([
+                aurelia_framework_19.bindable,
+                __metadata("design:type", String)
+            ], VdTh.prototype, "label", void 0);
+            __decorate([
+                aurelia_framework_19.bindable,
+                __metadata("design:type", String)
+            ], VdTh.prototype, "name", void 0);
+            __decorate([
+                aurelia_framework_19.bindable,
+                __metadata("design:type", Object)
+            ], VdTh.prototype, "order", void 0);
+            exports_23("VdTh", VdTh);
+        }
+    };
+});
+System.register("configuration/configuration", [], function (exports_24, context_24) {
+    "use strict";
+    var ConfigurationMode, Configuration;
+    var __moduleName = context_24 && context_24.id;
+    return {
+        setters: [],
+        execute: function () {
+            /**
+             * Enumeration of available configuration modes
+             */
+            (function (ConfigurationMode) {
+                ConfigurationMode[ConfigurationMode["Debug"] = 0] = "Debug";
+                ConfigurationMode[ConfigurationMode["Release"] = 1] = "Release";
+            })(ConfigurationMode || (ConfigurationMode = {}));
+            exports_24("ConfigurationMode", ConfigurationMode);
+            /**
+             * Container class for the current configuration mode
+             */
+            Configuration = class Configuration {
+                /**
+                 * Creates the map of available modes
+                 */
+                static createModes() {
+                    const result = new Map();
+                    result.set('Debug', ConfigurationMode.Debug);
+                    result.set('Release', ConfigurationMode.Release);
+                    return result;
+                }
+            };
+            exports_24("Configuration", Configuration);
+            /**
+             * The map of available modes
+             */
+            Configuration.modes = Configuration.createModes();
+        }
+    };
+});
+System.register("configuration/debug-configuration", [], function (exports_25, context_25) {
+    "use strict";
+    var DebugConfiguration;
+    var __moduleName = context_25 && context_25.id;
+    return {
+        setters: [],
+        execute: function () {
+            /**
+             * Initializer for the debug configuration mode
+             */
+            DebugConfiguration = class DebugConfiguration {
+                /**
+                 * Configures the configuration mode dependant stuff
+                 * @param config The framework configuration
+                 */
+                initialize(config) {
+                    config.developmentLogging();
+                }
+            };
+            exports_25("DebugConfiguration", DebugConfiguration);
+        }
+    };
+});
+System.register("configuration/release-configuration", ["aurelia-framework"], function (exports_26, context_26) {
+    "use strict";
+    var aurelia_framework_20, ReleaseConfiguration;
+    var __moduleName = context_26 && context_26.id;
+    return {
+        setters: [
+            function (aurelia_framework_20_1) {
+                aurelia_framework_20 = aurelia_framework_20_1;
+            }
+        ],
+        execute: function () {
+            /**
+             * Initializer for the release configuration mode
+             */
+            ReleaseConfiguration = class ReleaseConfiguration {
+                /**
+                 * Configures the configuration mode dependant stuff
+                 * @param config The framework configuration
+                 */
+                initialize(config) {
+                    aurelia_framework_20.LogManager.setLevel(aurelia_framework_20.LogManager.logLevel.warn);
+                }
+            };
+            exports_26("ReleaseConfiguration", ReleaseConfiguration);
+        }
+    };
+});
+System.register("configuration/configuration-factory", ["configuration/configuration", "configuration/debug-configuration", "configuration/release-configuration"], function (exports_27, context_27) {
+    "use strict";
+    var configuration_1, debug_configuration_1, release_configuration_1, InitializerFactory;
+    var __moduleName = context_27 && context_27.id;
+    return {
+        setters: [
+            function (configuration_1_1) {
+                configuration_1 = configuration_1_1;
+            },
+            function (debug_configuration_1_1) {
+                debug_configuration_1 = debug_configuration_1_1;
+            },
+            function (release_configuration_1_1) {
+                release_configuration_1 = release_configuration_1_1;
+            }
+        ],
+        execute: function () {
+            /**
+             * Factory for the initializer class
+             */
+            InitializerFactory = class InitializerFactory {
+                /**
+                 * Create the appropriate initializer
+                 * @param mode: The current configuration mode
+                 */
+                static create(mode) {
+                    switch (mode) {
+                        case configuration_1.ConfigurationMode.Debug:
+                            return new debug_configuration_1.DebugConfiguration();
+                        case configuration_1.ConfigurationMode.Release:
+                            return new release_configuration_1.ReleaseConfiguration();
+                        default:
+                            throw new Error('Unknown configuration mode');
+                    }
+                }
+            };
+            exports_27("InitializerFactory", InitializerFactory);
+        }
+    };
+});
+System.register("converters/bool", ["aurelia-framework"], function (exports_28, context_28) {
+    "use strict";
+    var aurelia_framework_21, BoolValueConverter;
+    var __moduleName = context_28 && context_28.id;
+    return {
+        setters: [
+            function (aurelia_framework_21_1) {
+                aurelia_framework_21 = aurelia_framework_21_1;
+            }
+        ],
+        execute: function () {
+            BoolValueConverter = class BoolValueConverter {
+                toView(value) {
+                    return value === true ? 'Ja' : value === false ? 'Nee' : '';
+                }
+            };
+            BoolValueConverter = __decorate([
+                aurelia_framework_21.valueConverter('bool')
+            ], BoolValueConverter);
+            exports_28("BoolValueConverter", BoolValueConverter);
+        }
+    };
+});
+System.register("converters/date", ["moment", "moment/locale/nl"], function (exports_29, context_29) {
+    "use strict";
+    var moment_1, DateValueConverter;
+    var __moduleName = context_29 && context_29.id;
+    return {
+        setters: [
+            function (moment_1_1) {
+                moment_1 = moment_1_1;
+            },
+            function (_1) {
+            }
+        ],
+        execute: function () {
+            DateValueConverter = class DateValueConverter {
+                toView(value) {
+                    if (!value) {
+                        return value;
+                    }
+                    const data = moment_1.default(value).locale('nl');
+                    return data.isValid() ? `${data.format('l')} ${data.format('H:mm')}` : value;
+                }
+            };
+            exports_29("DateValueConverter", DateValueConverter);
+        }
+    };
+});
+System.register("converters/encode-uri", ["aurelia-framework"], function (exports_30, context_30) {
+    "use strict";
+    var aurelia_framework_22, EncodeUriValueConverter;
+    var __moduleName = context_30 && context_30.id;
+    return {
+        setters: [
+            function (aurelia_framework_22_1) {
+                aurelia_framework_22 = aurelia_framework_22_1;
+            }
+        ],
+        execute: function () {
+            EncodeUriValueConverter = class EncodeUriValueConverter {
+                toView(value) {
+                    return !value ? '' : encodeURIComponent(value);
+                }
+            };
+            EncodeUriValueConverter = __decorate([
+                aurelia_framework_22.valueConverter('encodeUri')
+            ], EncodeUriValueConverter);
+            exports_30("EncodeUriValueConverter", EncodeUriValueConverter);
+        }
+    };
+});
+System.register("converters/null", ["aurelia-framework"], function (exports_31, context_31) {
+    "use strict";
+    var aurelia_framework_23, NullValueConverter;
+    var __moduleName = context_31 && context_31.id;
+    return {
+        setters: [
+            function (aurelia_framework_23_1) {
+                aurelia_framework_23 = aurelia_framework_23_1;
+            }
+        ],
+        execute: function () {
+            NullValueConverter = class NullValueConverter {
+                toView(value) {
+                    return !value ? '' : value;
+                }
+            };
+            NullValueConverter = __decorate([
+                aurelia_framework_23.valueConverter('null')
+            ], NullValueConverter);
+            exports_31("NullValueConverter", NullValueConverter);
+        }
+    };
+});
+System.register("converters/uppercase", ["aurelia-framework"], function (exports_32, context_32) {
+    "use strict";
+    var aurelia_framework_24, UpperCaseValueConverter;
+    var __moduleName = context_32 && context_32.id;
+    return {
+        setters: [
+            function (aurelia_framework_24_1) {
+                aurelia_framework_24 = aurelia_framework_24_1;
+            }
+        ],
+        execute: function () {
+            UpperCaseValueConverter = class UpperCaseValueConverter {
+                toView(value) {
+                    return !value ? value : value.toUpperCase();
+                }
+                fromView(value) {
+                    return !value ? value : value.toUpperCase();
+                }
+            };
+            UpperCaseValueConverter = __decorate([
+                aurelia_framework_24.valueConverter('upperCase')
+            ], UpperCaseValueConverter);
+            exports_32("UpperCaseValueConverter", UpperCaseValueConverter);
+        }
+    };
+});
+System.register("utilities/wait", [], function (exports_33, context_33) {
+    "use strict";
+    var Wait;
+    var __moduleName = context_33 && context_33.id;
+    return {
+        setters: [],
+        execute: function () {
+            Wait = class Wait {
+                static for(ms) {
+                    return new Promise(resolve => setTimeout(resolve, ms));
+                }
+            };
+            exports_33("Wait", Wait);
+        }
+    };
+});
+System.register("utilities/alert-helper", ["utilities/wait"], function (exports_34, context_34) {
+    "use strict";
+    var wait_1, AlertHelper;
+    var __moduleName = context_34 && context_34.id;
+    return {
+        setters: [
+            function (wait_1_1) {
+                wait_1 = wait_1_1;
+            }
+        ],
+        execute: function () {
+            /**
+             * Helper for showing alerts
+             */
+            AlertHelper = class AlertHelper {
+                show(message, options) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        options = Object.assign(Object.assign({}, AlertHelper.DEFAULTS), options);
+                        const id = `static-alert-${AlertHelper.id++}`;
+                        const template = `<div id="${id}" class="static-alert fade text-center alert-${AlertHelper.count++}">
+    <div class="alert alert-sm ${options.variant}" role="alert">${message}</div>
+</div>`;
+                        $('body').prepend(template);
+                        const alert = $(`#${id}`);
+                        yield wait_1.Wait.for(options.delay);
+                        alert.addClass('show');
+                        yield wait_1.Wait.for(options.duration);
+                        alert.removeClass('show');
+                        AlertHelper.count--;
+                        yield wait_1.Wait.for(100);
+                        alert.remove();
+                    });
+                }
+            };
+            exports_34("AlertHelper", AlertHelper);
+            AlertHelper.DEFAULTS = { variant: 'alert-success', delay: 10, duration: 3500 };
+            AlertHelper.id = 0;
+            AlertHelper.count = 0;
+        }
+    };
+});
+System.register("utilities/http-fetch", ["aurelia-fetch-client", "aurelia-framework"], function (exports_35, context_35) {
+    "use strict";
+    var HttpFetch_1, _a, aurelia_fetch_client_1, aurelia_framework_25, HttpFetch;
+    var __moduleName = context_35 && context_35.id;
+    return {
+        setters: [
+            function (aurelia_fetch_client_1_1) {
+                aurelia_fetch_client_1 = aurelia_fetch_client_1_1;
+            },
+            function (aurelia_framework_25_1) {
+                aurelia_framework_25 = aurelia_framework_25_1;
+            }
+        ],
+        execute: function () {
+            HttpFetch = HttpFetch_1 = class HttpFetch {
+                /**
+                 * Returns a newly created instance
+                 */
+                constructor(http) {
+                    this.http = http;
+                    this.isFetching = 0;
+                }
+                /**   * Posts the given data to the given url
+                 */
+                fetchAsync(url, init) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        const headers = new Headers({ 'user-role': HttpFetch_1.roleChange.toString() });
+                        init = Object.assign({ method: 'POST', headers }, init);
+                        this.isFetching++;
+                        try {
+                            const response = yield this.http.fetch(url, init);
+                            return response;
+                        }
+                        finally {
+                            this.isFetching--;
+                        }
+                    });
+                }
+            };
+            HttpFetch.roleChange = 0;
+            HttpFetch = HttpFetch_1 = __decorate([
+                aurelia_framework_25.autoinject,
+                __metadata("design:paramtypes", [typeof (_a = typeof aurelia_fetch_client_1.HttpClient !== "undefined" && aurelia_fetch_client_1.HttpClient) === "function" ? _a : Object])
+            ], HttpFetch);
+            exports_35("HttpFetch", HttpFetch);
+        }
+    };
+});
+System.register("utilities/fetch-base", ["aurelia-fetch-client"], function (exports_36, context_36) {
+    "use strict";
+    var aurelia_fetch_client_2, FetchBase;
+    var __moduleName = context_36 && context_36.id;
+    return {
+        setters: [
+            function (aurelia_fetch_client_2_1) {
+                aurelia_fetch_client_2 = aurelia_fetch_client_2_1;
+            }
+        ],
+        execute: function () {
+            FetchBase = class FetchBase {
+                /**
+                 * Returns a newly created instance
+                 * @param http: The injected http fetch instance
+                 */
+                constructor(http, commonDialogHelper) {
+                    this.http = http;
+                    this.commonDialogHelper = commonDialogHelper;
+                }
+                /**
+                 * Posts the given data to the given url, and stores any returned errors.
+                 */
+                fetchAsync(url, data) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        const body = !!data ? aurelia_fetch_client_2.json(data) : data;
+                        try {
+                            const response = yield this.http.fetchAsync(url, { method: 'POST', body });
+                            if (!response.ok) {
+                                this.commonDialogHelper.unexpectedError(response.statusText);
+                                return { success: false, handled: true };
+                            }
+                            const value = yield response.json();
+                            const result = value;
+                            result.handled = false;
+                            return result;
+                        }
+                        catch (error) {
+                            this.commonDialogHelper.unexpectedError(error);
+                            return { success: false, handled: true, firstMessage: error };
+                        }
+                    });
+                }
+            };
+            exports_36("FetchBase", FetchBase);
+        }
+    };
+});
+System.register("utilities/input-file-reader", [], function (exports_37, context_37) {
+    "use strict";
+    var InputFileReader;
+    var __moduleName = context_37 && context_37.id;
+    return {
+        setters: [],
+        execute: function () {
+            InputFileReader = class InputFileReader {
+                loadFileAsync(file) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        const result = new Promise((resolve, reject) => {
+                            const reader = new FileReader();
+                            reader.onload = () => resolve(reader.result);
+                            reader.onerror = error => reject(error);
+                            reader.readAsText(file);
+                        });
+                        return result;
+                    });
+                }
+                clearLoad(load) {
+                    try {
+                        load.value = '';
+                        if (load.value) {
+                            load.type = 'text';
+                            load.type = 'file';
+                        }
+                        // tslint:disable-next-line:no-empty
+                    }
+                    catch (e) { }
+                }
+            };
+            exports_37("InputFileReader", InputFileReader);
+        }
+    };
+});
+System.register("utilities/list-base", ["utilities/list-helper"], function (exports_38, context_38) {
+    "use strict";
+    var list_helper_1, ListBase;
+    var __moduleName = context_38 && context_38.id;
+    return {
+        setters: [
+            function (list_helper_1_1) {
+                list_helper_1 = list_helper_1_1;
+            }
+        ],
+        execute: function () {
+            /**
+             * Controller for the application view.
+             */
+            ListBase = class ListBase {
+                constructor() {
+                    this.trigger = 0;
+                    this.currentList = [];
+                    this.listHelper = new list_helper_1.ListHelper();
+                }
+                bind() {
+                    for (const item of this.items) {
+                        item._filterValues = [];
+                    }
+                }
+                /**
+                 * Order the list of work items
+                 * @param orderBy The name of the field to order by
+                 */
+                setOrder(orderBy) {
+                    this.order.ascending = this.order.by === orderBy ? !this.order.ascending : true;
+                    this.order.by = orderBy;
+                    this.trigger++;
+                }
+                /**
+                 * Event handler for row click events
+                 * @param event The mouse click event
+                 */
+                rowClick(item) {
+                    if (!!this.select) {
+                        this.select(item);
+                    }
+                    else {
+                        this.selected = item;
+                    }
+                }
+                /**
+                 * Gets the selected class
+                 * @param item The current item
+                 */
+                GetRowClass(item) {
+                    if (!this.selected && !!item) {
+                        this.selected = item;
+                    }
+                    return !this.select && this.selected === item ? 'table-success' : '';
+                }
+                /**
+                 * Gets the filtered and sorted list of items
+                 */
+                getCurrentList() {
+                    let result = this.items;
+                    if (!result) {
+                        return [];
+                    }
+                    if (!!this.filter) {
+                        result = this.listHelper.filter(result, this.filter);
+                    }
+                    if (!!this.order) {
+                        result = this.listHelper.sort(result, this.order);
+                    }
+                    this.currentList = result;
+                    return result;
+                }
+            };
+            exports_38("ListBase", ListBase);
+        }
+    };
+});
+System.register("utilities/service-base", ["utilities/fetch-base"], function (exports_39, context_39) {
+    "use strict";
+    var fetch_base_1, ServiceBase;
+    var __moduleName = context_39 && context_39.id;
+    return {
+        setters: [
+            function (fetch_base_1_1) {
+                fetch_base_1 = fetch_base_1_1;
+            }
+        ],
+        execute: function () {
+            /**
+             * base class for list services.
+             */
+            ServiceBase = class ServiceBase extends fetch_base_1.FetchBase {
+                /**
+                 * Returns a newly created instance
+                 * @param http: The injected http fetch instance
+                 */
+                constructor(http, commonDialogHelper) {
+                    super(http, commonDialogHelper);
+                    /**
+                     * A place to store some data
+                     */
+                    this.data = {};
+                }
+                /**
+                 * Loads an object from the given url.
+                 * @param url: The url for the operation
+                 * @param data: The id of the instance to load
+                 */
+                searchBaseAsync(url, id) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        const data = typeof id === 'string' || id instanceof String ? { id } : id;
+                        const result = !!id ? yield this.fetchAsync(url, data) : yield this.fetchAsync(url);
+                        return result;
+                    });
+                }
+                /**
+                 * Loads an object from the given url.
+                 * @param url: The url for the operation
+                 * @param data: The id of the instance to load
+                 */
+                loadBaseAsync(url, id) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        const data = typeof id === 'string' || id instanceof String ? { id } : id;
+                        const result = !!id ? yield this.fetchAsync(url, data) : yield this.fetchAsync(url);
+                        return result;
+                    });
+                }
+                /**
+                 * Deletes the item from the list by sending the id to given url.
+                 * @param url: The url for the operation
+                 * @param data: The id of the instance to delete
+                 */
+                deleteBaseAsync(url, id) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        const result = yield this.fetchAsync(url, { id });
+                        return result;
+                    });
+                }
+                /**
+                 * Saves or adds the item by sending the item to given url.
+                 * @param url: The url for the operation
+                 * @param model: The model to save
+                 */
+                saveBaseAsync(url, item) {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        const result = yield this.fetchAsync(url, item);
+                        return result;
+                    });
+                }
+            };
+            exports_39("ServiceBase", ServiceBase);
+        }
+    };
+});
+System.register("validation/bootstrap-renderer", [], function (exports_40, context_40) {
+    "use strict";
+    var BootstrapRenderer;
+    var __moduleName = context_40 && context_40.id;
+    return {
+        setters: [],
+        execute: function () {
+            BootstrapRenderer = class BootstrapRenderer {
+                constructor() {
+                    this.findById = true;
+                    this.focusFirst = false;
+                    this.dashedId = true;
+                }
+                render(instruction) {
+                    for (let { result, elements } of instruction.unrender) {
+                        if (this.findById && elements.length === 0 && !!result.propertyName) {
+                            elements = this.findElementById(result.propertyName.toString());
+                        }
+                        for (const element of elements) {
+                            this.remove(element, result);
+                        }
+                    }
+                    for (let { result, elements } of instruction.render) {
+                        if (this.findById && elements.length === 0 && !!result.propertyName) {
+                            elements = this.findElementById(result.propertyName.toString());
+                        }
+                        let first = true;
+                        for (const element of elements) {
+                            this.add(element, result);
+                            if (this.focusFirst && first && !result.valid) {
+                                first = false;
+                                $(element).focus();
+                            }
+                        }
+                    }
+                }
+                add(element, result) {
+                    if (result.valid) {
+                        return;
+                    }
+                    const $element = $(element);
+                    $element.addClass('is-invalid');
+                    $element.one('keypress', () => {
+                        $element.removeClass('is-invalid');
+                    });
+                }
+                remove(element, result) {
+                    if (result.valid) {
+                        return;
+                    }
+                    const $element = $(element);
+                    $element.removeClass('is-invalid');
+                }
+                findElementById(id) {
+                    const name = this.dashedId
+                        ? id.replace(/^[a-z]|[A-Z]/g, (s, i) => (i === 0 ? s.toLowerCase() : `-${s.toLowerCase()}`))
+                        : id.toString().toLowerCase();
+                    const selector = `#${name}`;
+                    return $(selector).get();
+                }
+            };
+            exports_40("BootstrapRenderer", BootstrapRenderer);
+        }
+    };
+});
+System.register("validation/popover-renderer", [], function (exports_41, context_41) {
+    "use strict";
+    var PopoverRenderer;
+    var __moduleName = context_41 && context_41.id;
+    return {
+        setters: [],
+        execute: function () {
+            PopoverRenderer = class PopoverRenderer {
+                constructor() {
+                    this.findById = true;
+                    this.focusFirst = false;
+                    this.dashedId = true;
+                }
+                render(instruction) {
+                    const toHide = [];
+                    const toShow = [];
+                    for (let { result, elements } of instruction.unrender.filter(x => !x.result.valid)) {
+                        if (this.findById && elements.length === 0 && !!result.propertyName) {
+                            elements = this.findElementById(result.propertyName.toString());
+                        }
+                        for (const element of elements) {
+                            toHide.push(element);
+                        }
+                    }
+                    for (let { result, elements } of instruction.render) {
+                        if (this.findById && elements.length === 0 && !!result.propertyName) {
+                            elements = this.findElementById(result.propertyName.toString());
+                        }
+                        for (const element of elements) {
+                            if (result.valid) {
+                                toHide.push(element);
+                            }
+                            else {
+                                const popover = $(element).closest('[data-toggle=popover]');
+                                if (toShow.indexOf(element) >= 0) {
+                                    popover.data('content', popover.data('content') + '\n' + result.message);
+                                }
+                                else {
+                                    popover.data('content', result.message);
+                                    toShow.push(element);
+                                }
+                            }
+                        }
+                    }
+                    let first = true;
+                    for (const element of toShow) {
+                        if (this.focusFirst && first) {
+                            first = false;
+                            $(element).focus();
+                        }
+                        const popover = $(element).closest('[data-toggle=popover]');
+                        const data = popover.data('bs.popover');
+                        const hasTip = !!data && !!data.tip;
+                        let $tip = hasTip ? $(data.tip) : undefined;
+                        const isVisible = hasTip && $tip.hasClass('show');
+                        const content = popover.data('content');
+                        if (!!data) {
+                            data.config.content = content;
+                        }
+                        if (isVisible) {
+                            $tip.find('.popover-body').html(content);
+                            popover.popover('update');
+                        }
+                        else {
+                            popover.popover('show');
+                            $tip = $(popover.data('bs.popover').tip);
+                            $tip.addClass('popover-danger');
+                            $(element).one('keypress', () => {
+                                popover.popover('hide');
+                            });
+                        }
+                    }
+                    for (const element of $.unique(toHide).filter(x => toShow.indexOf(x) === -1)) {
+                        const popover = $(element).closest('[data-toggle=popover]');
+                        popover.popover('hide');
+                    }
+                }
+                findElementById(id) {
+                    const name = this.dashedId
+                        ? id.replace(/^[a-z]|[A-Z]/g, (s, i) => (i === 0 ? s.toLowerCase() : `-${s.toLowerCase()}`))
+                        : id.toString().toLowerCase();
+                    const selector = `#${name}`;
+                    return $(selector).get();
+                }
+            };
+            exports_41("PopoverRenderer", PopoverRenderer);
+        }
+    };
+});
+System.register("index", ["aurelia-pal", "common-dialog/common-dialogs", "attributes/clipboard", "attributes/draggable", "attributes/popover", "attributes/tooltip", "common-dialog/common-dialog", "common-dialog/common-dialog-helper", "common-dialog/common-dialog-info", "common-dialog/common-dialog-model", "components/bootstrap-select", "components/vd-bool-icon", "components/vd-button", "components/vd-data", "components/vd-filter-input", "components/vd-link", "components/vd-route", "components/vd-td-abbrev", "components/vd-td-bool-icon", "components/vd-td-list", "components/vd-td", "components/vd-textbox", "components/vd-th", "configuration/configuration", "configuration/configuration-factory", "converters/bool", "converters/date", "converters/encode-uri", "converters/null", "converters/uppercase", "utilities/alert-helper", "utilities/fetch-base", "utilities/http-fetch", "utilities/input-file-reader", "utilities/list-base", "utilities/list-helper", "utilities/service-base", "utilities/wait", "validation/bootstrap-renderer", "validation/popover-renderer"], function (exports_42, context_42) {
+    "use strict";
+    var aurelia_pal_1, common_dialogs_2;
+    var __moduleName = context_42 && context_42.id;
+    function configure(config) {
+        const attributes = ['clipboard', 'draggable', 'popover', 'tooltip'];
+        const components = [
+            'bootstrap-select',
+            'vd-bool-icon',
+            'vd-button',
+            'vd-data',
+            'vd-filter-input',
+            'vd-link',
+            'vd-td',
+            'vd-td-abbrev',
+            'vd-td-bool-icon',
+            'vd-textbox',
+            'vd-td-list',
+            'vd-th',
+            'vd-route',
+        ];
+        const converters = ['bool', 'date', 'encode-uri', 'null', 'uppercase'];
+        const basePath = './dist';
+        const resources = components
+            .map(x => `${basePath}/components/${x}`)
+            .concat(attributes.map(x => `${basePath}/attributes/${x}`))
+            .concat(converters.map(x => `${basePath}/converters/${x}`))
+            .map(x => aurelia_pal_1.PLATFORM.moduleName(x));
+        config.globalResources(resources);
+        common_dialogs_2.CommonDialogs.configure();
+    }
+    exports_42("configure", configure);
+    var exportedNames_1 = {
+        "configure": true
+    };
+    function exportStar_1(m) {
+        var exports = {};
+        for (var n in m) {
+            if (n !== "default" && !exportedNames_1.hasOwnProperty(n)) exports[n] = m[n];
+        }
+        exports_42(exports);
+    }
+    return {
+        setters: [
+            function (aurelia_pal_1_1) {
+                aurelia_pal_1 = aurelia_pal_1_1;
+            },
+            function (common_dialogs_2_1) {
+                common_dialogs_2 = common_dialogs_2_1;
+                exportStar_1(common_dialogs_2_1);
+            },
+            function (clipboard_1_1) {
+                exportStar_1(clipboard_1_1);
+            },
+            function (draggable_1_1) {
+                exportStar_1(draggable_1_1);
+            },
+            function (popover_1_1) {
+                exportStar_1(popover_1_1);
+            },
+            function (tooltip_1_1) {
+                exportStar_1(tooltip_1_1);
+            },
+            function (common_dialog_3_1) {
+                exportStar_1(common_dialog_3_1);
+            },
+            function (common_dialog_helper_1_1) {
+                exportStar_1(common_dialog_helper_1_1);
+            },
+            function (common_dialog_info_2_1) {
+                exportStar_1(common_dialog_info_2_1);
+            },
+            function (common_dialog_model_2_1) {
+                exportStar_1(common_dialog_model_2_1);
+            },
+            function (bootstrap_select_1_1) {
+                exportStar_1(bootstrap_select_1_1);
+            },
+            function (vd_bool_icon_1_1) {
+                exportStar_1(vd_bool_icon_1_1);
+            },
+            function (vd_button_1_1) {
+                exportStar_1(vd_button_1_1);
+            },
+            function (vd_data_2_1) {
+                exportStar_1(vd_data_2_1);
+            },
+            function (vd_filter_input_1_1) {
+                exportStar_1(vd_filter_input_1_1);
+            },
+            function (vd_link_1_1) {
+                exportStar_1(vd_link_1_1);
+            },
+            function (vd_route_1_1) {
+                exportStar_1(vd_route_1_1);
+            },
+            function (vd_td_abbrev_1_1) {
+                exportStar_1(vd_td_abbrev_1_1);
+            },
+            function (vd_td_bool_icon_1_1) {
+                exportStar_1(vd_td_bool_icon_1_1);
+            },
+            function (vd_td_list_1_1) {
+                exportStar_1(vd_td_list_1_1);
+            },
+            function (vd_td_4_1) {
+                exportStar_1(vd_td_4_1);
+            },
+            function (vd_textbox_1_1) {
+                exportStar_1(vd_textbox_1_1);
+            },
+            function (vd_th_1_1) {
+                exportStar_1(vd_th_1_1);
+            },
+            function (configuration_2_1) {
+                exportStar_1(configuration_2_1);
+            },
+            function (configuration_factory_1_1) {
+                exportStar_1(configuration_factory_1_1);
+            },
+            function (bool_1_1) {
+                exportStar_1(bool_1_1);
+            },
+            function (date_1_1) {
+                exportStar_1(date_1_1);
+            },
+            function (encode_uri_1_1) {
+                exportStar_1(encode_uri_1_1);
+            },
+            function (null_1_1) {
+                exportStar_1(null_1_1);
+            },
+            function (uppercase_1_1) {
+                exportStar_1(uppercase_1_1);
+            },
+            function (alert_helper_1_1) {
+                exportStar_1(alert_helper_1_1);
+            },
+            function (fetch_base_2_1) {
+                exportStar_1(fetch_base_2_1);
+            },
+            function (http_fetch_1_1) {
+                exportStar_1(http_fetch_1_1);
+            },
+            function (input_file_reader_1_1) {
+                exportStar_1(input_file_reader_1_1);
+            },
+            function (list_base_1_1) {
+                exportStar_1(list_base_1_1);
+            },
+            function (list_helper_2_1) {
+                exportStar_1(list_helper_2_1);
+            },
+            function (service_base_1_1) {
+                exportStar_1(service_base_1_1);
+            },
+            function (wait_2_1) {
+                exportStar_1(wait_2_1);
+            },
+            function (bootstrap_renderer_1_1) {
+                exportStar_1(bootstrap_renderer_1_1);
+            },
+            function (popover_renderer_1_1) {
+                exportStar_1(popover_renderer_1_1);
+            }
+        ],
+        execute: function () {
+        }
+    };
+});

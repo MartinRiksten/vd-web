@@ -11,14 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 const vd_data_1 = require("./vd-data");
-class VdDataLink extends vd_data_1.VdData {
+class VdLink extends vd_data_1.VdData {
 }
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
-], VdDataLink.prototype, "href", void 0);
+], VdLink.prototype, "href", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Function)
-], VdDataLink.prototype, "click", void 0);
-exports.VdDataLink = VdDataLink;
+], VdLink.prototype, "click", void 0);
+exports.VdLink = VdLink;
