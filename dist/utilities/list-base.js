@@ -51,7 +51,7 @@ class ListBase {
      */
     getCurrentList() {
         let result = this.items;
-        if (!result) {
+        if (!result || result.length === 0) {
             return [];
         }
         if (!!this.filter) {

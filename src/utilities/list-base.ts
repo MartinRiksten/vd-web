@@ -60,7 +60,7 @@ export class ListBase<T extends IFilterable> {
    */
   public getCurrentList(): T[] {
     let result = this.items;
-    if (!result) {
+    if (!result || result.length === 0) {
       return [];
     }
 
