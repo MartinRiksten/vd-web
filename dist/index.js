@@ -46,6 +46,7 @@ __export(require("./validation/bootstrap-renderer"));
 __export(require("./validation/popover-renderer"));
 function configure(config) {
     const attributes = ['clipboard', 'draggable', 'popover', 'tooltip'];
+    const bindings = ['async'];
     const components = [
         'bootstrap-select',
         'vd-bool-icon',
@@ -66,6 +67,7 @@ function configure(config) {
     const resources = components
         .map(x => `${basePath}/components/${x}`)
         .concat(attributes.map(x => `${basePath}/attributes/${x}`))
+        .concat(bindings.map(x => `${basePath}/bindings/${x}`))
         .concat(converters.map(x => `${basePath}/converters/${x}`))
         .map(x => aurelia_pal_1.PLATFORM.moduleName(x));
     config.globalResources(resources);

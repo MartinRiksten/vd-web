@@ -44,6 +44,7 @@ export * from './validation/popover-renderer';
 
 export function configure(config: FrameworkConfiguration) {
   const attributes = ['clipboard', 'draggable', 'popover', 'tooltip'];
+  const bindings = ['async'];
   const components = [
     'bootstrap-select',
     'vd-bool-icon',
@@ -65,6 +66,7 @@ export function configure(config: FrameworkConfiguration) {
   const resources = components
     .map(x => `${basePath}/components/${x}`)
     .concat(attributes.map(x => `${basePath}/attributes/${x}`))
+    .concat(bindings.map(x => `${basePath}/bindings/${x}`))
     .concat(converters.map(x => `${basePath}/converters/${x}`))
     .map(x => PLATFORM.moduleName(x));
   config.globalResources(resources);
