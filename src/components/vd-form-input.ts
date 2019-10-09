@@ -1,14 +1,14 @@
 import { bindable } from 'aurelia-framework';
 import { PopoverOption } from 'bootstrap/index';
 
-export class VdFormInput {
+export class VdFormInput<T> {
   @bindable public labelClass = 'col-6';
   @bindable public groupClass = 'col-6';
   @bindable public inputClass = '';
 
   @bindable public inputId: string;
   @bindable public label: string;
-  @bindable public value: string;
+  @bindable public value: T;
 
   @bindable public autoFocus = false;
 

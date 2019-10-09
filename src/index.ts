@@ -16,6 +16,7 @@ export * from './components/bootstrap-select';
 export * from './components/vd-bool-icon';
 export * from './components/vd-button';
 export * from './components/vd-filter-input';
+export * from './components/vd-form-checkbox';
 export * from './components/vd-form-data';
 export * from './components/vd-form-input';
 export * from './components/vd-form-link';
@@ -53,6 +54,7 @@ export function configure(config: FrameworkConfiguration) {
     'vd-bool-icon',
     'vd-button',
     'vd-filter-input',
+    'vd-form-checkbox',
     'vd-form-data',
     'vd-form-link',
     'vd-form-select',
