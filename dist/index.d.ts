@@ -3,6 +3,7 @@ export * from './attributes/clipboard';
 export * from './attributes/draggable';
 export * from './attributes/popover';
 export * from './attributes/tooltip';
+export * from './bindings/async';
 export * from './common-dialog/common-dialog';
 export * from './common-dialog/common-dialog-helper';
 export * from './common-dialog/common-dialog-info';

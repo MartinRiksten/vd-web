@@ -9,6 +9,7 @@ __export(require("./attributes/clipboard"));
 __export(require("./attributes/draggable"));
 __export(require("./attributes/popover"));
 __export(require("./attributes/tooltip"));
+__export(require("./bindings/async"));
 __export(require("./common-dialog/common-dialog"));
 __export(require("./common-dialog/common-dialog-helper"));
 __export(require("./common-dialog/common-dialog-info"));
