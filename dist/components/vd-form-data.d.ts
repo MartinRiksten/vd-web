@@ -1,4 +1,4 @@
-export declare class VdData {
+export declare class VdFormData {
     formClass: string;
     labelClass: string;
     dataClass: string;

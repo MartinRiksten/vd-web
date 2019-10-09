@@ -10,21 +10,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-const vd_data_1 = require("./vd-data");
-class VdLink extends vd_data_1.VdData {
+class VdFormData {
     constructor() {
-        super(...arguments);
-        this.href = "#";
-        // tslint:disable-next-line:no-empty
-        this.click = () => { };
+        this.formClass = 'col-6';
+        this.labelClass = 'col-6';
+        this.dataClass = 'col-6';
     }
 }
 __decorate([
     aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdLink.prototype, "href", void 0);
+    __metadata("design:type", Object)
+], VdFormData.prototype, "formClass", void 0);
 __decorate([
     aurelia_framework_1.bindable,
-    __metadata("design:type", Function)
-], VdLink.prototype, "click", void 0);
-exports.VdLink = VdLink;
+    __metadata("design:type", Object)
+], VdFormData.prototype, "labelClass", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", Object)
+], VdFormData.prototype, "dataClass", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormData.prototype, "label", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormData.prototype, "value", void 0);
+exports.VdFormData = VdFormData;

@@ -15,15 +15,17 @@ export * from './common-dialog/common-dialogs';
 export * from './components/bootstrap-select';
 export * from './components/vd-bool-icon';
 export * from './components/vd-button';
-export * from './components/vd-data';
-export * from './components/vd-data-link';
 export * from './components/vd-filter-input';
+export * from './components/vd-form-data';
+export * from './components/vd-form-input';
+export * from './components/vd-form-link';
+export * from './components/vd-form-select';
+export * from './components/vd-form-textbox';
 export * from './components/vd-route';
 export * from './components/vd-td-abbrev';
 export * from './components/vd-td-bool-icon';
 export * from './components/vd-td-list';
 export * from './components/vd-td';
-export * from './components/vd-textbox';
 export * from './components/vd-th';
 export * from './configuration/configuration';
 export * from './configuration/configuration-factory';
@@ -50,13 +52,14 @@ export function configure(config: FrameworkConfiguration) {
     'bootstrap-select',
     'vd-bool-icon',
     'vd-button',
-    'vd-data',
-    'vd-data-link',
     'vd-filter-input',
+    'vd-form-data',
+    'vd-form-link',
+    'vd-form-select',
+    'vd-form-textbox',
     'vd-td',
     'vd-td-abbrev',
     'vd-td-bool-icon',
-    'vd-textbox',
     'vd-td-list',
     'vd-th',
     'vd-route',

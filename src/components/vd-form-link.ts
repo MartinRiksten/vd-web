@@ -1,7 +1,7 @@
 import { bindable } from 'aurelia-framework';
-import { VdData } from './vd-data';
+import { VdFormData } from './vd-form-data';
 
-export class VdDataLink extends VdData {
+export class VdFormLink extends VdFormData {
   @bindable public href: string = '#';
   // tslint:disable-next-line:no-empty
   @bindable public click: () => void = () => {};

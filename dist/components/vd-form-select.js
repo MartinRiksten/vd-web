@@ -10,31 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-class VdData {
-    constructor() {
-        this.formClass = 'col-6';
-        this.labelClass = 'col-6';
-        this.dataClass = 'col-6';
-    }
+const vd_form_input_1 = require("./vd-form-input");
+class VdDataSelect extends vd_form_input_1.VdFormInput {
 }
 __decorate([
     aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdData.prototype, "formClass", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdData.prototype, "labelClass", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdData.prototype, "dataClass", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdData.prototype, "label", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdData.prototype, "value", void 0);
-exports.VdData = VdData;
+    __metadata("design:type", Array)
+], VdDataSelect.prototype, "options", void 0);
+exports.VdDataSelect = VdDataSelect;

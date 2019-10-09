@@ -18,15 +18,17 @@ __export(require("./common-dialog/common-dialogs"));
 __export(require("./components/bootstrap-select"));
 __export(require("./components/vd-bool-icon"));
 __export(require("./components/vd-button"));
-__export(require("./components/vd-data"));
-__export(require("./components/vd-data-link"));
 __export(require("./components/vd-filter-input"));
+__export(require("./components/vd-form-data"));
+__export(require("./components/vd-form-input"));
+__export(require("./components/vd-form-link"));
+__export(require("./components/vd-form-select"));
+__export(require("./components/vd-form-textbox"));
 __export(require("./components/vd-route"));
 __export(require("./components/vd-td-abbrev"));
 __export(require("./components/vd-td-bool-icon"));
 __export(require("./components/vd-td-list"));
 __export(require("./components/vd-td"));
-__export(require("./components/vd-textbox"));
 __export(require("./components/vd-th"));
 __export(require("./configuration/configuration"));
 __export(require("./configuration/configuration-factory"));
@@ -52,13 +54,14 @@ function configure(config) {
         'bootstrap-select',
         'vd-bool-icon',
         'vd-button',
-        'vd-data',
-        'vd-data-link',
         'vd-filter-input',
+        'vd-form-data',
+        'vd-form-link',
+        'vd-form-select',
+        'vd-form-textbox',
         'vd-td',
         'vd-td-abbrev',
         'vd-td-bool-icon',
-        'vd-textbox',
         'vd-td-list',
         'vd-th',
         'vd-route',

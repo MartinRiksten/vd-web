@@ -1,20 +1,12 @@
 import { PopoverOption } from 'bootstrap/index';
-export declare class VdTextbox {
-    labelClass: string;
-    groupClass: string;
-    inputClass: string;
-    inputId: string;
-    label: string;
-    value: string;
+import { VdFormInput } from './vd-form-input';
+export declare class VdTextbox extends VdFormInput {
     regex: string;
     maxLength: string;
     placeHolder: string;
-    autoFocus: boolean;
     usePopover: boolean;
     popoverOption: PopoverOption;
-    element: Element;
     dataToggle: string;
     popover: PopoverOption | undefined;
     bind(): void;
-    attached(): void;
 }

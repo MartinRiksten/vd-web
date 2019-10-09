@@ -10,12 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
-class VdTextbox {
+const vd_form_input_1 = require("./vd-form-input");
+class VdTextbox extends vd_form_input_1.VdFormInput {
     constructor() {
-        this.labelClass = 'col-6';
-        this.groupClass = 'col-6';
-        this.inputClass = '';
-        this.autoFocus = false;
+        super(...arguments);
         this.usePopover = true;
         this.popoverOption = { container: 'body', placement: 'right', trigger: 'manual' };
     }
@@ -23,36 +21,7 @@ class VdTextbox {
         this.dataToggle = this.usePopover ? 'popover' : '';
         this.popover = this.usePopover ? this.popoverOption : undefined;
     }
-    attached() {
-        if (this.autoFocus) {
-            $(this.element).focus();
-        }
-    }
 }
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdTextbox.prototype, "labelClass", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdTextbox.prototype, "groupClass", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdTextbox.prototype, "inputClass", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdTextbox.prototype, "inputId", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdTextbox.prototype, "label", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdTextbox.prototype, "value", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
@@ -65,10 +34,6 @@ __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
 ], VdTextbox.prototype, "placeHolder", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdTextbox.prototype, "autoFocus", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Boolean)
