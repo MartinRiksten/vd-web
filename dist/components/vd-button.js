@@ -13,6 +13,7 @@ const aurelia_framework_1 = require("aurelia-framework");
 class VdButton {
     constructor() {
         this.buttonIf = true;
+        this.buttonClass = '';
         this.types = [
             { kind: 'ok', label: 'OK', variant: 'btn-primary', icon: 'fas fa-check' },
             { kind: 'cancel', label: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' },
@@ -31,6 +32,9 @@ class VdButton {
         this.variant = !!this.variant ? this.variant : info.variant;
         this.icon = !!this.icon ? this.icon : info.icon;
         this.click = !!this.click ? this.click : this.onClick;
+    }
+    getClass() {
+        return [this.buttonClass, this.variant].filter(x => !x).join(" ");
     }
     onClick() {
         if (!!this.clickTarget) {
@@ -70,4 +74,8 @@ __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Boolean)
 ], VdButton.prototype, "buttonIf", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", Object)
+], VdButton.prototype, "buttonClass", void 0);
 exports.VdButton = VdButton;

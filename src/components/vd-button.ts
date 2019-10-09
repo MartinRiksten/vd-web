@@ -16,6 +16,7 @@ export class VdButton {
   @bindable public icon!: string;
   @bindable public clickTarget: string | undefined;
   @bindable public buttonIf: boolean = true;
+  @bindable public buttonClass = '';
 
   private types = [
     { kind: 'ok', label: 'OK', variant: 'btn-primary', icon: 'fas fa-check' } as IButtonInfo,
@@ -36,6 +37,10 @@ export class VdButton {
     this.icon = !!this.icon ? this.icon : info.icon;
     this.click = !!this.click ? this.click : this.onClick;
   }
+
+public getClass(): string {
+  return [this.buttonClass, this.variant].filter(x => !x).join(" ");
+}
 
   public onClick() {
     if (!!this.clickTarget) {

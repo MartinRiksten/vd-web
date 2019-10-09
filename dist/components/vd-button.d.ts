@@ -13,7 +13,9 @@ export declare class VdButton {
     icon: string;
     clickTarget: string | undefined;
     buttonIf: boolean;
+    buttonClass: string;
     private types;
     bind(): void;
+    getClass(): string;
     onClick(): void;
 }
