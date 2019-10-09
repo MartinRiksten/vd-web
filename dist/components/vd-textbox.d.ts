@@ -1,7 +1,7 @@
 import { PopoverOption } from 'bootstrap/index';
 export declare class VdTextbox {
-    formClass: string;
     labelClass: string;
+    groupClass: string;
     inputClass: string;
     inputId: string;
     label: string;

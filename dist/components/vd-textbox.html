@@ -1,8 +1,8 @@
 <template>
     <label for.bind="inputId" class="font-weight-lighter text-right" class.bind="labelClass">${label}</label>
-    <div class="input-group">
+    <div class="input-group" class.bind="groupClass">
         <slot name="before"></slot>
-        <input class="form-control d-inline" class.bind="inputClass" id.bind="inputId" name.bind="inputId" 
+        <input class="form-control" class.bind="inputClass" id.bind="inputId" name.bind="inputId" 
                type="text" ref="element" value.bind="value" placeholder.bind="placeHolder | null"
                maxlength.bind="maxLength" data-regex.bind="regex"
                popover.bind="popover" data-toggle.bind="dataToggle">

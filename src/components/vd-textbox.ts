@@ -2,9 +2,9 @@ import { bindable } from 'aurelia-framework';
 import { PopoverOption } from 'bootstrap/index';
 
 export class VdTextbox {
-  @bindable public formClass = 'col-6';
   @bindable public labelClass = 'col-6';
-  @bindable public inputClass = 'col-6';
+  @bindable public groupClass = 'col-6';
+  @bindable public inputClass = '';
 
   @bindable public inputId: string;
   @bindable public label: string;

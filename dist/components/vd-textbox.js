@@ -12,9 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 class VdTextbox {
     constructor() {
-        this.formClass = 'col-6';
         this.labelClass = 'col-6';
-        this.inputClass = 'col-6';
+        this.groupClass = 'col-6';
+        this.inputClass = '';
         this.autoFocus = false;
         this.usePopover = true;
         this.popoverOption = { container: 'body', placement: 'right', trigger: 'manual' };
@@ -32,11 +32,11 @@ class VdTextbox {
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Object)
-], VdTextbox.prototype, "formClass", void 0);
+], VdTextbox.prototype, "labelClass", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Object)
-], VdTextbox.prototype, "labelClass", void 0);
+], VdTextbox.prototype, "groupClass", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Object)
