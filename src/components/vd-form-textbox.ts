@@ -2,7 +2,7 @@ import { bindable } from 'aurelia-framework';
 import { PopoverOption } from 'bootstrap/index';
 import { VdFormInput } from './vd-form-input';
 
-export class VdTextbox extends VdFormInput {
+export class VdFormTextbox extends VdFormInput {
   @bindable public regex: string;
   @bindable public maxLength: string;
   @bindable public placeHolder: string;

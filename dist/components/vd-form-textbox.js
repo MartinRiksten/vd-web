@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 const vd_form_input_1 = require("./vd-form-input");
-class VdTextbox extends vd_form_input_1.VdFormInput {
+class VdFormTextbox extends vd_form_input_1.VdFormInput {
     constructor() {
         super(...arguments);
         this.usePopover = true;
@@ -25,21 +25,21 @@ class VdTextbox extends vd_form_input_1.VdFormInput {
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
-], VdTextbox.prototype, "regex", void 0);
+], VdFormTextbox.prototype, "regex", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
-], VdTextbox.prototype, "maxLength", void 0);
+], VdFormTextbox.prototype, "maxLength", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
-], VdTextbox.prototype, "placeHolder", void 0);
+], VdFormTextbox.prototype, "placeHolder", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Boolean)
-], VdTextbox.prototype, "usePopover", void 0);
+], VdFormTextbox.prototype, "usePopover", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Object)
-], VdTextbox.prototype, "popoverOption", void 0);
-exports.VdTextbox = VdTextbox;
+], VdFormTextbox.prototype, "popoverOption", void 0);
+exports.VdFormTextbox = VdFormTextbox;

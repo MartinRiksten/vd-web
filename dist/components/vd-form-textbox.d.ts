@@ -1,6 +1,6 @@
 import { PopoverOption } from 'bootstrap/index';
 import { VdFormInput } from './vd-form-input';
-export declare class VdTextbox extends VdFormInput {
+export declare class VdFormTextbox extends VdFormInput {
     regex: string;
     maxLength: string;
     placeHolder: string;

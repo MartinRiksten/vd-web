@@ -11,10 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 const vd_form_input_1 = require("./vd-form-input");
-class VdDataSelect extends vd_form_input_1.VdFormInput {
+class VdFormSelect extends vd_form_input_1.VdFormInput {
 }
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Array)
-], VdDataSelect.prototype, "options", void 0);
-exports.VdDataSelect = VdDataSelect;
+], VdFormSelect.prototype, "options", void 0);
+exports.VdFormSelect = VdFormSelect;
