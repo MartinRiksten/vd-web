@@ -11,7 +11,8 @@ class ListBase {
         this.listHelper = new list_helper_1.ListHelper();
     }
     bind() {
-        for (const item of this.items) {
+        const items = this.items;
+        for (const item of items) {
             item._filterValues = [];
         }
     }

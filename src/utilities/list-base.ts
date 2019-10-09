@@ -16,7 +16,8 @@ export class ListBase<T extends IFilterable> {
   protected table!: Element;
 
   public bind() {
-    for (const item of this.items) {
+    const items = this.items;
+    for (const item of items) {
       item._filterValues = [];
     }
   }
