@@ -16,7 +16,7 @@ export class VdButton {
   @bindable public icon!: string;
   @bindable public clickTarget: string | undefined;
   @bindable public buttonIf: boolean = true;
-  @bindable public buttonClass = '';
+  @bindable public buttonClass = 'ml-1';
 
   private types = [
     { kind: 'ok', label: 'OK', variant: 'btn-primary', icon: 'fas fa-check' } as IButtonInfo,

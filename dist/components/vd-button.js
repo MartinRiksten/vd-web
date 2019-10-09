@@ -13,7 +13,7 @@ const aurelia_framework_1 = require("aurelia-framework");
 class VdButton {
     constructor() {
         this.buttonIf = true;
-        this.buttonClass = '';
+        this.buttonClass = 'ml-1';
         this.types = [
             { kind: 'ok', label: 'OK', variant: 'btn-primary', icon: 'fas fa-check' },
             { kind: 'cancel', label: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' },
