@@ -33,8 +33,9 @@ class VdButton {
         this.icon = !!this.icon ? this.icon : info.icon;
         this.click = !!this.click ? this.click : this.onClick;
     }
-    getClass() {
-        return [this.buttonClass, this.variant].filter(x => !x).join(" ");
+    getButtonClass() {
+        const result = [this.buttonClass, this.variant].filter(x => !!x).join(" ");
+        return result;
     }
     onClick() {
         if (!!this.clickTarget) {

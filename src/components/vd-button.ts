@@ -38,8 +38,9 @@ export class VdButton {
     this.click = !!this.click ? this.click : this.onClick;
   }
 
-public getClass(): string {
-  return [this.buttonClass, this.variant].filter(x => !x).join(" ");
+public getButtonClass(): string {
+  const result = [this.buttonClass, this.variant].filter(x => !!x).join(" ");
+  return result;
 }
 
   public onClick() {
