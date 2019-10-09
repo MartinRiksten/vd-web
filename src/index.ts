@@ -15,8 +15,8 @@ export * from './components/bootstrap-select';
 export * from './components/vd-bool-icon';
 export * from './components/vd-button';
 export * from './components/vd-data';
+export * from './components/vd-data-link';
 export * from './components/vd-filter-input';
-export * from './components/vd-link';
 export * from './components/vd-route';
 export * from './components/vd-td-abbrev';
 export * from './components/vd-td-bool-icon';
@@ -49,8 +49,8 @@ export function configure(config: FrameworkConfiguration) {
     'vd-bool-icon',
     'vd-button',
     'vd-data',
+    'vd-data-link',
     'vd-filter-input',
-    'vd-link',
     'vd-td',
     'vd-td-abbrev',
     'vd-td-bool-icon',

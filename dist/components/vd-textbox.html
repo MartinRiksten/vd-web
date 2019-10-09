@@ -1,9 +1,11 @@
 <template>
     <label for.bind="inputId" class="font-weight-lighter text-right" class.bind="labelClass">${label}</label>
-    <slot name="before"></slot>
-    <input class="form-control d-inline" class.bind="inputClass" id.bind="inputId" name.bind="inputId" 
-           type="text" ref="element" value.bind="value" placeholder.bind="placeHolder | null"
-           maxlength.bind="maxLength" data-regex.bind="regex"
-           popover.bind="popover" data-toggle.bind="dataToggle">
-    <slot name="after"></slot>
+    <div class="input-group">
+        <slot name="before"></slot>
+        <input class="form-control d-inline" class.bind="inputClass" id.bind="inputId" name.bind="inputId" 
+               type="text" ref="element" value.bind="value" placeholder.bind="placeHolder | null"
+               maxlength.bind="maxLength" data-regex.bind="regex"
+               popover.bind="popover" data-toggle.bind="dataToggle">
+        <slot name="after"></slot>
+    </div>
 </template>
