@@ -9,18 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-class VdRoute {
-    bind() {
-        this.params = { id: this.key };
+var aurelia_framework_1 = require("aurelia-framework");
+var VdRoute = /** @class */ (function () {
+    function VdRoute() {
     }
-}
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdRoute.prototype, "route", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdRoute.prototype, "key", void 0);
+    VdRoute.prototype.bind = function () {
+        this.params = { id: this.key };
+    };
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdRoute.prototype, "route", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdRoute.prototype, "key", void 0);
+    return VdRoute;
+}());
 exports.VdRoute = VdRoute;

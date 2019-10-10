@@ -12,28 +12,29 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-const jquery_1 = __importDefault(require("jquery"));
-let PopoverCustomAttribute = class PopoverCustomAttribute {
-    constructor(element) {
+var aurelia_framework_1 = require("aurelia-framework");
+var jquery_1 = __importDefault(require("jquery"));
+var PopoverCustomAttribute = /** @class */ (function () {
+    function PopoverCustomAttribute(element) {
         this.element = element;
     }
-    attached() {
+    PopoverCustomAttribute.prototype.attached = function () {
         if (!this.value) {
             return;
         }
         jquery_1.default(this.element).popover(this.value);
-    }
-    detached() {
+    };
+    PopoverCustomAttribute.prototype.detached = function () {
         if (!this.value) {
             return;
         }
         jquery_1.default(this.element).popover('dispose');
-    }
-};
-PopoverCustomAttribute = __decorate([
-    aurelia_framework_1.autoinject,
-    aurelia_framework_1.customAttribute('popover'),
-    __metadata("design:paramtypes", [Element])
-], PopoverCustomAttribute);
+    };
+    PopoverCustomAttribute = __decorate([
+        aurelia_framework_1.autoinject,
+        aurelia_framework_1.customAttribute('popover'),
+        __metadata("design:paramtypes", [Element])
+    ], PopoverCustomAttribute);
+    return PopoverCustomAttribute;
+}());
 exports.PopoverCustomAttribute = PopoverCustomAttribute;

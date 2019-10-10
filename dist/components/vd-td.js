@@ -9,9 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-class VdTd {
-    bind() {
+var aurelia_framework_1 = require("aurelia-framework");
+var VdTd = /** @class */ (function () {
+    function VdTd() {
+    }
+    VdTd.prototype.bind = function () {
         if (!this.instance) {
             return;
         }
@@ -19,14 +21,15 @@ class VdTd {
             this.instance._filterValues = [];
         }
         this.instance._filterValues.push(this.value);
-    }
-}
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdTd.prototype, "value", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdTd.prototype, "instance", void 0);
+    };
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdTd.prototype, "value", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdTd.prototype, "instance", void 0);
+    return VdTd;
+}());
 exports.VdTd = VdTd;

@@ -6,13 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-let NullValueConverter = class NullValueConverter {
-    toView(value) {
-        return !value ? '' : value;
+var aurelia_framework_1 = require("aurelia-framework");
+var NullValueConverter = /** @class */ (function () {
+    function NullValueConverter() {
     }
-};
-NullValueConverter = __decorate([
-    aurelia_framework_1.valueConverter('null')
-], NullValueConverter);
+    NullValueConverter.prototype.toView = function (value) {
+        return !value ? '' : value;
+    };
+    NullValueConverter = __decorate([
+        aurelia_framework_1.valueConverter('null')
+    ], NullValueConverter);
+    return NullValueConverter;
+}());
 exports.NullValueConverter = NullValueConverter;

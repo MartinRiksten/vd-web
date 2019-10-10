@@ -9,29 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-let ClipboardCustomAttribute = class ClipboardCustomAttribute {
-    constructor(element) {
+var aurelia_framework_1 = require("aurelia-framework");
+var ClipboardCustomAttribute = /** @class */ (function () {
+    function ClipboardCustomAttribute(element) {
         this.element = element;
     }
-    attached() {
+    ClipboardCustomAttribute.prototype.attached = function () {
         // Loop over any child elements and disable the click events. For example if you put this on a button,
         // and then put a span / image icon it breaks the click event.
-        this.element.childNodes.forEach(e => {
-            const style = e.style;
+        this.element.childNodes.forEach(function (e) {
+            var style = e.style;
             if (style) {
                 style.pointerEvents = 'none';
             }
         });
         this.element.addEventListener('click', this.handleClick);
-    }
-    detached() {
+    };
+    ClipboardCustomAttribute.prototype.detached = function () {
         this.element.removeEventListener('click', this.handleClick);
-    }
-    handleClick($event) {
-        const text = $event.srcElement.getAttribute('text');
+    };
+    ClipboardCustomAttribute.prototype.handleClick = function ($event) {
+        var text = $event.srcElement.getAttribute('text');
         if (document.queryCommandSupported('copy') && text) {
-            const textarea = document.createElement('textarea');
+            var textarea = document.createElement('textarea');
             textarea.style.display = 'none !important;';
             textarea.value = text;
             document.body.appendChild(textarea);
@@ -39,14 +39,15 @@ let ClipboardCustomAttribute = class ClipboardCustomAttribute {
             document.execCommand('Copy');
             document.body.removeChild(textarea);
         }
-    }
-    valueChanged(newValue) {
+    };
+    ClipboardCustomAttribute.prototype.valueChanged = function (newValue) {
         this.element.setAttribute('text', newValue);
-    }
-};
-ClipboardCustomAttribute = __decorate([
-    aurelia_framework_1.autoinject,
-    aurelia_framework_1.customAttribute('clipboard'),
-    __metadata("design:paramtypes", [Element])
-], ClipboardCustomAttribute);
+    };
+    ClipboardCustomAttribute = __decorate([
+        aurelia_framework_1.autoinject,
+        aurelia_framework_1.customAttribute('clipboard'),
+        __metadata("design:paramtypes", [Element])
+    ], ClipboardCustomAttribute);
+    return ClipboardCustomAttribute;
+}());
 exports.ClipboardCustomAttribute = ClipboardCustomAttribute;

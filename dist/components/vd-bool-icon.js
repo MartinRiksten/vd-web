@@ -9,14 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-class VdBoolIcon {
-    getIcon(value) {
-        return value === true ? 'fa-check text-success' : value === false ? 'fa-times text-danger' : '';
+var aurelia_framework_1 = require("aurelia-framework");
+var VdBoolIcon = /** @class */ (function () {
+    function VdBoolIcon() {
     }
-}
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Boolean)
-], VdBoolIcon.prototype, "value", void 0);
+    VdBoolIcon.prototype.getIcon = function (value) {
+        return value === true ? 'fa-check text-success' : value === false ? 'fa-times text-danger' : '';
+    };
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Boolean)
+    ], VdBoolIcon.prototype, "value", void 0);
+    return VdBoolIcon;
+}());
 exports.VdBoolIcon = VdBoolIcon;

@@ -3,13 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Initializer for the debug configuration mode
  */
-class DebugConfiguration {
+var DebugConfiguration = /** @class */ (function () {
+    function DebugConfiguration() {
+    }
     /**
      * Configures the configuration mode dependant stuff
      * @param config The framework configuration
      */
-    initialize(config) {
+    DebugConfiguration.prototype.initialize = function (config) {
         config.developmentLogging();
-    }
-}
+    };
+    return DebugConfiguration;
+}());
 exports.DebugConfiguration = DebugConfiguration;

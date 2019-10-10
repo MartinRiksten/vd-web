@@ -9,27 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-class VdTh {
-    getClass(by, ascending) {
-        const result = !!this.order && by === this.name
+var aurelia_framework_1 = require("aurelia-framework");
+var VdTh = /** @class */ (function () {
+    function VdTh() {
+    }
+    VdTh.prototype.getClass = function (by, ascending) {
+        var result = !!this.order && by === this.name
             ? ascending
                 ? 'fas fa-caret-up'
                 : 'fas fa-caret-down'
             : 'fas fa-caret-up invisible';
         return result;
-    }
-}
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdTh.prototype, "label", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdTh.prototype, "name", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdTh.prototype, "order", void 0);
+    };
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdTh.prototype, "label", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdTh.prototype, "name", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdTh.prototype, "order", void 0);
+    return VdTh;
+}());
 exports.VdTh = VdTh;

@@ -1,17 +1,19 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const configuration_1 = require("./configuration");
-const debug_configuration_1 = require("./debug-configuration");
-const release_configuration_1 = require("./release-configuration");
+var configuration_1 = require("./configuration");
+var debug_configuration_1 = require("./debug-configuration");
+var release_configuration_1 = require("./release-configuration");
 /**
  * Factory for the initializer class
  */
-class InitializerFactory {
+var InitializerFactory = /** @class */ (function () {
+    function InitializerFactory() {
+    }
     /**
      * Create the appropriate initializer
      * @param mode: The current configuration mode
      */
-    static create(mode) {
+    InitializerFactory.create = function (mode) {
         switch (mode) {
             case configuration_1.ConfigurationMode.Debug:
                 return new debug_configuration_1.DebugConfiguration();
@@ -20,6 +22,7 @@ class InitializerFactory {
             default:
                 throw new Error('Unknown configuration mode');
         }
-    }
-}
+    };
+    return InitializerFactory;
+}());
 exports.InitializerFactory = InitializerFactory;

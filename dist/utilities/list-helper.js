@@ -3,19 +3,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Helper class for paing and sorting.
  */
-class ListHelper {
+var ListHelper = /** @class */ (function () {
+    function ListHelper() {
+    }
     /**
      * Sorts the given array
      * @param array The array to sort
      * @param order The sorting information
      */
-    sort(array, order) {
+    ListHelper.prototype.sort = function (array, order) {
+        var _this = this;
         if (!order) {
             return array;
         }
-        const result = array.sort((a, b) => this.compare(a, b, order.by) * (order.ascending ? 1 : -1));
+        var result = array.sort(function (a, b) { return _this.compare(a, b, order.by) * (order.ascending ? 1 : -1); });
         return result;
-    }
+    };
     /**
      * Filers the given array using the properties of both the items and the value.
      * @param items The array to filter
@@ -24,17 +27,18 @@ class ListHelper {
      *        T: the array is filtered over each property of the filter
      * @param included The array op property names to include
      */
-    filter(items, filter) {
+    ListHelper.prototype.filter = function (items, filter) {
+        var _this = this;
         if (!filter || items.length === 0 || !items[0]._filterValues) {
             return items;
         }
-        const list = filter.split(' ');
-        let result = items;
-        list.forEach(current => {
-            result = result.filter((item) => this.filterFunc(item, current));
+        var list = filter.split(' ');
+        var result = items;
+        list.forEach(function (current) {
+            result = result.filter(function (item) { return _this.filterFunc(item, current); });
         });
         return result;
-    }
+    };
     /**
      * determines whether the item satisfies the filter
      * @param item The item to test
@@ -42,9 +46,10 @@ class ListHelper {
      * @param included The array op property names to include
      * @param property The property to filter on, or null when the filter applies to all properties
      */
-    filterFunc(item, value) {
-        for (const current of item._filterValues) {
-            const result = current != null &&
+    ListHelper.prototype.filterFunc = function (item, value) {
+        for (var _i = 0, _a = item._filterValues; _i < _a.length; _i++) {
+            var current = _a[_i];
+            var result = current != null &&
                 current
                     .toString()
                     .toLowerCase()
@@ -54,17 +59,18 @@ class ListHelper {
             }
         }
         return false;
-    }
+    };
     /**
      * Compares the property values of the two objects
      * @param a The first object
      * @param b The second object
      * @param prop The name of the property to compare
      */
-    compare(a, b, prop) {
-        let propA = a;
-        let propB = b;
-        for (const item of prop.split('.')) {
+    ListHelper.prototype.compare = function (a, b, prop) {
+        var propA = a;
+        var propB = b;
+        for (var _i = 0, _a = prop.split('.'); _i < _a.length; _i++) {
+            var item = _a[_i];
             propA = propA[item];
             propB = propB[item];
         }
@@ -81,20 +87,21 @@ class ListHelper {
             propA = propA.getTime();
             propB = propB.getTime();
         }
-        const result = this.compareValues(propA, propB);
+        var result = this.compareValues(propA, propB);
         if (result === 0 && prop !== 'id') {
             return this.compare(a, b, 'id');
         }
         return result;
-    }
+    };
     /**
      * Compares two values
      * @param v1 The first value
      * @param v2 The second value
      */
-    compareValues(v1, v2) {
-        const result = v1 < v2 ? -1 : v1 > v2 ? 1 : 0;
+    ListHelper.prototype.compareValues = function (v1, v2) {
+        var result = v1 < v2 ? -1 : v1 > v2 ? 1 : 0;
         return result;
-    }
-}
+    };
+    return ListHelper;
+}());
 exports.ListHelper = ListHelper;

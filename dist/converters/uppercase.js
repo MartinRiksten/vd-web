@@ -6,16 +6,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-let UpperCaseValueConverter = class UpperCaseValueConverter {
-    toView(value) {
-        return !value ? value : value.toUpperCase();
+var aurelia_framework_1 = require("aurelia-framework");
+var UpperCaseValueConverter = /** @class */ (function () {
+    function UpperCaseValueConverter() {
     }
-    fromView(value) {
+    UpperCaseValueConverter.prototype.toView = function (value) {
         return !value ? value : value.toUpperCase();
-    }
-};
-UpperCaseValueConverter = __decorate([
-    aurelia_framework_1.valueConverter('upperCase')
-], UpperCaseValueConverter);
+    };
+    UpperCaseValueConverter.prototype.fromView = function (value) {
+        return !value ? value : value.toUpperCase();
+    };
+    UpperCaseValueConverter = __decorate([
+        aurelia_framework_1.valueConverter('upperCase')
+    ], UpperCaseValueConverter);
+    return UpperCaseValueConverter;
+}());
 exports.UpperCaseValueConverter = UpperCaseValueConverter;

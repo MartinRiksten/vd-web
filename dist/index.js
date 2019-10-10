@@ -3,8 +3,8 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_pal_1 = require("aurelia-pal");
-const common_dialogs_1 = require("./common-dialog/common-dialogs");
+var aurelia_pal_1 = require("aurelia-pal");
+var common_dialogs_1 = require("./common-dialog/common-dialogs");
 __export(require("./attributes/clipboard"));
 __export(require("./attributes/draggable"));
 __export(require("./attributes/popover"));
@@ -49,9 +49,9 @@ __export(require("./utilities/wait"));
 __export(require("./validation/bootstrap-renderer"));
 __export(require("./validation/popover-renderer"));
 function configure(config) {
-    const attributes = ['clipboard', 'draggable', 'popover', 'tooltip'];
-    const bindings = ['async'];
-    const components = [
+    var attributes = ['clipboard', 'draggable', 'popover', 'tooltip'];
+    var bindings = ['async'];
+    var components = [
         'bootstrap-select',
         'vd-bool-icon',
         'vd-button',
@@ -68,14 +68,14 @@ function configure(config) {
         'vd-th',
         'vd-route',
     ];
-    const converters = ['bool', 'date', 'encode-uri', 'null', 'uppercase'];
-    const basePath = './dist';
-    const resources = components
-        .map(x => `${basePath}/components/${x}`)
-        .concat(attributes.map(x => `${basePath}/attributes/${x}`))
-        .concat(bindings.map(x => `${basePath}/bindings/${x}`))
-        .concat(converters.map(x => `${basePath}/converters/${x}`))
-        .map(x => aurelia_pal_1.PLATFORM.moduleName(x));
+    var converters = ['bool', 'date', 'encode-uri', 'null', 'uppercase'];
+    var basePath = './dist';
+    var resources = components
+        .map(function (x) { return basePath + "/components/" + x; })
+        .concat(attributes.map(function (x) { return basePath + "/attributes/" + x; }))
+        .concat(bindings.map(function (x) { return basePath + "/bindings/" + x; }))
+        .concat(converters.map(function (x) { return basePath + "/converters/" + x; }))
+        .map(function (x) { return aurelia_pal_1.PLATFORM.moduleName(x); });
     config.globalResources(resources);
     common_dialogs_1.CommonDialogs.configure();
 }

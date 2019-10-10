@@ -6,13 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-let EncodeUriValueConverter = class EncodeUriValueConverter {
-    toView(value) {
-        return !value ? '' : encodeURIComponent(value);
+var aurelia_framework_1 = require("aurelia-framework");
+var EncodeUriValueConverter = /** @class */ (function () {
+    function EncodeUriValueConverter() {
     }
-};
-EncodeUriValueConverter = __decorate([
-    aurelia_framework_1.valueConverter('encodeUri')
-], EncodeUriValueConverter);
+    EncodeUriValueConverter.prototype.toView = function (value) {
+        return !value ? '' : encodeURIComponent(value);
+    };
+    EncodeUriValueConverter = __decorate([
+        aurelia_framework_1.valueConverter('encodeUri')
+    ], EncodeUriValueConverter);
+    return EncodeUriValueConverter;
+}());
 exports.EncodeUriValueConverter = EncodeUriValueConverter;

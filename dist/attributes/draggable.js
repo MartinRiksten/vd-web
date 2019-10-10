@@ -12,24 +12,25 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-const hammerjs_1 = __importDefault(require("hammerjs"));
-let DraggableCustomAttribute = class DraggableCustomAttribute {
-    constructor(element) {
+var aurelia_framework_1 = require("aurelia-framework");
+var hammerjs_1 = __importDefault(require("hammerjs"));
+var DraggableCustomAttribute = /** @class */ (function () {
+    function DraggableCustomAttribute(element) {
         this.startX = 0;
         this.startY = 0;
         this.selector = '';
         this.element = element;
     }
-    attached() {
-        const target = this.element.querySelector(this.selector);
-        target.addEventListener('mousedown', (event) => this.init(event), false);
-        const manager = new hammerjs_1.default.Manager(target);
+    DraggableCustomAttribute.prototype.attached = function () {
+        var _this = this;
+        var target = this.element.querySelector(this.selector);
+        target.addEventListener('mousedown', function (event) { return _this.init(event); }, false);
+        var manager = new hammerjs_1.default.Manager(target);
         manager.add(new hammerjs_1.default.Pan({ direction: hammerjs_1.default.DIRECTION_ALL, threshold: 0 }));
-        manager.on('pan', (e) => this.pan(e));
-    }
-    init(event) {
-        const rect = this.element.getBoundingClientRect();
+        manager.on('pan', function (e) { return _this.pan(e); });
+    };
+    DraggableCustomAttribute.prototype.init = function (event) {
+        var rect = this.element.getBoundingClientRect();
         /* tslint:disable */
         this.startX = rect.x | rect.left;
         this.startY = rect.y | rect.top;
@@ -40,19 +41,20 @@ let DraggableCustomAttribute = class DraggableCustomAttribute {
             this.element.style.marginTop = '0';
             this.element.style.position = 'absolute';
         }
-    }
-    pan(e) {
+    };
+    DraggableCustomAttribute.prototype.pan = function (e) {
         this.element.style.top = this.startY + e.deltaY + 'px';
         this.element.style.left = this.startX + e.deltaX + 'px';
-    }
-};
-__decorate([
-    aurelia_framework_1.bindable({ primaryProperty: true }),
-    __metadata("design:type", String)
-], DraggableCustomAttribute.prototype, "selector", void 0);
-DraggableCustomAttribute = __decorate([
-    aurelia_framework_1.autoinject,
-    aurelia_framework_1.customAttribute('draggable'),
-    __metadata("design:paramtypes", [Element])
-], DraggableCustomAttribute);
+    };
+    __decorate([
+        aurelia_framework_1.bindable({ primaryProperty: true }),
+        __metadata("design:type", String)
+    ], DraggableCustomAttribute.prototype, "selector", void 0);
+    DraggableCustomAttribute = __decorate([
+        aurelia_framework_1.autoinject,
+        aurelia_framework_1.customAttribute('draggable'),
+        __metadata("design:paramtypes", [Element])
+    ], DraggableCustomAttribute);
+    return DraggableCustomAttribute;
+}());
 exports.DraggableCustomAttribute = DraggableCustomAttribute;

@@ -9,27 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-class VdFormData {
-    constructor() {
+var aurelia_framework_1 = require("aurelia-framework");
+var VdFormData = /** @class */ (function () {
+    function VdFormData() {
         this.labelClass = 'col-md-6';
         this.dataClass = 'col-md-6';
     }
-}
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdFormData.prototype, "labelClass", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdFormData.prototype, "dataClass", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdFormData.prototype, "label", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdFormData.prototype, "value", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdFormData.prototype, "labelClass", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdFormData.prototype, "dataClass", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdFormData.prototype, "label", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdFormData.prototype, "value", void 0);
+    return VdFormData;
+}());
 exports.VdFormData = VdFormData;

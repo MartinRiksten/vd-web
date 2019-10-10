@@ -9,9 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-class VdButton {
-    constructor() {
+var aurelia_framework_1 = require("aurelia-framework");
+var VdButton = /** @class */ (function () {
+    function VdButton() {
         this.buttonIf = true;
         this.buttonClass = 'ml-1';
         this.types = [
@@ -25,58 +25,60 @@ class VdButton {
             { kind: 'upload', label: 'Inlezen', variant: 'btn-light', icon: 'fas fa-upload' },
         ];
     }
-    bind() {
+    VdButton.prototype.bind = function () {
+        var _this = this;
         this.buttonId = !this.buttonId ? this.kind : this.buttonId;
-        const info = this.types.find(x => x.kind === this.kind) || {};
+        var info = this.types.find(function (x) { return x.kind === _this.kind; }) || {};
         this.label = !!this.label ? this.label : info.label;
         this.variant = !!this.variant ? this.variant : info.variant;
         this.icon = !!this.icon ? this.icon : info.icon;
         this.click = !!this.click ? this.click : this.onClick;
-    }
-    getButtonClass() {
-        const result = [this.buttonClass, this.variant].filter(x => !!x).join(" ");
+    };
+    VdButton.prototype.getButtonClass = function () {
+        var result = [this.buttonClass, this.variant].filter(function (x) { return !!x; }).join(" ");
         return result;
-    }
-    onClick() {
+    };
+    VdButton.prototype.onClick = function () {
         if (!!this.clickTarget) {
             $(this.clickTarget).click();
         }
-    }
-}
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdButton.prototype, "kind", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdButton.prototype, "buttonId", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Function)
-], VdButton.prototype, "click", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdButton.prototype, "label", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdButton.prototype, "variant", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdButton.prototype, "icon", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", String)
-], VdButton.prototype, "clickTarget", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Boolean)
-], VdButton.prototype, "buttonIf", void 0);
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdButton.prototype, "buttonClass", void 0);
+    };
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdButton.prototype, "kind", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdButton.prototype, "buttonId", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Function)
+    ], VdButton.prototype, "click", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdButton.prototype, "label", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdButton.prototype, "variant", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdButton.prototype, "icon", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdButton.prototype, "clickTarget", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Boolean)
+    ], VdButton.prototype, "buttonIf", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdButton.prototype, "buttonClass", void 0);
+    return VdButton;
+}());
 exports.VdButton = VdButton;

@@ -1,8 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Wait {
-    static for(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+var Wait = /** @class */ (function () {
+    function Wait() {
     }
-}
+    Wait.for = function (ms) {
+        return new Promise(function (resolve) { return setTimeout(resolve, ms); });
+    };
+    return Wait;
+}());
 exports.Wait = Wait;

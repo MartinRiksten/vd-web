@@ -1,32 +1,36 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class PopoverRenderer {
-    constructor() {
+var PopoverRenderer = /** @class */ (function () {
+    function PopoverRenderer() {
         this.findById = true;
         this.focusFirst = false;
         this.dashedId = true;
     }
-    render(instruction) {
-        const toHide = [];
-        const toShow = [];
-        for (let { result, elements } of instruction.unrender.filter(x => !x.result.valid)) {
+    PopoverRenderer.prototype.render = function (instruction) {
+        var toHide = [];
+        var toShow = [];
+        for (var _i = 0, _a = instruction.unrender.filter(function (x) { return !x.result.valid; }); _i < _a.length; _i++) {
+            var _b = _a[_i], result = _b.result, elements = _b.elements;
             if (this.findById && elements.length === 0 && !!result.propertyName) {
                 elements = this.findElementById(result.propertyName.toString());
             }
-            for (const element of elements) {
+            for (var _c = 0, elements_1 = elements; _c < elements_1.length; _c++) {
+                var element = elements_1[_c];
                 toHide.push(element);
             }
         }
-        for (let { result, elements } of instruction.render) {
+        for (var _d = 0, _e = instruction.render; _d < _e.length; _d++) {
+            var _f = _e[_d], result = _f.result, elements = _f.elements;
             if (this.findById && elements.length === 0 && !!result.propertyName) {
                 elements = this.findElementById(result.propertyName.toString());
             }
-            for (const element of elements) {
+            for (var _g = 0, elements_2 = elements; _g < elements_2.length; _g++) {
+                var element = elements_2[_g];
                 if (result.valid) {
                     toHide.push(element);
                 }
                 else {
-                    const popover = $(element).closest('[data-toggle=popover]');
+                    var popover = $(element).closest('[data-toggle=popover]');
                     if (toShow.indexOf(element) >= 0) {
                         popover.data('content', popover.data('content') + '\n' + result.message);
                     }
@@ -37,18 +41,18 @@ class PopoverRenderer {
                 }
             }
         }
-        let first = true;
-        for (const element of toShow) {
-            if (this.focusFirst && first) {
+        var first = true;
+        var _loop_1 = function (element) {
+            if (this_1.focusFirst && first) {
                 first = false;
                 $(element).focus();
             }
-            const popover = $(element).closest('[data-toggle=popover]');
-            const data = popover.data('bs.popover');
-            const hasTip = !!data && !!data.tip;
-            let $tip = hasTip ? $(data.tip) : undefined;
-            const isVisible = hasTip && $tip.hasClass('show');
-            const content = popover.data('content');
+            var popover = $(element).closest('[data-toggle=popover]');
+            var data = popover.data('bs.popover');
+            var hasTip = !!data && !!data.tip;
+            var $tip = hasTip ? $(data.tip) : undefined;
+            var isVisible = hasTip && $tip.hasClass('show');
+            var content = popover.data('content');
             if (!!data) {
                 data.config.content = content;
             }
@@ -60,22 +64,29 @@ class PopoverRenderer {
                 popover.popover('show');
                 $tip = $(popover.data('bs.popover').tip);
                 $tip.addClass('popover-danger');
-                $(element).one('keypress', () => {
+                $(element).one('keypress', function () {
                     popover.popover('hide');
                 });
             }
+        };
+        var this_1 = this;
+        for (var _h = 0, toShow_1 = toShow; _h < toShow_1.length; _h++) {
+            var element = toShow_1[_h];
+            _loop_1(element);
         }
-        for (const element of $.unique(toHide).filter(x => toShow.indexOf(x) === -1)) {
-            const popover = $(element).closest('[data-toggle=popover]');
+        for (var _j = 0, _k = $.unique(toHide).filter(function (x) { return toShow.indexOf(x) === -1; }); _j < _k.length; _j++) {
+            var element = _k[_j];
+            var popover = $(element).closest('[data-toggle=popover]');
             popover.popover('hide');
         }
-    }
-    findElementById(id) {
-        const name = this.dashedId
-            ? id.replace(/^[a-z]|[A-Z]/g, (s, i) => (i === 0 ? s.toLowerCase() : `-${s.toLowerCase()}`))
+    };
+    PopoverRenderer.prototype.findElementById = function (id) {
+        var name = this.dashedId
+            ? id.replace(/^[a-z]|[A-Z]/g, function (s, i) { return (i === 0 ? s.toLowerCase() : "-" + s.toLowerCase()); })
             : id.toString().toLowerCase();
-        const selector = `#${name}`;
+        var selector = "#" + name;
         return $(selector).get();
-    }
-}
+    };
+    return PopoverRenderer;
+}());
 exports.PopoverRenderer = PopoverRenderer;

@@ -6,13 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-let BoolValueConverter = class BoolValueConverter {
-    toView(value) {
-        return value === true ? 'Ja' : value === false ? 'Nee' : '';
+var aurelia_framework_1 = require("aurelia-framework");
+var BoolValueConverter = /** @class */ (function () {
+    function BoolValueConverter() {
     }
-};
-BoolValueConverter = __decorate([
-    aurelia_framework_1.valueConverter('bool')
-], BoolValueConverter);
+    BoolValueConverter.prototype.toView = function (value) {
+        return value === true ? 'Ja' : value === false ? 'Nee' : '';
+    };
+    BoolValueConverter = __decorate([
+        aurelia_framework_1.valueConverter('bool')
+    ], BoolValueConverter);
+    return BoolValueConverter;
+}());
 exports.BoolValueConverter = BoolValueConverter;

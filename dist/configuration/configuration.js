@@ -11,19 +11,22 @@ var ConfigurationMode;
 /**
  * Container class for the current configuration mode
  */
-class Configuration {
+var Configuration = /** @class */ (function () {
+    function Configuration() {
+    }
     /**
      * Creates the map of available modes
      */
-    static createModes() {
-        const result = new Map();
+    Configuration.createModes = function () {
+        var result = new Map();
         result.set('Debug', ConfigurationMode.Debug);
         result.set('Release', ConfigurationMode.Release);
         return result;
-    }
-}
+    };
+    /**
+     * The map of available modes
+     */
+    Configuration.modes = Configuration.createModes();
+    return Configuration;
+}());
 exports.Configuration = Configuration;
-/**
- * The map of available modes
- */
-Configuration.modes = Configuration.createModes();

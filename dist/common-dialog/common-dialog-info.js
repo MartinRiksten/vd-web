@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Common dialog information container
  */
-class CommonDialogInfo {
+var CommonDialogInfo = /** @class */ (function () {
     /**
      * Initializes a new instance of the CommonDialogInfo class
      * @param header The header text
@@ -11,11 +11,13 @@ class CommonDialogInfo {
      * @param buttons The buttons
      * @param symbolClass The header symbol class
      */
-    constructor(header, headerClass, buttons = [], symbolClass) {
+    function CommonDialogInfo(header, headerClass, buttons, symbolClass) {
+        if (buttons === void 0) { buttons = []; }
         this.header = header;
         this.headerClass = headerClass;
         this.buttons = buttons;
         this.symbolClass = symbolClass;
     }
-}
+    return CommonDialogInfo;
+}());
 exports.CommonDialogInfo = CommonDialogInfo;

@@ -12,33 +12,35 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_framework_1 = require("aurelia-framework");
-const aurelia_task_queue_1 = require("aurelia-task-queue");
-const jquery_1 = __importDefault(require("jquery"));
-let TooltipCustomAttribute = class TooltipCustomAttribute {
-    constructor(element, taskQueue) {
+var aurelia_framework_1 = require("aurelia-framework");
+var aurelia_task_queue_1 = require("aurelia-task-queue");
+var jquery_1 = __importDefault(require("jquery"));
+var TooltipCustomAttribute = /** @class */ (function () {
+    function TooltipCustomAttribute(element, taskQueue) {
         this.element = element;
         this.taskQueue = taskQueue;
     }
-    attached() {
+    TooltipCustomAttribute.prototype.attached = function () {
+        var _this = this;
         if (!this.value) {
             return;
         }
-        const option = this.value;
-        this.taskQueue.queueTask(() => {
-            jquery_1.default(this.element).tooltip(option);
+        var option = this.value;
+        this.taskQueue.queueTask(function () {
+            jquery_1.default(_this.element).tooltip(option);
         });
-    }
-    detached() {
+    };
+    TooltipCustomAttribute.prototype.detached = function () {
         if (!this.value) {
             return;
         }
         jquery_1.default(this.element).tooltip('dispose');
-    }
-};
-TooltipCustomAttribute = __decorate([
-    aurelia_framework_1.autoinject,
-    aurelia_framework_1.customAttribute('tooltip'),
-    __metadata("design:paramtypes", [Element, aurelia_task_queue_1.TaskQueue])
-], TooltipCustomAttribute);
+    };
+    TooltipCustomAttribute = __decorate([
+        aurelia_framework_1.autoinject,
+        aurelia_framework_1.customAttribute('tooltip'),
+        __metadata("design:paramtypes", [Element, aurelia_task_queue_1.TaskQueue])
+    ], TooltipCustomAttribute);
+    return TooltipCustomAttribute;
+}());
 exports.TooltipCustomAttribute = TooltipCustomAttribute;
