@@ -78,8 +78,6 @@ function configure(config) {
         .concat(converters.map(function (x) { return basePath + "/converters/" + x; }))
         .map(function (x) { return aurelia_pal_1.PLATFORM.moduleName(x); });
     config.globalResources(resources);
-    $.fn.selectpicker.Constructor.BootstrapVersion = "4";
-    $.fn.selectpicker.Constructor.DEFAULTS.display = "static";
     common_dialogs_1.CommonDialogs.configure();
     config_1.Config.configure();
 }

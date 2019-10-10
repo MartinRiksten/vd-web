@@ -78,9 +78,6 @@ export function configure(config: FrameworkConfiguration) {
     .map(x => PLATFORM.moduleName(x));
   config.globalResources(resources);
 
-  ($.fn as any).selectpicker.Constructor.BootstrapVersion = "4";
-  ($.fn as any).selectpicker.Constructor.DEFAULTS.display = "static";
-
   CommonDialogs.configure();
   Config.configure();
 }
