@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class VdFormInput {
     constructor() {
-        this.labelClass = 'col-6';
-        this.groupClass = 'col-6';
+        this.labelClass = 'col-md-6';
+        this.groupClass = 'col-md-6';
         this.inputClass = '';
         this.autoFocus = false;
     }

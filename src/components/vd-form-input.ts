@@ -1,6 +1,6 @@
 export class VdFormInput<T> {
-  public labelClass = 'col-6';
-  public groupClass = 'col-6';
+  public labelClass = 'col-md-6';
+  public groupClass = 'col-md-6';
   public inputClass = '';
 
   public inputId: string;
