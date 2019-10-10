@@ -1,4 +1,6 @@
 import { FrameworkConfiguration } from 'aurelia-framework';
+import "bootstrap";
+import "bootstrap-select";
 export * from './attributes/clipboard';
 export * from './attributes/draggable';
 export * from './attributes/popover';

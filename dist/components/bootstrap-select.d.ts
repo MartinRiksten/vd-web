@@ -1,5 +1,3 @@
-import "bootstrap";
-import "bootstrap-select";
 declare global {
     interface JQuery<TElement = HTMLElement> {
         selectpicker: (x?: string, y?: string) => string;

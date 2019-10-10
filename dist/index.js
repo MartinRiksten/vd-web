@@ -14,6 +14,8 @@ var config_1 = require("./utilities/config");
 // bootstrap is loaded in components/bootstrap-select 
 var popper_js_1 = __importDefault(require("popper.js"));
 window.Popper = popper_js_1.default;
+require("bootstrap");
+require("bootstrap-select");
 __export(require("./attributes/clipboard"));
 __export(require("./attributes/draggable"));
 __export(require("./attributes/popover"));

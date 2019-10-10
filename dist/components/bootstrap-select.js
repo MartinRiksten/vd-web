@@ -10,8 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
-require("bootstrap");
-require("bootstrap-select");
 var BootstrapSelect = /** @class */ (function () {
     function BootstrapSelect() {
     }
