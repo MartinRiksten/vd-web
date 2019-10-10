@@ -1,4 +1,6 @@
 ﻿import { bindable } from 'aurelia-framework';
+import "bootstrap";
+import "bootstrap-select";
 
 declare global {
   // tslint:disable-next-line:interface-name
