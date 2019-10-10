@@ -11,7 +11,7 @@ var common_dialogs_1 = require("./common-dialog/common-dialogs");
 var config_1 = require("./utilities/config");
 // https://github.com/twbs/bootstrap/issues/23381
 // boostrap must be loaded after popper.js is initialized
-// bootstrap is loaded in app.js 
+// bootstrap is loaded in components/bootstrap-select 
 var popper_js_1 = __importDefault(require("popper.js"));
 window.Popper = popper_js_1.default;
 __export(require("./attributes/clipboard"));

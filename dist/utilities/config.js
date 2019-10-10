@@ -4,6 +4,17 @@ var Config = /** @class */ (function () {
     function Config() {
     }
     Config.configure = function () {
+        if (!Object.entries) {
+            Object.entries = function (obj) {
+                var ownProps = Object.keys(obj);
+                var i = ownProps.length;
+                var resArray = new Array(i); // preallocate the Array
+                while (i--) {
+                    resArray[i] = [ownProps[i], obj[ownProps[i]]];
+                }
+                return resArray;
+            };
+        }
         /* function to restrict the input of an input control by implementing a keypress event
         - data-regex contains the regex to use to validate a key */
         $("body").on("keypress", "input[data-regex]", function (event) {

@@ -1,5 +1,18 @@
 export class Config {
     public static configure() {
+        if (!Object.entries) {
+            Object.entries = (obj: any) => {
+                const ownProps = Object.keys(obj);
+                let i = ownProps.length;
+                const resArray = new Array(i); // preallocate the Array
+                while (i--) {
+                    resArray[i] = [ownProps[i], obj[ownProps[i]]];
+                }
+
+                return resArray as any[];
+            };
+        }
+
         /* function to restrict the input of an input control by implementing a keypress event
         - data-regex contains the regex to use to validate a key */
         $("body").on("keypress", "input[data-regex]", event => {
