@@ -14,8 +14,8 @@ const vd_form_input_1 = require("./vd-form-input");
 class VdFormCheckbox extends vd_form_input_1.VdFormInput {
     constructor() {
         super(...arguments);
-        this.labelClass = 'col-6';
-        this.groupClass = 'offset-sm-4';
+        this.labelClass = 'col-md-6';
+        this.groupClass = 'offset-md-4';
     }
 }
 __decorate([
