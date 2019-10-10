@@ -5,6 +5,7 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_pal_1 = require("aurelia-pal");
 var common_dialogs_1 = require("./common-dialog/common-dialogs");
+var config_1 = require("./utilities/config");
 __export(require("./attributes/clipboard"));
 __export(require("./attributes/draggable"));
 __export(require("./attributes/popover"));
@@ -78,5 +79,6 @@ function configure(config) {
         .map(function (x) { return aurelia_pal_1.PLATFORM.moduleName(x); });
     config.globalResources(resources);
     common_dialogs_1.CommonDialogs.configure();
+    config_1.Config.configure();
 }
 exports.configure = configure;

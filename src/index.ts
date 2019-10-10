@@ -1,6 +1,7 @@
 import { FrameworkConfiguration } from 'aurelia-framework';
 import { PLATFORM } from 'aurelia-pal';
 import { CommonDialogs } from './common-dialog/common-dialogs';
+import { Config } from './utilities/config';
 
 export * from './attributes/clipboard';
 export * from './attributes/draggable';
@@ -78,4 +79,5 @@ export function configure(config: FrameworkConfiguration) {
   config.globalResources(resources);
 
   CommonDialogs.configure();
+  Config.configure();
 }
