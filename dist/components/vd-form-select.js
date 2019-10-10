@@ -15,6 +15,34 @@ class VdFormSelect extends vd_form_input_1.VdFormInput {
 }
 __decorate([
     aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormSelect.prototype, "labelClass", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormSelect.prototype, "groupClass", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormSelect.prototype, "inputClass", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormSelect.prototype, "inputId", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormSelect.prototype, "label", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormSelect.prototype, "value", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", Boolean)
+], VdFormSelect.prototype, "autoFocus", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
     __metadata("design:type", Array)
 ], VdFormSelect.prototype, "options", void 0);
 exports.VdFormSelect = VdFormSelect;

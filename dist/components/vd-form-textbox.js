@@ -25,7 +25,31 @@ class VdFormTextbox extends vd_form_input_1.VdFormInput {
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
+], VdFormTextbox.prototype, "labelClass", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormTextbox.prototype, "groupClass", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormTextbox.prototype, "inputClass", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormTextbox.prototype, "inputId", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormTextbox.prototype, "label", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
 ], VdFormTextbox.prototype, "value", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", Boolean)
+], VdFormTextbox.prototype, "autoFocus", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)

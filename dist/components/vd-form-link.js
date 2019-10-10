@@ -22,6 +22,22 @@ class VdFormLink extends vd_form_data_1.VdFormData {
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
+], VdFormLink.prototype, "labelClass", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormLink.prototype, "dataClass", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormLink.prototype, "label", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormLink.prototype, "value", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
 ], VdFormLink.prototype, "href", void 0);
 __decorate([
     aurelia_framework_1.bindable,

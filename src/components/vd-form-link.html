@@ -1,6 +1,6 @@
 <template>
     <label class="font-weight-lighter text-sm-right" class.bind="labelClass">${label}</label>
-    <div class="d-inline" class.bind="dataClass">
+    <div class.bind="dataClass">
         <a href="#" href.bind="href" click.trigger="click($event)">
                 <slot name="before"></slot>
                 <span innerhtml.bind="value"></span>

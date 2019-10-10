@@ -12,15 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 class VdFormData {
     constructor() {
-        this.formClass = 'col-6';
         this.labelClass = 'col-6';
         this.dataClass = 'col-6';
     }
 }
-__decorate([
-    aurelia_framework_1.bindable,
-    __metadata("design:type", Object)
-], VdFormData.prototype, "formClass", void 0);
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Object)

@@ -26,4 +26,24 @@ __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", Object)
 ], VdFormCheckbox.prototype, "groupClass", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormCheckbox.prototype, "inputClass", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormCheckbox.prototype, "inputId", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
+], VdFormCheckbox.prototype, "label", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", Boolean)
+], VdFormCheckbox.prototype, "value", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", Boolean)
+], VdFormCheckbox.prototype, "autoFocus", void 0);
 exports.VdFormCheckbox = VdFormCheckbox;

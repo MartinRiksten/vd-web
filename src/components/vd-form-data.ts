@@ -1,7 +1,6 @@
 ﻿import { bindable } from 'aurelia-framework';
 
 export class VdFormData {
-  @bindable public formClass = 'col-6';
   @bindable public labelClass = 'col-6';
   @bindable public dataClass = 'col-6';
   @bindable public label: string;
