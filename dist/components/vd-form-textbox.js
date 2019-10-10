@@ -25,6 +25,10 @@ class VdFormTextbox extends vd_form_input_1.VdFormInput {
 __decorate([
     aurelia_framework_1.bindable,
     __metadata("design:type", String)
+], VdFormTextbox.prototype, "value", void 0);
+__decorate([
+    aurelia_framework_1.bindable,
+    __metadata("design:type", String)
 ], VdFormTextbox.prototype, "regex", void 0);
 __decorate([
     aurelia_framework_1.bindable,

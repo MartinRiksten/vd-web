@@ -3,6 +3,8 @@ import { PopoverOption } from 'bootstrap/index';
 import { VdFormInput } from './vd-form-input';
 
 export class VdFormTextbox extends VdFormInput<string> {
+  @bindable public value: string;
+
   @bindable public regex: string;
   @bindable public maxLength: string;
   @bindable public placeHolder: string;
