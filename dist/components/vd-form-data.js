@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const aurelia_framework_1 = require("aurelia-framework");
 class VdFormData {
     constructor() {
-        this.labelClass = 'col-6';
-        this.dataClass = 'col-6';
+        this.labelClass = 'col-md-6';
+        this.dataClass = 'col-md-6';
     }
 }
 __decorate([
