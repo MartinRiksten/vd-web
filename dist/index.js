@@ -2,20 +2,10 @@
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_pal_1 = require("aurelia-pal");
 var common_dialogs_1 = require("./common-dialog/common-dialogs");
 var config_1 = require("./utilities/config");
-// https://github.com/twbs/bootstrap/issues/23381
-// boostrap must be loaded after popper.js is initialized
-// bootstrap is loaded in components/bootstrap-select 
-var popper_js_1 = __importDefault(require("popper.js"));
-window.Popper = popper_js_1.default;
-require("bootstrap");
-require("bootstrap-select");
 __export(require("./attributes/clipboard"));
 __export(require("./attributes/draggable"));
 __export(require("./attributes/popover"));

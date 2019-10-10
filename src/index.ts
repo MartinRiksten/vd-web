@@ -3,15 +3,6 @@ import { PLATFORM } from 'aurelia-pal';
 import { CommonDialogs } from './common-dialog/common-dialogs';
 import { Config } from './utilities/config';
 
-// https://github.com/twbs/bootstrap/issues/23381
-// boostrap must be loaded after popper.js is initialized
-// bootstrap is loaded in components/bootstrap-select 
-import Popper from "popper.js";
-(window as any).Popper = Popper;
-
-import "bootstrap";
-import "bootstrap-select";
-
 export * from './attributes/clipboard';
 export * from './attributes/draggable';
 export * from './attributes/popover';
