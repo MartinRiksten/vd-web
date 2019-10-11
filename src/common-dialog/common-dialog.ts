@@ -44,7 +44,7 @@ export class CommonDialog {
    */
   public showButton(name: string): boolean {
     const button = CommonDialogs.buttons.get(name);
-    const result = !!button && this.info.buttons.indexOf(button) >= 0;
+    const result = (!!button || button === 0) && this.info.buttons.indexOf(button) >= 0;
     return result;
   }
 

@@ -77,7 +77,7 @@ var CommonDialog = /** @class */ (function () {
      */
     CommonDialog.prototype.showButton = function (name) {
         var button = common_dialogs_1.CommonDialogs.buttons.get(name);
-        var result = !!button && this.info.buttons.indexOf(button) >= 0;
+        var result = (!!button || button === 0) && this.info.buttons.indexOf(button) >= 0;
         return result;
     };
     /**
