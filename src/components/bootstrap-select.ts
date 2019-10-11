@@ -31,6 +31,9 @@ export class BootstrapSelect {
       this.selected = $(this.picker).selectpicker('val');
     });
   }
+  public optionsChanged() {
+    $('.selectpicker').selectpicker('refresh');
+  }
 
   public selectedChanged() {
     $(this.picker).selectpicker('val', this.selected);

@@ -14,5 +14,6 @@ export declare class BootstrapSelect {
     displayName: string;
     picker: Element;
     attached(): void;
+    optionsChanged(): void;
     selectedChanged(): void;
 }

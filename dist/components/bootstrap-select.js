@@ -24,6 +24,9 @@ var BootstrapSelect = /** @class */ (function () {
             _this.selected = $(_this.picker).selectpicker('val');
         });
     };
+    BootstrapSelect.prototype.optionsChanged = function () {
+        $('.selectpicker').selectpicker('refresh');
+    };
     BootstrapSelect.prototype.selectedChanged = function () {
         $(this.picker).selectpicker('val', this.selected);
     };
