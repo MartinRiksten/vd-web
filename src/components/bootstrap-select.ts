@@ -1,4 +1,4 @@
-﻿import { bindable } from 'aurelia-framework';
+﻿import { autoinject, bindable, TaskQueue } from 'aurelia-framework';
 
 declare global {
   // tslint:disable-next-line:interface-name
@@ -13,12 +13,16 @@ export interface IBootstrapSelectOption {
   subtext: string;
 }
 
+@autoinject
 export class BootstrapSelect {
   @bindable public options!: IBootstrapSelectOption[];
   @bindable public selected!: string;
   @bindable public displayName!: string;
 
   public picker!: Element;
+
+constructor(private readonly taskQueue: TaskQueue) {
+}
 
   public attached() {
     if (!!this.displayName) {
@@ -31,8 +35,9 @@ export class BootstrapSelect {
       this.selected = $(this.picker).selectpicker('val');
     });
   }
+
   public optionsChanged() {
-    $('.selectpicker').selectpicker('refresh');
+    this.taskQueue.queueTask(() => { $(this.picker).selectpicker('refresh'); });
   }
 
   public selectedChanged() {

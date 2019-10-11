@@ -1,3 +1,4 @@
+import { TaskQueue } from 'aurelia-framework';
 declare global {
     interface JQuery<TElement = HTMLElement> {
         selectpicker: (x?: string, y?: string) => string;
@@ -9,10 +10,12 @@ export interface IBootstrapSelectOption {
     subtext: string;
 }
 export declare class BootstrapSelect {
+    private readonly taskQueue;
     options: IBootstrapSelectOption[];
     selected: string;
     displayName: string;
     picker: Element;
+    constructor(taskQueue: TaskQueue);
     attached(): void;
     optionsChanged(): void;
     selectedChanged(): void;

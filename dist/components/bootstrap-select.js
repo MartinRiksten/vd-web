@@ -11,7 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
 var BootstrapSelect = /** @class */ (function () {
-    function BootstrapSelect() {
+    function BootstrapSelect(taskQueue) {
+        this.taskQueue = taskQueue;
     }
     BootstrapSelect.prototype.attached = function () {
         var _this = this;
@@ -25,7 +26,8 @@ var BootstrapSelect = /** @class */ (function () {
         });
     };
     BootstrapSelect.prototype.optionsChanged = function () {
-        $('.selectpicker').selectpicker('refresh');
+        var _this = this;
+        this.taskQueue.queueTask(function () { $(_this.picker).selectpicker('refresh'); });
     };
     BootstrapSelect.prototype.selectedChanged = function () {
         $(this.picker).selectpicker('val', this.selected);
@@ -42,6 +44,10 @@ var BootstrapSelect = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
     ], BootstrapSelect.prototype, "displayName", void 0);
+    BootstrapSelect = __decorate([
+        aurelia_framework_1.autoinject,
+        __metadata("design:paramtypes", [aurelia_framework_1.TaskQueue])
+    ], BootstrapSelect);
     return BootstrapSelect;
 }());
 exports.BootstrapSelect = BootstrapSelect;
