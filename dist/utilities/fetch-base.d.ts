@@ -15,7 +15,7 @@ export declare abstract class FetchBase {
     /**
      * Gets the given data to the given url, and stores any returned errors.
      */
-    protected getAsync<T>(url: string): Promise<IServiceResult<T>>;
+    protected getAsync<T>(url: string): Promise<T>;
     /**
      * Gets the given data to the given url, and stores any returned errors.
      */

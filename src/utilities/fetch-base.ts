@@ -15,23 +15,48 @@ export abstract class FetchBase {
   protected async postAsync<T>(url: string, data?: any): Promise<IServiceResult<T>> {
     const body: Blob | object = !!data ? json(data) : data;
     const init = { method: 'POST', body };
-    const result = await this.doFetchAsync<T>(url, init);
-    return result;
+    try {
+      const response = await this.http.fetchAsync(url, init);
+      if (!response.ok) {
+        this.commonDialogHelper.unexpectedError(response.statusText);
+        return { success: false, handled: true } as IServiceResult<T>;
+      }
+
+      const value = await response.json();
+      const result = value as IServiceResult<T>;
+      result.handled = false;
+      return result;
+    } catch (error) {
+      this.commonDialogHelper.unexpectedError(error);
+      return { success: false, handled: true, firstMessage: error } as IServiceResult<T>;
+    }
   }
 
   /**
    * Gets the given data to the given url, and stores any returned errors.
    */
-  protected async getAsync<T>(url: string): Promise<IServiceResult<T>> {
+  protected async getAsync<T>(url: string): Promise<T> {
     const init = { method: 'GET' };
-    const result = await this.doFetchAsync<T>(url, init);
-    return result;
+    try {
+      const response = await this.http.fetchAsync(url, init);
+      if (!response.ok) {
+        this.commonDialogHelper.unexpectedError(response.statusText);
+        return void 0;
+      }
+
+      const value = await response.json();
+      const result = value as T;
+      return result;
+    } catch (error) {
+      this.commonDialogHelper.unexpectedError(error);
+      return void 0;
+    }
   }
 
-    /**
-     * Gets the given data to the given url, and stores any returned errors.
-     */
-  private async doFetchAsync<T>(url: string, init: object): Promise<IServiceResult<T>> {
+  /**
+   * Gets the given data to the given url, and stores any returned errors.
+   */
+  private async doFetchAsync<T, R>(url: string, init: object): Promise<IServiceResult<T>> {
     try {
       const response = await this.http.fetchAsync(url, init);
       if (!response.ok) {

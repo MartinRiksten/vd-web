@@ -51,16 +51,33 @@ var FetchBase = /** @class */ (function () {
      */
     FetchBase.prototype.postAsync = function (url, data) {
         return __awaiter(this, void 0, void 0, function () {
-            var body, init, result;
+            var body, init, response, value, result, error_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         body = !!data ? aurelia_fetch_client_1.json(data) : data;
                         init = { method: 'POST', body: body };
-                        return [4 /*yield*/, this.doFetchAsync(url, init)];
+                        _a.label = 1;
                     case 1:
-                        result = _a.sent();
+                        _a.trys.push([1, 4, , 5]);
+                        return [4 /*yield*/, this.http.fetchAsync(url, init)];
+                    case 2:
+                        response = _a.sent();
+                        if (!response.ok) {
+                            this.commonDialogHelper.unexpectedError(response.statusText);
+                            return [2 /*return*/, { success: false, handled: true }];
+                        }
+                        return [4 /*yield*/, response.json()];
+                    case 3:
+                        value = _a.sent();
+                        result = value;
+                        result.handled = false;
                         return [2 /*return*/, result];
+                    case 4:
+                        error_1 = _a.sent();
+                        this.commonDialogHelper.unexpectedError(error_1);
+                        return [2 /*return*/, { success: false, handled: true, firstMessage: error_1 }];
+                    case 5: return [2 /*return*/];
                 }
             });
         });
@@ -70,15 +87,31 @@ var FetchBase = /** @class */ (function () {
      */
     FetchBase.prototype.getAsync = function (url) {
         return __awaiter(this, void 0, void 0, function () {
-            var init, result;
+            var init, response, value, result, error_2;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         init = { method: 'GET' };
-                        return [4 /*yield*/, this.doFetchAsync(url, init)];
+                        _a.label = 1;
                     case 1:
-                        result = _a.sent();
+                        _a.trys.push([1, 4, , 5]);
+                        return [4 /*yield*/, this.http.fetchAsync(url, init)];
+                    case 2:
+                        response = _a.sent();
+                        if (!response.ok) {
+                            this.commonDialogHelper.unexpectedError(response.statusText);
+                            return [2 /*return*/, void 0];
+                        }
+                        return [4 /*yield*/, response.json()];
+                    case 3:
+                        value = _a.sent();
+                        result = value;
                         return [2 /*return*/, result];
+                    case 4:
+                        error_2 = _a.sent();
+                        this.commonDialogHelper.unexpectedError(error_2);
+                        return [2 /*return*/, void 0];
+                    case 5: return [2 /*return*/];
                 }
             });
         });
@@ -88,7 +121,7 @@ var FetchBase = /** @class */ (function () {
      */
     FetchBase.prototype.doFetchAsync = function (url, init) {
         return __awaiter(this, void 0, void 0, function () {
-            var response, value, result, error_1;
+            var response, value, result, error_3;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -107,9 +140,9 @@ var FetchBase = /** @class */ (function () {
                         result.handled = false;
                         return [2 /*return*/, result];
                     case 3:
-                        error_1 = _a.sent();
-                        this.commonDialogHelper.unexpectedError(error_1);
-                        return [2 /*return*/, { success: false, handled: true, firstMessage: error_1 }];
+                        error_3 = _a.sent();
+                        this.commonDialogHelper.unexpectedError(error_3);
+                        return [2 /*return*/, { success: false, handled: true, firstMessage: error_3 }];
                     case 4: return [2 /*return*/];
                 }
             });
