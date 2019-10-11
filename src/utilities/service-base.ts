@@ -27,8 +27,18 @@ export abstract class ServiceBase<TModel> extends FetchBase {
    * @param data: The id of the instance to load
    */
   protected async searchBaseAsync(url: string, id?: string | object): Promise<IServiceResult<TModel[]>> {
-    const data = typeof id === 'string' || id instanceof String ? { id } : id;
-    const result = !!id ? await this.fetchAsync<TModel[]>(url, data) : await this.fetchAsync<TModel[]>(url);
+    const data = ! id ? void 0 : typeof id === 'string' || id instanceof String ? { id } : id;
+    const result = await this.postAsync<TModel[]>(url, data);
+    return result;
+  }
+
+    /**
+     * Gets a file from the given url.
+     * @param url: The url for the operation
+     * @param data: The id of the instance to load
+     */
+  protected async getBaseAsync(url: string): Promise<IServiceResult<TModel>> {
+    const result = await this.getAsync<TModel>(url);
     return result;
   }
 
@@ -38,8 +48,8 @@ export abstract class ServiceBase<TModel> extends FetchBase {
    * @param data: The id of the instance to load
    */
   protected async loadBaseAsync(url: string, id?: string | object): Promise<IServiceResult<TModel>> {
-    const data = typeof id === 'string' || id instanceof String ? { id } : id;
-    const result = !!id ? await this.fetchAsync<TModel>(url, data) : await this.fetchAsync<TModel>(url);
+    const data = !id ? void 0 : typeof id === 'string' || id instanceof String ? { id } : id;
+    const result = await this.postAsync<TModel>(url, data);
     return result;
   }
 
@@ -49,7 +59,7 @@ export abstract class ServiceBase<TModel> extends FetchBase {
    * @param data: The id of the instance to delete
    */
   protected async deleteBaseAsync(url: string, id: string): Promise<IServiceResult<boolean>> {
-    const result = await this.fetchAsync<boolean>(url, { id });
+    const result = await this.postAsync<boolean>(url, { id });
     return result;
   }
 
@@ -59,7 +69,7 @@ export abstract class ServiceBase<TModel> extends FetchBase {
    * @param model: The model to save
    */
   protected async saveBaseAsync(url: string, item: TModel): Promise<IServiceResult<TModel>> {
-    const result = await this.fetchAsync<TModel>(url, item);
+    const result = await this.postAsync<TModel>(url, item);
     return result;
   }
 }

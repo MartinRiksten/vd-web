@@ -1,7 +1,7 @@
 import { FrameworkConfiguration } from 'aurelia-framework';
 import { PLATFORM } from 'aurelia-pal';
 import { CommonDialogs } from './common-dialog/common-dialogs';
-import { Config } from './utilities/config';
+import { Config } from './configuration/config';
 
 export * from './attributes/clipboard';
 export * from './attributes/draggable';

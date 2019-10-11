@@ -74,22 +74,32 @@ var ServiceBase = /** @class */ (function (_super) {
      */
     ServiceBase.prototype.searchBaseAsync = function (url, id) {
         return __awaiter(this, void 0, void 0, function () {
-            var data, result, _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var data, result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
                     case 0:
-                        data = typeof id === 'string' || id instanceof String ? { id: id } : id;
-                        if (!!!id) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.fetchAsync(url, data)];
+                        data = !id ? void 0 : typeof id === 'string' || id instanceof String ? { id: id } : id;
+                        return [4 /*yield*/, this.postAsync(url, data)];
                     case 1:
-                        _a = _b.sent();
-                        return [3 /*break*/, 4];
-                    case 2: return [4 /*yield*/, this.fetchAsync(url)];
-                    case 3:
-                        _a = _b.sent();
-                        _b.label = 4;
-                    case 4:
-                        result = _a;
+                        result = _a.sent();
+                        return [2 /*return*/, result];
+                }
+            });
+        });
+    };
+    /**
+     * Gets a file from the given url.
+     * @param url: The url for the operation
+     * @param data: The id of the instance to load
+     */
+    ServiceBase.prototype.getBaseAsync = function (url) {
+        return __awaiter(this, void 0, void 0, function () {
+            var result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getAsync(url)];
+                    case 1:
+                        result = _a.sent();
                         return [2 /*return*/, result];
                 }
             });
@@ -102,22 +112,14 @@ var ServiceBase = /** @class */ (function (_super) {
      */
     ServiceBase.prototype.loadBaseAsync = function (url, id) {
         return __awaiter(this, void 0, void 0, function () {
-            var data, result, _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var data, result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
                     case 0:
-                        data = typeof id === 'string' || id instanceof String ? { id: id } : id;
-                        if (!!!id) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.fetchAsync(url, data)];
+                        data = !id ? void 0 : typeof id === 'string' || id instanceof String ? { id: id } : id;
+                        return [4 /*yield*/, this.postAsync(url, data)];
                     case 1:
-                        _a = _b.sent();
-                        return [3 /*break*/, 4];
-                    case 2: return [4 /*yield*/, this.fetchAsync(url)];
-                    case 3:
-                        _a = _b.sent();
-                        _b.label = 4;
-                    case 4:
-                        result = _a;
+                        result = _a.sent();
                         return [2 /*return*/, result];
                 }
             });
@@ -133,7 +135,7 @@ var ServiceBase = /** @class */ (function (_super) {
             var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.fetchAsync(url, { id: id })];
+                    case 0: return [4 /*yield*/, this.postAsync(url, { id: id })];
                     case 1:
                         result = _a.sent();
                         return [2 /*return*/, result];
@@ -151,7 +153,7 @@ var ServiceBase = /** @class */ (function (_super) {
             var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.fetchAsync(url, item)];
+                    case 0: return [4 /*yield*/, this.postAsync(url, item)];
                     case 1:
                         result = _a.sent();
                         return [2 /*return*/, result];

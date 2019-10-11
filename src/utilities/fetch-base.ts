@@ -12,10 +12,28 @@ export abstract class FetchBase {
   /**
    * Posts the given data to the given url, and stores any returned errors.
    */
-  protected async fetchAsync<T>(url: string, data?: any): Promise<IServiceResult<T>> {
+  protected async postAsync<T>(url: string, data?: any): Promise<IServiceResult<T>> {
     const body: Blob | object = !!data ? json(data) : data;
+    const init = { method: 'POST', body };
+    const result = await this.doFetchAsync<T>(url, init);
+    return result;
+  }
+
+  /**
+   * Gets the given data to the given url, and stores any returned errors.
+   */
+  protected async getAsync<T>(url: string): Promise<IServiceResult<T>> {
+    const init = { method: 'GET' };
+    const result = await this.doFetchAsync<T>(url, init);
+    return result;
+  }
+
+    /**
+     * Gets the given data to the given url, and stores any returned errors.
+     */
+  private async doFetchAsync<T>(url: string, init: object): Promise<IServiceResult<T>> {
     try {
-      const response = await this.http.fetchAsync(url, { method: 'POST', body });
+      const response = await this.http.fetchAsync(url, init);
       if (!response.ok) {
         this.commonDialogHelper.unexpectedError(response.statusText);
         return { success: false, handled: true } as IServiceResult<T>;
@@ -30,6 +48,7 @@ export abstract class FetchBase {
       return { success: false, handled: true, firstMessage: error } as IServiceResult<T>;
     }
   }
+
 }
 
 /**

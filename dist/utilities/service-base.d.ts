@@ -21,6 +21,12 @@ export declare abstract class ServiceBase<TModel> extends FetchBase {
      */
     protected searchBaseAsync(url: string, id?: string | object): Promise<IServiceResult<TModel[]>>;
     /**
+     * Gets a file from the given url.
+     * @param url: The url for the operation
+     * @param data: The id of the instance to load
+     */
+    protected getBaseAsync(url: string): Promise<IServiceResult<TModel>>;
+    /**
      * Loads an object from the given url.
      * @param url: The url for the operation
      * @param data: The id of the instance to load

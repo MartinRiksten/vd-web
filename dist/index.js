@@ -5,7 +5,7 @@ function __export(m) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_pal_1 = require("aurelia-pal");
 var common_dialogs_1 = require("./common-dialog/common-dialogs");
-var config_1 = require("./utilities/config");
+var config_1 = require("./configuration/config");
 __export(require("./attributes/clipboard"));
 __export(require("./attributes/draggable"));
 __export(require("./attributes/popover"));

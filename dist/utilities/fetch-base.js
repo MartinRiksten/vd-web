@@ -49,34 +49,68 @@ var FetchBase = /** @class */ (function () {
     /**
      * Posts the given data to the given url, and stores any returned errors.
      */
-    FetchBase.prototype.fetchAsync = function (url, data) {
+    FetchBase.prototype.postAsync = function (url, data) {
         return __awaiter(this, void 0, void 0, function () {
-            var body, response, value, result, error_1;
+            var body, init, result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         body = !!data ? aurelia_fetch_client_1.json(data) : data;
-                        _a.label = 1;
+                        init = { method: 'POST', body: body };
+                        return [4 /*yield*/, this.doFetchAsync(url, init)];
                     case 1:
-                        _a.trys.push([1, 4, , 5]);
-                        return [4 /*yield*/, this.http.fetchAsync(url, { method: 'POST', body: body })];
-                    case 2:
+                        result = _a.sent();
+                        return [2 /*return*/, result];
+                }
+            });
+        });
+    };
+    /**
+     * Gets the given data to the given url, and stores any returned errors.
+     */
+    FetchBase.prototype.getAsync = function (url) {
+        return __awaiter(this, void 0, void 0, function () {
+            var init, result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        init = { method: 'GET' };
+                        return [4 /*yield*/, this.doFetchAsync(url, init)];
+                    case 1:
+                        result = _a.sent();
+                        return [2 /*return*/, result];
+                }
+            });
+        });
+    };
+    /**
+     * Gets the given data to the given url, and stores any returned errors.
+     */
+    FetchBase.prototype.doFetchAsync = function (url, init) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response, value, result, error_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 3, , 4]);
+                        return [4 /*yield*/, this.http.fetchAsync(url, init)];
+                    case 1:
                         response = _a.sent();
                         if (!response.ok) {
                             this.commonDialogHelper.unexpectedError(response.statusText);
                             return [2 /*return*/, { success: false, handled: true }];
                         }
                         return [4 /*yield*/, response.json()];
-                    case 3:
+                    case 2:
                         value = _a.sent();
                         result = value;
                         result.handled = false;
                         return [2 /*return*/, result];
-                    case 4:
+                    case 3:
                         error_1 = _a.sent();
                         this.commonDialogHelper.unexpectedError(error_1);
                         return [2 /*return*/, { success: false, handled: true, firstMessage: error_1 }];
-                    case 5: return [2 /*return*/];
+                    case 4: return [2 /*return*/];
                 }
             });
         });
