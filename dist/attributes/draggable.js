@@ -24,7 +24,7 @@ var DraggableCustomAttribute = /** @class */ (function () {
     DraggableCustomAttribute.prototype.attached = function () {
         var _this = this;
         var target = this.element.querySelector(this.selector);
-        target.addEventListener('mousedown', function (event) { return _this.init(event); }, true);
+        target.addEventListener('mousedown', function (event) { return _this.init(event); });
         var manager = new hammerjs_1.default.Manager(target);
         manager.add(new hammerjs_1.default.Pan({ direction: hammerjs_1.default.DIRECTION_ALL, threshold: 0 }));
         manager.on('pan', function (e) { return _this.pan(e); });
