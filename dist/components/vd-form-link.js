@@ -28,6 +28,7 @@ var VdFormLink = /** @class */ (function (_super) {
     __extends(VdFormLink, _super);
     function VdFormLink() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.showIcon = true;
         _this.href = '#';
         // tslint:disable-next-line:no-empty
         _this.click = function () { };
@@ -49,6 +50,10 @@ var VdFormLink = /** @class */ (function (_super) {
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
     ], VdFormLink.prototype, "value", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdFormLink.prototype, "showIcon", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)

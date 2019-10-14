@@ -6,6 +6,7 @@ export class VdFormLink extends VdFormData {
   @bindable public dataClass: string;
   @bindable public label: string;
   @bindable public value: string;
+  @bindable public showIcon = true;
 
   @bindable public href: string = '#';
   // tslint:disable-next-line:no-empty

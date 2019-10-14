@@ -1,10 +1,11 @@
 <template>
     <label class="font-weight-bold text-sm-flex-left text-md-flex-right" class.bind="labelClass">${label}</label>
     <div class.bind="dataClass">
+        <slot name="before"></slot>
         <a href="#" href.bind="href" click.trigger="click($event)">
-            <slot name="before"></slot>
             <span innerhtml.bind="value"></span>
-            <slot name="after"><i class="fas fa-play fa-xs"></i></slot>
+            <i if.bind="showIcon" class="fas fa-play fa-xs"></i>
         </a>
+        <slot name="after"></slot>
     </div>
 </template>
