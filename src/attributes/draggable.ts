@@ -15,7 +15,7 @@ export class DraggableCustomAttribute {
 
   public attached() {
     const target = this.element.querySelector(this.selector);
-    target.addEventListener('mousedown', (event: any) => this.init(event), false);
+    target.addEventListener('mousedown', (event: any) => this.init(event), true);
     const manager = new Hammer.Manager(target);
     manager.add(new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }));
     manager.on('pan', (e: HammerInput) => this.pan(e));
