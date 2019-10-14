@@ -6,5 +6,5 @@ export declare class VdFormLink extends VdFormData {
     value: string;
     showIcon: boolean;
     href: string;
-    click: () => void;
+    clickEvent: () => void;
 }
