@@ -7,7 +7,7 @@ export interface IButtonInfo {
 export declare class VdButton {
     kind: string;
     buttonId: string;
-    click: () => void;
+    clickHandler: () => void;
     label: string;
     variant: string;
     icon: string;

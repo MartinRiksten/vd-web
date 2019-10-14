@@ -10,5 +10,5 @@ export class VdFormLink extends VdFormData {
 
   @bindable public href: string = '#';
   // tslint:disable-next-line:no-empty
-  @bindable public clickEvent: () => void = () => {};
+  @bindable public clickHandler: () => void = () => {};
 }

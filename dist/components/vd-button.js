@@ -32,7 +32,7 @@ var VdButton = /** @class */ (function () {
         this.label = !!this.label ? this.label : info.label;
         this.variant = !!this.variant ? this.variant : info.variant;
         this.icon = !!this.icon ? this.icon : info.icon;
-        this.click = !!this.click ? this.click : this.onClick;
+        this.clickHandler = !!this.clickHandler ? this.clickHandler : this.onClick;
     };
     VdButton.prototype.getButtonClass = function () {
         var result = [this.buttonClass, this.variant].filter(function (x) { return !!x; }).join(" ");
@@ -54,7 +54,7 @@ var VdButton = /** @class */ (function () {
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Function)
-    ], VdButton.prototype, "click", void 0);
+    ], VdButton.prototype, "clickHandler", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)

@@ -31,7 +31,7 @@ var VdFormLink = /** @class */ (function (_super) {
         _this.showIcon = true;
         _this.href = '#';
         // tslint:disable-next-line:no-empty
-        _this.clickEvent = function () { };
+        _this.clickHandler = function () { };
         return _this;
     }
     __decorate([
@@ -61,7 +61,7 @@ var VdFormLink = /** @class */ (function (_super) {
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Function)
-    ], VdFormLink.prototype, "clickEvent", void 0);
+    ], VdFormLink.prototype, "clickHandler", void 0);
     return VdFormLink;
 }(vd_form_data_1.VdFormData));
 exports.VdFormLink = VdFormLink;
