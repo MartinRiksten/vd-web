@@ -10,7 +10,7 @@ export interface IButtonInfo {
 export class VdButton {
   @bindable public kind!: string;
   @bindable public buttonId!: string;
-  @bindable public clickHandler!: () => void;
+  @bindable public clickHandler!: (event: Event) => void;
   @bindable public label!: string;
   @bindable public variant!: string;
   @bindable public icon!: string;
@@ -35,7 +35,6 @@ export class VdButton {
     this.label = !!this.label ? this.label : info.label;
     this.variant = !!this.variant ? this.variant : info.variant;
     this.icon = !!this.icon ? this.icon : info.icon;
-    this.clickHandler = !!this.clickHandler ? this.clickHandler : this.onClick;
   }
 
 public getButtonClass(): string {
@@ -46,6 +45,10 @@ public getButtonClass(): string {
   public onClick() {
     if (!!this.clickTarget) {
       $(this.clickTarget).click();
+    }
+
+    if (!!this.clickHandler) {
+      this.clickHandler(event)
     }
   }
 }

@@ -7,8 +7,12 @@ export class VdFormLink extends VdFormData {
   @bindable public label: string;
   @bindable public value: string;
   @bindable public showIcon = true;
-
   @bindable public href: string = '#';
-  // tslint:disable-next-line:no-empty
-  @bindable public clickHandler: () => void = () => {};
+  @bindable public clickHandler: (event: Event) => void;
+
+  public onClick(event: Event) {
+    if (!!this.clickHandler) {
+      this.clickHandler(event)
+    }
+  }
 }

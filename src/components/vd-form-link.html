@@ -2,7 +2,7 @@
     <label class="font-weight-bold text-sm-flex-left text-md-flex-right" class.bind="labelClass">${label}</label>
     <div class.bind="dataClass">
         <slot name="before"></slot>
-        <a href="#" href.bind="href" click.trigger="clickHandler($event)">
+        <a href="#" href.bind="href" click.trigger="onClick($event)">
             <span innerhtml.bind="value"></span>
             <i if.bind="showIcon" class="fas fa-play fa-xs"></i>
         </a>

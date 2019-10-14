@@ -30,10 +30,13 @@ var VdFormLink = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.showIcon = true;
         _this.href = '#';
-        // tslint:disable-next-line:no-empty
-        _this.clickHandler = function () { };
         return _this;
     }
+    VdFormLink.prototype.onClick = function (event) {
+        if (!!this.clickHandler) {
+            this.clickHandler(event);
+        }
+    };
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
