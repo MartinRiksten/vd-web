@@ -2,9 +2,9 @@
     <label class="font-weight-bold text-sm-flex-left text-md-flex-right" class.bind="labelClass">${label}</label>
     <div class.bind="dataClass">
         <a href="#" href.bind="href" click.trigger="click($event)">
-                <slot name="before"></slot>
-                <span innerhtml.bind="value"></span>
-            <i class="fas fa-play fa-xs"></i>
+            <slot name="before"></slot>
+            <span innerhtml.bind="value"></span>
+            <slot name="after"><i class="fas fa-play fa-xs"></i></slot>
         </a>
     </div>
 </template>
