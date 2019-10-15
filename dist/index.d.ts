@@ -1,5 +1,6 @@
 import { FrameworkConfiguration } from 'aurelia-framework';
 export * from './attributes/clipboard';
+export * from './attributes/class-delay';
 export * from './attributes/draggable';
 export * from './attributes/popover';
 export * from './attributes/tooltip';

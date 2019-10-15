@@ -4,6 +4,7 @@ import { CommonDialogs } from './common-dialog/common-dialogs';
 import { Config } from './configuration/config';
 
 export * from './attributes/clipboard';
+export * from './attributes/class-delay';
 export * from './attributes/draggable';
 export * from './attributes/popover';
 export * from './attributes/tooltip';
@@ -48,7 +49,7 @@ export * from './validation/bootstrap-renderer';
 export * from './validation/popover-renderer';
 
 export function configure(config: FrameworkConfiguration) {
-  const attributes = ['clipboard', 'draggable', 'popover', 'tooltip'];
+  const attributes = ['clipboard', 'class-delay', 'draggable', 'popover', 'tooltip'];
   const bindings = ['async'];
   const components = [
     'bootstrap-select',

@@ -7,6 +7,7 @@ var aurelia_pal_1 = require("aurelia-pal");
 var common_dialogs_1 = require("./common-dialog/common-dialogs");
 var config_1 = require("./configuration/config");
 __export(require("./attributes/clipboard"));
+__export(require("./attributes/class-delay"));
 __export(require("./attributes/draggable"));
 __export(require("./attributes/popover"));
 __export(require("./attributes/tooltip"));
@@ -50,7 +51,7 @@ __export(require("./utilities/wait"));
 __export(require("./validation/bootstrap-renderer"));
 __export(require("./validation/popover-renderer"));
 function configure(config) {
-    var attributes = ['clipboard', 'draggable', 'popover', 'tooltip'];
+    var attributes = ['clipboard', 'class-delay', 'draggable', 'popover', 'tooltip'];
     var bindings = ['async'];
     var components = [
         'bootstrap-select',
