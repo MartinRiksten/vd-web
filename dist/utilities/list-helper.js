@@ -69,27 +69,27 @@ var ListHelper = /** @class */ (function () {
     ListHelper.prototype.compare = function (a, b, prop) {
         var propA = a;
         var propB = b;
-        for (var _i = 0, _a = prop.split('.'); _i < _a.length; _i++) {
+        for (var _i = 0, _a = prop.split("."); _i < _a.length; _i++) {
             var item = _a[_i];
-            propA = propA[item];
-            propB = propB[item];
+            propA = !propA ? null : propA[item];
+            propB = !propB ? null : propB[item];
         }
-        if (propA == null && propB == null) {
-            return 0;
+        var result = false;
+        if (propA == null || propB == null) {
+            result = propA == null ? propB == null ? 0 : -1 : 1;
         }
-        if (propA == null) {
-            return -1;
+        else {
+            if (typeof propA === "boolean") {
+                result = propA === propB ? 0 : propA ? 1 : -1;
+            }
+            if (propA instanceof Date) {
+                propA = propA.getTime();
+                propB = propB.getTime();
+            }
         }
-        if (propB == null) {
-            return 1;
-        }
-        if (propA instanceof Date) {
-            propA = propA.getTime();
-            propB = propB.getTime();
-        }
-        var result = this.compareValues(propA, propB);
-        if (result === 0 && prop !== 'id') {
-            return this.compare(a, b, 'id');
+        result = result === false ? this.compareValues(propA, propB) : result;
+        if (result === 0 && prop !== "id") {
+            return this.compare(a, b, "id");
         }
         return result;
     };
