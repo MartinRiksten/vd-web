@@ -10,6 +10,7 @@ export class ListBase<T extends IFilterable> {
   public order!: IOrderInfo;
   public trigger = 0;
   public currentList: T[] = [];
+  public count = 0;
 
   protected selected: T | undefined;
   protected listHelper = new ListHelper<T>();
@@ -62,6 +63,7 @@ export class ListBase<T extends IFilterable> {
   public getCurrentList(): T[] {
     let result = this.items;
     if (!result || result.length === 0) {
+      this.count = 0;
       return [];
     }
 
@@ -74,6 +76,7 @@ export class ListBase<T extends IFilterable> {
     }
 
     this.currentList = result;
+    this.count = result.length;
     return result;
   }
 }

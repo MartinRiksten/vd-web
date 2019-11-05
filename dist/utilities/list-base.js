@@ -8,6 +8,7 @@ var ListBase = /** @class */ (function () {
     function ListBase() {
         this.trigger = 0;
         this.currentList = [];
+        this.count = 0;
         this.listHelper = new list_helper_1.ListHelper();
     }
     ListBase.prototype.bind = function () {
@@ -54,6 +55,7 @@ var ListBase = /** @class */ (function () {
     ListBase.prototype.getCurrentList = function () {
         var result = this.items;
         if (!result || result.length === 0) {
+            this.count = 0;
             return [];
         }
         if (!!this.filter) {
@@ -63,6 +65,7 @@ var ListBase = /** @class */ (function () {
             result = this.listHelper.sort(result, this.order);
         }
         this.currentList = result;
+        this.count = result.length;
         return result;
     };
     return ListBase;
