@@ -1,5 +1,6 @@
 import { bindable } from "aurelia-framework";
-import { IFilterable, VdTd } from "..";
+import { IFilterable } from "../utilities/list-helper";
+import { VdTd } from "./vd-td";
 
 
 export class VdTdProgress extends VdTd {

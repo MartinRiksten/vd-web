@@ -23,7 +23,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
-var __1 = require("..");
+var vd_td_1 = require("./vd-td");
 var VdTdProgress = /** @class */ (function (_super) {
     __extends(VdTdProgress, _super);
     function VdTdProgress() {
@@ -47,5 +47,5 @@ var VdTdProgress = /** @class */ (function (_super) {
         __metadata("design:type", Boolean)
     ], VdTdProgress.prototype, "showValue", void 0);
     return VdTdProgress;
-}(__1.VdTd));
+}(vd_td_1.VdTd));
 exports.VdTdProgress = VdTdProgress;
