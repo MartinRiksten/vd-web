@@ -1,0 +1,7 @@
+<template>
+    <div class="progress mt-1">
+        <div class="progress-bar" style.bind="getWidthStyle(value)">
+            <span if.bind="showValue">${value} %</span>
+        </div>
+    </div>
+</template>

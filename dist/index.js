@@ -67,6 +67,7 @@ function configure(config) {
         'vd-td-abbrev',
         'vd-td-bool-icon',
         'vd-td-list',
+        'vd-td-progress',
         'vd-th',
         'vd-route',
     ];
