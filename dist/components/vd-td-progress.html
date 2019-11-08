@@ -1,6 +1,6 @@
 <template>
     <div if.bind="value > 0" class="progress mt-1">
-        <div class="progress-bar" style.bind="getWidthStyle(rounded)">
+        <div class="progress-bar" class.bind="variant" style.bind="getWidthStyle(rounded)">
             <span if.bind="!hideValue">${rounded} %</span>
         </div>
     </div>

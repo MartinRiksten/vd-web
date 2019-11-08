@@ -4,6 +4,7 @@ export declare class VdTdProgress extends VdTd<number> {
     value: number;
     instance: IFilterable;
     hideValue: boolean;
+    variant: string;
     rounded: number;
     valueChanged(): void;
     getWidthStyle(): string;

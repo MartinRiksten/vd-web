@@ -7,6 +7,7 @@ export class VdTdProgress extends VdTd<number> {
     @bindable public value: number;
     @bindable public instance: IFilterable;
     @bindable public hideValue: boolean = false;
+    @bindable public variant: string;
 
     public rounded: number;
 

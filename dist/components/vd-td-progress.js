@@ -49,6 +49,10 @@ var VdTdProgress = /** @class */ (function (_super) {
         aurelia_framework_1.bindable,
         __metadata("design:type", Boolean)
     ], VdTdProgress.prototype, "hideValue", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdTdProgress.prototype, "variant", void 0);
     return VdTdProgress;
 }(vd_td_1.VdTd));
 exports.VdTdProgress = VdTdProgress;
