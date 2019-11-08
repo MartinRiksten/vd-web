@@ -13,12 +13,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
-var aurelia_task_queue_1 = require("aurelia-task-queue");
 var jquery_1 = __importDefault(require("jquery"));
 var CollapseCustomAttribute = /** @class */ (function () {
-    function CollapseCustomAttribute(element, taskQueue) {
+    function CollapseCustomAttribute(element) {
         this.element = element;
-        this.taskQueue = taskQueue;
         this.value = false;
     }
     CollapseCustomAttribute.prototype.attached = function () {
@@ -27,8 +25,8 @@ var CollapseCustomAttribute = /** @class */ (function () {
     CollapseCustomAttribute.prototype.detached = function () {
         jquery_1.default(this.element).collapse('dispose');
     };
-    CollapseCustomAttribute.prototype.valueChanged = function () {
-        var option = this.value ? 'show' : 'hide';
+    CollapseCustomAttribute.prototype.valueChanged = function (newValue) {
+        var option = newValue ? 'show' : 'hide';
         jquery_1.default(this.element).collapse(option);
     };
     __decorate([
@@ -38,7 +36,7 @@ var CollapseCustomAttribute = /** @class */ (function () {
     CollapseCustomAttribute = __decorate([
         aurelia_framework_1.autoinject,
         aurelia_framework_1.customAttribute('collapse'),
-        __metadata("design:paramtypes", [Element, aurelia_task_queue_1.TaskQueue])
+        __metadata("design:paramtypes", [Element])
     ], CollapseCustomAttribute);
     return CollapseCustomAttribute;
 }());

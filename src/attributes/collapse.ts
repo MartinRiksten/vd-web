@@ -1,5 +1,4 @@
 import { autoinject, bindable, customAttribute } from 'aurelia-framework';
-import { TaskQueue } from 'aurelia-task-queue';
 import { CollapseOption } from 'bootstrap';
 import $ from 'jquery';
 
@@ -8,7 +7,8 @@ import $ from 'jquery';
 export class CollapseCustomAttribute {
   @bindable public value: boolean = false;
 
-  constructor(private readonly element: Element, private readonly taskQueue: TaskQueue) {}
+  constructor(private readonly element: Element) {
+  }
 
   public attached(): void {
     $(this.element).collapse({ toggle: this.value } as CollapseOption);
@@ -18,8 +18,8 @@ export class CollapseCustomAttribute {
     $(this.element).collapse('dispose');
   }
 
-  public valueChanged() {
-      const option = this.value ? 'show' : 'hide';
+  public valueChanged(newValue: boolean) {
+    const option = newValue ? 'show' : 'hide';
     $(this.element).collapse(option);
   }
 }
