@@ -31,8 +31,11 @@ var VdTdProgress = /** @class */ (function (_super) {
         _this.hideValue = false;
         return _this;
     }
-    VdTdProgress.prototype.getWidthStyle = function (value) {
-        return "width: " + value + "%";
+    VdTdProgress.prototype.valueChanged = function () {
+        this.rounded = Math.round(this.value);
+    };
+    VdTdProgress.prototype.getWidthStyle = function () {
+        return "width: " + this.rounded + "%";
     };
     __decorate([
         aurelia_framework_1.bindable,
