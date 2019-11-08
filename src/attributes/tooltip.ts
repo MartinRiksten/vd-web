@@ -1,4 +1,4 @@
-﻿import { autoinject, customAttribute } from 'aurelia-framework';
+﻿import { autoinject, bindable, customAttribute } from 'aurelia-framework';
 import { TaskQueue } from 'aurelia-task-queue';
 import { TooltipOption } from 'bootstrap';
 import $ from 'jquery';
@@ -6,7 +6,7 @@ import $ from 'jquery';
 @autoinject
 @customAttribute('tooltip')
 export class TooltipCustomAttribute {
-  public value: TooltipOption | undefined;
+  @bindable({ primaryProperty: true }) public value: TooltipOption | undefined;
 
   constructor(private readonly element: Element, private readonly taskQueue: TaskQueue) {}
 

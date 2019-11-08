@@ -5,7 +5,7 @@ import $ from 'jquery';
 @autoinject
 @customAttribute('collapse')
 export class CollapseCustomAttribute {
-  @bindable public value: boolean = false;
+  @bindable({ primaryProperty: true }) public value: boolean = false;
 
   constructor(private readonly element: Element) {
   }

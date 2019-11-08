@@ -1,8 +1,9 @@
-import { autoinject, customAttribute } from 'aurelia-framework';
+import { autoinject, bindable, customAttribute } from 'aurelia-framework';
 
 @autoinject
 @customAttribute('clipboard')
 export class ClipboardCustomAttribute {
+  @bindable({ primaryProperty: true }) private value: string;
   constructor(private readonly element: Element) {}
 
   public attached() {

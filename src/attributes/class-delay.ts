@@ -4,7 +4,7 @@ import $ from 'jquery';
 @autoinject
 @customAttribute('class-delay')
 export class ClassDelayCustomAttribute {
-  public value: string | undefined;
+  public value: string;
 
   constructor(private readonly element: Element) {}
 

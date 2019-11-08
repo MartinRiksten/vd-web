@@ -30,7 +30,7 @@ var CollapseCustomAttribute = /** @class */ (function () {
         jquery_1.default(this.element).collapse(option);
     };
     __decorate([
-        aurelia_framework_1.bindable,
+        aurelia_framework_1.bindable({ primaryProperty: true }),
         __metadata("design:type", Boolean)
     ], CollapseCustomAttribute.prototype, "value", void 0);
     CollapseCustomAttribute = __decorate([

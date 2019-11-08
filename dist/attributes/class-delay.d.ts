@@ -1,6 +1,6 @@
 export declare class ClassDelayCustomAttribute {
     private readonly element;
-    value: string | undefined;
+    value: string;
     constructor(element: Element);
     attached(): void;
 }

@@ -43,6 +43,10 @@ var ClipboardCustomAttribute = /** @class */ (function () {
     ClipboardCustomAttribute.prototype.valueChanged = function (newValue) {
         this.element.setAttribute('text', newValue);
     };
+    __decorate([
+        aurelia_framework_1.bindable({ primaryProperty: true }),
+        __metadata("design:type", String)
+    ], ClipboardCustomAttribute.prototype, "value", void 0);
     ClipboardCustomAttribute = __decorate([
         aurelia_framework_1.autoinject,
         aurelia_framework_1.customAttribute('clipboard'),
