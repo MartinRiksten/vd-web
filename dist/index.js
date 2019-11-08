@@ -53,7 +53,7 @@ __export(require("./utilities/wait"));
 __export(require("./validation/bootstrap-renderer"));
 __export(require("./validation/popover-renderer"));
 function configure(config) {
-    var attributes = ['clipboard', 'class-delay', 'draggable', 'popover', 'tooltip'];
+    var attributes = ['clipboard', 'class-delay', 'collapse', 'draggable', 'popover', 'tooltip'];
     var bindings = ['async'];
     var components = [
         'bootstrap-select',

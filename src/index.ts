@@ -51,7 +51,7 @@ export * from './validation/bootstrap-renderer';
 export * from './validation/popover-renderer';
 
 export function configure(config: FrameworkConfiguration) {
-  const attributes = ['clipboard', 'class-delay', 'draggable', 'popover', 'tooltip'];
+  const attributes = ['clipboard', 'class-delay', 'collapse', 'draggable', 'popover', 'tooltip'];
   const bindings = ['async'];
   const components = [
     'bootstrap-select',
