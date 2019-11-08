@@ -19,6 +19,7 @@ var CollapseCustomAttribute = /** @class */ (function () {
     function CollapseCustomAttribute(element, taskQueue) {
         this.element = element;
         this.taskQueue = taskQueue;
+        this.value = false;
     }
     CollapseCustomAttribute.prototype.attached = function () {
         jquery_1.default(this.element).collapse();
@@ -28,7 +29,8 @@ var CollapseCustomAttribute = /** @class */ (function () {
         jquery_1.default(this.element).collapse('dispose');
     };
     CollapseCustomAttribute.prototype.valueChanged = function () {
-        jquery_1.default(this.element).collapse(this.value ? 'show' : 'hide');
+        var option = this.value ? 'show' : 'hide';
+        jquery_1.default(this.element).collapse(option);
     };
     __decorate([
         aurelia_framework_1.bindable,

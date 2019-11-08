@@ -6,7 +6,7 @@ import $ from 'jquery';
 @autoinject
 @customAttribute('collapse')
 export class CollapseCustomAttribute {
-  @bindable public value: boolean;
+  @bindable public value: boolean = false;
 
   constructor(private readonly element: Element, private readonly taskQueue: TaskQueue) {}
 
@@ -20,6 +20,7 @@ export class CollapseCustomAttribute {
   }
 
   public valueChanged() {
-    $(this.element).collapse(this.value ? 'show' : 'hide');
+      const option = this.value ? 'show' : 'hide';
+    $(this.element).collapse(option);
   }
 }
