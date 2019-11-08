@@ -3,7 +3,7 @@ import { TooltipOption } from 'bootstrap';
 export declare class TooltipCustomAttribute {
     private readonly element;
     private readonly taskQueue;
-    value: TooltipOption | undefined;
+    value: TooltipOption;
     constructor(element: Element, taskQueue: TaskQueue);
     attached(): void;
     detached(): void;

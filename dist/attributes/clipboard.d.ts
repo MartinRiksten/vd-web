@@ -4,6 +4,6 @@ export declare class ClipboardCustomAttribute {
     constructor(element: Element);
     attached(): void;
     detached(): void;
+    valueChanged(): void;
     private handleClick;
-    private valueChanged;
 }

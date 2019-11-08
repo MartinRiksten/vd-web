@@ -1,11 +1,11 @@
-import { autoinject, bindable, customAttribute } from 'aurelia-framework';
+import { autoinject, customAttribute } from 'aurelia-framework';
 import { CollapseOption } from 'bootstrap';
 import $ from 'jquery';
 
 @autoinject
 @customAttribute('collapse')
 export class CollapseCustomAttribute {
-  @bindable({ primaryProperty: true }) public value: boolean = false;
+  public value: boolean = false;
 
   constructor(private readonly element: Element) {
   }

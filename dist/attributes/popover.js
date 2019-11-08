@@ -30,10 +30,6 @@ var PopoverCustomAttribute = /** @class */ (function () {
         }
         jquery_1.default(this.element).popover('dispose');
     };
-    __decorate([
-        aurelia_framework_1.bindable({ primaryProperty: true }),
-        __metadata("design:type", Object)
-    ], PopoverCustomAttribute.prototype, "value", void 0);
     PopoverCustomAttribute = __decorate([
         aurelia_framework_1.autoinject,
         aurelia_framework_1.customAttribute('popover'),

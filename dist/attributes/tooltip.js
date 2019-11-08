@@ -36,10 +36,6 @@ var TooltipCustomAttribute = /** @class */ (function () {
         }
         jquery_1.default(this.element).tooltip('dispose');
     };
-    __decorate([
-        aurelia_framework_1.bindable({ primaryProperty: true }),
-        __metadata("design:type", Object)
-    ], TooltipCustomAttribute.prototype, "value", void 0);
     TooltipCustomAttribute = __decorate([
         aurelia_framework_1.autoinject,
         aurelia_framework_1.customAttribute('tooltip'),

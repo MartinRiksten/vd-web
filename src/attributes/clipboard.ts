@@ -1,9 +1,10 @@
-import { autoinject, bindable, customAttribute } from 'aurelia-framework';
+import { autoinject, customAttribute } from 'aurelia-framework';
 
 @autoinject
 @customAttribute('clipboard')
 export class ClipboardCustomAttribute {
-  @bindable({ primaryProperty: true }) private value: string;
+  private value: string;
+  
   constructor(private readonly element: Element) {}
 
   public attached() {
@@ -23,6 +24,10 @@ export class ClipboardCustomAttribute {
     this.element.removeEventListener('click', this.handleClick);
   }
 
+  public valueChanged() {
+    this.element.setAttribute('text', this.value);
+  }
+
   private handleClick($event: Event) {
     const text = ($event.srcElement as Element).getAttribute('text');
     if (document.queryCommandSupported('copy') && text) {
@@ -34,9 +39,5 @@ export class ClipboardCustomAttribute {
       document.execCommand('Copy');
       document.body.removeChild(textarea);
     }
-  }
-
-  private valueChanged(newValue: string) {
-    this.element.setAttribute('text', newValue);
   }
 }

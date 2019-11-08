@@ -6,7 +6,7 @@ import $ from 'jquery';
 @autoinject
 @customAttribute('tooltip')
 export class TooltipCustomAttribute {
-  @bindable({ primaryProperty: true }) public value: TooltipOption | undefined;
+  public value: TooltipOption;
 
   constructor(private readonly element: Element, private readonly taskQueue: TaskQueue) {}
 

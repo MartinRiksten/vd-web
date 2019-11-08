@@ -18,12 +18,12 @@ var DraggableCustomAttribute = /** @class */ (function () {
     function DraggableCustomAttribute(element) {
         this.startX = 0;
         this.startY = 0;
-        this.selector = '';
+        this.value = '';
         this.element = element;
     }
     DraggableCustomAttribute.prototype.attached = function () {
         var _this = this;
-        var target = this.element.querySelector(this.selector);
+        var target = this.element.querySelector(this.value);
         target.addEventListener('mousedown', function (event) { return _this.init(event); });
         var manager = new hammerjs_1.default.Manager(target);
         manager.add(new hammerjs_1.default.Pan({ direction: hammerjs_1.default.DIRECTION_ALL, threshold: 0 }));
@@ -46,10 +46,6 @@ var DraggableCustomAttribute = /** @class */ (function () {
         this.element.style.top = this.startY + e.deltaY + 'px';
         this.element.style.left = this.startX + e.deltaX + 'px';
     };
-    __decorate([
-        aurelia_framework_1.bindable({ primaryProperty: true }),
-        __metadata("design:type", String)
-    ], DraggableCustomAttribute.prototype, "selector", void 0);
     DraggableCustomAttribute = __decorate([
         aurelia_framework_1.autoinject,
         aurelia_framework_1.customAttribute('draggable'),
