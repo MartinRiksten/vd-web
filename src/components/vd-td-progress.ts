@@ -8,7 +8,13 @@ export class VdTdProgress extends VdTd<number> {
     @bindable public instance: IFilterable;
     @bindable public hideValue: boolean = false;
 
-    public getWidthStyle(value: number) {
-        return `width: ${value}%`;
+    public rounded: number;
+
+    public valueChanged() {
+        this.rounded = Math.round(this.value);
+    }
+
+    public getWidthStyle() {
+        return `width: ${this.rounded}%`;
     }
 }
