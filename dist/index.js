@@ -8,6 +8,7 @@ var common_dialogs_1 = require("./common-dialog/common-dialogs");
 var config_1 = require("./configuration/config");
 __export(require("./attributes/clipboard"));
 __export(require("./attributes/class-delay"));
+__export(require("./attributes/collapse"));
 __export(require("./attributes/draggable"));
 __export(require("./attributes/popover"));
 __export(require("./attributes/tooltip"));
