@@ -24,8 +24,8 @@ var VdButton = /** @class */ (function () {
             { kind: 'close', label: '', variant: 'btn-light', icon: 'fas fa-times' },
             { kind: 'upload', label: 'Uploaden', variant: 'btn-light', icon: 'fas fa-upload' },
             { kind: 'download', label: 'Downloaden', variant: 'btn-light', icon: 'fas fa-download' },
-            { kind: 'select-all', label: 'Alle', variant: 'btn-light', icon: 'fas fa-check-sqaure' },
-            { kind: 'deselect-all', label: 'Geen', variant: 'btn-light', icon: 'fas fa-square' }
+            { kind: 'select-all', label: 'Alle', variant: 'btn-light', icon: 'fas fa-check-square' },
+            { kind: 'deselect-all', label: 'Geen', variant: 'btn-light', icon: 'far fa-square' }
         ];
     }
     VdButton.prototype.bind = function () {

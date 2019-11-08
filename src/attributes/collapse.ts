@@ -1,6 +1,6 @@
 import { autoinject, bindable, customAttribute } from 'aurelia-framework';
 import { TaskQueue } from 'aurelia-task-queue';
-import { TooltipOption } from 'bootstrap';
+import { CollapseOption } from 'bootstrap';
 import $ from 'jquery';
 
 @autoinject
@@ -11,8 +11,7 @@ export class CollapseCustomAttribute {
   constructor(private readonly element: Element, private readonly taskQueue: TaskQueue) {}
 
   public attached(): void {
-    $(this.element).collapse();
-    this.valueChanged();
+    $(this.element).collapse({ toggle: this.value } as CollapseOption);
   }
 
   public detached(): void {
