@@ -28,7 +28,7 @@ var CollapseCustomAttribute = /** @class */ (function () {
         jquery_1.default(this.element).collapse('dispose');
     };
     CollapseCustomAttribute.prototype.valueChanged = function () {
-        jquery_1.default(this.element).collapse(this.value ? 'hide' : 'show');
+        jquery_1.default(this.element).collapse(this.value ? 'show' : 'hide');
     };
     __decorate([
         aurelia_framework_1.bindable,

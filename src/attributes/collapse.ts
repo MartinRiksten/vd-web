@@ -20,6 +20,6 @@ export class CollapseCustomAttribute {
   }
 
   public valueChanged() {
-    $(this.element).collapse(this.value ? 'hide' : 'show');
+    $(this.element).collapse(this.value ? 'show' : 'hide');
   }
 }
