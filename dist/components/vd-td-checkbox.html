@@ -1,4 +1,4 @@
 <template>
-    <span if.bind="!@selected.Value" class="fas fa-square"></span>
-    <span if.bind="@selected.Value" class="fas fa-check-square" class.bind="variant"></span>
+    <span if.bind="!value" class="fas fa-square"></span>
+    <span if.bind="value" class="fas fa-check-square" class.bind="variant"></span>
 </template>
