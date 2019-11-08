@@ -27,7 +27,9 @@ export class VdButton {
     { kind: 'save', label: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save' } as IButtonInfo,
     { kind: 'close', label: '', variant: 'btn-light', icon: 'fas fa-times' } as IButtonInfo,
     { kind: 'upload', label: 'Uploaden', variant: 'btn-light', icon: 'fas fa-upload' } as IButtonInfo,
-    { kind: 'download', label: 'Downloaden', variant: 'btn-light', icon: 'fas fa-download' } as IButtonInfo
+    { kind: 'download', label: 'Downloaden', variant: 'btn-light', icon: 'fas fa-download' } as IButtonInfo,
+    { kind: 'select-all', label: 'Alle', variant: 'btn-light', icon: 'fas fa-check-sqaure' } as IButtonInfo,
+    { kind: 'deselect-all', label: 'Geen', variant: 'btn-light', icon: 'fas fa-square' } as IButtonInfo
   ];
 
   public bind() {

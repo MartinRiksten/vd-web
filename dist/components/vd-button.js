@@ -23,7 +23,9 @@ var VdButton = /** @class */ (function () {
             { kind: 'save', label: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save' },
             { kind: 'close', label: '', variant: 'btn-light', icon: 'fas fa-times' },
             { kind: 'upload', label: 'Uploaden', variant: 'btn-light', icon: 'fas fa-upload' },
-            { kind: 'download', label: 'Downloaden', variant: 'btn-light', icon: 'fas fa-download' }
+            { kind: 'download', label: 'Downloaden', variant: 'btn-light', icon: 'fas fa-download' },
+            { kind: 'select-all', label: 'Alle', variant: 'btn-light', icon: 'fas fa-check-sqaure' },
+            { kind: 'deselect-all', label: 'Geen', variant: 'btn-light', icon: 'fas fa-square' }
         ];
     }
     VdButton.prototype.bind = function () {
