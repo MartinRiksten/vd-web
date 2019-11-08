@@ -1,8 +1,7 @@
 import { IFilterable } from "../utilities/list-helper";
 import { VdTd } from "./vd-td";
-export declare class VdTdProgress extends VdTd {
+export declare class VdTdCheckbox extends VdTd {
     value: string;
     instance: IFilterable;
-    hideValue: boolean;
-    getWidthStyle(value: number): string;
+    variant: string;
 }

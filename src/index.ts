@@ -27,7 +27,9 @@ export * from './components/vd-form-textbox';
 export * from './components/vd-route';
 export * from './components/vd-td-abbrev';
 export * from './components/vd-td-bool-icon';
+export * from './components/vd-td-checkbox';
 export * from './components/vd-td-list';
+export * from './components/vd-td-progress';
 export * from './components/vd-td';
 export * from './components/vd-th';
 export * from './configuration/configuration';
@@ -64,6 +66,7 @@ export function configure(config: FrameworkConfiguration) {
     'vd-td',
     'vd-td-abbrev',
     'vd-td-bool-icon',
+    'vd-td-checkbox',
     'vd-td-list',
     'vd-td-progress',
     'vd-th',

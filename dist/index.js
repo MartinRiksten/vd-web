@@ -30,7 +30,9 @@ __export(require("./components/vd-form-textbox"));
 __export(require("./components/vd-route"));
 __export(require("./components/vd-td-abbrev"));
 __export(require("./components/vd-td-bool-icon"));
+__export(require("./components/vd-td-checkbox"));
 __export(require("./components/vd-td-list"));
+__export(require("./components/vd-td-progress"));
 __export(require("./components/vd-td"));
 __export(require("./components/vd-th"));
 __export(require("./configuration/configuration"));
@@ -66,6 +68,7 @@ function configure(config) {
         'vd-td',
         'vd-td-abbrev',
         'vd-td-bool-icon',
+        'vd-td-checkbox',
         'vd-td-list',
         'vd-td-progress',
         'vd-th',

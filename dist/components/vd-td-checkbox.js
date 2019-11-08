@@ -24,28 +24,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
 var vd_td_1 = require("./vd-td");
-var VdTdProgress = /** @class */ (function (_super) {
-    __extends(VdTdProgress, _super);
-    function VdTdProgress() {
+var VdTdCheckbox = /** @class */ (function (_super) {
+    __extends(VdTdCheckbox, _super);
+    function VdTdCheckbox() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.hideValue = false;
+        _this.variant = "text-success";
         return _this;
     }
-    VdTdProgress.prototype.getWidthStyle = function (value) {
-        return "width: " + value + "%";
-    };
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdTdProgress.prototype, "value", void 0);
+    ], VdTdCheckbox.prototype, "value", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)
-    ], VdTdProgress.prototype, "instance", void 0);
+    ], VdTdCheckbox.prototype, "instance", void 0);
     __decorate([
         aurelia_framework_1.bindable,
-        __metadata("design:type", Boolean)
-    ], VdTdProgress.prototype, "hideValue", void 0);
-    return VdTdProgress;
+        __metadata("design:type", Object)
+    ], VdTdCheckbox.prototype, "variant", void 0);
+    return VdTdCheckbox;
 }(vd_td_1.VdTd));
-exports.VdTdProgress = VdTdProgress;
+exports.VdTdCheckbox = VdTdCheckbox;
