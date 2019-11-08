@@ -3,8 +3,8 @@ import { IFilterable } from "../utilities/list-helper";
 import { VdTd } from "./vd-td";
 
 
-export class VdTdProgress extends VdTd {
-    @bindable public value: string;
+export class VdTdProgress extends VdTd<number> {
+    @bindable public value: number;
     @bindable public instance: IFilterable;
     @bindable public hideValue: boolean = false;
 

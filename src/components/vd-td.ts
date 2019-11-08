@@ -2,8 +2,8 @@
 
 import { IFilterable } from '../utilities/list-helper';
 
-export class VdTd {
-  @bindable public value: string;
+export class VdTd<TValue> {
+  @bindable public value: TValue;
   @bindable public instance: IFilterable;
 
   public bind() {

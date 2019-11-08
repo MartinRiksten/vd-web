@@ -3,7 +3,7 @@ import { PopoverOption } from 'bootstrap/index';
 import { IFilterable } from '../utilities/list-helper';
 import { VdTd } from './vd-td';
 
-export class VdTdAbbrev extends VdTd {
+export class VdTdAbbrev extends VdTd<string> {
   @bindable public value: string;
   @bindable public instance: IFilterable;
   @bindable public cutoff = 25;

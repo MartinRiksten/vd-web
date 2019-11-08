@@ -31,7 +31,7 @@ var VdTdBoolIcon = /** @class */ (function (_super) {
     }
     __decorate([
         aurelia_framework_1.bindable,
-        __metadata("design:type", String)
+        __metadata("design:type", Boolean)
     ], VdTdBoolIcon.prototype, "value", void 0);
     __decorate([
         aurelia_framework_1.bindable,

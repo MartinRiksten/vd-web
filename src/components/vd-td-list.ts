@@ -3,10 +3,9 @@ import { PopoverOption } from 'bootstrap/index';
 import { IFilterable } from '../utilities/list-helper';
 import { VdTd } from './vd-td';
 
-export class VdTdList extends VdTd {
+export class VdTdList extends VdTd<string> {
   @bindable public instance: IFilterable;
   @bindable public items!: IValueList[];
-  public value: string;
 
   public bind() {
     super.bind();

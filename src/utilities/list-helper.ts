@@ -7,7 +7,7 @@ export interface IOrderInfo {
 }
 
 export interface IFilterable {
-  _filterValues: string[];
+  _filterValues: unknown[];
 }
 
 /**

@@ -6,7 +6,7 @@ export interface IOrderInfo {
     ascending: boolean;
 }
 export interface IFilterable {
-    _filterValues: string[];
+    _filterValues: unknown[];
 }
 /**
  * Helper class for paing and sorting.

@@ -1,7 +1,7 @@
 <template>
-    <div class="progress mt-1">
+    <div if.bind="value > 0" class="progress mt-1">
         <div class="progress-bar" style.bind="getWidthStyle(value)">
-            <span if.bind="!hideValue && value > 0">${value} %</span>
+            <span if.bind="!hideValue">${value} %</span>
         </div>
     </div>
 </template>

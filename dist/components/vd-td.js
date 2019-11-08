@@ -24,7 +24,7 @@ var VdTd = /** @class */ (function () {
     };
     __decorate([
         aurelia_framework_1.bindable,
-        __metadata("design:type", String)
+        __metadata("design:type", Object)
     ], VdTd.prototype, "value", void 0);
     __decorate([
         aurelia_framework_1.bindable,
