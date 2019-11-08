@@ -16,6 +16,6 @@ export declare class VdButton {
     buttonClass: string;
     private types;
     bind(): void;
-    getButtonClass(): string;
+    getClass(): string;
     onClick(): void;
 }

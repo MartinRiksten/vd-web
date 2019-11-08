@@ -40,8 +40,8 @@ export class VdButton {
     this.icon = !!this.icon ? this.icon : info.icon;
   }
 
-public getButtonClass(): string {
-  const result = [this.buttonClass, this.variant].filter(x => !!x).join(" ");
+public getClass(): string {
+  const result = `${this.buttonClass} ${this.variant}`;
   return result;
 }
 

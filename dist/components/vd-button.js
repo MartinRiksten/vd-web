@@ -36,8 +36,8 @@ var VdButton = /** @class */ (function () {
         this.variant = !!this.variant ? this.variant : info.variant;
         this.icon = !!this.icon ? this.icon : info.icon;
     };
-    VdButton.prototype.getButtonClass = function () {
-        var result = [this.buttonClass, this.variant].filter(function (x) { return !!x; }).join(" ");
+    VdButton.prototype.getClass = function () {
+        var result = this.buttonClass + " " + this.variant;
         return result;
     };
     VdButton.prototype.onClick = function () {

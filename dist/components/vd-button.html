@@ -1,6 +1,6 @@
 ﻿<template>
-    <button if.bind="buttonIf" type="button" id.bind="buttonId" click.trigger="onClick($event)" class="btn btn-sm" 
-            class.bind="getButtonClass()">
+    <button if.bind="buttonIf" type="button" id.bind="buttonId" click.trigger="onClick($event)" 
+        class="btn btn-sm" class.bind="getClass(buttonClass, variant)">
         <i class="mr-1" class.bind="icon"></i>
         <span innerhtml.bind="label"></span>
     </button>
