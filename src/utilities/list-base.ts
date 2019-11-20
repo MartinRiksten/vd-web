@@ -14,8 +14,7 @@ export class ListBase<T extends IFilterable> {
 
   protected selected: T | undefined;
   protected listHelper = new ListHelper<T>();
-  protected table!: Element;
-
+  
   public bind() {
     const items = this.items;
     for (const item of items) {
@@ -62,21 +61,21 @@ export class ListBase<T extends IFilterable> {
    */
   public getCurrentList(): T[] {
     let result = this.items;
-    if (!result || result.length === 0) {
+    if (!result) {
       this.count = 0;
       return [];
     }
 
-    if (!!this.filter) {
+    if (!!this.filter && result.length > 0) {
       result = this.listHelper.filter(result, this.filter);
     }
 
-    if (!!this.order) {
+    if (!!this.order && result.length > 0) {
       result = this.listHelper.sort(result, this.order);
     }
 
-    this.currentList = result;
     this.count = result.length;
+    this.currentList = result;
     return result;
   }
 }

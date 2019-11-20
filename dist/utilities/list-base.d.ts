@@ -12,7 +12,6 @@ export declare class ListBase<T extends IFilterable> {
     count: number;
     protected selected: T | undefined;
     protected listHelper: ListHelper<T>;
-    protected table: Element;
     bind(): void;
     /**
      * Order the list of work items

@@ -49,7 +49,7 @@ var FetchBase = /** @class */ (function () {
     /**
      * Posts the given data to the given url, and stores any returned errors.
      */
-    FetchBase.prototype.postAsync = function (url, data) {
+    FetchBase.prototype.postAsync = function (url, data, options) {
         return __awaiter(this, void 0, void 0, function () {
             var body, init, response, value, result, error_1;
             return __generator(this, function (_a) {
@@ -64,8 +64,7 @@ var FetchBase = /** @class */ (function () {
                     case 2:
                         response = _a.sent();
                         if (!response.ok) {
-                            this.commonDialogHelper.unexpectedError(response.statusText);
-                            return [2 /*return*/, { success: false, handled: true }];
+                            return [2 /*return*/, this.handleUnexpectedError(response.statusText, options)];
                         }
                         return [4 /*yield*/, response.json()];
                     case 3:
@@ -75,8 +74,7 @@ var FetchBase = /** @class */ (function () {
                         return [2 /*return*/, result];
                     case 4:
                         error_1 = _a.sent();
-                        this.commonDialogHelper.unexpectedError(error_1);
-                        return [2 /*return*/, { success: false, handled: true, firstMessage: error_1 }];
+                        return [2 /*return*/, this.handleUnexpectedError(error_1, options)];
                     case 5: return [2 /*return*/];
                 }
             });
@@ -85,7 +83,7 @@ var FetchBase = /** @class */ (function () {
     /**
      * Gets the given data to the given url, and stores any returned errors.
      */
-    FetchBase.prototype.getAsync = function (url) {
+    FetchBase.prototype.getAsync = function (url, options) {
         return __awaiter(this, void 0, void 0, function () {
             var init, response, value, result, error_2;
             return __generator(this, function (_a) {
@@ -99,8 +97,9 @@ var FetchBase = /** @class */ (function () {
                     case 2:
                         response = _a.sent();
                         if (!response.ok) {
-                            this.commonDialogHelper.unexpectedError(response.statusText);
+                            this.handleUnexpectedError(response.statusText, options);
                             return [2 /*return*/, void 0];
+                            ;
                         }
                         return [4 /*yield*/, response.json()];
                     case 3:
@@ -109,7 +108,7 @@ var FetchBase = /** @class */ (function () {
                         return [2 /*return*/, result];
                     case 4:
                         error_2 = _a.sent();
-                        this.commonDialogHelper.unexpectedError(error_2);
+                        this.handleUnexpectedError(error_2, options);
                         return [2 /*return*/, void 0];
                     case 5: return [2 /*return*/];
                 }
@@ -119,7 +118,7 @@ var FetchBase = /** @class */ (function () {
     /**
      * Gets the given data to the given url, and stores any returned errors.
      */
-    FetchBase.prototype.doFetchAsync = function (url, init) {
+    FetchBase.prototype.doFetchAsync = function (url, init, options) {
         return __awaiter(this, void 0, void 0, function () {
             var response, value, result, error_3;
             return __generator(this, function (_a) {
@@ -130,8 +129,7 @@ var FetchBase = /** @class */ (function () {
                     case 1:
                         response = _a.sent();
                         if (!response.ok) {
-                            this.commonDialogHelper.unexpectedError(response.statusText);
-                            return [2 /*return*/, { success: false, handled: true }];
+                            return [2 /*return*/, this.handleUnexpectedError(response.statusText, options)];
                         }
                         return [4 /*yield*/, response.json()];
                     case 2:
@@ -141,12 +139,18 @@ var FetchBase = /** @class */ (function () {
                         return [2 /*return*/, result];
                     case 3:
                         error_3 = _a.sent();
-                        this.commonDialogHelper.unexpectedError(error_3);
-                        return [2 /*return*/, { success: false, handled: true, firstMessage: error_3 }];
+                        return [2 /*return*/, this.handleUnexpectedError(error_3, options)];
                     case 4: return [2 /*return*/];
                 }
             });
         });
+    };
+    FetchBase.prototype.handleUnexpectedError = function (error, options) {
+        var handle = !options || !options.ignoreErrors;
+        if (handle) {
+            this.commonDialogHelper.unexpectedError(error);
+        }
+        return { success: false, handled: handle, firstMessage: { message: error } };
     };
     return FetchBase;
 }());

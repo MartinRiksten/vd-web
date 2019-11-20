@@ -54,18 +54,18 @@ var ListBase = /** @class */ (function () {
      */
     ListBase.prototype.getCurrentList = function () {
         var result = this.items;
-        if (!result || result.length === 0) {
+        if (!result) {
             this.count = 0;
             return [];
         }
-        if (!!this.filter) {
+        if (!!this.filter && result.length > 0) {
             result = this.listHelper.filter(result, this.filter);
         }
-        if (!!this.order) {
+        if (!!this.order && result.length > 0) {
             result = this.listHelper.sort(result, this.order);
         }
-        this.currentList = result;
         this.count = result.length;
+        this.currentList = result;
         return result;
     };
     return ListBase;

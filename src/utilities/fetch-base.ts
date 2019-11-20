@@ -1,6 +1,7 @@
 import { json } from 'aurelia-fetch-client';
 import { CommonDialogHelper } from '..';
 import { HttpFetch } from './http-fetch';
+import { IFilter } from './list-base';
 
 export abstract class FetchBase {
   /**
@@ -12,14 +13,13 @@ export abstract class FetchBase {
   /**
    * Posts the given data to the given url, and stores any returned errors.
    */
-  protected async postAsync<T>(url: string, data?: any): Promise<IServiceResult<T>> {
+  protected async postAsync<T>(url: string, data?: any, options?: IFetchOptions): Promise<IServiceResult<T>> {
     const body: Blob | object = !!data ? json(data) : data;
     const init = { method: 'POST', body };
     try {
       const response = await this.http.fetchAsync(url, init);
       if (!response.ok) {
-        this.commonDialogHelper.unexpectedError(response.statusText);
-        return { success: false, handled: true } as IServiceResult<T>;
+        return this.handleUnexpectedError(response.statusText, options);
       }
 
       const value = await response.json();
@@ -27,41 +27,39 @@ export abstract class FetchBase {
       result.handled = false;
       return result;
     } catch (error) {
-      this.commonDialogHelper.unexpectedError(error);
-      return { success: false, handled: true, firstMessage: error } as IServiceResult<T>;
+      return this.handleUnexpectedError(error, options);
     }
   }
 
   /**
    * Gets the given data to the given url, and stores any returned errors.
    */
-  protected async getAsync<T>(url: string): Promise<T> {
+  protected async getAsync<T>(url: string, options?: IFetchOptions): Promise<T> {
     const init = { method: 'GET' };
     try {
       const response = await this.http.fetchAsync(url, init);
       if (!response.ok) {
-        this.commonDialogHelper.unexpectedError(response.statusText);
-        return void 0;
+        this.handleUnexpectedError<T>(response.statusText, options)
+        return void 0;;
       }
 
       const value = await response.json();
       const result = value as T;
       return result;
     } catch (error) {
-      this.commonDialogHelper.unexpectedError(error);
-      return void 0;
+       this.handleUnexpectedError<T>(error, options);
+       return void 0;
     }
   }
 
   /**
    * Gets the given data to the given url, and stores any returned errors.
    */
-  private async doFetchAsync<T, R>(url: string, init: object): Promise<IServiceResult<T>> {
+  private async doFetchAsync<T, R>(url: string, init: object, options: IFetchOptions): Promise<IServiceResult<T>> {
     try {
       const response = await this.http.fetchAsync(url, init);
       if (!response.ok) {
-        this.commonDialogHelper.unexpectedError(response.statusText);
-        return { success: false, handled: true } as IServiceResult<T>;
+        return this.handleUnexpectedError(response.statusText, options);
       }
 
       const value = await response.json();
@@ -69,11 +67,23 @@ export abstract class FetchBase {
       result.handled = false;
       return result;
     } catch (error) {
-      this.commonDialogHelper.unexpectedError(error);
-      return { success: false, handled: true, firstMessage: error } as IServiceResult<T>;
+      return this.handleUnexpectedError(error, options);
     }
   }
 
+  private handleUnexpectedError<T>(error: string, options: IFetchOptions): IServiceResult<T> {
+    const handle = !options || !options.ignoreErrors;
+    if (handle) {
+      this.commonDialogHelper.unexpectedError(error);
+    }
+
+    return { success: false, handled: handle, firstMessage: { message: error } } as IServiceResult<T>;
+  }
+
+}
+
+export interface IFetchOptions {
+  ignoreErrors: boolean;
 }
 
 /**

@@ -72,14 +72,14 @@ var ServiceBase = /** @class */ (function (_super) {
      * @param url: The url for the operation
      * @param data: The id of the instance to load
      */
-    ServiceBase.prototype.searchBaseAsync = function (url, id) {
+    ServiceBase.prototype.searchBaseAsync = function (url, id, options) {
         return __awaiter(this, void 0, void 0, function () {
             var data, result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         data = !id ? void 0 : typeof id === 'string' || id instanceof String ? { id: id } : id;
-                        return [4 /*yield*/, this.postAsync(url, data)];
+                        return [4 /*yield*/, this.postAsync(url, data, options)];
                     case 1:
                         result = _a.sent();
                         return [2 /*return*/, result];
@@ -92,12 +92,12 @@ var ServiceBase = /** @class */ (function (_super) {
      * @param url: The url for the operation
      * @param data: The id of the instance to load
      */
-    ServiceBase.prototype.getBaseAsync = function (url) {
+    ServiceBase.prototype.getBaseAsync = function (url, options) {
         return __awaiter(this, void 0, void 0, function () {
             var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getAsync(url)];
+                    case 0: return [4 /*yield*/, this.getAsync(url, options)];
                     case 1:
                         result = _a.sent();
                         return [2 /*return*/, result];
@@ -110,14 +110,14 @@ var ServiceBase = /** @class */ (function (_super) {
      * @param url: The url for the operation
      * @param data: The id of the instance to load
      */
-    ServiceBase.prototype.loadBaseAsync = function (url, id) {
+    ServiceBase.prototype.loadBaseAsync = function (url, id, options) {
         return __awaiter(this, void 0, void 0, function () {
             var data, result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         data = !id ? void 0 : typeof id === 'string' || id instanceof String ? { id: id } : id;
-                        return [4 /*yield*/, this.postAsync(url, data)];
+                        return [4 /*yield*/, this.postAsync(url, data, options)];
                     case 1:
                         result = _a.sent();
                         return [2 /*return*/, result];
@@ -130,12 +130,12 @@ var ServiceBase = /** @class */ (function (_super) {
      * @param url: The url for the operation
      * @param data: The id of the instance to delete
      */
-    ServiceBase.prototype.deleteBaseAsync = function (url, id) {
+    ServiceBase.prototype.deleteBaseAsync = function (url, id, options) {
         return __awaiter(this, void 0, void 0, function () {
             var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.postAsync(url, { id: id })];
+                    case 0: return [4 /*yield*/, this.postAsync(url, { id: id }, options)];
                     case 1:
                         result = _a.sent();
                         return [2 /*return*/, result];
@@ -148,12 +148,12 @@ var ServiceBase = /** @class */ (function (_super) {
      * @param url: The url for the operation
      * @param model: The model to save
      */
-    ServiceBase.prototype.saveBaseAsync = function (url, item) {
+    ServiceBase.prototype.saveBaseAsync = function (url, item, options) {
         return __awaiter(this, void 0, void 0, function () {
             var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.postAsync(url, item)];
+                    case 0: return [4 /*yield*/, this.postAsync(url, item, options)];
                     case 1:
                         result = _a.sent();
                         return [2 /*return*/, result];

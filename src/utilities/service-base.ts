@@ -1,7 +1,7 @@
 ﻿import { autoinject } from 'aurelia-framework';
 
 import { CommonDialogHelper } from '..';
-import { FetchBase, IServiceResult } from './fetch-base';
+import { FetchBase, IFetchOptions, IServiceResult } from './fetch-base';
 import { HttpFetch } from './http-fetch';
 
 /**
@@ -26,9 +26,9 @@ export abstract class ServiceBase<TModel> extends FetchBase {
    * @param url: The url for the operation
    * @param data: The id of the instance to load
    */
-  protected async searchBaseAsync(url: string, id?: string | object): Promise<IServiceResult<TModel[]>> {
+  protected async searchBaseAsync(url: string, id?: string | object, options?: IFetchOptions): Promise<IServiceResult<TModel[]>> {
     const data = ! id ? void 0 : typeof id === 'string' || id instanceof String ? { id } : id;
-    const result = await this.postAsync<TModel[]>(url, data);
+    const result = await this.postAsync<TModel[]>(url, data, options);
     return result;
   }
 
@@ -37,8 +37,8 @@ export abstract class ServiceBase<TModel> extends FetchBase {
      * @param url: The url for the operation
      * @param data: The id of the instance to load
      */
-  protected async getBaseAsync(url: string): Promise<TModel> {
-    const result = await this.getAsync<TModel>(url);
+  protected async getBaseAsync(url: string, options?: IFetchOptions): Promise<TModel> {
+    const result = await this.getAsync<TModel>(url, options);
     return result;
   }
 
@@ -47,9 +47,9 @@ export abstract class ServiceBase<TModel> extends FetchBase {
    * @param url: The url for the operation
    * @param data: The id of the instance to load
    */
-  protected async loadBaseAsync(url: string, id?: string | object): Promise<IServiceResult<TModel>> {
+  protected async loadBaseAsync(url: string, id?: string | object, options?: IFetchOptions): Promise<IServiceResult<TModel>> {
     const data = !id ? void 0 : typeof id === 'string' || id instanceof String ? { id } : id;
-    const result = await this.postAsync<TModel>(url, data);
+    const result = await this.postAsync<TModel>(url, data, options);
     return result;
   }
 
@@ -58,8 +58,8 @@ export abstract class ServiceBase<TModel> extends FetchBase {
    * @param url: The url for the operation
    * @param data: The id of the instance to delete
    */
-  protected async deleteBaseAsync(url: string, id: string): Promise<IServiceResult<boolean>> {
-    const result = await this.postAsync<boolean>(url, { id });
+  protected async deleteBaseAsync(url: string, id: string, options?: IFetchOptions): Promise<IServiceResult<boolean>> {
+    const result = await this.postAsync<boolean>(url, { id }, options);
     return result;
   }
 
@@ -68,8 +68,8 @@ export abstract class ServiceBase<TModel> extends FetchBase {
    * @param url: The url for the operation
    * @param model: The model to save
    */
-  protected async saveBaseAsync(url: string, item: TModel): Promise<IServiceResult<TModel>> {
-    const result = await this.postAsync<TModel>(url, item);
+  protected async saveBaseAsync(url: string, item: TModel, options?: IFetchOptions): Promise<IServiceResult<TModel>> {
+    const result = await this.postAsync<TModel>(url, item, options);
     return result;
   }
 }
