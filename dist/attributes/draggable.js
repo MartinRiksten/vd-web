@@ -25,7 +25,7 @@ var DraggableCustomAttribute = /** @class */ (function () {
         this.valueChanged();
     };
     DraggableCustomAttribute.prototype.valueChanged = function () {
-        if (!this.value) {
+        if (!!this.value) {
             this.initTarget();
         }
     };
@@ -54,10 +54,6 @@ var DraggableCustomAttribute = /** @class */ (function () {
         this.element.style.top = this.startY + e.deltaY + 'px';
         this.element.style.left = this.startX + e.deltaX + 'px';
     };
-    __decorate([
-        aurelia_framework_1.bindable,
-        __metadata("design:type", String)
-    ], DraggableCustomAttribute.prototype, "value", void 0);
     DraggableCustomAttribute = __decorate([
         aurelia_framework_1.autoinject,
         aurelia_framework_1.customAttribute('draggable'),

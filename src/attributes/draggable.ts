@@ -4,7 +4,7 @@ import Hammer from 'hammerjs';
 @autoinject
 @customAttribute('draggable')
 export class DraggableCustomAttribute {
-  @bindable public value: string = '';
+  public value: string = '';
   private startX = 0;
   private startY = 0;
   private readonly element: any;
@@ -18,7 +18,7 @@ export class DraggableCustomAttribute {
   }
 
   public valueChanged() {
-    if (!this.value) {
+    if (!!this.value) {
       this.initTarget();
     }
   }
