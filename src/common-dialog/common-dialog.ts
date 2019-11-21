@@ -9,6 +9,7 @@ import { CommonDialogs } from './common-dialogs';
  */
 @autoinject
 export class CommonDialog {
+  
   /**
    * The model for dialog
    */
@@ -23,7 +24,8 @@ export class CommonDialog {
    * Initializes a new instance of the CommonDialog class
    * @param controller The injected dialog controller
    */
-  constructor(public controller: DialogController) {}
+  constructor(public controller: DialogController) {
+  }
 
   /**
    *

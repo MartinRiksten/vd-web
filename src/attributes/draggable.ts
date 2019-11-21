@@ -1,19 +1,29 @@
-﻿import { autoinject, customAttribute } from 'aurelia-framework';
+﻿import { autoinject, bindable, customAttribute } from 'aurelia-framework';
 import Hammer from 'hammerjs';
 
 @autoinject
 @customAttribute('draggable')
 export class DraggableCustomAttribute {
+  @bindable public value: string = '';
   private startX = 0;
   private startY = 0;
   private readonly element: any;
-  private value: string = '';
 
   constructor(element: Element) {
     this.element = element;
   }
 
   public attached() {
+    this.valueChanged();
+  }
+
+  public valueChanged() {
+    if (!this.value) {
+      this.initTarget();
+    }
+  }
+
+  private initTarget() {
     const target = this.element.querySelector(this.value);
     target.addEventListener('mousedown', (event: any) => this.init(event));
     const manager = new Hammer.Manager(target);

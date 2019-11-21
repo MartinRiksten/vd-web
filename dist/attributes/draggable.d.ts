@@ -1,10 +1,12 @@
 export declare class DraggableCustomAttribute {
+    value: string;
     private startX;
     private startY;
     private readonly element;
-    private value;
     constructor(element: Element);
     attached(): void;
+    valueChanged(): void;
+    private initTarget;
     private init;
     private pan;
 }
