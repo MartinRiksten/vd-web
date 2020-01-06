@@ -60,7 +60,7 @@ export class ListBase<T extends IFilterable> {
    * Gets the filtered and sorted list of items
    */
   public getCurrentList(): T[] {
-    let result = this.items;
+    let result = this.items.slice();
     if (!result) {
       this.count = 0;
       return [];

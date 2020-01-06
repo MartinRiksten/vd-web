@@ -70,7 +70,7 @@ var ServiceBase = /** @class */ (function (_super) {
     /**
      * Loads an object from the given url.
      * @param url: The url for the operation
-     * @param data: The id of the instance to load
+     * @param id: The id of the instance to load
      */
     ServiceBase.prototype.searchBaseAsync = function (url, id, options) {
         return __awaiter(this, void 0, void 0, function () {

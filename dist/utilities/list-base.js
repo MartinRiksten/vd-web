@@ -53,7 +53,7 @@ var ListBase = /** @class */ (function () {
      * Gets the filtered and sorted list of items
      */
     ListBase.prototype.getCurrentList = function () {
-        var result = this.items;
+        var result = this.items.slice();
         if (!result) {
             this.count = 0;
             return [];

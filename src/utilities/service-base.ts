@@ -24,7 +24,7 @@ export abstract class ServiceBase<TModel> extends FetchBase {
   /**
    * Loads an object from the given url.
    * @param url: The url for the operation
-   * @param data: The id of the instance to load
+   * @param id: The id of the instance to load
    */
   protected async searchBaseAsync(url: string, id?: string | object, options?: IFetchOptions): Promise<IServiceResult<TModel[]>> {
     const data = ! id ? void 0 : typeof id === 'string' || id instanceof String ? { id } : id;
