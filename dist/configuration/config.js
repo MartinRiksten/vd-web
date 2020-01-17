@@ -54,7 +54,6 @@ var Config = /** @class */ (function () {
                 var target = e.target;
                 var current = $(element);
                 if (!current.is(target) && current.has(target).length === 0) {
-                    // $(".popover").has(target).length === 0
                     var data = $(element).data("bs.popover");
                     var isVisible = !!data && !!data.tip && $(data.tip).hasClass("show");
                     if (isVisible) {

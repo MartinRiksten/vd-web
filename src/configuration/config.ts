@@ -54,7 +54,6 @@ export class Config {
                 const target = e.target as any;
                 const current = $(element as any);
                 if (!current.is(target) && current.has(target).length === 0) {
-                    // $(".popover").has(target).length === 0
                     const data = $(element).data("bs.popover");
                     const isVisible = !!data && !!data.tip && $(data.tip).hasClass("show");
                     if (isVisible) {

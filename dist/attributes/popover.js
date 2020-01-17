@@ -19,10 +19,11 @@ var PopoverCustomAttribute = /** @class */ (function () {
         this.element = element;
     }
     PopoverCustomAttribute.prototype.attached = function () {
+        var _this = this;
         if (!this.value) {
             return;
         }
-        jquery_1.default(this.element).popover(this.value);
+        setTimeout(function () { return jquery_1.default(_this.element).popover(_this.value); }, 100);
     };
     PopoverCustomAttribute.prototype.detached = function () {
         if (!this.value) {

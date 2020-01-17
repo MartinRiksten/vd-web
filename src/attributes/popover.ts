@@ -14,7 +14,7 @@ export class PopoverCustomAttribute {
       return;
     }
 
-    $(this.element).popover(this.value);
+    setTimeout(() => $(this.element).popover(this.value), 100);
   }
 
   public detached(): void {
