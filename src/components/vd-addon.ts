@@ -17,7 +17,7 @@ export class VdEraserAddon {
   @bindable public icon!: string;
   
   private types = [
-    { kind: 'erase', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times' } as IAddonInfo
+    { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times' } as IAddonInfo
   ];
 
   public bind() {

@@ -13,7 +13,7 @@ var aurelia_framework_1 = require("aurelia-framework");
 var VdEraserAddon = /** @class */ (function () {
     function VdEraserAddon() {
         this.types = [
-            { kind: 'erase', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times' }
+            { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times' }
         ];
     }
     VdEraserAddon.prototype.bind = function () {
