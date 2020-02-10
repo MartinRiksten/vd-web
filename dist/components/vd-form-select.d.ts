@@ -5,7 +5,7 @@ export declare class VdFormSelect extends VdFormInput<string> {
     groupClass: string;
     inputClass: string;
     inputId: string;
-    label: string;
+    displayName: string;
     value: string;
     autoFocus: boolean;
     options: IBootstrapSelectOption[];

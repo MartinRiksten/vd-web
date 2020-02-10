@@ -7,7 +7,7 @@ export class VdFormCheckbox extends VdFormInput<boolean> {
   @bindable public inputClass: string;
 
   @bindable public inputId: string;
-  @bindable public label: string;
+  @bindable public displayName: string;
   @bindable public value: boolean;
 
   @bindable public autoFocus: boolean;

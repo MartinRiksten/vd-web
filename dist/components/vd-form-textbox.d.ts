@@ -5,7 +5,7 @@ export declare class VdFormTextbox extends VdFormInput<string> {
     groupClass: string;
     inputClass: string;
     inputId: string;
-    label: string;
+    displayName: string;
     value: string;
     autoFocus: boolean;
     regex: string;

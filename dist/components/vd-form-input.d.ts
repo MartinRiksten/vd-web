@@ -3,7 +3,7 @@ export declare class VdFormInput<T> {
     groupClass: string;
     inputClass: string;
     inputId: string;
-    label: string;
+    displayName: string;
     value: T;
     autoFocus: boolean;
     element: Element;

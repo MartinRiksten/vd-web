@@ -4,7 +4,7 @@ export class VdFormInput<T> {
   public inputClass = '';
 
   public inputId: string;
-  public label: string;
+  public displayName: string;
   public value: T;
 
   public autoFocus = false;

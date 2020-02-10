@@ -51,7 +51,7 @@ var VdFormCheckbox = /** @class */ (function (_super) {
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdFormCheckbox.prototype, "label", void 0);
+    ], VdFormCheckbox.prototype, "displayName", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Boolean)

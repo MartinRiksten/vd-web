@@ -55,7 +55,7 @@ var VdFormTextbox = /** @class */ (function (_super) {
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdFormTextbox.prototype, "label", void 0);
+    ], VdFormTextbox.prototype, "displayName", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)

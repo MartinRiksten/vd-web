@@ -8,7 +8,7 @@ export class VdFormTextbox extends VdFormInput<string> {
   @bindable public inputClass: string;
 
   @bindable public inputId: string;
-  @bindable public label: string;
+  @bindable public displayName: string;
   @bindable public value: string;
 
   @bindable public autoFocus: boolean;

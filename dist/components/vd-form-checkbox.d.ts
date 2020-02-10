@@ -4,7 +4,7 @@ export declare class VdFormCheckbox extends VdFormInput<boolean> {
     groupClass: string;
     inputClass: string;
     inputId: string;
-    label: string;
+    displayName: string;
     value: boolean;
     autoFocus: boolean;
 }
