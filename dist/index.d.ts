@@ -14,6 +14,7 @@ export * from './common-dialog/common-dialogs';
 export * from './components/bootstrap-select';
 export * from './components/vd-bool-icon';
 export * from './components/vd-button';
+export * from './components/vd-addon';
 export * from './components/vd-filter-input';
 export * from './components/vd-form-checkbox';
 export * from './components/vd-form-data';

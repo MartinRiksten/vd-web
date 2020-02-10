@@ -21,6 +21,7 @@ __export(require("./common-dialog/common-dialogs"));
 __export(require("./components/bootstrap-select"));
 __export(require("./components/vd-bool-icon"));
 __export(require("./components/vd-button"));
+__export(require("./components/vd-addon"));
 __export(require("./components/vd-filter-input"));
 __export(require("./components/vd-form-checkbox"));
 __export(require("./components/vd-form-data"));
@@ -61,6 +62,7 @@ function configure(config) {
         'bootstrap-select',
         'vd-bool-icon',
         'vd-button',
+        "vd-addon",
         'vd-filter-input',
         'vd-form-checkbox',
         'vd-form-data',
