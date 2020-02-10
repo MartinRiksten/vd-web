@@ -3,11 +3,11 @@ import { IFilterable } from '../utilities/list-helper';
 import { VdTd } from './vd-td';
 export declare class VdTdList extends VdTd<string> {
     instance: IFilterable;
-    items: IValueList[];
+    items: IListValue[];
     bind(): void;
-    getToggle(item: IValueList): string | undefined;
+    getToggle(item: IListValue): string | undefined;
 }
-export interface IValueList {
+export interface IListValue {
     id: string;
     value: string;
     variant?: string;

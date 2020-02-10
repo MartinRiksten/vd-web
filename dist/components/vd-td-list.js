@@ -31,7 +31,7 @@ var VdTdList = /** @class */ (function (_super) {
     }
     VdTdList.prototype.bind = function () {
         _super.prototype.bind.call(this);
-        this.value = !this.items ? '' : this.items.join(', ');
+        this.value = !this.items ? '' : this.items.map(function (x) { return x.id; }).join(', ');
     };
     VdTdList.prototype.getToggle = function (item) {
         return !item.popoverOption ? void 0 : 'popover';

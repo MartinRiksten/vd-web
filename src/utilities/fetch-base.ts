@@ -39,8 +39,8 @@ export abstract class FetchBase {
     try {
       const response = await this.http.fetchAsync(url, init);
       if (!response.ok) {
-        this.handleUnexpectedError<T>(response.statusText, options)
-        return void 0;;
+        this.handleUnexpectedError<T>(response.statusText, options);
+        return void 0;
       }
 
       const value = await response.json();

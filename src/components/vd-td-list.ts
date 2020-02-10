@@ -5,19 +5,19 @@ import { VdTd } from './vd-td';
 
 export class VdTdList extends VdTd<string> {
   @bindable public instance: IFilterable;
-  @bindable public items!: IValueList[];
+  @bindable public items!: IListValue[];
 
   public bind() {
     super.bind();
-    this.value = !this.items ? '' : this.items.join(', ');
+    this.value = !this.items ? '' : this.items.map(x => x.id).join(', ');
   }
 
-  public getToggle(item: IValueList): string | undefined {
+  public getToggle(item: IListValue): string | undefined {
     return !item.popoverOption ? void 0 : 'popover';
   }
 }
 
-export interface IValueList {
+export interface IListValue {
   id: string;
   value: string;
   variant?: string;

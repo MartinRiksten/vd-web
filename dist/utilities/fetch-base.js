@@ -99,7 +99,6 @@ var FetchBase = /** @class */ (function () {
                         if (!response.ok) {
                             this.handleUnexpectedError(response.statusText, options);
                             return [2 /*return*/, void 0];
-                            ;
                         }
                         return [4 /*yield*/, response.json()];
                     case 3:
