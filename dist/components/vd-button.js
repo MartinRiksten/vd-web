@@ -41,7 +41,7 @@ var VdButton = /** @class */ (function () {
         var result = this.buttonClass + " " + this.variant;
         return result;
     };
-    VdButton.prototype.onClick = function () {
+    VdButton.prototype.onClick = function (event) {
         if (!!this.clickTarget) {
             $(this.clickTarget).click();
         }

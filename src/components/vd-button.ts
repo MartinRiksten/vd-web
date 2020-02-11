@@ -46,7 +46,7 @@ public getClass(): string {
   return result;
 }
 
-  public onClick() {
+  public onClick(event: Event) {
     if (!!this.clickTarget) {
       $(this.clickTarget).click();
     }

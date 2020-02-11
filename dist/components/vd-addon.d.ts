@@ -15,5 +15,5 @@ export declare class VdAddon {
     private types;
     bind(): void;
     getClass(): string;
-    onClick(): void;
+    onClick(event: Event): void;
 }

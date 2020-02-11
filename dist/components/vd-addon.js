@@ -28,7 +28,7 @@ var VdAddon = /** @class */ (function () {
         var result = this.icon + " " + this.variant;
         return result;
     };
-    VdAddon.prototype.onClick = function () {
+    VdAddon.prototype.onClick = function (event) {
         if (!!this.clickTarget) {
             $(this.clickTarget).click();
         }
