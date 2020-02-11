@@ -13,7 +13,7 @@ var aurelia_framework_1 = require("aurelia-framework");
 var VdButton = /** @class */ (function () {
     function VdButton() {
         this.buttonIf = true;
-        this.buttonClass = 'ml-1';
+        this.buttonClass = 'ml-2';
         this.types = [
             { kind: 'ok', displayName: 'OK', variant: 'btn-primary', icon: 'fas fa-check' },
             { kind: 'cancel', displayName: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' },
@@ -22,6 +22,7 @@ var VdButton = /** @class */ (function () {
             { kind: 'clear', displayName: 'Wissen', variant: 'btn-light', icon: 'fas fa-eraser' },
             { kind: 'save', displayName: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save' },
             { kind: 'search', displayName: 'Zoeken', variant: 'btn-primary', icon: 'fas fa-search' },
+            { kind: 'execute', displayName: 'Uitvoeren', variant: 'btn-primary', icon: 'fas fa-check' },
             { kind: 'close', displayName: '', variant: 'btn-light', icon: 'fas fa-times' },
             { kind: 'upload', displayName: 'Uploaden', variant: 'btn-light', icon: 'fas fa-upload' },
             { kind: 'download', displayName: 'Downloaden', variant: 'btn-light', icon: 'fas fa-download' },

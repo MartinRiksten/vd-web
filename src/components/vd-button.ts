@@ -16,7 +16,7 @@ export class VdButton {
   @bindable public icon!: string;
   @bindable public clickTarget: string | undefined;
   @bindable public buttonIf: boolean = true;
-  @bindable public buttonClass = 'ml-1';
+  @bindable public buttonClass = 'ml-2';
 
   private types = [
     { kind: 'ok', displayName: 'OK', variant: 'btn-primary', icon: 'fas fa-check' } as IButtonInfo,
@@ -26,6 +26,7 @@ export class VdButton {
     { kind: 'clear', displayName: 'Wissen', variant: 'btn-light', icon: 'fas fa-eraser' } as IButtonInfo,
     { kind: 'save', displayName: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save' } as IButtonInfo,
     { kind: 'search', displayName: 'Zoeken', variant: 'btn-primary', icon: 'fas fa-search' } as IButtonInfo,
+    { kind: 'execute', displayName: 'Uitvoeren', variant: 'btn-primary', icon: 'fas fa-check' } as IButtonInfo,
     { kind: 'close', displayName: '', variant: 'btn-light', icon: 'fas fa-times' } as IButtonInfo,
     { kind: 'upload', displayName: 'Uploaden', variant: 'btn-light', icon: 'fas fa-upload' } as IButtonInfo,
     { kind: 'download', displayName: 'Downloaden', variant: 'btn-light', icon: 'fas fa-download' } as IButtonInfo,
