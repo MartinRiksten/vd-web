@@ -26,7 +26,7 @@ var VdFormData = /** @class */ (function () {
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdFormData.prototype, "label", void 0);
+    ], VdFormData.prototype, "displayName", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)

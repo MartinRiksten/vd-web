@@ -1,5 +1,5 @@
 <template>
-    <label class="font-weight-bold text-sm-flex-left text-md-flex-right" class.bind="labelClass">${label}</label>
+    <label class="font-weight-bold text-sm-flex-left text-md-flex-right" class.bind="labelClass">${displayName}</label>
     <div class.bind="dataClass">
         <slot name="before"></slot>
         <a href="#" href.bind="href" click.trigger="onClick($event)">

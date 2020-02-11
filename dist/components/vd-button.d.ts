@@ -1,6 +1,6 @@
 export interface IButtonInfo {
     kind: string;
-    label: string;
+    displayName: string;
     variant: string;
     icon: string;
 }
@@ -8,7 +8,7 @@ export declare class VdButton {
     kind: string;
     buttonId: string;
     clickHandler: (event: Event) => void;
-    label: string;
+    displayName: string;
     variant: string;
     icon: string;
     clickTarget: string | undefined;

@@ -15,25 +15,25 @@ var VdButton = /** @class */ (function () {
         this.buttonIf = true;
         this.buttonClass = 'ml-1';
         this.types = [
-            { kind: 'ok', label: 'OK', variant: 'btn-primary', icon: 'fas fa-check' },
-            { kind: 'cancel', label: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' },
-            { kind: 'yes', label: 'Ja', variant: 'btn-primary', icon: 'fas fa-check' },
-            { kind: 'no', label: 'Nee', variant: 'btn-light', icon: 'fas fa-times' },
-            { kind: 'clear', label: 'Wissen', variant: 'btn-light', icon: 'fas fa-eraser' },
-            { kind: 'save', label: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save' },
-            { kind: 'search', label: 'Zoeken', variant: 'btn-primary', icon: 'fas fa-search' },
-            { kind: 'close', label: '', variant: 'btn-light', icon: 'fas fa-times' },
-            { kind: 'upload', label: 'Uploaden', variant: 'btn-light', icon: 'fas fa-upload' },
-            { kind: 'download', label: 'Downloaden', variant: 'btn-light', icon: 'fas fa-download' },
-            { kind: 'select-all', label: 'Alle', variant: 'btn-light', icon: 'fas fa-check-square' },
-            { kind: 'deselect-all', label: 'Geen', variant: 'btn-light', icon: 'far fa-square' }
+            { kind: 'ok', displayName: 'OK', variant: 'btn-primary', icon: 'fas fa-check' },
+            { kind: 'cancel', displayName: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' },
+            { kind: 'yes', displayName: 'Ja', variant: 'btn-primary', icon: 'fas fa-check' },
+            { kind: 'no', displayName: 'Nee', variant: 'btn-light', icon: 'fas fa-times' },
+            { kind: 'clear', displayName: 'Wissen', variant: 'btn-light', icon: 'fas fa-eraser' },
+            { kind: 'save', displayName: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save' },
+            { kind: 'search', displayName: 'Zoeken', variant: 'btn-primary', icon: 'fas fa-search' },
+            { kind: 'close', displayName: '', variant: 'btn-light', icon: 'fas fa-times' },
+            { kind: 'upload', displayName: 'Uploaden', variant: 'btn-light', icon: 'fas fa-upload' },
+            { kind: 'download', displayName: 'Downloaden', variant: 'btn-light', icon: 'fas fa-download' },
+            { kind: 'select-all', displayName: 'Alle', variant: 'btn-light', icon: 'fas fa-check-square' },
+            { kind: 'deselect-all', displayName: 'Geen', variant: 'btn-light', icon: 'far fa-square' }
         ];
     }
     VdButton.prototype.bind = function () {
         var _this = this;
         this.buttonId = !this.buttonId ? this.kind : this.buttonId;
         var info = this.types.find(function (x) { return x.kind === _this.kind; }) || {};
-        this.label = !!this.label ? this.label : info.label;
+        this.displayName = !!this.displayName ? this.displayName : info.displayName;
         this.variant = !!this.variant ? this.variant : info.variant;
         this.icon = !!this.icon ? this.icon : info.icon;
     };
@@ -64,7 +64,7 @@ var VdButton = /** @class */ (function () {
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdButton.prototype, "label", void 0);
+    ], VdButton.prototype, "displayName", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)

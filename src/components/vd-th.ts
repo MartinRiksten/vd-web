@@ -2,7 +2,7 @@
 import { IOrderInfo } from '../utilities/list-helper';
 
 export class VdTh {
-  @bindable public label!: string;
+  @bindable public displayName!: string;
   @bindable public name!: string;
   @bindable public order!: IOrderInfo;
 

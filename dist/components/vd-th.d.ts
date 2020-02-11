@@ -1,6 +1,6 @@
 import { IOrderInfo } from '../utilities/list-helper';
 export declare class VdTh {
-    label: string;
+    displayName: string;
     name: string;
     order: IOrderInfo;
     getClass(by: string, ascending: boolean): string;

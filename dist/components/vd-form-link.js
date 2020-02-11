@@ -48,7 +48,7 @@ var VdFormLink = /** @class */ (function (_super) {
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdFormLink.prototype, "label", void 0);
+    ], VdFormLink.prototype, "displayName", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)

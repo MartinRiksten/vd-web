@@ -2,6 +2,6 @@
     <div class="custom-control custom-checkbox" class.bind="groupClass">
         <slot name="before"></slot>
         <input type="checkbox" class="custom-control-input" id.bind="inputId" checked.bind="value">
-        <label for.bind="inputId" class="custom-control-label font-weight-bold" class.bind="labelClass">${label}</label>
+        <label for.bind="inputId" class="custom-control-label font-weight-bold" class.bind="labelClass">${displayName}</label>
     </div>
 </template>
