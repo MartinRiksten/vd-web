@@ -13,7 +13,7 @@ var DateValueConverter = /** @class */ (function () {
             return value;
         }
         var data = moment_1.default(value).locale("nl");
-        return data.isValid() ? data.format("l") + " " + data.format("H:mm") : value;
+        return data.isValid() ? data.format("l") : value;
     };
     return DateValueConverter;
 }());

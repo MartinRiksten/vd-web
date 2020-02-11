@@ -76,7 +76,7 @@ export function configure(config: FrameworkConfiguration) {
     'vd-th',
     'vd-route',
   ];
-  const converters = ['bool', 'date', 'encode-uri', 'null', 'uppercase'];
+  const converters = ['bool', 'date', 'date-time', 'encode-uri', 'null', 'uppercase'];
 
   const basePath = './dist';
   const resources = components
