@@ -7,7 +7,7 @@ import 'moment/locale/nl';
  * @param option The format
  * @returns The converted value
  */
-export class DateValueConverter {
+export class DateTimeValueConverter {
   public toView(value: string, option: string) {
     if (!value) {
       return value;

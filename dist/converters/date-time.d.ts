@@ -5,6 +5,6 @@ import 'moment/locale/nl';
  * @param option The format
  * @returns The converted value
  */
-export declare class DateValueConverter {
+export declare class DateTimeValueConverter {
     toView(value: string, option: string): string;
 }

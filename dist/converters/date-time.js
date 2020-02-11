@@ -11,10 +11,10 @@ require("moment/locale/nl");
  * @param option The format
  * @returns The converted value
  */
-var DateValueConverter = /** @class */ (function () {
-    function DateValueConverter() {
+var DateTimeValueConverter = /** @class */ (function () {
+    function DateTimeValueConverter() {
     }
-    DateValueConverter.prototype.toView = function (value, option) {
+    DateTimeValueConverter.prototype.toView = function (value, option) {
         if (!value) {
             return value;
         }
@@ -28,6 +28,6 @@ var DateValueConverter = /** @class */ (function () {
             : value;
         return result;
     };
-    return DateValueConverter;
+    return DateTimeValueConverter;
 }());
-exports.DateValueConverter = DateValueConverter;
+exports.DateTimeValueConverter = DateTimeValueConverter;
