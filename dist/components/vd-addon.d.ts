@@ -1,6 +1,5 @@
 export interface IAddonInfo {
     kind: string;
-    append: boolean;
     title: string;
     variant: string;
     icon: string;
@@ -8,7 +7,6 @@ export interface IAddonInfo {
 export declare class VdAddon {
     kind: string;
     addonName: string;
-    append: boolean;
     clickHandler: (event: Event) => void;
     clickTarget: string | undefined;
     title: string;
@@ -16,7 +14,6 @@ export declare class VdAddon {
     icon: string;
     private types;
     bind(): void;
-    getGroupClass(): "input-group-append" | "input-group-prepend";
     getClass(): string;
     onClick(): void;
 }
