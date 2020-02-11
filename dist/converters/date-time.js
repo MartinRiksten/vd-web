@@ -8,7 +8,7 @@ require("moment/locale/nl");
 /**
  * Value converter for a date time
  * @param value The value to convert
- * @param option Either the format or a boolean indicating whether to show time
+ * @param option The format
  * @returns The converted value
  */
 var DateValueConverter = /** @class */ (function () {
@@ -22,7 +22,7 @@ var DateValueConverter = /** @class */ (function () {
         var result = data.isValid()
             ? typeof option === 'string'
                 ? data.format(option)
-                : option
+                : data.hour() !== 0 || data.minute() !== 0 || data.second() !== 0
                     ? data.format('l') + " " + data.format('H:mm')
                     : data.format('l')
             : value;
