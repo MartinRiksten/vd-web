@@ -40,7 +40,7 @@ __export(require("./components/vd-th"));
 __export(require("./configuration/configuration"));
 __export(require("./configuration/configuration-factory"));
 __export(require("./converters/bool"));
-__export(require("./converters/date"));
+__export(require("./converters/date-time"));
 __export(require("./converters/encode-uri"));
 __export(require("./converters/null"));
 __export(require("./converters/uppercase"));
@@ -78,7 +78,7 @@ function configure(config) {
         'vd-th',
         'vd-route',
     ];
-    var converters = ['bool', 'date', 'encode-uri', 'null', 'uppercase'];
+    var converters = ['bool', 'date-time', 'encode-uri', 'null', 'uppercase'];
     var basePath = './dist';
     var resources = components
         .map(function (x) { return basePath + "/components/" + x; })

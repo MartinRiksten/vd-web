@@ -33,7 +33,7 @@ export * from './components/vd-th';
 export * from './configuration/configuration';
 export * from './configuration/configuration-factory';
 export * from './converters/bool';
-export * from './converters/date';
+export * from './converters/date-time';
 export * from './converters/encode-uri';
 export * from './converters/null';
 export * from './converters/uppercase';
