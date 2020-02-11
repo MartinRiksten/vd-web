@@ -13,16 +13,21 @@ var aurelia_framework_1 = require("aurelia-framework");
 var VdAddon = /** @class */ (function () {
     function VdAddon() {
         this.types = [
-            { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times' }
+            { kind: 'eraser', append: true, title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times' }
         ];
     }
     VdAddon.prototype.bind = function () {
         var _this = this;
         this.addonName = !this.addonName ? this.kind : this.addonName;
         var info = this.types.find(function (x) { return x.kind === _this.kind; }) || {};
+        this.append = !!this.append ? this.append : info.append;
         this.title = !!this.title ? this.title : info.title;
         this.variant = !!this.variant ? this.variant : info.variant;
         this.icon = !!this.icon ? this.icon : info.icon;
+    };
+    VdAddon.prototype.getGroupClass = function () {
+        var result = this.append ? 'input-group-append' : 'input-group-prepend';
+        return result;
     };
     VdAddon.prototype.getClass = function () {
         var result = this.icon + " " + this.variant;
@@ -44,6 +49,10 @@ var VdAddon = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
     ], VdAddon.prototype, "addonName", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Boolean)
+    ], VdAddon.prototype, "append", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Function)

@@ -1,5 +1,7 @@
 <template>
-    <a name="addonName" class="input-group-addon" title.bind="title" click.trigger="onClick($event)">
-        <span class.bind="getClass(icon, variant)"></span>
-    </a>
+    <div class.bind="getGroupClass(append)">
+        <a name="addonName" class="input-group-text" title.bind="title" click.trigger="onClick($event)">
+            <span class.bind="getClass(icon, variant)"></span>
+        </a>
+    </div>
 </template>
