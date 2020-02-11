@@ -4,7 +4,7 @@ export interface IAddonInfo {
     variant: string;
     icon: string;
 }
-export declare class VdEraserAddon {
+export declare class VdAddon {
     kind: string;
     addonName: string;
     clickHandler: (event: Event) => void;

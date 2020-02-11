@@ -7,7 +7,7 @@ export interface IAddonInfo {
     icon: string;
   }
   
-export class VdEraserAddon {
+export class VdAddon {
   @bindable public kind!: string;
   @bindable public addonName: string;
   @bindable public clickHandler!: (event: Event) => void;

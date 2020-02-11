@@ -10,13 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
-var VdEraserAddon = /** @class */ (function () {
-    function VdEraserAddon() {
+var VdAddon = /** @class */ (function () {
+    function VdAddon() {
         this.types = [
             { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times' }
         ];
     }
-    VdEraserAddon.prototype.bind = function () {
+    VdAddon.prototype.bind = function () {
         var _this = this;
         this.addonName = !this.addonName ? this.kind : this.addonName;
         var info = this.types.find(function (x) { return x.kind === _this.kind; }) || {};
@@ -24,11 +24,11 @@ var VdEraserAddon = /** @class */ (function () {
         this.variant = !!this.variant ? this.variant : info.variant;
         this.icon = !!this.icon ? this.icon : info.icon;
     };
-    VdEraserAddon.prototype.getClass = function () {
+    VdAddon.prototype.getClass = function () {
         var result = this.icon + " " + this.variant;
         return result;
     };
-    VdEraserAddon.prototype.onClick = function () {
+    VdAddon.prototype.onClick = function () {
         if (!!this.clickTarget) {
             $(this.clickTarget).click();
         }
@@ -39,31 +39,31 @@ var VdEraserAddon = /** @class */ (function () {
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdEraserAddon.prototype, "kind", void 0);
+    ], VdAddon.prototype, "kind", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdEraserAddon.prototype, "addonName", void 0);
+    ], VdAddon.prototype, "addonName", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Function)
-    ], VdEraserAddon.prototype, "clickHandler", void 0);
+    ], VdAddon.prototype, "clickHandler", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdEraserAddon.prototype, "clickTarget", void 0);
+    ], VdAddon.prototype, "clickTarget", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdEraserAddon.prototype, "title", void 0);
+    ], VdAddon.prototype, "title", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdEraserAddon.prototype, "variant", void 0);
+    ], VdAddon.prototype, "variant", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdEraserAddon.prototype, "icon", void 0);
-    return VdEraserAddon;
+    ], VdAddon.prototype, "icon", void 0);
+    return VdAddon;
 }());
-exports.VdEraserAddon = VdEraserAddon;
+exports.VdAddon = VdAddon;
