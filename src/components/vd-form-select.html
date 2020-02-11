@@ -2,7 +2,7 @@
     <label for.bind="inputId" class="font-weight-bold text-sm-flex-left text-md-flex-right" class.bind="labelClass">${displayName}</label>
     <div class="input-group" class.bind="groupClass">
         <slot name="before"></slot>
-        <div as-element="bootstrap-select" class="px-0 py-0" display-name.bind="displayName" options.bind="options" selected.two-way="value"></bootstrap-select>
+        <div as-element="bootstrap-select" class="w-100 px-0 py-0" display-name.bind="displayName" options.bind="options" selected.two-way="value"></bootstrap-select>
         <slot name="after"></slot>
     </div>
 </template>
