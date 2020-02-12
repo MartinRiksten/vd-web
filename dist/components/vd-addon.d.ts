@@ -7,13 +7,13 @@ export interface IAddonInfo {
 }
 export declare class VdAddon {
     kind: string;
-    addonName: string;
+    addonName: string | undefined;
     clickHandler: (event: Event) => void;
     clickTarget: string | undefined;
-    title: string;
+    title: string | undefined;
     variant: string;
     icon: string;
-    clickable: boolean;
+    clickable: boolean | undefined;
     private types;
     bind(): void;
     getClass(): string;
