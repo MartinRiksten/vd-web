@@ -13,7 +13,7 @@ var aurelia_framework_1 = require("aurelia-framework");
 var VdFormData = /** @class */ (function () {
     function VdFormData() {
         this.labelClass = 'col-md-6';
-        this.dataClass = 'col-md-6';
+        this.groupClass = 'col-md-6';
     }
     __decorate([
         aurelia_framework_1.bindable,
@@ -22,7 +22,7 @@ var VdFormData = /** @class */ (function () {
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)
-    ], VdFormData.prototype, "dataClass", void 0);
+    ], VdFormData.prototype, "groupClass", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)

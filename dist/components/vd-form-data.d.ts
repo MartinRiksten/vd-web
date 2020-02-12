@@ -1,6 +1,6 @@
 export declare class VdFormData {
     labelClass: string;
-    dataClass: string;
+    groupClass: string;
     displayName: string;
     value: string;
 }
