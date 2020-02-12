@@ -5,6 +5,7 @@ export interface IAddonInfo {
   title: string;
   variant: string;
   icon: string;
+  clickable: boolean;
 }
 
 export class VdAddon {
@@ -15,9 +16,10 @@ export class VdAddon {
   @bindable public title: string;
   @bindable public variant!: string;
   @bindable public icon!: string;
+  @bindable public clickable: boolean = false;
 
   private types = [
-    { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times' } as IAddonInfo
+    { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times', clickable: true } as IAddonInfo
   ];
 
   public bind() {
@@ -26,6 +28,7 @@ export class VdAddon {
     this.title = !!this.title ? this.title : info.title;
     this.variant = !!this.variant ? this.variant : info.variant;
     this.icon = !!this.icon ? this.icon : info.icon;
+    this.clickable = this.clickable === undefined ? this.clickable : info.clickable; 
   }
 
   public getClass(): string {

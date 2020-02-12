@@ -3,6 +3,7 @@ export interface IAddonInfo {
     title: string;
     variant: string;
     icon: string;
+    clickable: boolean;
 }
 export declare class VdAddon {
     kind: string;
@@ -12,6 +13,7 @@ export declare class VdAddon {
     title: string;
     variant: string;
     icon: string;
+    clickable: boolean;
     private types;
     bind(): void;
     getClass(): string;

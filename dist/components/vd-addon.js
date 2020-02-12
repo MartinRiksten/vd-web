@@ -12,8 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
 var VdAddon = /** @class */ (function () {
     function VdAddon() {
+        this.clickable = false;
         this.types = [
-            { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times' }
+            { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times', clickable: true }
         ];
     }
     VdAddon.prototype.bind = function () {
@@ -23,6 +24,7 @@ var VdAddon = /** @class */ (function () {
         this.title = !!this.title ? this.title : info.title;
         this.variant = !!this.variant ? this.variant : info.variant;
         this.icon = !!this.icon ? this.icon : info.icon;
+        this.clickable = this.clickable === undefined ? this.clickable : info.clickable;
     };
     VdAddon.prototype.getClass = function () {
         var result = this.icon + " " + this.variant;
@@ -64,6 +66,10 @@ var VdAddon = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
     ], VdAddon.prototype, "icon", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Boolean)
+    ], VdAddon.prototype, "clickable", void 0);
     return VdAddon;
 }());
 exports.VdAddon = VdAddon;
