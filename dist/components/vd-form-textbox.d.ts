@@ -9,7 +9,7 @@ export declare class VdFormTextbox extends VdFormInput<string> {
     value: string;
     autoFocus: boolean;
     regex: string;
-    maxLength: string;
+    maxLength: number;
     placeHolder: string;
     usePopover: boolean;
     popoverOption: PopoverOption;

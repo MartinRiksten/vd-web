@@ -28,6 +28,7 @@ var VdFormTextbox = /** @class */ (function (_super) {
     __extends(VdFormTextbox, _super);
     function VdFormTextbox() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.maxLength = 99;
         _this.usePopover = true;
         _this.popoverOption = { container: 'body', placement: 'right', trigger: 'manual' };
         return _this;
@@ -70,7 +71,7 @@ var VdFormTextbox = /** @class */ (function (_super) {
     ], VdFormTextbox.prototype, "regex", void 0);
     __decorate([
         aurelia_framework_1.bindable,
-        __metadata("design:type", String)
+        __metadata("design:type", Number)
     ], VdFormTextbox.prototype, "maxLength", void 0);
     __decorate([
         aurelia_framework_1.bindable,
