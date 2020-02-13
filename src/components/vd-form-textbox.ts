@@ -1,5 +1,5 @@
 import { bindable } from 'aurelia-framework';
-import { PopoverOption } from 'bootstrap/index';
+import { PopoverOption } from 'bootstrap';
 import { VdFormInput } from './vd-form-input';
 
 export class VdFormTextbox extends VdFormInput<string> {
