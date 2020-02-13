@@ -1,6 +1,6 @@
 <template>
     <label class="font-weight-bold text-sm-flex-left text-md-flex-right" class.bind="labelClass">${displayName}</label>
-    <div class.bind="dataClass">
+    <div class.bind="groupClass">
         <slot name="before"></slot>
         <a if.bind="!!value" href.bind="href">
             <span innerhtml.bind="value"></span>

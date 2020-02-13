@@ -1,7 +1,7 @@
 import { VdFormData } from './vd-form-data';
 export declare class VdFormLink extends VdFormData {
     labelClass: string;
-    dataClass: string;
+    groupClass: string;
     displayName: string;
     value: string;
     showIcon: boolean;
