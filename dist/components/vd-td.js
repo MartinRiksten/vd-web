@@ -30,6 +30,10 @@ var VdTd = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)
     ], VdTd.prototype, "instance", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdTd.prototype, "valueClass", void 0);
     return VdTd;
 }());
 exports.VdTd = VdTd;
