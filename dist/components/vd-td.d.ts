@@ -3,7 +3,7 @@ import { IFilterable } from '../utilities/list-helper';
 export declare class VdTd<TValue> {
     value: TValue;
     instance: IFilterable;
-    valueClass: string;
+    dataClass: string;
     usePopover: boolean;
     popoverOption: PopoverOption;
     bind(): void;

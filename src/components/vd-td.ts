@@ -6,7 +6,7 @@ export class VdTd<TValue> {
   @bindable public value: TValue;
   @bindable public instance: IFilterable;
 
-  @bindable public valueClass: string;
+  @bindable public dataClass: string;
 
   @bindable public usePopover: boolean = false;
   @bindable public popoverOption: PopoverOption;

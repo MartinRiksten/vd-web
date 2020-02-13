@@ -34,7 +34,7 @@ var VdTd = /** @class */ (function () {
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdTd.prototype, "valueClass", void 0);
+    ], VdTd.prototype, "dataClass", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Boolean)
