@@ -5,12 +5,9 @@ import { IFilterable } from '../utilities/list-helper';
 export class VdTd<TValue> {
   @bindable public value: TValue;
   @bindable public instance: IFilterable;
-
   @bindable public dataClass: string;
-
-  @bindable public usePopover: boolean = false;
   @bindable public popoverOption: PopoverOption;
-
+  
   public bind() {
     if (!this.instance) {
       return;

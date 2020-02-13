@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
 var VdTd = /** @class */ (function () {
     function VdTd() {
-        this.usePopover = false;
     }
     VdTd.prototype.bind = function () {
         if (!this.instance) {
@@ -35,10 +34,6 @@ var VdTd = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
     ], VdTd.prototype, "dataClass", void 0);
-    __decorate([
-        aurelia_framework_1.bindable,
-        __metadata("design:type", Boolean)
-    ], VdTd.prototype, "usePopover", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)
