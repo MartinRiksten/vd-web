@@ -30,13 +30,9 @@ var VdFormLink = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.showIcon = true;
         _this.href = '#';
+        _this.icon = "fas fa-chevron-circle-right";
         return _this;
     }
-    VdFormLink.prototype.onClick = function (event) {
-        if (!!this.clickHandler) {
-            this.clickHandler(event);
-        }
-    };
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
@@ -63,8 +59,8 @@ var VdFormLink = /** @class */ (function (_super) {
     ], VdFormLink.prototype, "href", void 0);
     __decorate([
         aurelia_framework_1.bindable,
-        __metadata("design:type", Function)
-    ], VdFormLink.prototype, "clickHandler", void 0);
+        __metadata("design:type", Object)
+    ], VdFormLink.prototype, "icon", void 0);
     return VdFormLink;
 }(vd_form_data_1.VdFormData));
 exports.VdFormLink = VdFormLink;

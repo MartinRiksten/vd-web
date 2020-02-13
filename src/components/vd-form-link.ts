@@ -8,11 +8,5 @@ export class VdFormLink extends VdFormData {
   @bindable public value: string;
   @bindable public showIcon = true;
   @bindable public href: string = '#';
-  @bindable public clickHandler: (event: Event) => void;
-
-  public onClick(event: Event) {
-    if (!!this.clickHandler) {
-      this.clickHandler(event)
-    }
-  }
+  @bindable public icon = "fas fa-chevron-circle-right";
 }
