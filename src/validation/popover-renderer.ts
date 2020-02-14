@@ -27,7 +27,7 @@ export class PopoverRenderer implements ValidationRenderer {
         if (result.valid) {
           toHide.push(element);
         } else {
-          const popover = $(element).closest('[data-toggle=popover]');
+          const popover = this.findFromElement(element);
           if (toShow.indexOf(element) >= 0) {
             popover.data('content', popover.data('content') + '\n' + result.message);
           } else {
@@ -45,7 +45,7 @@ export class PopoverRenderer implements ValidationRenderer {
         $(element).focus();
       }
 
-      const popover = $(element).closest('[data-toggle=popover]');
+      const popover = this.findFromElement(element);
       const data = popover.data('bs.popover');
       const hasTip = !!data && !!data.tip;
       let $tip = hasTip ? $(data.tip) : undefined;
@@ -69,9 +69,19 @@ export class PopoverRenderer implements ValidationRenderer {
     }
 
     for (const element of $.unique(toHide).filter(x => toShow.indexOf(x) === -1)) {
-      const popover = $(element).closest('[data-toggle=popover]');
+      const popover = this.findFromElement(element);
       popover.popover('hide');
     }
+  }
+
+  private findFromElement(element: Element): JQuery<Element> {
+    let result = $(element).find('[data-toggle=popover]');
+    if (result.length > 0) {
+      return result;
+    }
+
+    result = $(element).closest('[data-toggle=popover]');
+    return result;
   }
 
   private findElementById(id: string): Element[] {

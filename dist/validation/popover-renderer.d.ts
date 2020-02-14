@@ -4,5 +4,6 @@ export declare class PopoverRenderer implements ValidationRenderer {
     focusFirst: boolean;
     dashedId: boolean;
     render(instruction: RenderInstruction): void;
+    private findFromElement;
     private findElementById;
 }

@@ -30,7 +30,7 @@ var PopoverRenderer = /** @class */ (function () {
                     toHide.push(element);
                 }
                 else {
-                    var popover = $(element).closest('[data-toggle=popover]');
+                    var popover = this.findFromElement(element);
                     if (toShow.indexOf(element) >= 0) {
                         popover.data('content', popover.data('content') + '\n' + result.message);
                     }
@@ -47,7 +47,7 @@ var PopoverRenderer = /** @class */ (function () {
                 first = false;
                 $(element).focus();
             }
-            var popover = $(element).closest('[data-toggle=popover]');
+            var popover = this_1.findFromElement(element);
             var data = popover.data('bs.popover');
             var hasTip = !!data && !!data.tip;
             var $tip = hasTip ? $(data.tip) : undefined;
@@ -76,9 +76,17 @@ var PopoverRenderer = /** @class */ (function () {
         }
         for (var _j = 0, _k = $.unique(toHide).filter(function (x) { return toShow.indexOf(x) === -1; }); _j < _k.length; _j++) {
             var element = _k[_j];
-            var popover = $(element).closest('[data-toggle=popover]');
+            var popover = this.findFromElement(element);
             popover.popover('hide');
         }
+    };
+    PopoverRenderer.prototype.findFromElement = function (element) {
+        var result = $(element).find('[data-toggle=popover]');
+        if (result.length > 0) {
+            return result;
+        }
+        result = $(element).closest('[data-toggle=popover]');
+        return result;
     };
     PopoverRenderer.prototype.findElementById = function (id) {
         var name = this.dashedId
