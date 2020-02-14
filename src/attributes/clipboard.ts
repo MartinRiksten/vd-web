@@ -3,8 +3,21 @@ import { autoinject, customAttribute } from 'aurelia-framework';
 @autoinject
 @customAttribute('clipboard')
 export class ClipboardCustomAttribute {
-  private value: string;
   
+  public static copyToClipboard(text: string): void {
+    if (document.queryCommandSupported('copy') && text) {
+      const textarea: HTMLTextAreaElement = document.createElement('textarea');
+      textarea.style.display = 'none !important;';
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('Copy');
+      document.body.removeChild(textarea);
+    }
+  }
+
+  private value: string;
+
   constructor(private readonly element: Element) {}
 
   public attached() {
@@ -30,14 +43,6 @@ export class ClipboardCustomAttribute {
 
   private handleClick($event: Event) {
     const text = ($event.srcElement as Element).getAttribute('text');
-    if (document.queryCommandSupported('copy') && text) {
-      const textarea: HTMLTextAreaElement = document.createElement('textarea');
-      textarea.style.display = 'none !important;';
-      textarea.value = text;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand('Copy');
-      document.body.removeChild(textarea);
-    }
+    ClipboardCustomAttribute.copyToClipboard(text);
   }
 }

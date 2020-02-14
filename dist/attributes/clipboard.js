@@ -14,6 +14,18 @@ var ClipboardCustomAttribute = /** @class */ (function () {
     function ClipboardCustomAttribute(element) {
         this.element = element;
     }
+    ClipboardCustomAttribute_1 = ClipboardCustomAttribute;
+    ClipboardCustomAttribute.copyToClipboard = function (text) {
+        if (document.queryCommandSupported('copy') && text) {
+            var textarea = document.createElement('textarea');
+            textarea.style.display = 'none !important;';
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('Copy');
+            document.body.removeChild(textarea);
+        }
+    };
     ClipboardCustomAttribute.prototype.attached = function () {
         // Loop over any child elements and disable the click events. For example if you put this on a button,
         // and then put a span / image icon it breaks the click event.
@@ -33,17 +45,10 @@ var ClipboardCustomAttribute = /** @class */ (function () {
     };
     ClipboardCustomAttribute.prototype.handleClick = function ($event) {
         var text = $event.srcElement.getAttribute('text');
-        if (document.queryCommandSupported('copy') && text) {
-            var textarea = document.createElement('textarea');
-            textarea.style.display = 'none !important;';
-            textarea.value = text;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('Copy');
-            document.body.removeChild(textarea);
-        }
+        ClipboardCustomAttribute_1.copyToClipboard(text);
     };
-    ClipboardCustomAttribute = __decorate([
+    var ClipboardCustomAttribute_1;
+    ClipboardCustomAttribute = ClipboardCustomAttribute_1 = __decorate([
         aurelia_framework_1.autoinject,
         aurelia_framework_1.customAttribute('clipboard'),
         __metadata("design:paramtypes", [Element])
