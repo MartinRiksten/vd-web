@@ -23,7 +23,8 @@ var PopoverCustomAttribute = /** @class */ (function () {
         if (!this.value) {
             return;
         }
-        setTimeout(function () { return jquery_1.default(_this.element).popover(_this.value); }, 100);
+        var value = this.value === "init" ? void 0 : this.value;
+        setTimeout(function () { return jquery_1.default(_this.element).popover(value); }, 100);
     };
     PopoverCustomAttribute.prototype.detached = function () {
         if (!this.value) {
