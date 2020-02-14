@@ -21,6 +21,7 @@ var VdButton = /** @class */ (function () {
             { kind: 'no', displayName: 'Nee', variant: 'btn-light', icon: 'fas fa-times' },
             { kind: 'clear', displayName: 'Wissen', variant: 'btn-light', icon: 'fas fa-eraser' },
             { kind: 'save', displayName: 'Opslaan', variant: 'btn-light', icon: 'fas fa-save' },
+            { kind: 'register', displayName: 'Registreren', variant: 'btn-light', icon: 'fas fa-save' },
             { kind: 'search', displayName: 'Zoeken', variant: 'btn-primary', icon: 'fas fa-search' },
             { kind: 'execute', displayName: 'Uitvoeren', variant: 'btn-primary', icon: 'fas fa-check' },
             { kind: 'close', displayName: 'Sluiten', variant: 'btn-light', icon: 'fas fa-times' },
