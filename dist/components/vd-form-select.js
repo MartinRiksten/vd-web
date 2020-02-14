@@ -27,8 +27,13 @@ var vd_form_input_1 = require("./vd-form-input");
 var VdFormSelect = /** @class */ (function (_super) {
     __extends(VdFormSelect, _super);
     function VdFormSelect() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.popoverOption = { container: 'body', placement: 'right', trigger: 'manual' };
+        return _this;
     }
+    VdFormSelect.prototype.bind = function () {
+        this.dataToggle = !!this.popoverOption ? 'popover' : '';
+    };
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
@@ -61,6 +66,10 @@ var VdFormSelect = /** @class */ (function (_super) {
         aurelia_framework_1.bindable,
         __metadata("design:type", Array)
     ], VdFormSelect.prototype, "options", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdFormSelect.prototype, "popoverOption", void 0);
     return VdFormSelect;
 }(vd_form_input_1.VdFormInput));
 exports.VdFormSelect = VdFormSelect;

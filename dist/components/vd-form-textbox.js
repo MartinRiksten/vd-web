@@ -29,13 +29,11 @@ var VdFormTextbox = /** @class */ (function (_super) {
     function VdFormTextbox() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.maxLength = 99;
-        _this.usePopover = true;
         _this.popoverOption = { container: 'body', placement: 'right', trigger: 'manual' };
         return _this;
     }
     VdFormTextbox.prototype.bind = function () {
-        this.dataToggle = this.usePopover ? 'popover' : '';
-        this.popover = this.usePopover ? this.popoverOption : undefined;
+        this.dataToggle = !!this.popoverOption ? 'popover' : '';
     };
     __decorate([
         aurelia_framework_1.bindable,
@@ -77,10 +75,6 @@ var VdFormTextbox = /** @class */ (function (_super) {
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
     ], VdFormTextbox.prototype, "placeHolder", void 0);
-    __decorate([
-        aurelia_framework_1.bindable,
-        __metadata("design:type", Boolean)
-    ], VdFormTextbox.prototype, "usePopover", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)

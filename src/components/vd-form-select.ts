@@ -1,3 +1,5 @@
+import { PopoverOption } from 'bootstrap';
+
 import { bindable } from 'aurelia-framework';
 import { IBootstrapSelectOption } from './bootstrap-select';
 import { VdFormInput } from './vd-form-input';
@@ -14,4 +16,11 @@ export class VdFormSelect extends VdFormInput<string> {
     @bindable public autoFocus: boolean;
     
     @bindable public options: IBootstrapSelectOption[];
-}
+    @bindable public popoverOption: PopoverOption | string = { container: 'body', placement: 'right', trigger: 'manual' } as PopoverOption;
+
+    public dataToggle: string;
+
+    public bind() {
+      this.dataToggle = !!this.popoverOption ? 'popover' : '';
+    }
+  }

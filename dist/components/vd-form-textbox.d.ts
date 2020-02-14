@@ -11,9 +11,7 @@ export declare class VdFormTextbox extends VdFormInput<string> {
     regex: string;
     maxLength: number;
     placeHolder: string;
-    usePopover: boolean;
-    popoverOption: PopoverOption;
+    popoverOption: PopoverOption | string;
     dataToggle: string;
-    popover: PopoverOption | undefined;
     bind(): void;
 }
