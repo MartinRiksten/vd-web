@@ -4,6 +4,7 @@ export class PopoverRenderer implements ValidationRenderer {
   public findById: boolean = true;
   public focusFirst: boolean = false;
   public dashedId: boolean = true;
+  public formatMessage: (message: string, popover: JQuery<Element>) => string;
 
   public render(instruction: RenderInstruction) {
     const toHide: Element[] = [];
@@ -28,10 +29,13 @@ export class PopoverRenderer implements ValidationRenderer {
           toHide.push(element);
         } else {
           const popover = this.findFromElement(element);
+          const message = !this.formatMessage 
+            ? result.message 
+            : this.formatMessage(result.message, popover);
           if (toShow.indexOf(element) >= 0) {
-            popover.data('content', popover.data('content') + '\n' + result.message);
+            popover.data('content', popover.data('content') + '\n' + message);
           } else {
-            popover.data('content', result.message);
+            popover.data('content', message);
             toShow.push(element);
           }
         }
@@ -61,7 +65,7 @@ export class PopoverRenderer implements ValidationRenderer {
       } else {
         popover.popover('show');
         $tip = $(popover.data('bs.popover').tip);
-        $tip.addClass('popover-danger');
+        $tip.addClass('popover-danger popover-validation');
         $(element).one('keypress', () => {
           popover.popover('hide');
         });

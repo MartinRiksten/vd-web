@@ -31,11 +31,14 @@ var PopoverRenderer = /** @class */ (function () {
                 }
                 else {
                     var popover = this.findFromElement(element);
+                    var message = !this.formatMessage
+                        ? result.message
+                        : this.formatMessage(result.message, popover);
                     if (toShow.indexOf(element) >= 0) {
-                        popover.data('content', popover.data('content') + '\n' + result.message);
+                        popover.data('content', popover.data('content') + '\n' + message);
                     }
                     else {
-                        popover.data('content', result.message);
+                        popover.data('content', message);
                         toShow.push(element);
                     }
                 }
@@ -63,7 +66,7 @@ var PopoverRenderer = /** @class */ (function () {
             else {
                 popover.popover('show');
                 $tip = $(popover.data('bs.popover').tip);
-                $tip.addClass('popover-danger');
+                $tip.addClass('popover-danger popover-validation');
                 $(element).one('keypress', function () {
                     popover.popover('hide');
                 });
