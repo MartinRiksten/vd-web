@@ -14,6 +14,7 @@ export declare class BootstrapSelect {
     options: IBootstrapSelectOption[];
     selected: string;
     displayName: string;
+    inputId: string;
     picker: Element;
     constructor(taskQueue: TaskQueue);
     attached(): void;

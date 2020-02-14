@@ -18,6 +18,7 @@ export class BootstrapSelect {
   @bindable public options!: IBootstrapSelectOption[];
   @bindable public selected!: string;
   @bindable public displayName!: string;
+  @bindable public inputId: string;
 
   public picker!: Element;
 
