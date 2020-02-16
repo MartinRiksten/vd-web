@@ -38,7 +38,7 @@ var VdFormSelect = /** @class */ (function (_super) {
     };
     VdFormSelect.prototype.attached = function () {
         this.update();
-        this.eventAggregator.subscribe("theme.changed", this.update);
+        this.eventAggregator.subscribe("theme:changed", this.update);
     };
     VdFormSelect.prototype.update = function () {
         var height = $(this.select).outerHeight();

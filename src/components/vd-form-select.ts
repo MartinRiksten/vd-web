@@ -34,7 +34,7 @@ export class VdFormSelect extends VdFormInput<string> {
 
     public attached() {
         this.update();
-        this.eventAggregator.subscribe("theme.changed", this.update);
+        this.eventAggregator.subscribe("theme:changed", this.update);
     }
     
     public update() {
