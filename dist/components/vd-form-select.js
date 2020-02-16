@@ -35,8 +35,11 @@ var VdFormSelect = /** @class */ (function (_super) {
         this.dataToggle = !!this.popoverOption ? 'popover' : '';
     };
     VdFormSelect.prototype.attached = function () {
-        var height = $(this.select).outerHeight();
-        $(this.select).siblings().outerHeight(height);
+        var _this = this;
+        setTimeout(function () {
+            var height = $(_this.select).outerHeight();
+            $(_this.select).siblings().outerHeight(height);
+        }, 100);
     };
     __decorate([
         aurelia_framework_1.bindable,
