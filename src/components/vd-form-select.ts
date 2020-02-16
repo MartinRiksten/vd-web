@@ -1,6 +1,6 @@
 import { PopoverOption } from 'bootstrap';
 
-import { EventAggregator } from 'aurelia-event-aggregator';
+import { EventAggregator, Subscription } from 'aurelia-event-aggregator';
 import { autoinject, bindable } from 'aurelia-framework';
 import { IBootstrapSelectOption } from './bootstrap-select';
 import { VdFormInput } from './vd-form-input';
@@ -23,6 +23,7 @@ export class VdFormSelect extends VdFormInput<string> {
     public dataToggle: string;
 
     private select: Element;
+    private subscriber: Subscription;
 
     constructor(private readonly eventAggregator: EventAggregator) {
         super();
@@ -34,11 +35,17 @@ export class VdFormSelect extends VdFormInput<string> {
 
     public attached() {
         this.update();
-        this.eventAggregator.subscribe("theme:changed", this.update);
+        this.subscriber = this.eventAggregator.subscribe("theme:changed", this.update);
     }
     
+    public detached() {
+        this.subscriber.dispose();
+    }
+
     public update() {
-        const height = $(this.select).outerHeight();
-        $(this.select).siblings().outerHeight(height);
+        setTimeout(() =>{
+            const height = $(this.select).outerHeight();
+            $(this.select).siblings().outerHeight(height);
+        }, 50);
     }
 }

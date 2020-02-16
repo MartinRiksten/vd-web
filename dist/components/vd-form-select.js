@@ -38,11 +38,17 @@ var VdFormSelect = /** @class */ (function (_super) {
     };
     VdFormSelect.prototype.attached = function () {
         this.update();
-        this.eventAggregator.subscribe("theme:changed", this.update);
+        this.subscriber = this.eventAggregator.subscribe("theme:changed", this.update);
+    };
+    VdFormSelect.prototype.detached = function () {
+        this.subscriber.dispose();
     };
     VdFormSelect.prototype.update = function () {
-        var height = $(this.select).outerHeight();
-        $(this.select).siblings().outerHeight(height);
+        var _this = this;
+        setTimeout(function () {
+            var height = $(_this.select).outerHeight();
+            $(_this.select).siblings().outerHeight(height);
+        }, 50);
     };
     __decorate([
         aurelia_framework_1.bindable,
