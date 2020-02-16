@@ -34,9 +34,9 @@ export class VdFormSelect extends VdFormInput<string> {
     }
 
     public attached() {
-        this.update();
         const that = this;
         this.subscriber = this.eventAggregator.subscribe("theme:changed", () => that.update());
+        this.update();
     }
     
     public detached() {
@@ -47,6 +47,6 @@ export class VdFormSelect extends VdFormInput<string> {
         setTimeout(() =>{
             const height = $(this.select).outerHeight(true);
             $(this.select).siblings(".input-group-prepend,.input-group-append").outerHeight(height);
-        }, 50);
+        }, 25);
     }
 }

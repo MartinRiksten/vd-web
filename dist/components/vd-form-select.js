@@ -37,9 +37,9 @@ var VdFormSelect = /** @class */ (function (_super) {
         this.dataToggle = !!this.popoverOption ? 'popover' : '';
     };
     VdFormSelect.prototype.attached = function () {
-        this.update();
         var that = this;
         this.subscriber = this.eventAggregator.subscribe("theme:changed", function () { return that.update(); });
+        this.update();
     };
     VdFormSelect.prototype.detached = function () {
         this.subscriber.dispose();
@@ -49,7 +49,7 @@ var VdFormSelect = /** @class */ (function (_super) {
         setTimeout(function () {
             var height = $(_this.select).outerHeight(true);
             $(_this.select).siblings(".input-group-prepend,.input-group-append").outerHeight(height);
-        }, 50);
+        }, 25);
     };
     __decorate([
         aurelia_framework_1.bindable,
