@@ -15,7 +15,10 @@ export declare class VdFormSelect extends VdFormInput<string> {
     popoverOption: PopoverOption | string;
     dataToggle: string;
     private select;
+    private subscriber;
     constructor(eventAggregator: EventAggregator);
     bind(): void;
     attached(): void;
+    detached(): void;
+    update(): void;
 }

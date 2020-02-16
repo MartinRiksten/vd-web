@@ -37,6 +37,13 @@ var VdFormSelect = /** @class */ (function (_super) {
         this.dataToggle = !!this.popoverOption ? 'popover' : '';
     };
     VdFormSelect.prototype.attached = function () {
+        var that = this;
+        this.subscriber = this.eventAggregator.subscribe("theme:changed", function () { return that.update(); });
+    };
+    VdFormSelect.prototype.detached = function () {
+        this.subscriber.dispose();
+    };
+    VdFormSelect.prototype.update = function () {
         this.eventAggregator.publish("addon:resize", this.select);
     };
     __decorate([
