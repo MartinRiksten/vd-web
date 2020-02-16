@@ -47,9 +47,9 @@ var VdFormSelect = /** @class */ (function (_super) {
     VdFormSelect.prototype.update = function () {
         var _this = this;
         setTimeout(function () {
-            var height = $(_this.select).outerHeight(true);
-            $(_this.select).siblings().outerHeight(height);
-        }, 25);
+            var height = $(_this.select).height();
+            $(_this.select).siblings().height(height);
+        }, 50);
     };
     __decorate([
         aurelia_framework_1.bindable,

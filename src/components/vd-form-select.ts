@@ -45,8 +45,8 @@ export class VdFormSelect extends VdFormInput<string> {
 
     public update() {
         setTimeout(() =>{
-            const height = $(this.select).outerHeight(true);
-            $(this.select).siblings().outerHeight(height);
-        }, 25);
+            const height = $(this.select).height();
+            $(this.select).siblings().height(height);
+        }, 50);
     }
 }
