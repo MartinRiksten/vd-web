@@ -20,7 +20,14 @@ export class VdFormSelect extends VdFormInput<string> {
 
     public dataToggle: string;
 
+    private select: Element;
+
     public bind() {
       this.dataToggle = !!this.popoverOption ? 'popover' : '';
+    }
+
+    public attached() {
+        const height = $(this.select).outerHeight();
+        $(this.select).siblings().outerHeight(height);
     }
   }

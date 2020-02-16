@@ -34,6 +34,10 @@ var VdFormSelect = /** @class */ (function (_super) {
     VdFormSelect.prototype.bind = function () {
         this.dataToggle = !!this.popoverOption ? 'popover' : '';
     };
+    VdFormSelect.prototype.attached = function () {
+        var height = $(this.select).outerHeight();
+        $(this.select).siblings().outerHeight(height);
+    };
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
