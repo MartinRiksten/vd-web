@@ -22,12 +22,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var aurelia_event_aggregator_1 = require("aurelia-event-aggregator");
 var aurelia_framework_1 = require("aurelia-framework");
 var vd_form_input_1 = require("./vd-form-input");
 var VdFormSelect = /** @class */ (function (_super) {
     __extends(VdFormSelect, _super);
-    function VdFormSelect() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
+    function VdFormSelect(eventAggregator) {
+        var _this = _super.call(this) || this;
+        _this.eventAggregator = eventAggregator;
         _this.popoverOption = { container: 'body', placement: 'right', trigger: 'manual' };
         return _this;
     }
@@ -35,11 +37,12 @@ var VdFormSelect = /** @class */ (function (_super) {
         this.dataToggle = !!this.popoverOption ? 'popover' : '';
     };
     VdFormSelect.prototype.attached = function () {
-        var _this = this;
-        setTimeout(function () {
-            var height = $(_this.select).outerHeight();
-            $(_this.select).siblings().outerHeight(height);
-        }, 100);
+        this.update();
+        this.eventAggregator.subscribe("theme.changed", this.update);
+    };
+    VdFormSelect.prototype.update = function () {
+        var height = $(this.select).outerHeight();
+        $(this.select).siblings().outerHeight(height);
     };
     __decorate([
         aurelia_framework_1.bindable,
@@ -77,6 +80,10 @@ var VdFormSelect = /** @class */ (function (_super) {
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)
     ], VdFormSelect.prototype, "popoverOption", void 0);
+    VdFormSelect = __decorate([
+        aurelia_framework_1.autoinject,
+        __metadata("design:paramtypes", [aurelia_event_aggregator_1.EventAggregator])
+    ], VdFormSelect);
     return VdFormSelect;
 }(vd_form_input_1.VdFormInput));
 exports.VdFormSelect = VdFormSelect;
