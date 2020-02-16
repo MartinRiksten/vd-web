@@ -35,7 +35,8 @@ export class VdFormSelect extends VdFormInput<string> {
 
     public attached() {
         this.update();
-        this.subscriber = this.eventAggregator.subscribe("theme:changed", this.update);
+        const that = this;
+        this.subscriber = this.eventAggregator.subscribe("theme:changed", () => that.update());
     }
     
     public detached() {

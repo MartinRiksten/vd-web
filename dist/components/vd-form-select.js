@@ -38,7 +38,8 @@ var VdFormSelect = /** @class */ (function (_super) {
     };
     VdFormSelect.prototype.attached = function () {
         this.update();
-        this.subscriber = this.eventAggregator.subscribe("theme:changed", this.update);
+        var that = this;
+        this.subscriber = this.eventAggregator.subscribe("theme:changed", function () { return that.update(); });
     };
     VdFormSelect.prototype.detached = function () {
         this.subscriber.dispose();
