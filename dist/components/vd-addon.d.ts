@@ -14,6 +14,7 @@ export declare class VdAddon {
     variant: string;
     icon: string;
     clickable: boolean | undefined;
+    type: string;
     private types;
     bind(): void;
     getClass(): string;

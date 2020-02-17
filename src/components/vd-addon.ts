@@ -17,6 +17,7 @@ export class VdAddon {
   @bindable public variant!: string;
   @bindable public icon!: string;
   @bindable public clickable: boolean | undefined;
+  @bindable public type: string = "text";
 
   private types = [
     { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times', clickable: true } as IAddonInfo

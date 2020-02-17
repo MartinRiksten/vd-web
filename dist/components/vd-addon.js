@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
 var VdAddon = /** @class */ (function () {
     function VdAddon() {
+        this.type = "text";
         this.types = [
             { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times', clickable: true }
         ];
@@ -69,6 +70,10 @@ var VdAddon = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", Boolean)
     ], VdAddon.prototype, "clickable", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdAddon.prototype, "type", void 0);
     return VdAddon;
 }());
 exports.VdAddon = VdAddon;
