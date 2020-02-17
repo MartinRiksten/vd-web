@@ -22,28 +22,7 @@ export class VdFormSelect extends VdFormInput<string> {
 
     public dataToggle: string;
 
-    private select: Element;
-    private subscriber: Subscription;
-
-    constructor(private readonly eventAggregator: EventAggregator) {
-        super();
-    }
-
     public bind() {
         this.dataToggle = !!this.popoverOption ? 'popover' : '';
-    }
-
-    public attached() {
-        const that = this;
-        this.subscriber = this.eventAggregator.subscribe("theme:changed", () => that.update());
-        this.update();
-    }
-    
-    public detached() {
-        this.subscriber.dispose();
-    }
-
-    public update() {
-        this.eventAggregator.publish("addon:resize", this.select);
     }
 }

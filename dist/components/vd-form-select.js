@@ -22,30 +22,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var aurelia_event_aggregator_1 = require("aurelia-event-aggregator");
 var aurelia_framework_1 = require("aurelia-framework");
 var vd_form_input_1 = require("./vd-form-input");
 var VdFormSelect = /** @class */ (function (_super) {
     __extends(VdFormSelect, _super);
-    function VdFormSelect(eventAggregator) {
-        var _this = _super.call(this) || this;
-        _this.eventAggregator = eventAggregator;
+    function VdFormSelect() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.popoverOption = { container: 'body', placement: 'right', trigger: 'manual' };
         return _this;
     }
     VdFormSelect.prototype.bind = function () {
         this.dataToggle = !!this.popoverOption ? 'popover' : '';
-    };
-    VdFormSelect.prototype.attached = function () {
-        var that = this;
-        this.subscriber = this.eventAggregator.subscribe("theme:changed", function () { return that.update(); });
-        this.update();
-    };
-    VdFormSelect.prototype.detached = function () {
-        this.subscriber.dispose();
-    };
-    VdFormSelect.prototype.update = function () {
-        this.eventAggregator.publish("addon:resize", this.select);
     };
     __decorate([
         aurelia_framework_1.bindable,
@@ -84,8 +71,7 @@ var VdFormSelect = /** @class */ (function (_super) {
         __metadata("design:type", Object)
     ], VdFormSelect.prototype, "popoverOption", void 0);
     VdFormSelect = __decorate([
-        aurelia_framework_1.autoinject,
-        __metadata("design:paramtypes", [aurelia_event_aggregator_1.EventAggregator])
+        aurelia_framework_1.autoinject
     ], VdFormSelect);
     return VdFormSelect;
 }(vd_form_input_1.VdFormInput));

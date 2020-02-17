@@ -1,9 +1,7 @@
 import { PopoverOption } from 'bootstrap';
-import { EventAggregator } from 'aurelia-event-aggregator';
 import { IBootstrapSelectOption } from './bootstrap-select';
 import { VdFormInput } from './vd-form-input';
 export declare class VdFormSelect extends VdFormInput<string> {
-    private readonly eventAggregator;
     labelClass: string;
     groupClass: string;
     inputClass: string;
@@ -14,11 +12,5 @@ export declare class VdFormSelect extends VdFormInput<string> {
     options: IBootstrapSelectOption[];
     popoverOption: PopoverOption | string;
     dataToggle: string;
-    private select;
-    private subscriber;
-    constructor(eventAggregator: EventAggregator);
     bind(): void;
-    attached(): void;
-    detached(): void;
-    update(): void;
 }
