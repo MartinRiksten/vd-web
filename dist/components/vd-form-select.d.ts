@@ -4,6 +4,7 @@ import { VdFormInput } from './vd-form-input';
 export declare class VdFormSelect extends VdFormInput<string> {
     labelClass: string;
     groupClass: string;
+    selectClass: string;
     inputClass: string;
     inputId: string;
     displayName: string;

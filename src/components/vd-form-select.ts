@@ -9,6 +9,7 @@ import { VdFormInput } from './vd-form-input';
 export class VdFormSelect extends VdFormInput<string> {
     @bindable public labelClass: string;
     @bindable public groupClass: string;
+    @bindable public selectClass: string;
     @bindable public inputClass: string;
 
     @bindable public inputId: string;

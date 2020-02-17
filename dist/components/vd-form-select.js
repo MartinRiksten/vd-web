@@ -45,6 +45,10 @@ var VdFormSelect = /** @class */ (function (_super) {
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
+    ], VdFormSelect.prototype, "selectClass", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
     ], VdFormSelect.prototype, "inputClass", void 0);
     __decorate([
         aurelia_framework_1.bindable,
