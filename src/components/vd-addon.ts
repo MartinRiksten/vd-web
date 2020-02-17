@@ -20,7 +20,8 @@ export class VdAddon {
   @bindable public type: string = "text";
 
   private types = [
-    { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times', clickable: true } as IAddonInfo
+    { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times', clickable: true } as IAddonInfo,
+    { kind: 'search', title: 'Zoeken', variant: 'text-primary', icon: 'fas fa-search', clickable: true } as IAddonInfo
   ];
 
   public bind() {
