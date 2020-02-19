@@ -61,10 +61,6 @@ export class ListBase<T extends IFilterable> {
    */
   public getCurrentList(): T[] {
     let result = this.items.slice();
-    if (!result) {
-      this.count = 0;
-      return [];
-    }
 
     if (!!this.filter && result.length > 0) {
       result = this.listHelper.filter(result, this.filter);
