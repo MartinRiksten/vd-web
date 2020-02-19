@@ -14,7 +14,11 @@ var VdBoolIcon = /** @class */ (function () {
     function VdBoolIcon() {
     }
     VdBoolIcon.prototype.getIcon = function (value) {
-        return value === true ? 'fa-check text-success' : value === false ? 'fa-times text-danger' : '';
+        return value === true
+            ? 'fa-check text-success'
+            : value === false
+                ? 'fa-times text-danger'
+                : 'fa-question text-warning';
     };
     __decorate([
         aurelia_framework_1.bindable,

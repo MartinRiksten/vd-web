@@ -29,8 +29,8 @@ var VdFormLink = /** @class */ (function (_super) {
     function VdFormLink() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.showIcon = true;
-        _this.href = "#";
-        _this.icon = "fas fa-chevron-circle-right";
+        _this.href = '#';
+        _this.icon = 'fas fa-chevron-circle-right';
         return _this;
     }
     VdFormLink.prototype.onClick = function (event) {

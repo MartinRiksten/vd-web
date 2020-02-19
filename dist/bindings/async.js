@@ -6,11 +6,13 @@ var AsyncBindingBehavior = /** @class */ (function () {
     AsyncBindingBehavior.prototype.bind = function (binding, source, message) {
         binding.originalUpdateTarget = binding.updateTarget;
         binding.updateTarget = function (a) {
-            if (typeof a.then === "function") {
+            if (typeof a.then === 'function') {
                 if (!!message) {
                     binding.originalUpdateTarget(message);
                 }
-                a.then(function (d) { binding.originalUpdateTarget(d); });
+                a.then(function (d) {
+                    binding.originalUpdateTarget(d);
+                });
             }
             else {
                 binding.originalUpdateTarget(a);

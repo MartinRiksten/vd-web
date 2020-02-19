@@ -24,12 +24,14 @@ var ClassDelayCustomAttribute = /** @class */ (function () {
             return;
         }
         var _loop_1 = function (current) {
-            var parts = current.split(":");
+            var parts = current.split(':');
             var value = parts[0];
             var delay = parts.length === 1 ? 1000 : parseInt(parts[1], 10);
-            setTimeout(function () { jquery_1.default(_this.element).addClass(value); }, delay);
+            setTimeout(function () {
+                jquery_1.default(_this.element).addClass(value);
+            }, delay);
         };
-        for (var _i = 0, _a = this.value.split(","); _i < _a.length; _i++) {
+        for (var _i = 0, _a = this.value.split(','); _i < _a.length; _i++) {
             var current = _a[_i];
             _loop_1(current);
         }

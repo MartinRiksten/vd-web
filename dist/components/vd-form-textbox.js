@@ -29,7 +29,11 @@ var VdFormTextbox = /** @class */ (function (_super) {
     function VdFormTextbox() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.maxLength = 99;
-        _this.popoverOption = { container: 'body', placement: 'right', trigger: 'manual' };
+        _this.popoverOption = {
+            container: 'body',
+            placement: 'right',
+            trigger: 'manual',
+        };
         return _this;
     }
     VdFormTextbox.prototype.bind = function () {

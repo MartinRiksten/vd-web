@@ -62,7 +62,7 @@ function configure(config) {
         'bootstrap-select',
         'vd-bool-icon',
         'vd-button',
-        "vd-addon",
+        'vd-addon',
         'vd-filter-input',
         'vd-form-checkbox',
         'vd-form-data',

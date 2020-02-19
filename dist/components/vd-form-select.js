@@ -28,7 +28,11 @@ var VdFormSelect = /** @class */ (function (_super) {
     __extends(VdFormSelect, _super);
     function VdFormSelect() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.popoverOption = { container: 'body', placement: 'right', trigger: 'manual' };
+        _this.popoverOption = {
+            container: 'body',
+            placement: 'right',
+            trigger: 'manual',
+        };
         return _this;
     }
     VdFormSelect.prototype.bind = function () {

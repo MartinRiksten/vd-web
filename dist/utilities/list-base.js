@@ -54,10 +54,6 @@ var ListBase = /** @class */ (function () {
      */
     ListBase.prototype.getCurrentList = function () {
         var result = this.items.slice();
-        if (!result) {
-            this.count = 0;
-            return [];
-        }
         if (!!this.filter && result.length > 0) {
             result = this.listHelper.filter(result, this.filter);
         }

@@ -29,7 +29,7 @@ var VdButton = /** @class */ (function () {
             { kind: 'upload', displayName: 'Uploaden', variant: 'btn-primary', icon: 'fas fa-upload' },
             { kind: 'download', displayName: 'Downloaden', variant: 'btn-primary', icon: 'fas fa-download' },
             { kind: 'select-all', displayName: 'Alle', variant: 'btn-light', icon: 'fas fa-check-square' },
-            { kind: 'deselect-all', displayName: 'Geen', variant: 'btn-light', icon: 'far fa-square' }
+            { kind: 'deselect-all', displayName: 'Geen', variant: 'btn-light', icon: 'far fa-square' },
         ];
     }
     VdButton.prototype.bind = function () {

@@ -27,7 +27,9 @@ var BootstrapSelect = /** @class */ (function () {
     };
     BootstrapSelect.prototype.optionsChanged = function () {
         var _this = this;
-        this.taskQueue.queueTask(function () { $(_this.picker).selectpicker('refresh'); });
+        this.taskQueue.queueTask(function () {
+            $(_this.picker).selectpicker('refresh');
+        });
     };
     BootstrapSelect.prototype.selectedChanged = function () {
         $(this.picker).selectpicker('val', this.selected);

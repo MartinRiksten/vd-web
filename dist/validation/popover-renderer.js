@@ -31,9 +31,7 @@ var PopoverRenderer = /** @class */ (function () {
                 }
                 else {
                     var popover = this.findFromElement(element);
-                    var message = !this.formatMessage
-                        ? result.message
-                        : this.formatMessage(result.message, popover);
+                    var message = !this.formatMessage ? result.message : this.formatMessage(result.message, popover);
                     if (toShow.indexOf(element) >= 0) {
                         popover.data('content', popover.data('content') + '\n' + message);
                     }

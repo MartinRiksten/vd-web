@@ -69,17 +69,17 @@ var ListHelper = /** @class */ (function () {
     ListHelper.prototype.compare = function (a, b, prop) {
         var propA = a;
         var propB = b;
-        for (var _i = 0, _a = prop.split("."); _i < _a.length; _i++) {
+        for (var _i = 0, _a = prop.split('.'); _i < _a.length; _i++) {
             var item = _a[_i];
             propA = !propA ? null : propA[item];
             propB = !propB ? null : propB[item];
         }
         var result = false;
         if (propA == null || propB == null) {
-            result = propA == null ? propB == null ? 0 : -1 : 1;
+            result = propA == null ? (propB == null ? 0 : -1) : 1;
         }
         else {
-            if (typeof propA === "boolean") {
+            if (typeof propA === 'boolean') {
                 result = propA === propB ? 0 : propA ? 1 : -1;
             }
             if (propA instanceof Date) {
@@ -88,8 +88,8 @@ var ListHelper = /** @class */ (function () {
             }
         }
         result = result === false ? this.compareValues(propA, propB) : result;
-        if (result === 0 && prop !== "id") {
-            return this.compare(a, b, "id");
+        if (result === 0 && prop !== 'id') {
+            return this.compare(a, b, 'id');
         }
         return result;
     };
