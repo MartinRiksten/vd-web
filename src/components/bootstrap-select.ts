@@ -22,8 +22,7 @@ export class BootstrapSelect {
 
   public picker!: Element;
 
-constructor(private readonly taskQueue: TaskQueue) {
-}
+  constructor(private readonly taskQueue: TaskQueue) {}
 
   public attached() {
     if (!!this.displayName) {
@@ -38,7 +37,9 @@ constructor(private readonly taskQueue: TaskQueue) {
   }
 
   public optionsChanged() {
-    this.taskQueue.queueTask(() => { $(this.picker).selectpicker('refresh'); });
+    this.taskQueue.queueTask(() => {
+      $(this.picker).selectpicker('refresh');
+    });
   }
 
   public selectedChanged() {

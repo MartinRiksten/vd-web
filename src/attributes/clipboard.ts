@@ -3,7 +3,6 @@ import { autoinject, customAttribute } from 'aurelia-framework';
 @autoinject
 @customAttribute('clipboard')
 export class ClipboardCustomAttribute {
-  
   public static copyToClipboard(text: string): void {
     if (document.queryCommandSupported('copy') && text) {
       const textarea: HTMLTextAreaElement = document.createElement('textarea');

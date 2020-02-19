@@ -14,7 +14,7 @@ export class PopoverCustomAttribute {
       return;
     }
 
-    const value = this.value === "init" ? void 0 : this.value;
+    const value = this.value === 'init' ? void 0 : this.value;
     setTimeout(() => $(this.element).popover(value), 100);
   }
 

@@ -33,7 +33,7 @@ export class VdButton {
     { kind: 'upload', displayName: 'Uploaden', variant: 'btn-primary', icon: 'fas fa-upload' } as IButtonInfo,
     { kind: 'download', displayName: 'Downloaden', variant: 'btn-primary', icon: 'fas fa-download' } as IButtonInfo,
     { kind: 'select-all', displayName: 'Alle', variant: 'btn-light', icon: 'fas fa-check-square' } as IButtonInfo,
-    { kind: 'deselect-all', displayName: 'Geen', variant: 'btn-light', icon: 'far fa-square' } as IButtonInfo
+    { kind: 'deselect-all', displayName: 'Geen', variant: 'btn-light', icon: 'far fa-square' } as IButtonInfo,
   ];
 
   public bind() {
@@ -44,10 +44,10 @@ export class VdButton {
     this.icon = !!this.icon ? this.icon : info.icon;
   }
 
-public getClass(): string {
-  const result = `${this.buttonClass} ${this.variant}`;
-  return result;
-}
+  public getClass(): string {
+    const result = `${this.buttonClass} ${this.variant}`;
+    return result;
+  }
 
   public onClick(event: Event) {
     if (!!this.clickTarget) {
@@ -55,7 +55,7 @@ public getClass(): string {
     }
 
     if (!!this.clickHandler) {
-      this.clickHandler(event)
+      this.clickHandler(event);
     }
   }
 }

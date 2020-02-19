@@ -1,3 +1,3 @@
 export class Busy {
-    public isBusy = 0;
+  public isBusy = 0;
 }

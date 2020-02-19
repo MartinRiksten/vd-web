@@ -7,8 +7,7 @@ import $ from 'jquery';
 export class CollapseCustomAttribute {
   public value: boolean = false;
 
-  constructor(private readonly element: Element) {
-  }
+  constructor(private readonly element: Element) {}
 
   public attached(): void {
     $(this.element).collapse({ toggle: this.value } as CollapseOption);

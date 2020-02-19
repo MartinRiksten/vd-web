@@ -14,7 +14,7 @@ export class ListBase<T extends IFilterable> {
 
   protected selected: T | undefined;
   protected listHelper = new ListHelper<T>();
-  
+
   public bind() {
     const items = this.items;
     for (const item of items) {

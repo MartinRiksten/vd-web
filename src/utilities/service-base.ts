@@ -26,17 +26,21 @@ export abstract class ServiceBase<TModel> extends FetchBase {
    * @param url: The url for the operation
    * @param id: The id of the instance to load
    */
-  protected async searchBaseAsync(url: string, id?: string | object, options?: IFetchOptions): Promise<IServiceResult<TModel[]>> {
-    const data = ! id ? void 0 : typeof id === 'string' || id instanceof String ? { id } : id;
+  protected async searchBaseAsync(
+    url: string,
+    id?: string | object,
+    options?: IFetchOptions,
+  ): Promise<IServiceResult<TModel[]>> {
+    const data = !id ? void 0 : typeof id === 'string' || id instanceof String ? { id } : id;
     const result = await this.postAsync<TModel[]>(url, data, options);
     return result;
   }
 
-    /**
-     * Gets a file from the given url.
-     * @param url: The url for the operation
-     * @param data: The id of the instance to load
-     */
+  /**
+   * Gets a file from the given url.
+   * @param url: The url for the operation
+   * @param data: The id of the instance to load
+   */
   protected async getBaseAsync(url: string, options?: IFetchOptions): Promise<TModel> {
     const result = await this.getAsync<TModel>(url, options);
     return result;
@@ -47,7 +51,11 @@ export abstract class ServiceBase<TModel> extends FetchBase {
    * @param url: The url for the operation
    * @param data: The id of the instance to load
    */
-  protected async loadBaseAsync(url: string, id?: string | object, options?: IFetchOptions): Promise<IServiceResult<TModel>> {
+  protected async loadBaseAsync(
+    url: string,
+    id?: string | object,
+    options?: IFetchOptions,
+  ): Promise<IServiceResult<TModel>> {
     const data = !id ? void 0 : typeof id === 'string' || id instanceof String ? { id } : id;
     const result = await this.postAsync<TModel>(url, data, options);
     return result;

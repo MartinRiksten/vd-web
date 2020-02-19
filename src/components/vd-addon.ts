@@ -17,11 +17,11 @@ export class VdAddon {
   @bindable public variant!: string;
   @bindable public icon!: string;
   @bindable public clickable: boolean | undefined;
-  @bindable public type: string = "text";
+  @bindable public type: string = 'text';
 
   private types = [
     { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times', clickable: true } as IAddonInfo,
-    { kind: 'search', title: 'Zoeken', variant: 'text-primary', icon: 'fas fa-search', clickable: true } as IAddonInfo
+    { kind: 'search', title: 'Zoeken', variant: 'text-primary', icon: 'fas fa-search', clickable: true } as IAddonInfo,
   ];
 
   public bind() {
@@ -30,7 +30,7 @@ export class VdAddon {
     this.title = !!this.title ? this.title : info.title;
     this.variant = !!this.variant ? this.variant : info.variant;
     this.icon = !!this.icon ? this.icon : info.icon;
-    this.clickable = typeof this.clickable !== 'undefined' ? this.clickable : info.clickable; 
+    this.clickable = typeof this.clickable !== 'undefined' ? this.clickable : info.clickable;
   }
 
   public getClass(): string {
@@ -44,7 +44,7 @@ export class VdAddon {
     }
 
     if (!!this.clickHandler) {
-      this.clickHandler(event)
+      this.clickHandler(event);
     }
   }
 }

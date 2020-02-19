@@ -47,8 +47,8 @@ export abstract class FetchBase {
       const result = value as T;
       return result;
     } catch (error) {
-       this.handleUnexpectedError<T>(error, options);
-       return void 0;
+      this.handleUnexpectedError<T>(error, options);
+      return void 0;
     }
   }
 
@@ -79,7 +79,6 @@ export abstract class FetchBase {
 
     return { success: false, handled: handle, firstMessage: { message: error } } as IServiceResult<T>;
   }
-
 }
 
 export interface IFetchOptions {

@@ -7,7 +7,7 @@ export class VdTd<TValue> {
   @bindable public instance: IFilterable;
   @bindable public dataClass: string;
   @bindable public popoverOption: PopoverOption;
-  
+
   public bind() {
     if (!this.instance) {
       return;

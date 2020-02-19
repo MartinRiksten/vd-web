@@ -60,7 +60,7 @@ export function configure(config: FrameworkConfiguration) {
     'bootstrap-select',
     'vd-bool-icon',
     'vd-button',
-    "vd-addon",
+    'vd-addon',
     'vd-filter-input',
     'vd-form-checkbox',
     'vd-form-data',

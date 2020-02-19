@@ -26,7 +26,7 @@ export class DraggableCustomAttribute {
   private initTarget() {
     const target = this.element.querySelector(this.value);
     if (!target) {
-        return;
+      return;
     }
 
     target.addEventListener('mousedown', (event: any) => this.init(event));

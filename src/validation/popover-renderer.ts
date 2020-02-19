@@ -29,9 +29,7 @@ export class PopoverRenderer implements ValidationRenderer {
           toHide.push(element);
         } else {
           const popover = this.findFromElement(element);
-          const message = !this.formatMessage 
-            ? result.message 
-            : this.formatMessage(result.message, popover);
+          const message = !this.formatMessage ? result.message : this.formatMessage(result.message, popover);
           if (toShow.indexOf(element) >= 0) {
             popover.data('content', popover.data('content') + '\n' + message);
           } else {

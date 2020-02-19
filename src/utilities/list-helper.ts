@@ -81,33 +81,33 @@ export class ListHelper<T extends IFilterable> {
   private compare(a: any, b: any, prop: string): number {
     let propA = a;
     let propB = b;
-    for (const item of prop.split(".")) {
-        propA = !propA ? null : propA[item];
-        propB = !propB ? null : propB[item];
+    for (const item of prop.split('.')) {
+      propA = !propA ? null : propA[item];
+      propB = !propB ? null : propB[item];
     }
 
     let result: number | boolean = false;
 
     if (propA == null || propB == null) {
-        result = propA == null ? propB == null ? 0 : -1 : 1;
+      result = propA == null ? (propB == null ? 0 : -1) : 1;
     } else {
-        if (typeof propA === "boolean") {
-            result = propA === propB ? 0 : propA ? 1 : -1;
-        }
+      if (typeof propA === 'boolean') {
+        result = propA === propB ? 0 : propA ? 1 : -1;
+      }
 
-        if (propA instanceof Date) {
-            propA = propA.getTime();
-            propB = propB.getTime();
-        }
+      if (propA instanceof Date) {
+        propA = propA.getTime();
+        propB = propB.getTime();
+      }
     }
 
     result = result === false ? this.compareValues(propA, propB) : result;
-    if (result === 0 && prop !== "id") {
-        return this.compare(a, b, "id");
+    if (result === 0 && prop !== 'id') {
+      return this.compare(a, b, 'id');
     }
 
     return result as number;
-}
+  }
 
   /**
    * Compares two values
