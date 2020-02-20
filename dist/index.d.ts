@@ -26,6 +26,7 @@ export * from './components/vd-route';
 export * from './components/vd-td-abbrev';
 export * from './components/vd-td-bool-icon';
 export * from './components/vd-td-checkbox';
+export * from './components/vd-td-link';
 export * from './components/vd-td-list';
 export * from './components/vd-td-progress';
 export * from './components/vd-td';
