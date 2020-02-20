@@ -1,0 +1,8 @@
+<template>
+    <slot name="before"></slot>
+    <a if.bind="!!value" href.bind="href" click.trigger="onClick($event)">
+        <span innerhtml.bind="value"></span>
+        <i if.bind="showIcon" class.bind="icon"></i>
+    </a>
+    <slot name="after"></slot>
+</template>
