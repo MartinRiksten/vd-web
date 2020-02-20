@@ -23,17 +23,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
-var vd_form_data_1 = require("./vd-form-data");
-var VdFormLink = /** @class */ (function (_super) {
-    __extends(VdFormLink, _super);
-    function VdFormLink() {
+var vd_td_1 = require("./vd-td");
+var VdTdLink = /** @class */ (function (_super) {
+    __extends(VdTdLink, _super);
+    function VdTdLink() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.showIcon = true;
         _this.href = '#';
         _this.icon = 'fas fa-chevron-circle-right';
         return _this;
     }
-    VdFormLink.prototype.onClick = function (event) {
+    VdTdLink.prototype.onClick = function (event) {
         if (!!this.clickTarget) {
             $(this.clickTarget).click();
         }
@@ -43,44 +43,28 @@ var VdFormLink = /** @class */ (function (_super) {
     };
     __decorate([
         aurelia_framework_1.bindable,
-        __metadata("design:type", String)
-    ], VdFormLink.prototype, "labelClass", void 0);
+        __metadata("design:type", Object)
+    ], VdTdLink.prototype, "showIcon", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdFormLink.prototype, "groupClass", void 0);
-    __decorate([
-        aurelia_framework_1.bindable,
-        __metadata("design:type", String)
-    ], VdFormLink.prototype, "displayName", void 0);
-    __decorate([
-        aurelia_framework_1.bindable,
-        __metadata("design:type", String)
-    ], VdFormLink.prototype, "value", void 0);
+    ], VdTdLink.prototype, "href", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)
-    ], VdFormLink.prototype, "showIcon", void 0);
+    ], VdTdLink.prototype, "icon", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdFormLink.prototype, "href", void 0);
-    __decorate([
-        aurelia_framework_1.bindable,
-        __metadata("design:type", String)
-    ], VdFormLink.prototype, "target", void 0);
-    __decorate([
-        aurelia_framework_1.bindable,
-        __metadata("design:type", Object)
-    ], VdFormLink.prototype, "icon", void 0);
-    __decorate([
-        aurelia_framework_1.bindable,
-        __metadata("design:type", String)
-    ], VdFormLink.prototype, "clickTarget", void 0);
+    ], VdTdLink.prototype, "clickTarget", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Function)
-    ], VdFormLink.prototype, "clickHandler", void 0);
-    return VdFormLink;
-}(vd_form_data_1.VdFormData));
-exports.VdFormLink = VdFormLink;
+    ], VdTdLink.prototype, "clickHandler", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdTdLink.prototype, "target", void 0);
+    return VdTdLink;
+}(vd_td_1.VdTd));
+exports.VdTdLink = VdTdLink;
