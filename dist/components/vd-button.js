@@ -14,6 +14,7 @@ var VdButton = /** @class */ (function () {
     function VdButton() {
         this.buttonIf = true;
         this.buttonClass = 'ml-2';
+        this.disabled = false;
         this.types = [
             { kind: 'ok', displayName: 'OK', variant: 'btn-primary', icon: 'fas fa-check' },
             { kind: 'cancel', displayName: 'Annuleren', variant: 'btn-light', icon: 'fas fa-times' },
@@ -88,6 +89,10 @@ var VdButton = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)
     ], VdButton.prototype, "buttonClass", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdButton.prototype, "disabled", void 0);
     return VdButton;
 }());
 exports.VdButton = VdButton;

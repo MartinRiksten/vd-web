@@ -14,6 +14,7 @@ export declare class VdButton {
     clickTarget: string | undefined;
     buttonIf: boolean;
     buttonClass: string;
+    disabled: boolean;
     private types;
     bind(): void;
     getClass(): string;

@@ -1,6 +1,7 @@
 ﻿<template>
     <button if.bind="buttonIf" type="button" id.bind="buttonId" click.trigger="onClick($event)" 
-        class="btn btn-sm" class.bind="getClass(buttonClass, variant)">
+        class="btn btn-sm" class.bind="getClass(buttonClass, variant)"
+        disabled.bind="disabled">
         <i class="mr-1" class.bind="icon"></i>
         <span innerhtml.bind="displayName"></span>
     </button>
