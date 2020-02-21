@@ -24,6 +24,7 @@ var VdButton = /** @class */ (function () {
             { kind: 'save', displayName: 'Opslaan', variant: 'btn-primary', icon: 'fas fa-save' },
             { kind: 'register', displayName: 'Registreren', variant: 'btn-primary', icon: 'fas fa-save' },
             { kind: 'search', displayName: 'Zoeken', variant: 'btn-primary', icon: 'fas fa-search' },
+            { kind: 'input', displayName: 'Invoer', variant: 'btn-light', icon: 'fas fa-keyboard' },
             { kind: 'execute', displayName: 'Uitvoeren', variant: 'btn-primary', icon: 'fas fa-check' },
             { kind: 'close', displayName: 'Sluiten', variant: 'btn-light', icon: 'fas fa-times' },
             { kind: 'add', displayName: 'Toevoegen', variant: 'btn-primary', icon: 'fas fa-plus-circle' },

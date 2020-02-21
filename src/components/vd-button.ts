@@ -28,6 +28,7 @@ export class VdButton {
     { kind: 'save', displayName: 'Opslaan', variant: 'btn-primary', icon: 'fas fa-save' } as IButtonInfo,
     { kind: 'register', displayName: 'Registreren', variant: 'btn-primary', icon: 'fas fa-save' } as IButtonInfo,
     { kind: 'search', displayName: 'Zoeken', variant: 'btn-primary', icon: 'fas fa-search' } as IButtonInfo,
+    { kind: 'input', displayName: 'Invoer', variant: 'btn-light', icon: 'fas fa-keyboard' } as IButtonInfo,
     { kind: 'execute', displayName: 'Uitvoeren', variant: 'btn-primary', icon: 'fas fa-check' } as IButtonInfo,
     { kind: 'close', displayName: 'Sluiten', variant: 'btn-light', icon: 'fas fa-times' } as IButtonInfo,
     { kind: 'add', displayName: 'Toevoegen', variant: 'btn-primary', icon: 'fas fa-plus-circle' } as IButtonInfo,
