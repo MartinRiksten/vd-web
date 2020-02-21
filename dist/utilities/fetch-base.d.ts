@@ -3,6 +3,7 @@ import { HttpFetch } from './http-fetch';
 export declare abstract class FetchBase {
     private readonly http;
     private readonly commonDialogHelper;
+    isFetching: boolean;
     /**
      * Returns a newly created instance
      * @param http: The injected http fetch instance
@@ -16,10 +17,6 @@ export declare abstract class FetchBase {
      * Gets the given data to the given url, and stores any returned errors.
      */
     protected getAsync<T>(url: string, options?: IFetchOptions): Promise<T>;
-    /**
-     * Gets the given data to the given url, and stores any returned errors.
-     */
-    private doFetchAsync;
     private handleUnexpectedError;
 }
 export interface IFetchOptions {

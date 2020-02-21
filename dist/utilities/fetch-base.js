@@ -45,6 +45,7 @@ var FetchBase = /** @class */ (function () {
     function FetchBase(http, commonDialogHelper) {
         this.http = http;
         this.commonDialogHelper = commonDialogHelper;
+        this.isFetching = false;
     }
     /**
      * Posts the given data to the given url, and stores any returned errors.
@@ -57,9 +58,10 @@ var FetchBase = /** @class */ (function () {
                     case 0:
                         body = !!data ? aurelia_fetch_client_1.json(data) : data;
                         init = { method: 'POST', body: body };
+                        this.isFetching = true;
                         _a.label = 1;
                     case 1:
-                        _a.trys.push([1, 4, , 5]);
+                        _a.trys.push([1, 4, 5, 6]);
                         return [4 /*yield*/, this.http.fetchAsync(url, init)];
                     case 2:
                         response = _a.sent();
@@ -75,7 +77,10 @@ var FetchBase = /** @class */ (function () {
                     case 4:
                         error_1 = _a.sent();
                         return [2 /*return*/, this.handleUnexpectedError(error_1, options)];
-                    case 5: return [2 /*return*/];
+                    case 5:
+                        this.isFetching = false;
+                        return [7 /*endfinally*/];
+                    case 6: return [2 /*return*/];
                 }
             });
         });
@@ -90,9 +95,10 @@ var FetchBase = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         init = { method: 'GET' };
+                        this.isFetching = true;
                         _a.label = 1;
                     case 1:
-                        _a.trys.push([1, 4, , 5]);
+                        _a.trys.push([1, 4, 5, 6]);
                         return [4 /*yield*/, this.http.fetchAsync(url, init)];
                     case 2:
                         response = _a.sent();
@@ -109,37 +115,10 @@ var FetchBase = /** @class */ (function () {
                         error_2 = _a.sent();
                         this.handleUnexpectedError(error_2, options);
                         return [2 /*return*/, void 0];
-                    case 5: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    /**
-     * Gets the given data to the given url, and stores any returned errors.
-     */
-    FetchBase.prototype.doFetchAsync = function (url, init, options) {
-        return __awaiter(this, void 0, void 0, function () {
-            var response, value, result, error_3;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 3, , 4]);
-                        return [4 /*yield*/, this.http.fetchAsync(url, init)];
-                    case 1:
-                        response = _a.sent();
-                        if (!response.ok) {
-                            return [2 /*return*/, this.handleUnexpectedError(response.statusText, options)];
-                        }
-                        return [4 /*yield*/, response.json()];
-                    case 2:
-                        value = _a.sent();
-                        result = value;
-                        result.handled = false;
-                        return [2 /*return*/, result];
-                    case 3:
-                        error_3 = _a.sent();
-                        return [2 /*return*/, this.handleUnexpectedError(error_3, options)];
-                    case 4: return [2 /*return*/];
+                    case 5:
+                        this.isFetching = false;
+                        return [7 /*endfinally*/];
+                    case 6: return [2 /*return*/];
                 }
             });
         });
