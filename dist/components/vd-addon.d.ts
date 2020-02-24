@@ -18,5 +18,6 @@ export declare class VdAddon {
     private types;
     bind(): void;
     getClass(): string;
+    getClickableClass(): "" | "cursor-pointer";
     onClick(event: Event): void;
 }

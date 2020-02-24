@@ -31,6 +31,9 @@ var VdAddon = /** @class */ (function () {
         var result = this.icon + " " + this.variant;
         return result;
     };
+    VdAddon.prototype.getClickableClass = function () {
+        return this.clickable ? "cursor-pointer" : "";
+    };
     VdAddon.prototype.onClick = function (event) {
         if (!!this.clickTarget) {
             $(this.clickTarget).click();

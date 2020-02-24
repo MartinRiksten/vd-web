@@ -38,6 +38,10 @@ export class VdAddon {
     return result;
   }
 
+  public getClickableClass() {
+    return this.clickable ? "cursor-pointer" : "";
+  }
+
   public onClick(event: Event) {
     if (!!this.clickTarget) {
       $(this.clickTarget).click();
