@@ -80,7 +80,7 @@ function configure(config) {
         'vd-th',
         'vd-route',
     ];
-    var converters = ['bool', 'date-time', 'encode-uri', 'null', 'uppercase'];
+    var converters = ['bool', 'date-time', 'encode-uri', 'locale', 'null', 'uppercase'];
     var basePath = './dist';
     var resources = components
         .map(function (x) { return basePath + "/components/" + x; })
