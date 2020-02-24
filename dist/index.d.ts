@@ -36,6 +36,7 @@ export * from './configuration/configuration-factory';
 export * from './converters/bool';
 export * from './converters/date-time';
 export * from './converters/encode-uri';
+export * from './converters/locale';
 export * from './converters/null';
 export * from './converters/uppercase';
 export * from './utilities/alert-helper';

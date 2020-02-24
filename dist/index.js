@@ -43,6 +43,7 @@ __export(require("./configuration/configuration-factory"));
 __export(require("./converters/bool"));
 __export(require("./converters/date-time"));
 __export(require("./converters/encode-uri"));
+__export(require("./converters/locale"));
 __export(require("./converters/null"));
 __export(require("./converters/uppercase"));
 __export(require("./utilities/alert-helper"));
