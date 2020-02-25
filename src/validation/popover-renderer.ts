@@ -67,6 +67,8 @@ export class PopoverRenderer implements ValidationRenderer {
         $(element).one('keypress', () => {
           popover.popover('hide');
         });
+
+        setTimeout(() => $tip.addClass('animate-update'), 100);
       }
     }
 

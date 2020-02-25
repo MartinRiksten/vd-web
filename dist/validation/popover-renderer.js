@@ -68,6 +68,7 @@ var PopoverRenderer = /** @class */ (function () {
                 $(element).one('keypress', function () {
                     popover.popover('hide');
                 });
+                setTimeout(function () { return $tip.addClass('animate-update'); }, 100);
             }
         };
         var this_1 = this;
