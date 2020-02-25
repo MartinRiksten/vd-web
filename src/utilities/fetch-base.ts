@@ -9,8 +9,7 @@ export abstract class FetchBase {
    * Returns a newly created instance
    * @param http: The injected http fetch instance
    */
-  protected constructor(private readonly http: HttpFetch, 
-    private readonly commonDialogHelper: CommonDialogHelper) {}
+  protected constructor(private readonly http: HttpFetch, private readonly commonDialogHelper: CommonDialogHelper) {}
 
   /**
    * Posts the given data to the given url, and stores any returned errors.
@@ -31,8 +30,7 @@ export abstract class FetchBase {
       return result;
     } catch (error) {
       return this.handleUnexpectedError(error, options);
-    }
-    finally {
+    } finally {
       this.isFetching = false;
     }
   }
@@ -56,8 +54,7 @@ export abstract class FetchBase {
     } catch (error) {
       this.handleUnexpectedError<T>(error, options);
       return void 0;
-    }
-    finally {
+    } finally {
       this.isFetching = false;
     }
   }

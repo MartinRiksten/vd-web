@@ -39,7 +39,7 @@ export class VdAddon {
   }
 
   public getClickableClass() {
-    return this.clickable ? "cursor-pointer" : "";
+    return this.clickable ? 'cursor-pointer' : '';
   }
 
   public onClick(event: Event) {
