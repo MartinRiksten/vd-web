@@ -5,15 +5,15 @@
  */
 export class AlertHelper {
   public static DEFAULTS: IAlertOptions = { variant: 'alert-success', delay: 10, duration: 3500 };
+  public static StackAlerts = true;
   private static id = 0;
   private static count = 0;
 
   public async show(message: string, options?: IAlertOptions): Promise<void> {
     options = { ...AlertHelper.DEFAULTS, ...options };
     const id = `static-alert-${AlertHelper.id++}`;
-    const template = `<div id="${id}" class="static-alert fade text-center alert-${AlertHelper.count++}">
-    <div class="alert alert-sm ${options.variant}" role="alert">${message}</div>
-</div>`;
+    const stackClass = AlertHelper.StackAlerts ? `alert-${AlertHelper.count++}` : "";
+    const template = `<div id="${id}" class="static-alert fade text-center ${stackClass}"><div class="alert alert-sm ${options.variant}" role="alert">${message}</div></div>`;
     $('body').prepend(template);
     const alert = $(`#${id}`);
 
@@ -21,7 +21,10 @@ export class AlertHelper {
     alert.addClass('show');
     await Wait.for(options.duration);
     alert.removeClass('show');
-    AlertHelper.count--;
+    if (AlertHelper.count > 0) {
+      AlertHelper.count--;
+    }
+
     await Wait.for(100);
     alert.remove();
   }

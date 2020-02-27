@@ -56,13 +56,14 @@ var AlertHelper = /** @class */ (function () {
     }
     AlertHelper.prototype.show = function (message, options) {
         return __awaiter(this, void 0, void 0, function () {
-            var id, template, alert;
+            var id, stackClass, template, alert;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         options = __assign(__assign({}, AlertHelper.DEFAULTS), options);
                         id = "static-alert-" + AlertHelper.id++;
-                        template = "<div id=\"" + id + "\" class=\"static-alert fade text-center alert-" + AlertHelper.count++ + "\">\n    <div class=\"alert alert-sm " + options.variant + "\" role=\"alert\">" + message + "</div>\n</div>";
+                        stackClass = AlertHelper.StackAlerts ? "alert-" + AlertHelper.count++ : "";
+                        template = "<div id=\"" + id + "\" class=\"static-alert fade text-center " + stackClass + "\"><div class=\"alert alert-sm " + options.variant + "\" role=\"alert\">" + message + "</div></div>";
                         $('body').prepend(template);
                         alert = $("#" + id);
                         return [4 /*yield*/, wait_1.Wait.for(options.delay)];
@@ -73,7 +74,9 @@ var AlertHelper = /** @class */ (function () {
                     case 2:
                         _a.sent();
                         alert.removeClass('show');
-                        AlertHelper.count--;
+                        if (AlertHelper.count > 0) {
+                            AlertHelper.count--;
+                        }
                         return [4 /*yield*/, wait_1.Wait.for(100)];
                     case 3:
                         _a.sent();
@@ -84,6 +87,7 @@ var AlertHelper = /** @class */ (function () {
         });
     };
     AlertHelper.DEFAULTS = { variant: 'alert-success', delay: 10, duration: 3500 };
+    AlertHelper.StackAlerts = true;
     AlertHelper.id = 0;
     AlertHelper.count = 0;
     return AlertHelper;

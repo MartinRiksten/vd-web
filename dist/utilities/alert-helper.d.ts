@@ -3,6 +3,7 @@
  */
 export declare class AlertHelper {
     static DEFAULTS: IAlertOptions;
+    static StackAlerts: boolean;
     private static id;
     private static count;
     show(message: string, options?: IAlertOptions): Promise<void>;
