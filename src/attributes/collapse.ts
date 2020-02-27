@@ -10,7 +10,8 @@ export class CollapseCustomAttribute {
   constructor(private readonly element: Element) {}
 
   public attached(): void {
-    $(this.element).collapse({ toggle: this.value } as CollapseOption);
+    $(this.element).collapse();
+    this.valueChanged(this.value);
   }
 
   public detached(): void {

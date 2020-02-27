@@ -20,7 +20,8 @@ var CollapseCustomAttribute = /** @class */ (function () {
         this.value = false;
     }
     CollapseCustomAttribute.prototype.attached = function () {
-        jquery_1.default(this.element).collapse({ toggle: this.value });
+        jquery_1.default(this.element).collapse();
+        this.valueChanged(this.value);
     };
     CollapseCustomAttribute.prototype.detached = function () {
         jquery_1.default(this.element).collapse('dispose');
