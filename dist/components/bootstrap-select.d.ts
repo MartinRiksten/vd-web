@@ -19,5 +19,5 @@ export declare class BootstrapSelect {
     constructor(taskQueue: TaskQueue);
     attached(): void;
     optionsChanged(): void;
-    selectedChanged(): void;
+    selectedChanged(newValue: string, oldValue: string): void;
 }

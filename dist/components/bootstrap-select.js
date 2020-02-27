@@ -31,7 +31,11 @@ var BootstrapSelect = /** @class */ (function () {
             $(_this.picker).selectpicker('refresh');
         });
     };
-    BootstrapSelect.prototype.selectedChanged = function () {
+    BootstrapSelect.prototype.selectedChanged = function (newValue, oldValue) {
+        // suppress change from empty string to null and vice versa
+        if (!newValue && !oldValue) {
+            return;
+        }
         $(this.picker).selectpicker('val', this.selected);
     };
     __decorate([
