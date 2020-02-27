@@ -43,7 +43,7 @@ var VdButton = /** @class */ (function () {
         this.icon = !!this.icon ? this.icon : info.icon;
     };
     VdButton.prototype.getClass = function () {
-        var result = this.buttonClass + " " + this.variant;
+        var result = this.buttonClass + " " + VdButton.DefaultClass + " " + this.variant;
         return result;
     };
     VdButton.prototype.onClick = function (event) {
@@ -54,6 +54,7 @@ var VdButton = /** @class */ (function () {
             this.clickHandler(event);
         }
     };
+    VdButton.DefaultClass = "btn-sm";
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)

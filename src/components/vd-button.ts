@@ -8,6 +8,8 @@ export interface IButtonInfo {
 }
 
 export class VdButton {
+  public static DefaultClass = "btn-sm";
+
   @bindable public kind!: string;
   @bindable public buttonId!: string;
   @bindable public clickHandler!: (event: Event) => void;
@@ -47,7 +49,7 @@ export class VdButton {
   }
 
   public getClass(): string {
-    const result = `${this.buttonClass} ${this.variant}`;
+    const result = `${this.buttonClass} ${VdButton.DefaultClass} ${this.variant}`;
     return result;
   }
 

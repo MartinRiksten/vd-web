@@ -32,7 +32,7 @@ var VdAddon = /** @class */ (function () {
         return result;
     };
     VdAddon.prototype.getClickableClass = function () {
-        return this.clickable ? "cursor-pointer" : "";
+        return this.clickable ? 'cursor-pointer' : '';
     };
     VdAddon.prototype.onClick = function (event) {
         if (!!this.clickTarget) {
