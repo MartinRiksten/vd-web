@@ -62,7 +62,7 @@ var AlertHelper = /** @class */ (function () {
                     case 0:
                         options = __assign(__assign({}, AlertHelper.DEFAULTS), options);
                         id = "static-alert-" + AlertHelper.id++;
-                        stackClass = AlertHelper.StackAlerts ? "alert-" + AlertHelper.count++ : "";
+                        stackClass = AlertHelper.StackAlerts ? "alert-" + AlertHelper.count++ : "alert-0";
                         template = "<div id=\"" + id + "\" class=\"static-alert fade text-center " + stackClass + "\"><div class=\"alert alert-sm " + options.variant + "\" role=\"alert\">" + message + "</div></div>";
                         $('body').prepend(template);
                         alert = $("#" + id);
