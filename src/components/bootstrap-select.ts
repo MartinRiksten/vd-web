@@ -42,7 +42,12 @@ export class BootstrapSelect {
     });
   }
 
-  public selectedChanged() {
+  public selectedChanged(newValue: string, oldValue: string) {
+    // suppress change from empty string to null and vice versa
+    if (!newValue && !oldValue) {
+        return;
+    }
+
     $(this.picker).selectpicker('val', this.selected);
   }
 }
