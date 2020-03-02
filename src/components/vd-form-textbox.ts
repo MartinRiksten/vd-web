@@ -12,7 +12,7 @@ export class VdFormTextbox extends VdFormInput<string> {
   @bindable public value: string;
 
   @bindable public autoFocus: boolean;
-
+ 
   @bindable public regex: string;
   @bindable public maxLength: number = 99;
   @bindable public placeHolder: string;

@@ -13,6 +13,7 @@ var aurelia_framework_1 = require("aurelia-framework");
 var BootstrapSelect = /** @class */ (function () {
     function BootstrapSelect(taskQueue) {
         this.taskQueue = taskQueue;
+        this.width = "100%";
     }
     BootstrapSelect.prototype.attached = function () {
         var _this = this;
@@ -54,6 +55,10 @@ var BootstrapSelect = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
     ], BootstrapSelect.prototype, "inputId", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], BootstrapSelect.prototype, "width", void 0);
     BootstrapSelect = __decorate([
         aurelia_framework_1.autoinject,
         __metadata("design:paramtypes", [aurelia_framework_1.TaskQueue])

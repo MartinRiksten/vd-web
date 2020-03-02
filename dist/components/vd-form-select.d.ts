@@ -10,6 +10,7 @@ export declare class VdFormSelect extends VdFormInput<string> {
     displayName: string;
     value: string;
     autoFocus: boolean;
+    width: string;
     options: IBootstrapSelectOption[];
     popoverOption: PopoverOption | string;
     dataToggle: string;

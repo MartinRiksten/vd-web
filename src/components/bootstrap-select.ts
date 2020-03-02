@@ -19,6 +19,7 @@ export class BootstrapSelect {
   @bindable public selected!: string;
   @bindable public displayName!: string;
   @bindable public inputId: string;
+  @bindable public width = "100%";
 
   public picker!: Element;
 

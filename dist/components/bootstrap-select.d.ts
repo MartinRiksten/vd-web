@@ -15,6 +15,7 @@ export declare class BootstrapSelect {
     selected: string;
     displayName: string;
     inputId: string;
+    width: string;
     picker: Element;
     constructor(taskQueue: TaskQueue);
     attached(): void;

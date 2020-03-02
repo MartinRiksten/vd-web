@@ -17,6 +17,7 @@ export class VdFormSelect extends VdFormInput<string> {
   @bindable public value: string;
 
   @bindable public autoFocus: boolean;
+  @bindable public width = "100%";
 
   @bindable public options: IBootstrapSelectOption[];
   @bindable public popoverOption: PopoverOption | string = {

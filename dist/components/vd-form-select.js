@@ -28,6 +28,7 @@ var VdFormSelect = /** @class */ (function (_super) {
     __extends(VdFormSelect, _super);
     function VdFormSelect() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.width = "100%";
         _this.popoverOption = {
             container: 'body',
             placement: 'right',
@@ -70,6 +71,10 @@ var VdFormSelect = /** @class */ (function (_super) {
         aurelia_framework_1.bindable,
         __metadata("design:type", Boolean)
     ], VdFormSelect.prototype, "autoFocus", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdFormSelect.prototype, "width", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Array)
