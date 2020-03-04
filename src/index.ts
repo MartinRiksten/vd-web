@@ -16,6 +16,7 @@ export * from './common-dialog/common-dialog-info';
 export * from './common-dialog/common-dialog-model';
 export * from './common-dialog/common-dialogs';
 export * from './components/bootstrap-select';
+export * from './components/toast';
 export * from './components/vd-bool-icon';
 export * from './components/vd-button';
 export * from './components/vd-addon';
@@ -51,6 +52,9 @@ export * from './utilities/input-file-reader';
 export * from './utilities/list-base';
 export * from './utilities/list-helper';
 export * from './utilities/service-base';
+export * from './utilities/toast-renderer';
+export * from './utilities/toast-service';
+export * from './utilities/toast-utilities';
 export * from './utilities/wait';
 export * from './validation/bootstrap-renderer';
 export * from './validation/popover-renderer';
@@ -60,6 +64,7 @@ export function configure(config: FrameworkConfiguration) {
   const bindings = ['async'];
   const components = [
     'bootstrap-select',
+    'toast',
     'vd-bool-icon',
     'vd-button',
     'vd-addon',

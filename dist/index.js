@@ -19,6 +19,7 @@ __export(require("./common-dialog/common-dialog-info"));
 __export(require("./common-dialog/common-dialog-model"));
 __export(require("./common-dialog/common-dialogs"));
 __export(require("./components/bootstrap-select"));
+__export(require("./components/toast"));
 __export(require("./components/vd-bool-icon"));
 __export(require("./components/vd-button"));
 __export(require("./components/vd-addon"));
@@ -54,6 +55,9 @@ __export(require("./utilities/input-file-reader"));
 __export(require("./utilities/list-base"));
 __export(require("./utilities/list-helper"));
 __export(require("./utilities/service-base"));
+__export(require("./utilities/toast-renderer"));
+__export(require("./utilities/toast-service"));
+__export(require("./utilities/toast-utilities"));
 __export(require("./utilities/wait"));
 __export(require("./validation/bootstrap-renderer"));
 __export(require("./validation/popover-renderer"));
@@ -62,6 +66,7 @@ function configure(config) {
     var bindings = ['async'];
     var components = [
         'bootstrap-select',
+        'toast',
         'vd-bool-icon',
         'vd-button',
         'vd-addon',
