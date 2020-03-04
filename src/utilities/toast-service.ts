@@ -65,7 +65,7 @@ export class ToastService {
     options = Object.assign({}, defaults, options, { message, title, type });
 
     const childContainer = this.container.createChild();
-    const instruction = { childContainer, container: this.container, model: options.model, viewModel: 'components/toast' } as CompositionContext;
+    const instruction = { childContainer, container: this.container, model: options.model, viewModel: './dist/components/toast' } as CompositionContext;
     const controllerInstruction = await getViewModel(instruction, this.compositionEngine);
     const canActivate = await invokeLifecycle(controllerInstruction.viewModel, 'canActivate', options.model);
     if (!canActivate) {

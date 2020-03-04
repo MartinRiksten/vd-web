@@ -138,7 +138,7 @@ var ToastService = /** @class */ (function () {
                         }
                         options = Object.assign({}, defaults, options, { message: message, title: title, type: type });
                         childContainer = this.container.createChild();
-                        instruction = { childContainer: childContainer, container: this.container, model: options.model, viewModel: 'components/toast' };
+                        instruction = { childContainer: childContainer, container: this.container, model: options.model, viewModel: './dist/components/toast' };
                         return [4 /*yield*/, toast_utilities_1.getViewModel(instruction, this.compositionEngine)];
                     case 1:
                         controllerInstruction = _a.sent();
