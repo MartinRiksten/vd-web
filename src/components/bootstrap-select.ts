@@ -40,6 +40,7 @@ export class BootstrapSelect {
   public optionsChanged() {
     this.taskQueue.queueTask(() => {
       $(this.picker).selectpicker('refresh');
+      $(this.picker).selectpicker('val', this.selected);
     });
   }
 

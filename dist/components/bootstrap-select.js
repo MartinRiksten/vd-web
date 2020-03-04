@@ -30,6 +30,7 @@ var BootstrapSelect = /** @class */ (function () {
         var _this = this;
         this.taskQueue.queueTask(function () {
             $(_this.picker).selectpicker('refresh');
+            $(_this.picker).selectpicker('val', _this.selected);
         });
     };
     BootstrapSelect.prototype.selectedChanged = function (newValue, oldValue) {
