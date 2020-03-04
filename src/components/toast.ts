@@ -5,7 +5,7 @@ export class Toast {
   @bindable public title: string;
   @bindable public message: string;
 
-  @bindable public closeable = false;
+  @bindable public closeable = true;
   @bindable public clearable = false;
 
   public toast: Element;

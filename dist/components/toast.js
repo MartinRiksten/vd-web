@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
 var Toast = /** @class */ (function () {
     function Toast() {
-        this.closeable = false;
+        this.closeable = true;
         this.clearable = false;
     }
     Toast.prototype.activate = function () {
