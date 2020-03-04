@@ -15,6 +15,12 @@ var Toast = /** @class */ (function () {
         this.closeable = false;
         this.clearable = false;
     }
+    Toast.prototype.activate = function () {
+        $(this.toast).toast();
+    };
+    Toast.prototype.deactivate = function () {
+        $(this.toast).toast("dispose");
+    };
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)

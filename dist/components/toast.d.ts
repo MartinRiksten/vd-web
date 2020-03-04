@@ -4,4 +4,7 @@ export declare class Toast {
     message: string;
     closeable: boolean;
     clearable: boolean;
+    toast: Element;
+    activate(): void;
+    deactivate(): void;
 }

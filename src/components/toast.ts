@@ -7,4 +7,14 @@ export class Toast {
 
   @bindable public closeable = false;
   @bindable public clearable = false;
+
+  public toast: Element;
+
+  public activate() {
+    $(this.toast).toast();
+  }
+
+  public deactivate() {
+    $(this.toast).toast("dispose");
+  }
 }

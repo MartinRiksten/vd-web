@@ -46,9 +46,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
+var toast_1 = require("../components/toast");
 var toast_renderer_1 = require("./toast-renderer");
 var toast_utilities_1 = require("./toast-utilities");
-var toast_1 = require("../components/toast");
 var defaults = {
     position: 'toast-top-right',
     startingZIndex: 1000

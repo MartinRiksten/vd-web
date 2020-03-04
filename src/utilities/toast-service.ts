@@ -1,8 +1,8 @@
 import { autoinject, CompositionContext, CompositionEngine, Container } from 'aurelia-framework';
 
+import { Toast } from '../components/toast';
 import { IToastOptions, ToastRenderer } from './toast-renderer';
 import { getViewModel, invokeLifecycle } from './toast-utilities';
-import { Toast } from '../components/toast';
 
 const defaults: IToastOptions = {
   position: 'toast-top-right',
