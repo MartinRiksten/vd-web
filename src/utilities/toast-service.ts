@@ -2,6 +2,7 @@ import { autoinject, CompositionContext, CompositionEngine, Container } from 'au
 
 import { IToastOptions, ToastRenderer } from './toast-renderer';
 import { getViewModel, invokeLifecycle } from './toast-utilities';
+import { Toast } from '../components/toast';
 
 const defaults: IToastOptions = {
   position: 'toast-top-right',
@@ -65,7 +66,7 @@ export class ToastService {
     options = Object.assign({}, defaults, options, { message, title, type });
 
     const childContainer = this.container.createChild();
-    const instruction = { childContainer, container: this.container, model: options.model, viewModel: 'toast' } as CompositionContext;
+    const instruction = { childContainer, container: this.container, model: options.model, viewModel: Toast } as CompositionContext;
     const controllerInstruction = await getViewModel(instruction, this.compositionEngine);
     const canActivate = await invokeLifecycle(controllerInstruction.viewModel, 'canActivate', options.model);
     if (!canActivate) {

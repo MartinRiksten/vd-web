@@ -48,6 +48,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
 var toast_renderer_1 = require("./toast-renderer");
 var toast_utilities_1 = require("./toast-utilities");
+var toast_1 = require("../components/toast");
 var defaults = {
     position: 'toast-top-right',
     startingZIndex: 1000
@@ -138,7 +139,7 @@ var ToastService = /** @class */ (function () {
                         }
                         options = Object.assign({}, defaults, options, { message: message, title: title, type: type });
                         childContainer = this.container.createChild();
-                        instruction = { childContainer: childContainer, container: this.container, model: options.model, viewModel: 'toast' };
+                        instruction = { childContainer: childContainer, container: this.container, model: options.model, viewModel: toast_1.Toast };
                         return [4 /*yield*/, toast_utilities_1.getViewModel(instruction, this.compositionEngine)];
                     case 1:
                         controllerInstruction = _a.sent();
