@@ -50,6 +50,8 @@ export class BootstrapSelect {
         return;
     }
 
-    $(this.picker).selectpicker('val', this.selected);
+    this.taskQueue.queueTask(() => {
+      $(this.picker).selectpicker('val', this.selected);
+    });
   }
 }

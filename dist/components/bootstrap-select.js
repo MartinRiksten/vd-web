@@ -34,11 +34,14 @@ var BootstrapSelect = /** @class */ (function () {
         });
     };
     BootstrapSelect.prototype.selectedChanged = function (newValue, oldValue) {
+        var _this = this;
         // suppress change from empty string to null and vice versa
         if (!newValue && !oldValue) {
             return;
         }
-        $(this.picker).selectpicker('val', this.selected);
+        this.taskQueue.queueTask(function () {
+            $(_this.picker).selectpicker('val', _this.selected);
+        });
     };
     __decorate([
         aurelia_framework_1.bindable,
