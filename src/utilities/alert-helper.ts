@@ -13,7 +13,7 @@ export class AlertHelper {
     options = { ...AlertHelper.DEFAULTS, ...options };
     const id = `static-alert-${AlertHelper.id++}`;
     const stackClass = AlertHelper.StackAlerts ? `alert-${AlertHelper.count++}` : "alert-0";
-    const template = `<div id="${id}" class="static-alert fade text-center ${stackClass}"><div class="alert alert-sm shadow rounded ${options.variant}" role="alert">${message}</div></div>`;
+    const template = `<div id="${id}" class="static-alert fade text-center ${stackClass}"><div class="alert alert-sm shadow rounded ${options.variant}" role="alert"><h5 class='mb-0'>${message}</h5></div></div>`;
     $('body').prepend(template);
     const alert = $(`#${id}`);
 

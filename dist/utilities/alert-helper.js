@@ -63,7 +63,7 @@ var AlertHelper = /** @class */ (function () {
                         options = __assign(__assign({}, AlertHelper.DEFAULTS), options);
                         id = "static-alert-" + AlertHelper.id++;
                         stackClass = AlertHelper.StackAlerts ? "alert-" + AlertHelper.count++ : "alert-0";
-                        template = "<div id=\"" + id + "\" class=\"static-alert fade text-center " + stackClass + "\"><div class=\"alert alert-sm shadow rounded " + options.variant + "\" role=\"alert\">" + message + "</div></div>";
+                        template = "<div id=\"" + id + "\" class=\"static-alert fade text-center " + stackClass + "\"><div class=\"alert alert-sm shadow rounded " + options.variant + "\" role=\"alert\"><h5 class='mb-0'>" + message + "</h5></div></div>";
                         $('body').prepend(template);
                         alert = $("#" + id);
                         return [4 /*yield*/, wait_1.Wait.for(options.delay)];
