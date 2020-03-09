@@ -3,5 +3,6 @@
         class="btn" class.bind="getClass(buttonClass, variant)" disabled.bind="disabled">
         <i class="mr-1" class.bind="icon"></i>
         <span innerhtml.bind="displayName"></span>
+        <slot></slot>
     </button>
 </template>
