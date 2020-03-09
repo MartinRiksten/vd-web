@@ -2,7 +2,7 @@ import { CommonDialogHelper } from '..';
 import { HttpFetch } from './http-fetch';
 export declare abstract class FetchBase {
     private readonly http;
-    private readonly commonDialogHelper;
+    protected readonly commonDialogHelper: CommonDialogHelper;
     isFetching: boolean;
     /**
      * Returns a newly created instance
@@ -17,7 +17,7 @@ export declare abstract class FetchBase {
      * Gets the given data to the given url, and stores any returned errors.
      */
     protected getAsync<T>(url: string, options?: IFetchOptions): Promise<T>;
-    private handleUnexpectedError;
+    protected handleUnexpectedError<T>(error: string, options: IFetchOptions): Promise<IServiceResult<T>>;
 }
 export interface IFetchOptions {
     ignoreErrors: boolean;

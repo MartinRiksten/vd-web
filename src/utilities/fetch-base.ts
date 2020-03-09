@@ -9,7 +9,9 @@ export abstract class FetchBase {
    * Returns a newly created instance
    * @param http: The injected http fetch instance
    */
-  protected constructor(private readonly http: HttpFetch, private readonly commonDialogHelper: CommonDialogHelper) {}
+  protected constructor(private readonly http: HttpFetch, 
+    protected readonly commonDialogHelper: CommonDialogHelper) {
+    }
 
   /**
    * Posts the given data to the given url, and stores any returned errors.
@@ -21,7 +23,7 @@ export abstract class FetchBase {
     try {
       const response = await this.http.fetchAsync(url, init);
       if (!response.ok) {
-        return this.handleUnexpectedError(response.statusText, options);
+        return await this.handleUnexpectedError(response.statusText, options);
       }
 
       const value = await response.json();
@@ -29,7 +31,7 @@ export abstract class FetchBase {
       result.handled = false;
       return result;
     } catch (error) {
-      return this.handleUnexpectedError(error, options);
+      return await this.handleUnexpectedError(error, options);
     } finally {
       this.isFetching = false;
     }
@@ -44,7 +46,7 @@ export abstract class FetchBase {
     try {
       const response = await this.http.fetchAsync(url, init);
       if (!response.ok) {
-        this.handleUnexpectedError<T>(response.statusText, options);
+        await this.handleUnexpectedError<T>(response.statusText, options);
         return void 0;
       }
 
@@ -52,17 +54,17 @@ export abstract class FetchBase {
       const result = value as T;
       return result;
     } catch (error) {
-      this.handleUnexpectedError<T>(error, options);
+      await this.handleUnexpectedError<T>(error, options);
       return void 0;
     } finally {
       this.isFetching = false;
     }
   }
 
-  private handleUnexpectedError<T>(error: string, options: IFetchOptions): IServiceResult<T> {
+  protected async handleUnexpectedError<T>(error: string, options: IFetchOptions): Promise<IServiceResult<T>> {
     const handle = !options || !options.ignoreErrors;
     if (handle) {
-      this.commonDialogHelper.unexpectedError(error);
+      await this.commonDialogHelper.unexpectedError(error);
     }
 
     return { success: false, handled: handle, firstMessage: { message: error } } as IServiceResult<T>;

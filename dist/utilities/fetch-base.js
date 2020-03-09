@@ -61,26 +61,27 @@ var FetchBase = /** @class */ (function () {
                         this.isFetching = true;
                         _a.label = 1;
                     case 1:
-                        _a.trys.push([1, 4, 5, 6]);
+                        _a.trys.push([1, 6, 8, 9]);
                         return [4 /*yield*/, this.http.fetchAsync(url, init)];
                     case 2:
                         response = _a.sent();
-                        if (!response.ok) {
-                            return [2 /*return*/, this.handleUnexpectedError(response.statusText, options)];
-                        }
-                        return [4 /*yield*/, response.json()];
-                    case 3:
+                        if (!!response.ok) return [3 /*break*/, 4];
+                        return [4 /*yield*/, this.handleUnexpectedError(response.statusText, options)];
+                    case 3: return [2 /*return*/, _a.sent()];
+                    case 4: return [4 /*yield*/, response.json()];
+                    case 5:
                         value = _a.sent();
                         result = value;
                         result.handled = false;
                         return [2 /*return*/, result];
-                    case 4:
+                    case 6:
                         error_1 = _a.sent();
-                        return [2 /*return*/, this.handleUnexpectedError(error_1, options)];
-                    case 5:
+                        return [4 /*yield*/, this.handleUnexpectedError(error_1, options)];
+                    case 7: return [2 /*return*/, _a.sent()];
+                    case 8:
                         this.isFetching = false;
                         return [7 /*endfinally*/];
-                    case 6: return [2 /*return*/];
+                    case 9: return [2 /*return*/];
                 }
             });
         });
@@ -98,37 +99,50 @@ var FetchBase = /** @class */ (function () {
                         this.isFetching = true;
                         _a.label = 1;
                     case 1:
-                        _a.trys.push([1, 4, 5, 6]);
+                        _a.trys.push([1, 6, 8, 9]);
                         return [4 /*yield*/, this.http.fetchAsync(url, init)];
                     case 2:
                         response = _a.sent();
-                        if (!response.ok) {
-                            this.handleUnexpectedError(response.statusText, options);
-                            return [2 /*return*/, void 0];
-                        }
-                        return [4 /*yield*/, response.json()];
+                        if (!!response.ok) return [3 /*break*/, 4];
+                        return [4 /*yield*/, this.handleUnexpectedError(response.statusText, options)];
                     case 3:
+                        _a.sent();
+                        return [2 /*return*/, void 0];
+                    case 4: return [4 /*yield*/, response.json()];
+                    case 5:
                         value = _a.sent();
                         result = value;
                         return [2 /*return*/, result];
-                    case 4:
+                    case 6:
                         error_2 = _a.sent();
-                        this.handleUnexpectedError(error_2, options);
+                        return [4 /*yield*/, this.handleUnexpectedError(error_2, options)];
+                    case 7:
+                        _a.sent();
                         return [2 /*return*/, void 0];
-                    case 5:
+                    case 8:
                         this.isFetching = false;
                         return [7 /*endfinally*/];
-                    case 6: return [2 /*return*/];
+                    case 9: return [2 /*return*/];
                 }
             });
         });
     };
     FetchBase.prototype.handleUnexpectedError = function (error, options) {
-        var handle = !options || !options.ignoreErrors;
-        if (handle) {
-            this.commonDialogHelper.unexpectedError(error);
-        }
-        return { success: false, handled: handle, firstMessage: { message: error } };
+        return __awaiter(this, void 0, void 0, function () {
+            var handle;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        handle = !options || !options.ignoreErrors;
+                        if (!handle) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.commonDialogHelper.unexpectedError(error)];
+                    case 1:
+                        _a.sent();
+                        _a.label = 2;
+                    case 2: return [2 /*return*/, { success: false, handled: handle, firstMessage: { message: error } }];
+                }
+            });
+        });
     };
     return FetchBase;
 }());
