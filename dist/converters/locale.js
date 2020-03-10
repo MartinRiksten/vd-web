@@ -13,9 +13,6 @@ var LocaleValueConverter = /** @class */ (function () {
     LocaleValueConverter.prototype.toView = function (value) {
         return !value ? value : value.toLocaleString();
     };
-    LocaleValueConverter.prototype.fromView = function (value) {
-        return !value ? value : value.toLocaleString();
-    };
     LocaleValueConverter = __decorate([
         aurelia_framework_1.valueConverter('locale')
     ], LocaleValueConverter);
