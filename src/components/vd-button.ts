@@ -17,7 +17,6 @@ export class VdButton {
   @bindable public variant!: string;
   @bindable public icon!: string;
   @bindable public clickTarget: string | undefined;
-  @bindable public buttonIf: boolean = true;
   @bindable public buttonClass = 'ml-2';
   @bindable public disabled = false;
 

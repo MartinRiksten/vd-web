@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
 var VdButton = /** @class */ (function () {
     function VdButton() {
-        this.buttonIf = true;
         this.buttonClass = 'ml-2';
         this.disabled = false;
         this.types = [
@@ -83,10 +82,6 @@ var VdButton = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
     ], VdButton.prototype, "clickTarget", void 0);
-    __decorate([
-        aurelia_framework_1.bindable,
-        __metadata("design:type", Boolean)
-    ], VdButton.prototype, "buttonIf", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)

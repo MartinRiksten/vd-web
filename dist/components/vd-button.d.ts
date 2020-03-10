@@ -13,7 +13,6 @@ export declare class VdButton {
     variant: string;
     icon: string;
     clickTarget: string | undefined;
-    buttonIf: boolean;
     buttonClass: string;
     disabled: boolean;
     private types;
