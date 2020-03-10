@@ -40,6 +40,14 @@ export class CommonDialogHelper {
   /**
    * Shows a dialog with the unexpected error message
    */
+  public async error(error: string): Promise<DialogOpenResult> {
+    const result = await this.message(error, CommonDialogType.Error);
+    return result;
+  }
+
+  /**
+   * Shows a dialog with the unexpected error message
+   */
   public async unexpectedError(error: string): Promise<DialogOpenResult> {
     LogManager.getLogger('app').info(`Unexpected error: ${error}`);
     const message = 'Er is een onverwachte fout opgetreden.';

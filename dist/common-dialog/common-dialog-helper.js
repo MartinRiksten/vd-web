@@ -103,6 +103,22 @@ var CommonDialogHelper = /** @class */ (function () {
     /**
      * Shows a dialog with the unexpected error message
      */
+    CommonDialogHelper.prototype.error = function (error) {
+        return __awaiter(this, void 0, void 0, function () {
+            var result;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.message(error, common_dialog_1.CommonDialogType.Error)];
+                    case 1:
+                        result = _a.sent();
+                        return [2 /*return*/, result];
+                }
+            });
+        });
+    };
+    /**
+     * Shows a dialog with the unexpected error message
+     */
     CommonDialogHelper.prototype.unexpectedError = function (error) {
         return __awaiter(this, void 0, void 0, function () {
             var message, result;

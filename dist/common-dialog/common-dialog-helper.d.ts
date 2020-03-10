@@ -23,5 +23,9 @@ export declare class CommonDialogHelper {
     /**
      * Shows a dialog with the unexpected error message
      */
+    error(error: string): Promise<DialogOpenResult>;
+    /**
+     * Shows a dialog with the unexpected error message
+     */
     unexpectedError(error: string): Promise<DialogOpenResult>;
 }
