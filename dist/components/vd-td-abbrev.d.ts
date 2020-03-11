@@ -1,4 +1,3 @@
-import { TooltipOption } from 'bootstrap/index';
 import { IFilterable } from '../utilities/list-helper';
 import { VdTd } from './vd-td';
 export declare class VdTdAbbrev extends VdTd<string> {
@@ -7,6 +6,12 @@ export declare class VdTdAbbrev extends VdTd<string> {
     cutoff: number;
     short: string;
     abbrev: boolean;
-    tooltipOption: TooltipOption;
     bind(): void;
+    getTootltipOption(): {
+        container: string;
+        html: boolean;
+        placement: string;
+        title: string;
+        trigger: string;
+    };
 }
