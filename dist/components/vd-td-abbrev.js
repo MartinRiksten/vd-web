@@ -37,13 +37,13 @@ var VdTdAbbrev = /** @class */ (function (_super) {
         _super.prototype.bind.call(this);
         this.abbrev = !!this.value && this.value.length > this.cutoff;
         this.short = this.abbrev ? this.value.substr(0, this.cutoff) : this.value;
-        this.popoverOption = !this.abbrev
+        this.tooltipOption = !this.abbrev
             ? void 0
             : {
                 container: 'body',
-                content: function () { return _this.value; },
                 html: false,
                 placement: 'right',
+                title: function () { return _this.value; },
                 trigger: 'hover',
             };
     };
