@@ -35,14 +35,6 @@ export class BootstrapSelect {
     $(this.picker).on('changed.bs.select', () => {
       this.selected = $(this.picker).selectpicker('val');
     });
-
-    $(this.picker).on('shown.bs.select', () => {
-      $("#select-overlay").removeClass("d-none");
-    });
-
-    $(this.picker).on('hidden.bs.select', () => {
-      $("#select-overlay").addClass("d-none");
-    });
   }
 
   public optionsChanged() {
