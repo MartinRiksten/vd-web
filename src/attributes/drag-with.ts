@@ -2,8 +2,8 @@
 import Hammer from 'hammerjs';
 
 @autoinject
-@customAttribute('draggable')
-export class DraggableCustomAttribute {
+@customAttribute('drag-with')
+export class DragWithCustomAttribute {
   public value: string = '';
   private startX = 0;
   private startY = 0;
@@ -24,7 +24,7 @@ export class DraggableCustomAttribute {
   }
 
   private initTarget() {
-    const target = this.element.querySelector(`.${this.value}`);
+    const target = this.element.querySelector(this.value);
     if (!target) {
       return;
     }

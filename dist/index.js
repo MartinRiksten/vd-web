@@ -9,7 +9,7 @@ var config_1 = require("./configuration/config");
 __export(require("./attributes/clipboard"));
 __export(require("./attributes/class-delay"));
 __export(require("./attributes/collapse"));
-__export(require("./attributes/draggable"));
+__export(require("./attributes/drag-with"));
 __export(require("./attributes/popover"));
 __export(require("./attributes/tooltip"));
 __export(require("./bindings/async"));
@@ -62,7 +62,7 @@ __export(require("./utilities/wait"));
 __export(require("./validation/bootstrap-renderer"));
 __export(require("./validation/popover-renderer"));
 function configure(config) {
-    var attributes = ['clipboard', 'class-delay', 'collapse', 'draggable', 'popover', 'tooltip'];
+    var attributes = ['clipboard', 'class-delay', 'collapse', 'drag-with', 'popover', 'tooltip'];
     var bindings = ['async'];
     var components = [
         'bootstrap-select',

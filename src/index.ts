@@ -6,7 +6,7 @@ import { Config } from './configuration/config';
 export * from './attributes/clipboard';
 export * from './attributes/class-delay';
 export * from './attributes/collapse';
-export * from './attributes/draggable';
+export * from './attributes/drag-with';
 export * from './attributes/popover';
 export * from './attributes/tooltip';
 export * from './bindings/async';
@@ -60,7 +60,7 @@ export * from './validation/bootstrap-renderer';
 export * from './validation/popover-renderer';
 
 export function configure(config: FrameworkConfiguration) {
-  const attributes = ['clipboard', 'class-delay', 'collapse', 'draggable', 'popover', 'tooltip'];
+  const attributes = ['clipboard', 'class-delay', 'collapse', 'drag-with', 'popover', 'tooltip'];
   const bindings = ['async'];
   const components = [
     'bootstrap-select',
