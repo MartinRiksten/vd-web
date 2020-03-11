@@ -1,5 +1,7 @@
 import { bindable } from 'aurelia-framework';
 
+import { TooltipOption, PopoverOption } from 'bootstrap';
+
 export interface IAddonInfo {
   kind: string;
   title: string;
@@ -14,14 +16,18 @@ export class VdAddon {
   @bindable public clickHandler!: (event: Event) => void;
   @bindable public clickTarget: string | undefined;
   @bindable public title: string | undefined;
+  @bindable public content: string | undefined;
   @bindable public variant!: string;
   @bindable public icon!: string;
   @bindable public clickable: boolean | undefined;
   @bindable public type: string = 'text';
+  public tooltipOption: TooltipOption;
+  public popoverOption: PopoverOption;
 
   private types = [
     { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times', clickable: true } as IAddonInfo,
     { kind: 'search', title: 'Zoeken', variant: 'text-primary', icon: 'fas fa-search', clickable: true } as IAddonInfo,
+    { kind: 'info', title: 'Informatie', variant: 'text-info', icon: 'fas fa-info', clickable: true } as IAddonInfo
   ];
 
   public bind() {
@@ -31,6 +37,13 @@ export class VdAddon {
     this.variant = !!this.variant ? this.variant : info.variant;
     this.icon = !!this.icon ? this.icon : info.icon;
     this.clickable = typeof this.clickable !== 'undefined' ? this.clickable : info.clickable;
+
+    this.tooltipOption = !this.title || !!this.content
+      ? void 0
+      : { container: 'body', html: false, placement: 'right', title: this.title, trigger: 'hover' };
+    this.popoverOption = !this.title || !this.content
+      ? void 0
+      : { container: 'body', content: this.content, html: false, placement: 'right', title: this.title, trigger: 'hover' };
   }
 
   public getClass(): string {

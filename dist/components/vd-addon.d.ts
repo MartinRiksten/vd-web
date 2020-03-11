@@ -1,3 +1,4 @@
+import { TooltipOption, PopoverOption } from 'bootstrap';
 export interface IAddonInfo {
     kind: string;
     title: string;
@@ -11,10 +12,13 @@ export declare class VdAddon {
     clickHandler: (event: Event) => void;
     clickTarget: string | undefined;
     title: string | undefined;
+    content: string | undefined;
     variant: string;
     icon: string;
     clickable: boolean | undefined;
     type: string;
+    tooltipOption: TooltipOption;
+    popoverOption: PopoverOption;
     private types;
     bind(): void;
     getClass(): string;

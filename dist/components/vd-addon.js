@@ -15,7 +15,7 @@ var VdAddon = /** @class */ (function () {
         this.type = 'text';
         this.types = [
             { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times', clickable: true },
-            { kind: 'search', title: 'Zoeken', variant: 'text-primary', icon: 'fas fa-search', clickable: true },
+            { kind: 'search', title: 'Zoeken', variant: 'text-primary', icon: 'fas fa-search', clickable: true }
         ];
     }
     VdAddon.prototype.bind = function () {
@@ -26,6 +26,12 @@ var VdAddon = /** @class */ (function () {
         this.variant = !!this.variant ? this.variant : info.variant;
         this.icon = !!this.icon ? this.icon : info.icon;
         this.clickable = typeof this.clickable !== 'undefined' ? this.clickable : info.clickable;
+        this.tooltipOption = !this.title || !!this.content
+            ? void 0
+            : { container: 'body', html: false, placement: 'right', title: this.title, trigger: 'hover' };
+        this.popoverOption = !this.title || !this.content
+            ? void 0
+            : { container: 'body', content: this.content, html: false, placement: 'right', title: this.title, trigger: 'hover' };
     };
     VdAddon.prototype.getClass = function () {
         var result = this.icon + " " + this.variant;
@@ -62,6 +68,10 @@ var VdAddon = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
     ], VdAddon.prototype, "title", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", String)
+    ], VdAddon.prototype, "content", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
