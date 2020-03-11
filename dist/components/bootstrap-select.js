@@ -25,6 +25,12 @@ var BootstrapSelect = /** @class */ (function () {
         $(this.picker).on('changed.bs.select', function () {
             _this.selected = $(_this.picker).selectpicker('val');
         });
+        $(this.picker).on('shown.bs.select', function () {
+            $("#select-overlay").removeClass("d-none");
+        });
+        $(this.picker).on('hidden.bs.select', function () {
+            $("#select-overlay").addClass("d-none");
+        });
     };
     BootstrapSelect.prototype.optionsChanged = function () {
         var _this = this;
