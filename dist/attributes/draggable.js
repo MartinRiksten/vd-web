@@ -31,7 +31,7 @@ var DraggableCustomAttribute = /** @class */ (function () {
     };
     DraggableCustomAttribute.prototype.initTarget = function () {
         var _this = this;
-        var target = this.element.querySelector(this.value);
+        var target = this.element.querySelector("." + this.value);
         if (!target) {
             return;
         }

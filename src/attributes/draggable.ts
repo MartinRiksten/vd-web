@@ -24,7 +24,7 @@ export class DraggableCustomAttribute {
   }
 
   private initTarget() {
-    const target = this.element.querySelector(this.value);
+    const target = this.element.querySelector(`.${this.value}`);
     if (!target) {
       return;
     }
