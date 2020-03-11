@@ -38,6 +38,10 @@ var VdTd = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)
     ], VdTd.prototype, "popoverOption", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdTd.prototype, "tooltipOption", void 0);
     return VdTd;
 }());
 exports.VdTd = VdTd;

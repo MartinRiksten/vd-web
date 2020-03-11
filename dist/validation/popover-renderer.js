@@ -64,7 +64,7 @@ var PopoverRenderer = /** @class */ (function () {
             else {
                 popover.popover('show');
                 $tip = $(popover.data('bs.popover').tip);
-                $tip.addClass('popover-danger popover-validation rounded shadow');
+                $tip.addClass('popover-danger popover-validation shadow');
                 $(element).one('keypress', function () {
                     popover.popover('hide');
                 });
