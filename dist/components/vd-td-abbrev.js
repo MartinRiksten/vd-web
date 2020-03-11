@@ -36,18 +36,9 @@ var VdTdAbbrev = /** @class */ (function (_super) {
         _super.prototype.bind.call(this);
         this.abbrev = !!this.value && this.value.length > this.cutoff;
         this.short = this.abbrev ? this.value.substr(0, this.cutoff) : this.value;
-    };
-    VdTdAbbrev.prototype.getTootltipOption = function () {
-        var tooltipOption = !this.abbrev
+        this.tooltipOption = !this.abbrev
             ? void 0
-            : {
-                container: 'body',
-                html: false,
-                placement: 'right',
-                title: this.value,
-                trigger: 'hover',
-            };
-        return tooltipOption;
+            : { container: 'body', html: false, placement: 'right', title: this.value, trigger: 'hover' };
     };
     __decorate([
         aurelia_framework_1.bindable,
