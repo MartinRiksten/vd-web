@@ -35,6 +35,7 @@ export class VdButton {
     { kind: 'add', displayName: 'Toevoegen', variant: 'btn-primary', icon: 'fas fa-plus-circle' } as IButtonInfo,
     { kind: 'upload', displayName: 'Uploaden', variant: 'btn-primary', icon: 'fas fa-upload' } as IButtonInfo,
     { kind: 'download', displayName: 'Downloaden', variant: 'btn-primary', icon: 'fas fa-download' } as IButtonInfo,
+    { kind: 'select', displayName: 'Selecteer', variant: 'btn-primary', icon: 'fas fa-check' } as IButtonInfo,
     { kind: 'select-all', displayName: 'Alle', variant: 'btn-light', icon: 'fas fa-check-square' } as IButtonInfo,
     { kind: 'deselect-all', displayName: 'Geen', variant: 'btn-light', icon: 'far fa-square' } as IButtonInfo,
   ];
