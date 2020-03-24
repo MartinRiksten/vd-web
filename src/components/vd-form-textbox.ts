@@ -16,7 +16,7 @@ export class VdFormTextbox extends VdFormInput<string> {
   @bindable public regex: string;
   @bindable public maxLength: number = 99;
   @bindable public placeHolder: string;
-  @bindable public type = "text";
+  @bindable public inputType = "text";
 
   @bindable public popoverOption: PopoverOption | string = {
     container: 'body',
