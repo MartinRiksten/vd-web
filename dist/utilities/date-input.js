@@ -40,13 +40,13 @@ var DateInput = /** @class */ (function () {
         var result = !momentResult || !momentResult.isValid() ? void 0 : momentResult.toDate();
         return result;
     };
-    DateInput.useTextDates = true; // !(window as any).chrome || !(window as any).chrome.webstore;
+    DateInput.useText = !window.chrome;
     DateInput.domFormat = "YYYY-MM-DD";
     DateInput.textFormat = "DD-MM-YYYY";
-    DateInput.format = DateInput.useTextDates ? DateInput.textFormat : DateInput.domFormat;
+    DateInput.format = DateInput.useText ? DateInput.textFormat : DateInput.domFormat;
     DateInput.domRegex = /^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$/i;
     DateInput.textRegex = /^[0-9]{1,2}-[0-9]{1,2}-[0-9]{4}$/i;
-    DateInput.regex = DateInput.useTextDates ? DateInput.textRegex : DateInput.domRegex;
+    DateInput.regex = DateInput.useText ? DateInput.textRegex : DateInput.domRegex;
     return DateInput;
 }());
 exports.DateInput = DateInput;

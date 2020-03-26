@@ -1,5 +1,5 @@
 export declare class DateInput {
-    static useTextDates: boolean;
+    static useText: boolean;
     static domFormat: string;
     static textFormat: string;
     static format: string;

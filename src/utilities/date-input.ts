@@ -1,13 +1,13 @@
 import moment from "moment";
 
 export class DateInput {
-    public static useTextDates = true; // !(window as any).chrome || !(window as any).chrome.webstore;
+    public static useText = !(window as any).chrome;
     public static domFormat = "YYYY-MM-DD";
     public static textFormat = "DD-MM-YYYY";
-    public static format = DateInput.useTextDates ? DateInput.textFormat : DateInput.domFormat;
+    public static format = DateInput.useText ? DateInput.textFormat : DateInput.domFormat;
     public static domRegex = /^[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}$/i;
     public static textRegex = /^[0-9]{1,2}-[0-9]{1,2}-[0-9]{4}$/i;
-    public static regex = DateInput.useTextDates ? DateInput.textRegex : DateInput.domRegex;
+    public static regex = DateInput.useText ? DateInput.textRegex : DateInput.domRegex;
 
     public text: string;
 
