@@ -39,6 +39,7 @@ export * from './components/vd-th';
 export * from './configuration/configuration';
 export * from './configuration/configuration-factory';
 export * from './converters/bool';
+export * from './converters/date-input';
 export * from './converters/date-time';
 export * from './converters/encode-uri';
 export * from './converters/locale';
@@ -46,6 +47,7 @@ export * from './converters/null';
 export * from './converters/uppercase';
 export * from './utilities/alert-helper';
 export * from './utilities/busy';
+export * from './utilities/date-input';
 export * from './utilities/fetch-base';
 export * from './utilities/http-fetch';
 export * from './utilities/input-file-reader';
@@ -84,7 +86,7 @@ export function configure(config: FrameworkConfiguration) {
     'vd-th',
     'vd-route',
   ];
-  const converters = ['bool', 'date-time', 'encode-uri', 'locale', 'null', 'uppercase'];
+  const converters = ['bool', 'date-input', 'date-time', 'encode-uri', 'locale', 'null', 'uppercase'];
 
   const basePath = './dist';
   const resources = components
