@@ -17,7 +17,7 @@ export declare abstract class FetchBase {
      * Gets the given data to the given url, and stores any returned errors.
      */
     protected getAsync<T>(url: string, options?: IFetchOptions): Promise<T>;
-    protected handleUnexpectedError<T>(error: string, options: IFetchOptions): Promise<IServiceResult<T>>;
+    protected handleUnexpectedError<T>(error: string, options: IFetchOptions, result?: IServiceResult<T>): Promise<IServiceResult<T>>;
 }
 export interface IFetchOptions {
     ignoreErrors: boolean;

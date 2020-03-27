@@ -28,7 +28,11 @@ export abstract class FetchBase {
 
       const value = await response.json();
       const result = value as IServiceResult<T>;
-      result.handled = false;
+
+      if (!result.success) {
+        return await this.handleUnexpectedError(result.firstMessage.message, options, result);
+      }
+
       return result;
     } catch (error) {
       return await this.handleUnexpectedError(error, options);
@@ -61,13 +65,18 @@ export abstract class FetchBase {
     }
   }
 
-  protected async handleUnexpectedError<T>(error: string, options: IFetchOptions): Promise<IServiceResult<T>> {
+  protected async handleUnexpectedError<T>(error: string, options: IFetchOptions, result?: IServiceResult<T>): Promise<IServiceResult<T>> {
     const handle = !options || !options.ignoreErrors;
     if (handle) {
       await this.commonDialogHelper.unexpectedError(error);
     }
 
-    return { success: false, handled: handle, firstMessage: { message: error } } as IServiceResult<T>;
+    if (!result) {
+      return { success: false, handled: handle, firstMessage: { message: error } } as IServiceResult<T>;
+    }
+
+    result.handled = handle;
+    return result;
   }
 }
 

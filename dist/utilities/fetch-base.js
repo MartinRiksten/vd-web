@@ -61,7 +61,7 @@ var FetchBase = /** @class */ (function () {
                         this.isFetching = true;
                         _a.label = 1;
                     case 1:
-                        _a.trys.push([1, 6, 8, 9]);
+                        _a.trys.push([1, 8, 10, 11]);
                         return [4 /*yield*/, this.http.fetchAsync(url, init)];
                     case 2:
                         response = _a.sent();
@@ -72,16 +72,18 @@ var FetchBase = /** @class */ (function () {
                     case 5:
                         value = _a.sent();
                         result = value;
-                        result.handled = false;
-                        return [2 /*return*/, result];
-                    case 6:
+                        if (!!result.success) return [3 /*break*/, 7];
+                        return [4 /*yield*/, this.handleUnexpectedError(result.firstMessage.message, options, result)];
+                    case 6: return [2 /*return*/, _a.sent()];
+                    case 7: return [2 /*return*/, result];
+                    case 8:
                         error_1 = _a.sent();
                         return [4 /*yield*/, this.handleUnexpectedError(error_1, options)];
-                    case 7: return [2 /*return*/, _a.sent()];
-                    case 8:
+                    case 9: return [2 /*return*/, _a.sent()];
+                    case 10:
                         this.isFetching = false;
                         return [7 /*endfinally*/];
-                    case 9: return [2 /*return*/];
+                    case 11: return [2 /*return*/];
                 }
             });
         });
@@ -127,7 +129,7 @@ var FetchBase = /** @class */ (function () {
             });
         });
     };
-    FetchBase.prototype.handleUnexpectedError = function (error, options) {
+    FetchBase.prototype.handleUnexpectedError = function (error, options, result) {
         return __awaiter(this, void 0, void 0, function () {
             var handle;
             return __generator(this, function (_a) {
@@ -139,7 +141,12 @@ var FetchBase = /** @class */ (function () {
                     case 1:
                         _a.sent();
                         _a.label = 2;
-                    case 2: return [2 /*return*/, { success: false, handled: handle, firstMessage: { message: error } }];
+                    case 2:
+                        if (!result) {
+                            return [2 /*return*/, { success: false, handled: handle, firstMessage: { message: error } }];
+                        }
+                        result.handled = handle;
+                        return [2 /*return*/, result];
                 }
             });
         });
