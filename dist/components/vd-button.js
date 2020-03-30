@@ -32,6 +32,7 @@ var VdButton = /** @class */ (function () {
             { kind: 'select', displayName: 'Selecteer', variant: 'btn-primary', icon: 'fas fa-check' },
             { kind: 'select-all', displayName: 'Alle', variant: 'btn-light', icon: 'fas fa-check-square' },
             { kind: 'deselect-all', displayName: 'Geen', variant: 'btn-light', icon: 'far fa-square' },
+            { kind: 'back', displayName: 'Terug', variant: 'btn-light', icon: 'fas fa-arrow-circle-left' }
         ];
     }
     VdButton.prototype.bind = function () {

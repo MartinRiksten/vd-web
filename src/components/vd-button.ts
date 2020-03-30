@@ -38,6 +38,7 @@ export class VdButton {
     { kind: 'select', displayName: 'Selecteer', variant: 'btn-primary', icon: 'fas fa-check' } as IButtonInfo,
     { kind: 'select-all', displayName: 'Alle', variant: 'btn-light', icon: 'fas fa-check-square' } as IButtonInfo,
     { kind: 'deselect-all', displayName: 'Geen', variant: 'btn-light', icon: 'far fa-square' } as IButtonInfo,
+    { kind: 'back', displayName: 'Terug', variant: 'btn-light', icon: 'fas fa-arrow-circle-left' } as IButtonInfo
   ];
 
   public bind() {
