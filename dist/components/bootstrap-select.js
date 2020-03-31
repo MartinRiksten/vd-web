@@ -14,6 +14,7 @@ var BootstrapSelect = /** @class */ (function () {
     function BootstrapSelect(taskQueue) {
         this.taskQueue = taskQueue;
         this.width = "100%";
+        this.virtualScroll = 50;
     }
     BootstrapSelect.prototype.attached = function () {
         var _this = this;

@@ -16,7 +16,7 @@ export declare class BootstrapSelect {
     displayName: string;
     inputId: string;
     width: string;
-    virtualScroll: string | number;
+    virtualScroll: number;
     picker: Element;
     constructor(taskQueue: TaskQueue);
     attached(): void;
