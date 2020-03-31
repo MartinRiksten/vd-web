@@ -3,7 +3,7 @@
     <div class="input-group" class.bind="groupClass" popover.bind="popoverOption" data-toggle.bind="dataToggle">
         <slot name="before"></slot>
         <div as-element="bootstrap-select" input-id.bind="inputId" class.bind="selectClass" display-name.bind="displayName" 
-              options.bind="options" selected.two-way="value" width.bind="width"></div>
+              options.bind="options" selected.two-way="value" width.bind="width" virtual-scroll.bind="virtualScroll"></div>
         <slot name="after"></slot>
         <slot name="after-1"></slot>
         <slot name="after-2"></slot>

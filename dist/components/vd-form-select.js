@@ -69,6 +69,10 @@ var VdFormSelect = /** @class */ (function (_super) {
     ], VdFormSelect.prototype, "value", void 0);
     __decorate([
         aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdFormSelect.prototype, "virtualScroll", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
         __metadata("design:type", Boolean)
     ], VdFormSelect.prototype, "autoFocus", void 0);
     __decorate([

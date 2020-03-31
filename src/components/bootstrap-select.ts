@@ -20,7 +20,7 @@ export class BootstrapSelect {
   @bindable public displayName!: string;
   @bindable public inputId: string;
   @bindable public width = "100%";
-
+  
   public picker!: Element;
 
   constructor(private readonly taskQueue: TaskQueue) {}

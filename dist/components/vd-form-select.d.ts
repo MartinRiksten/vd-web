@@ -9,6 +9,7 @@ export declare class VdFormSelect extends VdFormInput<string> {
     inputId: string;
     displayName: string;
     value: string;
+    virtualScroll: boolean | number;
     autoFocus: boolean;
     width: string;
     options: IBootstrapSelectOption[];

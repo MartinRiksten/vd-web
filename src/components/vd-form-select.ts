@@ -15,6 +15,7 @@ export class VdFormSelect extends VdFormInput<string> {
   @bindable public inputId: string;
   @bindable public displayName: string;
   @bindable public value: string;
+  @bindable public virtualScroll: boolean | number;
 
   @bindable public autoFocus: boolean;
   @bindable public width = "100%";
