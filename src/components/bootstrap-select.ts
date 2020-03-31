@@ -20,6 +20,7 @@ export class BootstrapSelect {
   @bindable public displayName!: string;
   @bindable public inputId: string;
   @bindable public width = "100%";
+  @bindable public virtualScroll: string | number;
   
   public picker!: Element;
 

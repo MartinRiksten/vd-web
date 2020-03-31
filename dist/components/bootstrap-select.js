@@ -63,6 +63,10 @@ var BootstrapSelect = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)
     ], BootstrapSelect.prototype, "width", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], BootstrapSelect.prototype, "virtualScroll", void 0);
     BootstrapSelect = __decorate([
         aurelia_framework_1.autoinject,
         __metadata("design:paramtypes", [aurelia_framework_1.TaskQueue])
