@@ -2,7 +2,7 @@
     <select class="selectpicker" ref="picker" data-show-tick="true" data-none-selected-text.bind="displayName" 
             data-size="8" data-container="body" data-live-search="true" data-live-search-style="contains" 
             data-live-search-normalize="true" data-width.bind="width" id.bind="inputId">
-        <option repeat.for="item of options" value.one-time="item.id" data-subtext.one-time="item.subtext">
+        <option virtual-repeat.for="item of options" value.one-time="item.id" data-subtext.one-time="item.subtext">
             ${item.option}
         </option>
     </select>
