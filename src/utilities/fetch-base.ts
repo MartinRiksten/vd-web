@@ -10,7 +10,7 @@ export abstract class FetchBase {
    * @param http: The injected http fetch instance
    */
   protected constructor(private readonly http: HttpFetch, 
-    protected readonly commonDialogHelper: CommonDialogHelper) {
+    protected readonly dialog: CommonDialogHelper) {
     }
 
   /**
@@ -68,7 +68,7 @@ export abstract class FetchBase {
   protected async handleUnexpectedError<T>(error: string, options: IFetchOptions, result?: IServiceResult<T>): Promise<IServiceResult<T>> {
     const handle = !options || !options.ignoreErrors;
     if (handle) {
-      await this.commonDialogHelper.unexpectedError(error);
+      await this.dialog.unexpectedError(error);
     }
 
     if (!result) {

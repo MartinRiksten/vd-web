@@ -59,8 +59,8 @@ var ServiceBase = /** @class */ (function (_super) {
      * Returns a newly created instance
      * @param http: The injected http fetch instance
      */
-    function ServiceBase(http, commonDialogHelper) {
-        var _this = _super.call(this, http, commonDialogHelper) || this;
+    function ServiceBase(http, dialog) {
+        var _this = _super.call(this, http, dialog) || this;
         /**
          * A place to store some data
          */

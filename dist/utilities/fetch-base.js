@@ -42,9 +42,9 @@ var FetchBase = /** @class */ (function () {
      * Returns a newly created instance
      * @param http: The injected http fetch instance
      */
-    function FetchBase(http, commonDialogHelper) {
+    function FetchBase(http, dialog) {
         this.http = http;
-        this.commonDialogHelper = commonDialogHelper;
+        this.dialog = dialog;
         this.isFetching = false;
     }
     /**
@@ -137,7 +137,7 @@ var FetchBase = /** @class */ (function () {
                     case 0:
                         handle = !options || !options.ignoreErrors;
                         if (!handle) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.commonDialogHelper.unexpectedError(error)];
+                        return [4 /*yield*/, this.dialog.unexpectedError(error)];
                     case 1:
                         _a.sent();
                         _a.label = 2;

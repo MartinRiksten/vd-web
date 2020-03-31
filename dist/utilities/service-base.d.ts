@@ -13,7 +13,7 @@ export declare abstract class ServiceBase<TModel> extends FetchBase {
      * Returns a newly created instance
      * @param http: The injected http fetch instance
      */
-    protected constructor(http: HttpFetch, commonDialogHelper: CommonDialogHelper);
+    protected constructor(http: HttpFetch, dialog: CommonDialogHelper);
     /**
      * Loads an object from the given url.
      * @param url: The url for the operation
