@@ -6,8 +6,8 @@
             <span innerhtml.bind="value"></span>
             <i if.bind="showIcon" class.bind="icon"></i>
         </a>
-        <a if.bind="!!value && !href" click.trigger="onClick($event)" target.bind="target">
-            <span innerhtml.bind="value" href></span>
+        <a if.bind="!!value && !href" click.trigger="onClick($event)" target.bind="target" href>
+            <span innerhtml.bind="value"></span>
             <i if.bind="showIcon" class.bind="icon"></i>
         </a>
         <slot name="after"></slot>
