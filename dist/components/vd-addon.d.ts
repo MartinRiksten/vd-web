@@ -1,4 +1,4 @@
-import { TooltipOption, PopoverOption } from 'bootstrap';
+import { PopoverOption, TooltipOption } from 'bootstrap';
 export interface IAddonInfo {
     kind: string;
     title: string;

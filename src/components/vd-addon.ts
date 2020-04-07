@@ -1,6 +1,6 @@
 import { bindable } from 'aurelia-framework';
 
-import { TooltipOption, PopoverOption } from 'bootstrap';
+import { PopoverOption, TooltipOption } from 'bootstrap';
 
 export interface IAddonInfo {
   kind: string;
