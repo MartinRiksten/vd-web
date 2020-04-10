@@ -41,7 +41,7 @@ export abstract class ServiceBase<TModel> extends FetchBase {
    * @param url: The url for the operation
    * @param data: The id of the instance to load
    */
-  protected async getBaseAsync(url: string, options?: IFetchOptions): Promise<TModel> {
+  protected async getBaseAsync(url: string, options?: IFetchOptions): Promise<IServiceResult<TModel>> {
     const result = await this.getAsync<TModel>(url, options);
     return result;
   }
