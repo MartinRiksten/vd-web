@@ -44,7 +44,7 @@ export abstract class FetchBase {
   /**
    * Gets the given data to the given url, and stores any returned errors.
    */
-  protected async getAsync<T>(url: string, options?: IFetchOptions): Promise<IServiceResult<T>> {
+  protected async getAsync<T>(url: string, options?: IFetchOptions): Promise<T> {
     const init = { method: 'GET' };
     this.isFetching = true;
     try {
@@ -55,10 +55,11 @@ export abstract class FetchBase {
       }
 
       const value = await response.json();
-      const result = value as IServiceResult<T>;
+      const result = value as T;
       return result;
     } catch (error) {
-      return await this.handleUnexpectedError<T>(error, options);
+      await this.handleUnexpectedError<T>(error, options);
+      return void 0;
     } finally {
       this.isFetching = false;
     }

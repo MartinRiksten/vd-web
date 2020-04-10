@@ -118,7 +118,9 @@ var FetchBase = /** @class */ (function () {
                     case 6:
                         error_2 = _a.sent();
                         return [4 /*yield*/, this.handleUnexpectedError(error_2, options)];
-                    case 7: return [2 /*return*/, _a.sent()];
+                    case 7:
+                        _a.sent();
+                        return [2 /*return*/, void 0];
                     case 8:
                         this.isFetching = false;
                         return [7 /*endfinally*/];

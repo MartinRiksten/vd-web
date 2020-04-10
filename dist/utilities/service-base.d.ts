@@ -25,7 +25,7 @@ export declare abstract class ServiceBase<TModel> extends FetchBase {
      * @param url: The url for the operation
      * @param data: The id of the instance to load
      */
-    protected getBaseAsync(url: string, options?: IFetchOptions): Promise<IServiceResult<TModel>>;
+    protected getBaseAsync(url: string, options?: IFetchOptions): Promise<TModel>;
     /**
      * Loads an object from the given url.
      * @param url: The url for the operation
