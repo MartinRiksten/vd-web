@@ -53,7 +53,15 @@ export class ListBase<T extends IFilterable> {
       this.selected = item;
     }
 
-    return !this.select && this.selected === item ? 'table-success' : '';
+    return !this.select && this.selected === item ? 'table-success selected' : '';
+  }
+
+  public GetCellClass(item: T) {
+    if (!this.selected && !!item) {
+      this.selected = item;
+    }
+
+    return !this.select && this.selected === item ? 'selector' : '';
   }
 
   /**

@@ -47,7 +47,13 @@ var ListBase = /** @class */ (function () {
         if (!this.selected && !!item) {
             this.selected = item;
         }
-        return !this.select && this.selected === item ? 'table-success' : '';
+        return !this.select && this.selected === item ? 'table-success selected' : '';
+    };
+    ListBase.prototype.GetCellClass = function (item) {
+        if (!this.selected && !!item) {
+            this.selected = item;
+        }
+        return !this.select && this.selected === item ? 'selector' : '';
     };
     /**
      * Gets the filtered and sorted list of items
