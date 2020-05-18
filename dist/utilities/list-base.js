@@ -43,13 +43,13 @@ var ListBase = /** @class */ (function () {
      * Gets the selected class
      * @param item The current item
      */
-    ListBase.prototype.GetRowClass = function (item) {
+    ListBase.prototype.getRowClass = function (item) {
         if (!this.selected && !!item) {
             this.selected = item;
         }
         return !this.select && this.selected === item ? 'table-success selected' : '';
     };
-    ListBase.prototype.GetCellClass = function (item) {
+    ListBase.prototype.getCellClass = function (item) {
         if (!this.selected && !!item) {
             this.selected = item;
         }
