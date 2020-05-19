@@ -56,7 +56,7 @@ export class ListBase<T extends IFilterable> {
     return !this.select && this.selected === item ? 'table-success selected' : '';
   }
 
-  public getCellClass(item: T) {
+  public getCellClass(item: T): string {
     if (!this.selected && !!item) {
       this.selected = item;
     }
