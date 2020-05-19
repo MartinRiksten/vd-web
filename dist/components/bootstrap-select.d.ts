@@ -8,6 +8,7 @@ export interface IBootstrapSelectOption {
     id: string;
     option: string;
     subtext: string;
+    order: any;
 }
 export declare class BootstrapSelect {
     private readonly taskQueue;

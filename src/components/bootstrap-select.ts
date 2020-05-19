@@ -11,6 +11,7 @@ export interface IBootstrapSelectOption {
   id: string;
   option: string;
   subtext: string;
+  order: any;
 }
 
 @autoinject
