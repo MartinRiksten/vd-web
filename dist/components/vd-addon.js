@@ -15,6 +15,7 @@ var VdAddon = /** @class */ (function () {
         this.type = 'text';
         this.types = [
             { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times', clickable: true },
+            { kind: 'more', title: 'Meer', variant: 'text-success', icon: 'fas fa-plus', clickable: true },
             { kind: 'search', title: 'Zoeken', variant: 'text-primary', icon: 'fas fa-search', clickable: true },
             { kind: 'info', title: 'Informatie', variant: 'text-info', icon: 'fas fa-info', clickable: true }
         ];

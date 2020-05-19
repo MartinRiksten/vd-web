@@ -26,6 +26,7 @@ export class VdAddon {
 
   private types = [
     { kind: 'eraser', title: 'Wissen', variant: 'text-danger', icon: 'fas fa-times', clickable: true } as IAddonInfo,
+    { kind: 'more', title: 'Meer', variant: 'text-success', icon: 'fas fa-plus', clickable: true } as IAddonInfo,
     { kind: 'search', title: 'Zoeken', variant: 'text-primary', icon: 'fas fa-search', clickable: true } as IAddonInfo,
     { kind: 'info', title: 'Informatie', variant: 'text-info', icon: 'fas fa-info', clickable: true } as IAddonInfo
   ];
