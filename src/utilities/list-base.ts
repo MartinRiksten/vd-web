@@ -48,7 +48,7 @@ export class ListBase<T extends IFilterable> {
    * Gets the selected class
    * @param item The current item
    */
-  public getRowClass(item: T) {
+  public getRowClass(item: T): string {
     if (!this.selected && !!item) {
       this.selected = item;
     }
