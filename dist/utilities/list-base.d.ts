@@ -28,7 +28,7 @@ export declare class ListBase<T extends IFilterable> {
      * @param item The current item
      */
     getRowClass(item: T): string;
-    getCellClass(item: T): "" | "selector";
+    getCellClass(item: T): string;
     /**
      * Gets the filtered and sorted list of items
      */
