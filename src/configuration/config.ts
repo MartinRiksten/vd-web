@@ -29,7 +29,7 @@ export class Config {
 
     /* function to restrict the input of an input control by implementing a paste event
         - data-regex contains the regex to use to validate a key */
-    $('body').on('paste', 'input[data-regex]', () => {
+    $('body').on('paste', 'input[data-regex]', event => {
       const $this = $(event.currentTarget as any);
       setTimeout(() => {
         const value = $this.val() as string;
