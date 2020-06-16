@@ -9,6 +9,9 @@ import { CommonDialogModel } from './common-dialog-model';
  */
 @autoinject
 export class CommonDialogHelper {
+
+  public static message = 'Er is een onverwachte fout opgetreden.';
+
   /**
    * Initializes a new instance of the CommonDialogs class
    * @param dialogService The injected dialog service
@@ -50,8 +53,7 @@ export class CommonDialogHelper {
    */
   public async unexpectedError(error: string): Promise<DialogOpenResult> {
     LogManager.getLogger('app').info(`Unexpected error: ${error}`);
-    const message = 'Er is een onverwachte fout opgetreden.';
-    const result = await this.message(message, CommonDialogType.Error);
+    const result = await this.message(CommonDialogHelper.message, CommonDialogType.Error);
     return result;
   }
 }

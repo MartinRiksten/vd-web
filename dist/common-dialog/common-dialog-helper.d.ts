@@ -5,6 +5,7 @@ import { CommonDialogType } from './common-dialog';
  */
 export declare class CommonDialogHelper {
     private readonly dialogService;
+    static message: string;
     /**
      * Initializes a new instance of the CommonDialogs class
      * @param dialogService The injected dialog service

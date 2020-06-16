@@ -60,6 +60,7 @@ var CommonDialogHelper = /** @class */ (function () {
     function CommonDialogHelper(dialogService) {
         this.dialogService = dialogService;
     }
+    CommonDialogHelper_1 = CommonDialogHelper;
     /**
      * Shows a dialog with a yes/no question
      * @param question The question for the user
@@ -121,13 +122,12 @@ var CommonDialogHelper = /** @class */ (function () {
      */
     CommonDialogHelper.prototype.unexpectedError = function (error) {
         return __awaiter(this, void 0, void 0, function () {
-            var message, result;
+            var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         aurelia_framework_1.LogManager.getLogger('app').info("Unexpected error: " + error);
-                        message = 'Er is een onverwachte fout opgetreden.';
-                        return [4 /*yield*/, this.message(message, common_dialog_1.CommonDialogType.Error)];
+                        return [4 /*yield*/, this.message(CommonDialogHelper_1.message, common_dialog_1.CommonDialogType.Error)];
                     case 1:
                         result = _a.sent();
                         return [2 /*return*/, result];
@@ -135,7 +135,9 @@ var CommonDialogHelper = /** @class */ (function () {
             });
         });
     };
-    CommonDialogHelper = __decorate([
+    var CommonDialogHelper_1;
+    CommonDialogHelper.message = 'Er is een onverwachte fout opgetreden.';
+    CommonDialogHelper = CommonDialogHelper_1 = __decorate([
         aurelia_framework_1.autoinject,
         __metadata("design:paramtypes", [aurelia_dialog_1.DialogService])
     ], CommonDialogHelper);
