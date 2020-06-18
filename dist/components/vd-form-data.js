@@ -14,6 +14,7 @@ var VdFormData = /** @class */ (function () {
     function VdFormData() {
         this.labelClass = 'col-md-6';
         this.groupClass = 'col-md-6';
+        this.dataClass = 'ml-2';
     }
     __decorate([
         aurelia_framework_1.bindable,
@@ -23,6 +24,10 @@ var VdFormData = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)
     ], VdFormData.prototype, "groupClass", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdFormData.prototype, "dataClass", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
