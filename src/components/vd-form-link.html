@@ -2,11 +2,11 @@
     <label class="font-weight-bold text-sm-flex-left text-md-flex-right" class.bind="labelClass">${displayName}</label>
     <div class.bind="groupClass">
         <slot name="before"></slot>
-        <a if.bind="!!value && !!href" href.bind="href" target.bind="target">
+        <a if.bind="!!value && !!href" href.bind="href" target.bind="linkTarget">
             <span innerhtml.bind="value"></span>
             <i if.bind="showIcon" class.bind="icon"></i>
         </a>
-        <a if.bind="!!value && !href" click.trigger="onClick($event)" target.bind="target" href>
+        <a if.bind="!!value && !href" click.trigger="onClick($event)" href>
             <span innerhtml.bind="value"></span>
             <i if.bind="showIcon" class.bind="icon"></i>
         </a>

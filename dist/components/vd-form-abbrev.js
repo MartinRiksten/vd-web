@@ -23,18 +23,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
-var vd_td_1 = require("./vd-td");
-var VdTdAbbrev = /** @class */ (function (_super) {
-    __extends(VdTdAbbrev, _super);
-    function VdTdAbbrev() {
+var vd_form_data_1 = require("./vd-form-data");
+var VdFormAbbrev = /** @class */ (function (_super) {
+    __extends(VdFormAbbrev, _super);
+    function VdFormAbbrev() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.cutoff = 25;
         _this.usePopover = 'false';
+        _this.headerClass = '';
+        _this.bodyClass = '';
+        _this.tooltipClass = '';
         _this.abbrev = false;
         return _this;
     }
-    VdTdAbbrev.prototype.bind = function () {
-        _super.prototype.bind.call(this);
+    VdFormAbbrev.prototype.bind = function () {
         this.abbrev = !!this.value && this.value.length > this.cutoff;
         this.short = this.abbrev ? this.value.substr(0, this.cutoff) : this.value;
         this.tooltipOption = !this.abbrev || this.usePopover === 'true'
@@ -43,39 +45,47 @@ var VdTdAbbrev = /** @class */ (function (_super) {
                 container: 'body',
                 html: false,
                 placement: 'right',
+                template: VdFormAbbrev.tooltip
+                    .replace("${tooltip-class}", this.tooltipClass),
                 title: this.value,
                 trigger: 'hover'
             };
         this.popoverOption = !this.abbrev || this.usePopover !== 'true'
             ? void 0
             : {
+                boundary: 'viewport',
                 container: 'body',
                 content: this.value,
-                html: false, placement: 'right',
+                placement: 'right',
+                template: VdFormAbbrev.popover
+                    .replace("${header-class}", this.headerClass)
+                    .replace("${body-class}", this.bodyClass),
                 title: this.displayName,
                 trigger: 'hover'
             };
     };
-    __decorate([
-        aurelia_framework_1.bindable,
-        __metadata("design:type", String)
-    ], VdTdAbbrev.prototype, "value", void 0);
-    __decorate([
-        aurelia_framework_1.bindable,
-        __metadata("design:type", Object)
-    ], VdTdAbbrev.prototype, "instance", void 0);
+    VdFormAbbrev.popover = '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header ${header-class}"></h3><div class="popover-body ${body-class}"></div></div>';
+    VdFormAbbrev.tooltip = '<div class="tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner ${tooltip-class}"></div></div>';
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)
-    ], VdTdAbbrev.prototype, "cutoff", void 0);
+    ], VdFormAbbrev.prototype, "cutoff", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)
-    ], VdTdAbbrev.prototype, "usePopover", void 0);
+    ], VdFormAbbrev.prototype, "usePopover", void 0);
     __decorate([
         aurelia_framework_1.bindable,
-        __metadata("design:type", String)
-    ], VdTdAbbrev.prototype, "displayName", void 0);
-    return VdTdAbbrev;
-}(vd_td_1.VdTd));
-exports.VdTdAbbrev = VdTdAbbrev;
+        __metadata("design:type", Object)
+    ], VdFormAbbrev.prototype, "headerClass", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdFormAbbrev.prototype, "bodyClass", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdFormAbbrev.prototype, "tooltipClass", void 0);
+    return VdFormAbbrev;
+}(vd_form_data_1.VdFormData));
+exports.VdFormAbbrev = VdFormAbbrev;

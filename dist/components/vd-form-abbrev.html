@@ -1,0 +1,14 @@
+<template>
+    <vd-form-data class="d-contents"
+                  label-class.bind="labelClass"
+                  group-class.bind="groupClass"
+                  data-class.bind="dataClass"
+                  display-name.bind="displayName"
+                  value.bind="short">
+        <i slot="after"
+           if.bind="abbrev"
+           class="fas fa-comment-dots"
+           popover.bind="popoverOption"
+           tooltip.bind="tooltipOption"></i>
+    </vd-form-data>
+</template>

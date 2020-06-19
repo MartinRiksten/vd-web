@@ -30,7 +30,7 @@ var VdFormLink = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.showIcon = true;
         _this.href = '#';
-        _this.target = "_self";
+        _this.linkTarget = "_self";
         _this.icon = 'fas fa-chevron-circle-right';
         return _this;
     }
@@ -69,7 +69,7 @@ var VdFormLink = /** @class */ (function (_super) {
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
-    ], VdFormLink.prototype, "target", void 0);
+    ], VdFormLink.prototype, "linkTarget", void 0);
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)

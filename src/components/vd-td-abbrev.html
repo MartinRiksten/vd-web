@@ -1,5 +1,10 @@
 ﻿<template>
     <span as-element="vd-td" value.bind="short">
-        <i slot="after" if.bind="abbrev" class="fas fa-comment-dots" tooltip.bind="tooltipOption"></i>
+        <i slot="after" 
+           if.bind="abbrev" 
+           class="fas fa-comment-dots" 
+           tooltip.bind="tooltipOption"
+           popover.bind="popoverOption">
+        </i>
     </span>
 </template>
