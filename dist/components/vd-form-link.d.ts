@@ -10,5 +10,6 @@ export declare class VdFormLink extends VdFormData {
     icon: string;
     clickTarget: string | undefined;
     clickHandler: (event: Event) => void;
+    bind(): void;
     onClick(event: Event): void;
 }

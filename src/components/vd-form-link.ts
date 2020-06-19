@@ -13,6 +13,12 @@ export class VdFormLink extends VdFormData {
   @bindable public clickTarget: string | undefined;
   @bindable public clickHandler!: (event: Event) => void;
 
+  public bind() {
+    if (this.href === "#" && (!this.clickTarget || !this.clickHandler)) {
+      this.href = "";
+    }
+  }
+
   public onClick(event: Event) {
     if (!!this.clickTarget) {
       $(this.clickTarget).click();

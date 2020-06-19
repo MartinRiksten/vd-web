@@ -34,6 +34,11 @@ var VdFormLink = /** @class */ (function (_super) {
         _this.icon = 'fas fa-chevron-circle-right';
         return _this;
     }
+    VdFormLink.prototype.bind = function () {
+        if (this.href === "#" && (!this.clickTarget || !this.clickHandler)) {
+            this.href = "";
+        }
+    };
     VdFormLink.prototype.onClick = function (event) {
         if (!!this.clickTarget) {
             $(this.clickTarget).click();
