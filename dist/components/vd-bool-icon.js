@@ -21,7 +21,7 @@ var VdBoolIcon = /** @class */ (function () {
                 : VdBoolIcon.UndeterminedIcon;
     };
     VdBoolIcon.SuccessIcon = 'fa-check text-success';
-    VdBoolIcon.FailureIcon = 'fa-question text-warning';
+    VdBoolIcon.FailureIcon = 'fa-times text-danger';
     VdBoolIcon.UndeterminedIcon = '';
     __decorate([
         aurelia_framework_1.bindable,
