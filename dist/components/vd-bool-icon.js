@@ -20,8 +20,8 @@ var VdBoolIcon = /** @class */ (function () {
                 ? VdBoolIcon.FailureIcon
                 : VdBoolIcon.UndeterminedIcon;
     };
-    VdBoolIcon.SuccessIcon = 'fa-check text-success';
-    VdBoolIcon.FailureIcon = 'fa-times text-danger';
+    VdBoolIcon.SuccessIcon = 'fas fa-check text-success';
+    VdBoolIcon.FailureIcon = 'fas fa-times text-danger';
     VdBoolIcon.UndeterminedIcon = '';
     __decorate([
         aurelia_framework_1.bindable,

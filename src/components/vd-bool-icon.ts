@@ -1,8 +1,8 @@
 ﻿import { bindable } from 'aurelia-framework';
 
 export class VdBoolIcon {
-  public static SuccessIcon = 'fa-check text-success';
-  public static FailureIcon = 'fa-times text-danger';
+  public static SuccessIcon = 'fas fa-check text-success';
+  public static FailureIcon = 'fas fa-times text-danger';
   public static UndeterminedIcon = '';
 
   @bindable public value: boolean;
