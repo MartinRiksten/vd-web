@@ -3,7 +3,7 @@
 export class VdBoolIcon {
   public static SuccessIcon = 'fa-check text-success';
   public static FailureIcon = 'fa-question text-warning';
-  public static UndeterminedIcon = 'fa-question text-warning';
+  public static UndeterminedIcon = '';
 
   @bindable public value: boolean;
 
