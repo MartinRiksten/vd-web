@@ -15,11 +15,14 @@ var VdBoolIcon = /** @class */ (function () {
     }
     VdBoolIcon.prototype.getIcon = function (value) {
         return value === true
-            ? 'fa-check text-success'
+            ? VdBoolIcon.SuccessIcon
             : value === false
-                ? 'fa-times text-danger'
-                : 'fa-question text-warning';
+                ? VdBoolIcon.FailureIcon
+                : VdBoolIcon.UndeterminedIcon;
     };
+    VdBoolIcon.SuccessIcon = 'fa-check text-success';
+    VdBoolIcon.FailureIcon = 'fa-question text-warning';
+    VdBoolIcon.UndeterminedIcon = 'fa-question text-warning';
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Boolean)

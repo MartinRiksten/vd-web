@@ -1,4 +1,7 @@
 export declare class VdBoolIcon {
+    static SuccessIcon: string;
+    static FailureIcon: string;
+    static UndeterminedIcon: string;
     value: boolean;
-    getIcon(value: boolean): "fa-check text-success" | "fa-times text-danger" | "fa-question text-warning";
+    getIcon(value: boolean): string;
 }
