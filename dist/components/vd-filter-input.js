@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
 var VdFilterInput = /** @class */ (function () {
     function VdFilterInput() {
-        this.groupClass = "";
+        this.groupClass = "input-group-sm col-sm-4 col-lg-3 col-x3l-2 pr-1 mb-1";
     }
     __decorate([
         aurelia_framework_1.bindable,
