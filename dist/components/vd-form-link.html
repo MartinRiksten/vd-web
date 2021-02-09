@@ -1,5 +1,5 @@
 <template>
-    <label class="font-weight-bold text-sm-flex-left text-md-flex-right" class.bind="labelClass">${displayName}</label>
+    <label class.bind="labelClass">${displayName}</label>
     <div class.bind="groupClass">
         <slot name="before"></slot>
         <a if.bind="!!value && !!href" href.bind="href" target.bind="linkTarget">
