@@ -3,7 +3,7 @@
 export class VdFormData {
   public static defaultLabelClass = 'font-weight-bold text-sm-flex-left text-md-flex-right col-xs-12 col-md-6 mb-1';
   public static defaultGroupClass = 'col-xs-12 col-md-6';
-  public static defaultDataClass = 'ml-2';
+  public static defaultDataClass = 'ml-3 ml-lg-2';
   
   @bindable public labelClass = VdFormData.defaultLabelClass;
   @bindable public groupClass = VdFormData.defaultGroupClass;
