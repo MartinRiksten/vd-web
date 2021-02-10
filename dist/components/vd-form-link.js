@@ -28,6 +28,7 @@ var VdFormLink = /** @class */ (function (_super) {
     __extends(VdFormLink, _super);
     function VdFormLink() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.groupClass = VdFormLink.defaultGroupClass;
         _this.showIcon = true;
         _this.href = '#';
         _this.linkTarget = "_self";
@@ -48,13 +49,14 @@ var VdFormLink = /** @class */ (function (_super) {
         }
     };
     VdFormLink.defaultIconClass = 'fas fa-chevron-circle-right';
+    VdFormLink.defaultGroupClass = 'col-md-6 pl-4';
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
     ], VdFormLink.prototype, "labelClass", void 0);
     __decorate([
         aurelia_framework_1.bindable,
-        __metadata("design:type", String)
+        __metadata("design:type", Object)
     ], VdFormLink.prototype, "groupClass", void 0);
     __decorate([
         aurelia_framework_1.bindable,
