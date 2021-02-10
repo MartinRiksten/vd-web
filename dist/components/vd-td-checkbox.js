@@ -28,9 +28,10 @@ var VdTdCheckbox = /** @class */ (function (_super) {
     __extends(VdTdCheckbox, _super);
     function VdTdCheckbox() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.variant = 'text-success';
+        _this.variant = VdTdCheckbox.defaultVariant;
         return _this;
     }
+    VdTdCheckbox.defaultVariant = 'text-success';
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Boolean)

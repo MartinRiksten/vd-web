@@ -30,7 +30,7 @@ var VdTdLink = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.showIcon = true;
         _this.href = '#';
-        _this.icon = 'fas fa-chevron-circle-right';
+        _this.icon = VdTdLink.defaultIcon;
         return _this;
     }
     VdTdLink.prototype.onClick = function (event) {
@@ -41,6 +41,7 @@ var VdTdLink = /** @class */ (function (_super) {
             this.clickHandler(event);
         }
     };
+    VdTdLink.defaultIcon = 'fas fa-chevron-circle-right';
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)

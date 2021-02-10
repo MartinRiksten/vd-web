@@ -31,7 +31,7 @@ var VdFormLink = /** @class */ (function (_super) {
         _this.showIcon = true;
         _this.href = '#';
         _this.linkTarget = "_self";
-        _this.icon = 'fas fa-chevron-circle-right';
+        _this.icon = VdFormLink.defaultIconClass;
         return _this;
     }
     VdFormLink.prototype.bind = function () {
@@ -47,6 +47,7 @@ var VdFormLink = /** @class */ (function (_super) {
             this.clickHandler(event);
         }
     };
+    VdFormLink.defaultIconClass = 'fas fa-chevron-circle-right';
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)

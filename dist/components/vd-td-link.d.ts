@@ -1,5 +1,6 @@
 import { VdTd } from './vd-td';
 export declare class VdTdLink extends VdTd<string> {
+    static defaultIcon: string;
     showIcon: boolean;
     href: string;
     icon: string;

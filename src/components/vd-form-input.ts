@@ -1,7 +1,11 @@
+import { VdFormData } from "./vd-form-data";
+
 export class VdFormInput<T> {
-  public labelClass = 'font-weight-bold text-sm-flex-left text-md-flex-right col-md-6 mb-1';
-  public groupClass = 'col-md-6';
-  public inputClass = '';
+  public static defaultInputClass = '';
+
+  public labelClass = VdFormData.defaultLabelClass;
+  public groupClass = VdFormData.defaultGroupClass;
+  public inputClass = VdFormInput.defaultInputClass;
 
   public inputId: string;
   public displayName: string;

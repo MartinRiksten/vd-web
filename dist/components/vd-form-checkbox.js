@@ -23,15 +23,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
+var vd_form_data_1 = require("./vd-form-data");
 var vd_form_input_1 = require("./vd-form-input");
 var VdFormCheckbox = /** @class */ (function (_super) {
     __extends(VdFormCheckbox, _super);
     function VdFormCheckbox() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.labelClass = 'col-md-6';
-        _this.groupClass = 'offset-md-4';
+        _this.labelClass = VdFormCheckbox.defaultLabelClass;
+        _this.groupClass = VdFormCheckbox.defaultGroupClass;
         return _this;
     }
+    VdFormCheckbox.defaultLabelClass = vd_form_data_1.VdFormData.defaultLabelClass;
+    VdFormCheckbox.defaultGroupClass = 'offset-md-4';
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)

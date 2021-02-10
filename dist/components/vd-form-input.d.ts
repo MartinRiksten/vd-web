@@ -1,4 +1,5 @@
 export declare class VdFormInput<T> {
+    static defaultInputClass: string;
     labelClass: string;
     groupClass: string;
     inputClass: string;

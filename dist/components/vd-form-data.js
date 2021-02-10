@@ -12,10 +12,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_framework_1 = require("aurelia-framework");
 var VdFormData = /** @class */ (function () {
     function VdFormData() {
-        this.labelClass = 'col-md-6';
-        this.groupClass = 'col-md-6';
-        this.dataClass = 'ml-2';
+        this.labelClass = VdFormData.defaultLabelClass;
+        this.groupClass = VdFormData.defaultGroupClass;
+        this.dataClass = VdFormData.defaultDataClass;
     }
+    VdFormData.defaultLabelClass = 'font-weight-bold text-sm-flex-left text-md-flex-right col-xs-12 col-md-6 mb-1';
+    VdFormData.defaultGroupClass = 'col-xs-12 col-md-6';
+    VdFormData.defaultDataClass = 'ml-2';
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", Object)
