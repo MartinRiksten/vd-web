@@ -49,7 +49,7 @@ var VdFormLink = /** @class */ (function (_super) {
         }
     };
     VdFormLink.defaultIconClass = 'fas fa-chevron-circle-right';
-    VdFormLink.defaultGroupClass = 'col-md-6 pl-4';
+    VdFormLink.defaultGroupClass = 'col-md-7 pl-4';
     __decorate([
         aurelia_framework_1.bindable,
         __metadata("design:type", String)

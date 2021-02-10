@@ -16,8 +16,8 @@ var VdFormData = /** @class */ (function () {
         this.groupClass = VdFormData.defaultGroupClass;
         this.dataClass = VdFormData.defaultDataClass;
     }
-    VdFormData.defaultLabelClass = 'font-weight-bold text-sm-flex-left text-md-flex-right col-xs-12 col-md-6 mb-1';
-    VdFormData.defaultGroupClass = 'col-xs-12 col-md-6';
+    VdFormData.defaultLabelClass = 'font-weight-bold text-sm-flex-left text-md-flex-right col-xs-12 col-md-5 mb-1';
+    VdFormData.defaultGroupClass = 'col-xs-12 col-md-7';
     VdFormData.defaultDataClass = 'ml-3 ml-lg-2';
     __decorate([
         aurelia_framework_1.bindable,

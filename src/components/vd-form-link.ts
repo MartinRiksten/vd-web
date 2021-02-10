@@ -3,7 +3,7 @@ import { VdFormData } from './vd-form-data';
 
 export class VdFormLink extends VdFormData {
 public static defaultIconClass = 'fas fa-chevron-circle-right';
-public static defaultGroupClass = 'col-md-6 pl-4';
+public static defaultGroupClass = 'col-md-7 pl-4';
 
   @bindable public labelClass: string;
   @bindable public groupClass = VdFormLink.defaultGroupClass;
