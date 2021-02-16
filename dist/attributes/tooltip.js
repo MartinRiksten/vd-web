@@ -20,7 +20,34 @@ var TooltipCustomAttribute = /** @class */ (function () {
         this.element = element;
         this.taskQueue = taskQueue;
     }
+    Object.defineProperty(TooltipCustomAttribute.prototype, "value", {
+        get: function () {
+            return this.valueValue;
+        },
+        set: function (value) {
+            this.valueValue = value;
+            this.valueChanged();
+        },
+        enumerable: true,
+        configurable: true
+    });
     TooltipCustomAttribute.prototype.attached = function () {
+        this.initialize();
+    };
+    TooltipCustomAttribute.prototype.detached = function () {
+        this.finalize();
+    };
+    TooltipCustomAttribute.prototype.valueChanged = function () {
+        this.finalize();
+        this.initialize();
+    };
+    TooltipCustomAttribute.prototype.finalize = function () {
+        if (!this.value) {
+            return;
+        }
+        jquery_1.default(this.element).tooltip('dispose');
+    };
+    TooltipCustomAttribute.prototype.initialize = function () {
         var _this = this;
         if (!this.value) {
             return;
@@ -29,12 +56,6 @@ var TooltipCustomAttribute = /** @class */ (function () {
         this.taskQueue.queueTask(function () {
             jquery_1.default(_this.element).tooltip(option);
         });
-    };
-    TooltipCustomAttribute.prototype.detached = function () {
-        if (!this.value) {
-            return;
-        }
-        jquery_1.default(this.element).tooltip('dispose');
     };
     TooltipCustomAttribute = __decorate([
         aurelia_framework_1.autoinject,
