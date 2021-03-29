@@ -20,8 +20,8 @@ export declare abstract class FetchBase {
     protected handleUnexpectedError<T>(error: string, options: IFetchOptions, result?: IServiceResult<T>): Promise<IServiceResult<T>>;
 }
 export interface IFetchOptions {
-    ignoreErrors: boolean;
-    ignoreErrorsWhen: () => boolean;
+    ignoreErrors?: boolean;
+    ignoreErrorsWhen?: () => boolean;
 }
 /**
  * Interface for service error information.

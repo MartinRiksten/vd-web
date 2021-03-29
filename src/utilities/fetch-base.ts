@@ -81,8 +81,8 @@ export abstract class FetchBase {
 }
 
 export interface IFetchOptions {
-  ignoreErrors: boolean;
-  ignoreErrorsWhen: () => boolean;
+  ignoreErrors?: boolean;
+  ignoreErrorsWhen?: () => boolean;
 }
 
 /**
