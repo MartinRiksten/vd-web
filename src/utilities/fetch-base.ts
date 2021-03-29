@@ -66,7 +66,7 @@ export abstract class FetchBase {
   }
 
   protected async handleUnexpectedError<T>(error: string, options: IFetchOptions, result?: IServiceResult<T>): Promise<IServiceResult<T>> {
-    const handle = !options || !options.ignoreErrors;
+    const handle = !options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen()));
     if (handle) {
       await this.dialog.unexpectedError(error);
     }
@@ -82,6 +82,7 @@ export abstract class FetchBase {
 
 export interface IFetchOptions {
   ignoreErrors: boolean;
+  ignoreErrorsWhen: () => boolean;
 }
 
 /**

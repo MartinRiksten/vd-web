@@ -135,7 +135,7 @@ var FetchBase = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        handle = !options || !options.ignoreErrors;
+                        handle = !options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen()));
                         if (!handle) return [3 /*break*/, 2];
                         return [4 /*yield*/, this.dialog.unexpectedError(error)];
                     case 1:

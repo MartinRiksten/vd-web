@@ -21,6 +21,7 @@ export declare abstract class FetchBase {
 }
 export interface IFetchOptions {
     ignoreErrors: boolean;
+    ignoreErrorsWhen: () => boolean;
 }
 /**
  * Interface for service error information.
