@@ -21,7 +21,7 @@ export class HttpFetch {
       const response = await this.http.fetch(url, init);
       return response;
     } finally {
-      this.isFetching--;
+      this.isFetching = this.isFetching === 0 ? 0 : this.isFetching - 1;
     }
   }
 }

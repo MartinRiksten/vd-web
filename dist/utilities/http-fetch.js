@@ -75,7 +75,7 @@ var HttpFetch = /** @class */ (function () {
                         response = _a.sent();
                         return [2 /*return*/, response];
                     case 3:
-                        this.isFetching--;
+                        this.isFetching = this.isFetching === 0 ? 0 : this.isFetching - 1;
                         return [7 /*endfinally*/];
                     case 4: return [2 /*return*/];
                 }
