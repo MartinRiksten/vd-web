@@ -1,11 +1,11 @@
 <template>
     <slot name="before"></slot>
     <a if.bind="!!value && !!href" href.bind="href" target.bind="target">
-        <span innerhtml.bind="value"></span>
+        <span text-content.bind="value"></span>
         <i if.bind="showIcon" class.bind="icon"></i>
     </a>
     <a if.bind="!!value && !href" click.trigger="onClick($event)" target.bind="target">
-        <span innerhtml.bind="value"></span>
+        <span text-content.bind="value"></span>
         <i if.bind="showIcon" class.bind="icon"></i>
     </a>
     <slot name="after"></slot>

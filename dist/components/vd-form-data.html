@@ -2,7 +2,7 @@
     <label class.bind="labelClass">${displayName}</label>
     <div class.bind="groupClass">
         <slot name="before"></slot>
-        <span class.bind="dataClass" innerhtml.bind="value"></span>
+        <span class.bind="dataClass" text-content.bind="value"></span>
         <slot name="after"></slot>
     </div>
 </template>

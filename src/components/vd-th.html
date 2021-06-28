@@ -1,6 +1,6 @@
 ﻿<template>
     <slot name="before"></slot>
-    <span innerhtml.bind="displayName"></span>
+    <span text-content.bind="displayName"></span>
     <i cass="ml-1" class.bind="getClass(order.by, order.ascending)"></i>
     <slot name="after"></slot>
 </template>
