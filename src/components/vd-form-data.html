@@ -1,8 +1,8 @@
 ﻿<template>
     <label class.bind="labelClass">${displayName}</label>
-    <div class.bind="groupClass" popover.bind="popoverOption" >
+    <div class.bind="groupClass" >
         <slot name="before"></slot>
-        <span class.bind="dataClass" text-content.bind="value"></span>
+        <span class.bind="dataClass" text-content.bind="value" popover.bind="popoverOption" ></span>
         <slot name="after"></slot>
     </div>
 </template>
