@@ -15,6 +15,11 @@ var VdFormData = /** @class */ (function () {
         this.labelClass = VdFormData.defaultLabelClass;
         this.groupClass = VdFormData.defaultGroupClass;
         this.dataClass = VdFormData.defaultDataClass;
+        this.popoverOption = {
+            container: 'body',
+            placement: 'right',
+            trigger: 'manual',
+        };
     }
     VdFormData.defaultLabelClass = 'font-weight-bold text-sm-flex-left text-md-flex-right col-xs-12 col-md-5 mb-1';
     VdFormData.defaultGroupClass = 'col-xs-12 col-md-7';
@@ -39,6 +44,10 @@ var VdFormData = /** @class */ (function () {
         aurelia_framework_1.bindable,
         __metadata("design:type", String)
     ], VdFormData.prototype, "value", void 0);
+    __decorate([
+        aurelia_framework_1.bindable,
+        __metadata("design:type", Object)
+    ], VdFormData.prototype, "popoverOption", void 0);
     return VdFormData;
 }());
 exports.VdFormData = VdFormData;

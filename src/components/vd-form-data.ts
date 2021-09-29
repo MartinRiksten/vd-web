@@ -1,4 +1,5 @@
 ﻿import { bindable } from 'aurelia-framework';
+import { PopoverOption } from 'bootstrap';
 
 export class VdFormData {
   public static defaultLabelClass = 'font-weight-bold text-sm-flex-left text-md-flex-right col-xs-12 col-md-5 mb-1';
@@ -10,4 +11,10 @@ export class VdFormData {
   @bindable public dataClass = VdFormData.defaultDataClass;
   @bindable public displayName: string;
   @bindable public value: string;
+
+  @bindable public popoverOption: PopoverOption | string = {
+    container: 'body',
+    placement: 'right',
+    trigger: 'manual',
+  } as PopoverOption;
 }

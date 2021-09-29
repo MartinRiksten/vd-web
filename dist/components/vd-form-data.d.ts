@@ -1,3 +1,4 @@
+import { PopoverOption } from 'bootstrap';
 export declare class VdFormData {
     static defaultLabelClass: string;
     static defaultGroupClass: string;
@@ -7,4 +8,5 @@ export declare class VdFormData {
     dataClass: string;
     displayName: string;
     value: string;
+    popoverOption: PopoverOption | string;
 }

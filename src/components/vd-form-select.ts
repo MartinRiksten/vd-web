@@ -1,6 +1,5 @@
 import { PopoverOption } from 'bootstrap';
 
-import { EventAggregator, Subscription } from 'aurelia-event-aggregator';
 import { autoinject, bindable } from 'aurelia-framework';
 import { IBootstrapSelectOption } from './bootstrap-select';
 import { VdFormInput } from './vd-form-input';
