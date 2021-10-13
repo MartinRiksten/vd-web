@@ -52,7 +52,7 @@ export abstract class FetchBase {
     try {
       const response = await this.http.fetchAsync(url, init);
       if (!response.ok) {
-        await this.handleUnexpectedError<T>(response.statusText, options);
+        this.handleUnexpectedError<T>(response.statusText, options);
         return void 0;
       }
 
@@ -60,23 +60,23 @@ export abstract class FetchBase {
       const result = value as T;
       return result;
     } catch (error) {
-      await this.handleUnexpectedError<T>(error, options);
+      this.handleUnexpectedError<T>(error, options);
       return void 0;
     } finally {
       this.isFetching = false;
     }
   }
 
-  protected async handleUnexpectedError<T>(error: string, options: IFetchOptions, result?: IServiceResult<T>): Promise<IServiceResult<T>> {
+  protected handleUnexpectedError<T>(error: string, options: IFetchOptions, result?: IServiceResult<T>): IServiceResult<T> {
     const useAlert = !!result && !!result.firstMessage && !!options && !!options.alertErrorsWhen && options.alertErrorsWhen(result);
     const useDialog = !useAlert && (!options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen(result))));
     
     if (useAlert) {
-      await this.alert.show(result.firstMessage.message);
+      this.alert.show(result.firstMessage.message);
     }
 
     if (useDialog) {
-      await this.dialog.unexpectedError(error);
+      this.dialog.unexpectedError(error);
     }
 
     if (!result) {

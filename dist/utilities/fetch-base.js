@@ -102,62 +102,45 @@ var FetchBase = /** @class */ (function () {
                         this.isFetching = true;
                         _a.label = 1;
                     case 1:
-                        _a.trys.push([1, 6, 8, 9]);
+                        _a.trys.push([1, 4, 5, 6]);
                         return [4 /*yield*/, this.http.fetchAsync(url, init)];
                     case 2:
                         response = _a.sent();
-                        if (!!response.ok) return [3 /*break*/, 4];
-                        return [4 /*yield*/, this.handleUnexpectedError(response.statusText, options)];
+                        if (!response.ok) {
+                            this.handleUnexpectedError(response.statusText, options);
+                            return [2 /*return*/, void 0];
+                        }
+                        return [4 /*yield*/, response.json()];
                     case 3:
-                        _a.sent();
-                        return [2 /*return*/, void 0];
-                    case 4: return [4 /*yield*/, response.json()];
-                    case 5:
                         value = _a.sent();
                         result = value;
                         return [2 /*return*/, result];
-                    case 6:
+                    case 4:
                         error_2 = _a.sent();
-                        return [4 /*yield*/, this.handleUnexpectedError(error_2, options)];
-                    case 7:
-                        _a.sent();
+                        this.handleUnexpectedError(error_2, options);
                         return [2 /*return*/, void 0];
-                    case 8:
+                    case 5:
                         this.isFetching = false;
                         return [7 /*endfinally*/];
-                    case 9: return [2 /*return*/];
+                    case 6: return [2 /*return*/];
                 }
             });
         });
     };
     FetchBase.prototype.handleUnexpectedError = function (error, options, result) {
-        return __awaiter(this, void 0, void 0, function () {
-            var useAlert, useDialog;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        useAlert = !!result && !!result.firstMessage && !!options && !!options.alertErrorsWhen && options.alertErrorsWhen(result);
-                        useDialog = !useAlert && (!options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen(result))));
-                        if (!useAlert) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.alert.show(result.firstMessage.message)];
-                    case 1:
-                        _a.sent();
-                        _a.label = 2;
-                    case 2:
-                        if (!useDialog) return [3 /*break*/, 4];
-                        return [4 /*yield*/, this.dialog.unexpectedError(error)];
-                    case 3:
-                        _a.sent();
-                        _a.label = 4;
-                    case 4:
-                        if (!result) {
-                            return [2 /*return*/, { success: false, handled: useDialog || useAlert, firstMessage: { message: error } }];
-                        }
-                        result.handled = useDialog || useAlert;
-                        return [2 /*return*/, result];
-                }
-            });
-        });
+        var useAlert = !!result && !!result.firstMessage && !!options && !!options.alertErrorsWhen && options.alertErrorsWhen(result);
+        var useDialog = !useAlert && (!options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen(result))));
+        if (useAlert) {
+            this.alert.show(result.firstMessage.message);
+        }
+        if (useDialog) {
+            this.dialog.unexpectedError(error);
+        }
+        if (!result) {
+            return { success: false, handled: useDialog || useAlert, firstMessage: { message: error } };
+        }
+        result.handled = useDialog || useAlert;
+        return result;
     };
     return FetchBase;
 }());
