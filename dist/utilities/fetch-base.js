@@ -137,7 +137,7 @@ var FetchBase = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         useAlert = !!result && !!result.firstMessage && !!options && !!options.alertErrorsWhen && options.alertErrorsWhen(result);
-                        useDialog = !useAlert && !options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen(result)));
+                        useDialog = !useAlert && (!options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen(result))));
                         if (!useAlert) return [3 /*break*/, 2];
                         return [4 /*yield*/, this.alert.show(result.firstMessage.message)];
                     case 1:
