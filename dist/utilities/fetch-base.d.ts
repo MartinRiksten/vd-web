@@ -1,14 +1,16 @@
 import { CommonDialogHelper } from '..';
+import { AlertHelper } from './alert-helper';
 import { HttpFetch } from './http-fetch';
 export declare abstract class FetchBase {
     private readonly http;
     protected readonly dialog: CommonDialogHelper;
+    protected readonly alert: AlertHelper;
     isFetching: boolean;
     /**
      * Returns a newly created instance
      * @param http: The injected http fetch instance
      */
-    protected constructor(http: HttpFetch, dialog: CommonDialogHelper);
+    protected constructor(http: HttpFetch, dialog: CommonDialogHelper, alert: AlertHelper);
     /**
      * Posts the given data to the given url, and stores any returned errors.
      */
@@ -22,6 +24,7 @@ export declare abstract class FetchBase {
 export interface IFetchOptions {
     ignoreErrors?: boolean;
     ignoreErrorsWhen?: (result: IServiceResultBase) => boolean;
+    alertErrorsWhen?: (result: IServiceResultBase) => boolean;
 }
 /**
  * Interface for service error information.

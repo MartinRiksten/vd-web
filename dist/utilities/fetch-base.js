@@ -42,9 +42,10 @@ var FetchBase = /** @class */ (function () {
      * Returns a newly created instance
      * @param http: The injected http fetch instance
      */
-    function FetchBase(http, dialog) {
+    function FetchBase(http, dialog, alert) {
         this.http = http;
         this.dialog = dialog;
+        this.alert = alert;
         this.isFetching = false;
     }
     /**
@@ -131,21 +132,28 @@ var FetchBase = /** @class */ (function () {
     };
     FetchBase.prototype.handleUnexpectedError = function (error, options, result) {
         return __awaiter(this, void 0, void 0, function () {
-            var handle;
+            var useAlert, useDialog;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        handle = !options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen(result)));
-                        if (!handle) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.dialog.unexpectedError(error)];
+                        useAlert = !!result && !!result.firstMessage && !!options && !!options.alertErrorsWhen && options.alertErrorsWhen(result);
+                        useDialog = !useAlert && !options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen(result)));
+                        if (!useAlert) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.alert.show(result.firstMessage.message)];
                     case 1:
                         _a.sent();
                         _a.label = 2;
                     case 2:
+                        if (!useDialog) return [3 /*break*/, 4];
+                        return [4 /*yield*/, this.dialog.unexpectedError(error)];
+                    case 3:
+                        _a.sent();
+                        _a.label = 4;
+                    case 4:
                         if (!result) {
-                            return [2 /*return*/, { success: false, handled: handle, firstMessage: { message: error } }];
+                            return [2 /*return*/, { success: false, handled: useDialog, firstMessage: { message: error } }];
                         }
-                        result.handled = handle;
+                        result.handled = useDialog;
                         return [2 /*return*/, result];
                 }
             });

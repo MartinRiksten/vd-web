@@ -1,5 +1,6 @@
 import { CommonDialogHelper } from '..';
 import { FetchBase, IFetchOptions, IServiceResult } from './fetch-base';
+import { AlertHelper } from './alert-helper';
 import { HttpFetch } from './http-fetch';
 /**
  * base class for list services.
@@ -13,7 +14,7 @@ export declare abstract class ServiceBase<TModel> extends FetchBase {
      * Returns a newly created instance
      * @param http: The injected http fetch instance
      */
-    protected constructor(http: HttpFetch, dialog: CommonDialogHelper);
+    protected constructor(http: HttpFetch, dialog: CommonDialogHelper, alert: AlertHelper);
     /**
      * Loads an object from the given url.
      * @param url: The url for the operation

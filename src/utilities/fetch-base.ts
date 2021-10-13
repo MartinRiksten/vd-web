@@ -1,5 +1,6 @@
 import { json } from 'aurelia-fetch-client';
 import { CommonDialogHelper } from '..';
+import { AlertHelper } from './alert-helper';
 import { HttpFetch } from './http-fetch';
 
 export abstract class FetchBase {
@@ -10,7 +11,8 @@ export abstract class FetchBase {
    * @param http: The injected http fetch instance
    */
   protected constructor(private readonly http: HttpFetch, 
-    protected readonly dialog: CommonDialogHelper) {
+    protected readonly dialog: CommonDialogHelper,
+    protected readonly alert: AlertHelper) {
     }
 
   /**
@@ -66,16 +68,22 @@ export abstract class FetchBase {
   }
 
   protected async handleUnexpectedError<T>(error: string, options: IFetchOptions, result?: IServiceResult<T>): Promise<IServiceResult<T>> {
-    const handle = !options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen(result)));
-    if (handle) {
+    const useAlert = !!result && !!result.firstMessage && !!options && !!options.alertErrorsWhen && options.alertErrorsWhen(result);
+    const useDialog = !useAlert && !options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen(result)));
+    
+    if (useAlert) {
+      await this.alert.show(result.firstMessage.message);
+    }
+
+    if (useDialog) {
       await this.dialog.unexpectedError(error);
     }
 
     if (!result) {
-      return { success: false, handled: handle, firstMessage: { message: error } } as IServiceResult<T>;
+      return { success: false, handled: useDialog, firstMessage: { message: error } } as IServiceResult<T>;
     }
 
-    result.handled = handle;
+    result.handled = useDialog;
     return result;
   }
 }
@@ -83,6 +91,7 @@ export abstract class FetchBase {
 export interface IFetchOptions {
   ignoreErrors?: boolean;
   ignoreErrorsWhen?: (result: IServiceResultBase) => boolean;
+  alertErrorsWhen?: (result: IServiceResultBase) => boolean;
 }
 
 /**

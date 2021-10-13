@@ -1,7 +1,6 @@
-﻿import { autoinject } from 'aurelia-framework';
-
-import { CommonDialogHelper } from '..';
+﻿import { CommonDialogHelper } from '..';
 import { FetchBase, IFetchOptions, IServiceResult } from './fetch-base';
+import { AlertHelper } from './alert-helper';
 import { HttpFetch } from './http-fetch';
 
 /**
@@ -17,8 +16,8 @@ export abstract class ServiceBase<TModel> extends FetchBase {
    * Returns a newly created instance
    * @param http: The injected http fetch instance
    */
-  protected constructor(http: HttpFetch, dialog: CommonDialogHelper) {
-    super(http, dialog);
+  protected constructor(http: HttpFetch, dialog: CommonDialogHelper, alert: AlertHelper) {
+    super(http, dialog, alert);
   }
 
   /**
