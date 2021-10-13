@@ -151,9 +151,9 @@ var FetchBase = /** @class */ (function () {
                         _a.label = 4;
                     case 4:
                         if (!result) {
-                            return [2 /*return*/, { success: false, handled: useDialog, firstMessage: { message: error } }];
+                            return [2 /*return*/, { success: false, handled: useDialog || useAlert, firstMessage: { message: error } }];
                         }
-                        result.handled = useDialog;
+                        result.handled = useDialog || useAlert;
                         return [2 /*return*/, result];
                 }
             });

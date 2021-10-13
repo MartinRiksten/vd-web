@@ -80,10 +80,10 @@ export abstract class FetchBase {
     }
 
     if (!result) {
-      return { success: false, handled: useDialog, firstMessage: { message: error } } as IServiceResult<T>;
+      return { success: false, handled: useDialog || useAlert, firstMessage: { message: error } } as IServiceResult<T>;
     }
 
-    result.handled = useDialog;
+    result.handled = useDialog || useAlert;
     return result;
   }
 }

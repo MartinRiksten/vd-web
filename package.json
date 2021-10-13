@@ -11,7 +11,7 @@
   },
   "type": "module",
   "scripts": {
-    "build": "tsc && npm run copy-html && npm run copy-con && npm run copy-con-dts",
+    "build": "tsc && npm run copy-html && npm run copy-con",
     "push": "git add -A && git commit -m \"Setup Package\" &&  git push",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
@@ -22,8 +22,7 @@
     "postversion": "git push && git push --tags",
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy-html": "copyfiles -u 1 ./src/**/*.html ./dist/",
-    "copy-con": "copyfiles -u 1 ./dist/**/*.* C:/C#/TRB/Trc/Main/Rdw.Con/Rdw.Con.Bundle-1_0/jspm_packages/github/MartinRiksten/vd-web@master/dist",
-    "copy-con-dts": "copyfiles -u 1 ./dist/**/*.d.ts C:/C#/TRB/Trc/Main/Rdw.Con/Rdw.Con.Bundle-1_0/node_modules/@types/vd-web"
+    "copy-con": "copyfiles -u 1 ./dist/**/*.* C:/C#/TRB/Trc/Main/Rdw.Con/Rdw.Con.Bundle-1_0/jspm_packages/github/MartinRiksten/vd-web@master/dist"
   },
   "files": [
     "dist/**/*"
