@@ -1,4 +1,4 @@
-import { CommonDialogHelper } from '..';
+import { CommonDialogHelper } from '../common-dialog/common-dialog-helper';
 import { AlertHelper } from './alert-helper';
 import { HttpFetch } from './http-fetch';
 export declare abstract class FetchBase {

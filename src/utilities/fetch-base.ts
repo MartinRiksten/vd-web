@@ -1,5 +1,6 @@
 import { json } from 'aurelia-fetch-client';
-import { CommonDialogHelper, CommonDialogType } from '..';
+import { CommonDialogHelper } from '../common-dialog/common-dialog-helper';
+import { CommonDialogType } from "../common-dialog/common-dialog";
 import { AlertHelper } from './alert-helper';
 import { HttpFetch } from './http-fetch';
 

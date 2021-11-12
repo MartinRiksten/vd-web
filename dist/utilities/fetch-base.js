@@ -37,7 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_fetch_client_1 = require("aurelia-fetch-client");
-var __1 = require("..");
+var common_dialog_1 = require("../common-dialog/common-dialog");
 var FetchBase = /** @class */ (function () {
     /**
      * Returns a newly created instance
@@ -136,7 +136,7 @@ var FetchBase = /** @class */ (function () {
             this.alert.show(result.firstMessage.message);
         }
         if (useDialog) {
-            this.dialog.message(result.firstMessage.message, __1.CommonDialogType.Error);
+            this.dialog.message(result.firstMessage.message, common_dialog_1.CommonDialogType.Error);
         }
         if (unexpected) {
             this.dialog.unexpectedError(error);
