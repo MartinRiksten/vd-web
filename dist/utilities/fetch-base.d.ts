@@ -25,7 +25,7 @@ export interface IFetchOptions {
     ignoreErrors?: boolean;
     ignoreErrorsWhen?: (result: IServiceResultBase) => boolean;
     alertErrorsWhen?: (result: IServiceResultBase) => boolean;
-    showErrosWhen?: (result: IServiceResultBase) => boolean;
+    showErrorsWhen?: (result: IServiceResultBase) => boolean;
 }
 /**
  * Interface for service error information.

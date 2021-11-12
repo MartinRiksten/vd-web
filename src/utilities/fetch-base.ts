@@ -70,7 +70,7 @@ export abstract class FetchBase {
 
   protected handleUnexpectedError<T>(error: string, options: IFetchOptions, result?: IServiceResult<T>): IServiceResult<T> {
     const useAlert = !!result && !!result.firstMessage && !!options && !!options.alertErrorsWhen && options.alertErrorsWhen(result);
-    const useDialog = !!result && !!result.firstMessage && !!options && !!options.showErrosWhen && options.showErrosWhen(result);
+    const useDialog = !!result && !!result.firstMessage && !!options && !!options.showErrorsWhen && options.showErrorsWhen(result);
     const unexpected = !useAlert && !useDialog && (!options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen(result))));
     
     if (useAlert) {
@@ -98,7 +98,7 @@ export interface IFetchOptions {
   ignoreErrors?: boolean;
   ignoreErrorsWhen?: (result: IServiceResultBase) => boolean;
   alertErrorsWhen?: (result: IServiceResultBase) => boolean;
-  showErrosWhen?: (result: IServiceResultBase) => boolean;
+  showErrorsWhen?: (result: IServiceResultBase) => boolean;
 }
 
 /**

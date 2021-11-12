@@ -130,7 +130,7 @@ var FetchBase = /** @class */ (function () {
     };
     FetchBase.prototype.handleUnexpectedError = function (error, options, result) {
         var useAlert = !!result && !!result.firstMessage && !!options && !!options.alertErrorsWhen && options.alertErrorsWhen(result);
-        var useDialog = !!result && !!result.firstMessage && !!options && !!options.showErrosWhen && options.showErrosWhen(result);
+        var useDialog = !!result && !!result.firstMessage && !!options && !!options.showErrorsWhen && options.showErrorsWhen(result);
         var unexpected = !useAlert && !useDialog && (!options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen(result))));
         if (useAlert) {
             this.alert.show(result.firstMessage.message);
