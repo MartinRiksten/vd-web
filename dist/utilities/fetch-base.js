@@ -37,6 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var aurelia_fetch_client_1 = require("aurelia-fetch-client");
+var __1 = require("..");
 var FetchBase = /** @class */ (function () {
     /**
      * Returns a newly created instance
@@ -129,17 +130,21 @@ var FetchBase = /** @class */ (function () {
     };
     FetchBase.prototype.handleUnexpectedError = function (error, options, result) {
         var useAlert = !!result && !!result.firstMessage && !!options && !!options.alertErrorsWhen && options.alertErrorsWhen(result);
-        var useDialog = !useAlert && (!options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen(result))));
+        var useDialog = !!result && !!result.firstMessage && !!options && !!options.showErrosWhen && options.showErrosWhen(result);
+        var unexpected = !useAlert && !useDialog && (!options || (!options.ignoreErrors && (!options.ignoreErrorsWhen || !options.ignoreErrorsWhen(result))));
         if (useAlert) {
             this.alert.show(result.firstMessage.message);
         }
         if (useDialog) {
+            this.dialog.message(result.firstMessage.message, __1.CommonDialogType.Error);
+        }
+        if (unexpected) {
             this.dialog.unexpectedError(error);
         }
         if (!result) {
-            return { success: false, handled: useDialog || useAlert, firstMessage: { message: error } };
+            return { success: false, handled: unexpected || useAlert || useDialog, firstMessage: { message: error } };
         }
-        result.handled = useDialog || useAlert;
+        result.handled = unexpected || useAlert || useDialog;
         return result;
     };
     return FetchBase;
